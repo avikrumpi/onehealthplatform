@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurology Health Education Platform</title>
+    <link rel="stylesheet" href="style_neurohealth.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content-wrapper">
+        <div class="header-left">
+           <div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                
+                            <!-- Floating language selector -->
+                            <div class="language-selector-float">
+                                <label for="languageSelector">Language:</label>
+                                <select id="languageSelector">
+                                    <option value="en">English</option>
+                                    <option value="hi">Hindi</option>
+                                    <option value="bn">Bengali</option>
+                                    <option value="kn">Kannada</option>
+                                </select>
+                            </div>
+    
+                    <h1 id="platformTitle">🧠Neurology Awareness & Care Platform</h1>
+                    
+                    <p id="platformSubtitle" style="margin-bottom: 1rem;">Comprehensive information on all neurology conditions and prevention strategies—covering symptoms, early detection, treatment options, and risk factors for all major bone disease types and age groups. Get trustworthy guidance tailored for individuals and families in India.</p>
+                    
+               
+                    <div class="nav-tabs">
+                        <!-- Your navigation buttons -->
+
+                        <button class="nav-tab active" data-section="diseases">Neurological Conditions</button>
+                                <button class="nav-tab" data-section="when-to-see">When to See a Neurologist</button>
+                                <button class="nav-tab" data-section="doctors">Find Neurologist</button>
+                                <button class="nav-tab" data-section="prevention">Prevention & Care</button>
+                                <button class="nav-tab" data-section="faq">FAQ</button>
+                                <button class="nav-tab" data-section="chatbot">Health Assistant</button>
+                                <button class="nav-tab" data-section="government">Government Initiatives</button>
+                                <button class="nav-tab" data-section="neuro-care-for-life">Lifelong Neuro Health</button>
+                                <button class="nav-tab" data-section="registration">Register</button>
+                                <button class="nav-tab" data-section="subscription">Subscribe</button>
+                    </div>
+                </div>
+                </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+        </div>
+
+    </header>
+
+    <div class="search-container">
+        <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search for health conditions, symptoms, or treatments..." oninput="handleSearch()">
+    </div>
+
+    <div class="container">
+               <section id="diseases" class="section active">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏥 Different Types of Neurological Diseases</h2>
+            <div class="diseases-grid" id="diseasesGrid"></div>
+            <div class="no-results" id="noResults" style="display: none;">
+                <h3>No results found</h3>
+                <p>Try searching with different keywords</p>
+            </div>
+            </section>
+
+        <section id="when-to-see" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">👩‍⚕️ When to See a Neurologist</h2>
+            <div class="faq-container" id="whenToSeeContainer"></div>
+        </section>
+
+        <section id="doctors" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🔍 Find Neurologist</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto 2rem;">
+                <label for="citySelect" style="display: block; margin-bottom: 0.75rem; font-size: 1.1rem; font-weight: 600; color: var(--color-text);">
+                    📍 Select Your City:
+                </label>
+                <select id="citySelect" onchange="filterDoctorsByCity()" style="width: 100%; padding: 1rem 1.5rem; font-size: 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); cursor: pointer; transition: all 0.3s ease;">
+                    <option value="">-- Select a City --</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                </select>
+            </div>
+
+            <div id="doctorsContainer"></div>
+
+            <p style="margin-top: 2rem; color: var(--color-text-secondary); font-style: italic; text-align: center;">
+                ⚠️ Always verify doctor credentials and call ahead to confirm availability and appointment procedures. These listings are for informational purposes. Please conduct your own research before visiting any healthcare provider.
+            </p>
+        </section>
+
+        <section id="prevention" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🛡️ Prevention & Care</h2>
+            <!-- Prevention and Care Section with Video Sidebar -->
+             <!-- Health Guidelines Bar (Full Width) -->
+        <div class="health-guidelines-banner">
+            <div class="banner-header">
+                <span class="banner-icon">💡</span>
+                <h3>Neurological Health Guidelines</h3>
+                <span class="banner-subtitle">Essential Information for Patient’s Brain and Nerve Health</span>
+            </div>
+
+            <div style="display: flex; gap: 2rem; align-items: stretch; margin-bottom: 2rem;">
+              <!-- Lifestyle Guidelines -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                  <div class="card-header">
+                      <span class="card-icon">🌟</span>
+                      <h4>Essential Brain & Nerve Health Practices</h4>
+                  </div>
+                  <ul class="guideline-list">
+                       <li>Regular neurology check-ups, especially for those with chronic headache, seizure, or memory issues</li>
+                       <li>Maintain a nutrient-rich diet: green leafy vegetables, fatty fish, nuts, fruits, whole grains</li>
+                       <li>At least 30 minutes a day of physical activity (brisk walking, swimming, dancing, cycling)</li>
+                       <li>Lifelong mental stimulation: reading, puzzles, learning new skills, social activity</li>
+                       <li>Control blood pressure, diabetes, and cholesterol</li>
+                       <li>Quit smoking and limit alcohol for optimal brain health</li>
+                       <li>Ensure 7-9 hours of restful sleep to support memory and neurological repair</li>
+                       <li>Manage stress and practice relaxation (yoga, meditation, mindfulness)</li>
+                  </ul>
+              </div>
+              <!-- Vaccination Guidelines -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                  <div class="card-header">
+                      <span class="card-icon">💉</span>
+                      <h4>Essential Vaccinations for Brain & Nerve Health</h4>
+                  </div>
+                  <ul class="guideline-list">
+                        <li><strong>Influenza (flu) vaccine:</strong> Annually for chronic neurological patients and elderly</li>
+                        <li><strong>Pneumococcal vaccine:</strong> For adults with stroke, epilepsy, or immune compromise</li>
+                        <li><strong>Haemophilus influenzae type b (Hib) vaccine:</strong> Childhood prevention of meningitis and encephalitis</li>
+                        <li><strong>Measles-Mumps-Rubella (MMR) vaccine:</strong> Prevents viral brain and nerve infections in children</li>
+                        <li><strong>Polio vaccine:</strong> Stops childhood paralysis and muscle wasting</li>
+                        <li><strong>Rabies vaccine:</strong> For bite exposure and animal handlers</li>
+                        <li><strong>Meningococcal vaccine:</strong> Prevents bacterial meningitis in children/adults</li>
+                        <li><strong>COVID-19 vaccine:</strong> Important for all neurological and high-risk patients</li>
+                        <li><strong>Shingles (herpes zoster) vaccine:</strong> For adults &gt;50 to prevent nerve pain (post-herpetic neuralgia)</li>
+                        <li><strong>Japanese Encephalitis vaccine:</strong> For endemic areas/travelers</li>
+                        <li><strong>Tetanus vaccine:</strong> For trauma, epilepsy, and neuromuscular safety</li>
+                    </ul>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 2rem; align-items: stretch; margin-bottom: 2rem;">
+              <!-- Neurology Screening Guidelines -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                  <div class="card-header">
+                      <span class="card-icon">🔬</span>
+                      <h4>Brain & Nerve Screening Guidelines</h4>
+                  </div>
+                  <ul class="guideline-list">
+                      <li><strong>Memory & cognitive tests:</strong> Annual screening after age 60; earlier if family history or symptoms</li>
+                      <li><strong>Blood pressure & metabolic tests:</strong> Annual checks for all; essential in vascular disease or stroke risk</li>
+                      <li><strong>EEG:</strong> For new-onset seizures or altered consciousness</li>
+                      <li><strong>MRI/CT scan:</strong> For unexplained headaches, seizures, or loss of function</li>
+                      <li><strong>Nerve conduction and EMG tests:</strong> In persistent weakness, numbness, suspected neuropathy or muscle disorder</li>
+                      <li><strong>Vitamin B12 & D level:</strong> Screen in neuropathy, cognitive decline, elderly</li>
+                      <li><strong>Vision/hearing assessment:</strong> Yearly for neurological/pediatric/elderly</li>
+                      <li><strong>Fall risk screening:</strong> Annually for those >65 years, history of falls or neurological disorders</li>
+                      <li><strong>Genetic counseling and testing:</strong> For strong family history of neurodegenerative disorders</li>
+                      <li><strong>Carotid Doppler or cardiac evaluation:</strong> In recurrent stroke or TIA patients</li>
+                  </ul>
+              </div>
+              <!-- Neurological Preventive Measures -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                  <div class="card-header">
+                      <span class="card-icon">🛡️</span>
+                      <h4>Preventive Measures for Brain & Nerve Health</h4>
+                  </div>
+                  <ul class="guideline-list">
+                      <li>Get recommended childhood and adult vaccinations to prevent brain/nerve infections (MMR, Hib, polio, meningococcal, influenza, COVID-19).</li>
+                      <li>Use helmets and take safety practices to prevent traumatic brain or spinal cord injury.</li>
+                      <li>Manage hypertension, diabetes, cholesterol, and treat metabolic illness early.</li>
+                      <li>Maintain a mentally active lifestyle: regular reading, socializing, hobbies.</li>
+                      <li>Avoid substance abuse (alcohol, drugs, smoking) to prevent nerve and brain damage.</li>
+                      <li>Seek urgent medical attention for sudden weakness, loss of consciousness, confusion, or persistent headache.</li>
+                      <li>Treat infections promptly and follow up on any persistent fever or neurological symptoms.</li>
+                      <li>For children: encourage outdoor play, support cognitive stimulation, and monitor academic performance.</li>
+                      <li>For older adults: regular hearing/vision checks, fall risk assessment, social engagement.</li>
+                      <li>Review medicines with a doctor, especially if elderly or using sedatives/anticholinergics.</li>
+                      <li>Balance dietary supplements (vitamins, minerals) and consult a doctor before starting new medicines if chronic illness present.</li>
+                      <li>Protect from workplace neurotoxic hazards using personal protection and safe practices.</li>
+                  </ul>
+              </div>
+            </div>
+        </div>
+        <!-- ADD SPACE HERE -->
+        <div style="height: 2.5rem;"></div>
+
+        <!-- Content Area with Sidebar -->
+        <div class="prevention-wrapper">
+        <!-- Main Content Area (Prevention Container) -->
+            <div class="prevention-content">
+                <div id="preventionContainer" class="disease-grid"></div>
+            </div>
+
+            <!-- Video Sidebar (Right Side) -->
+            <aside class="prevention-video-sidebar">
+                <div class="video-resources-card">
+                    <h3>📺 Educational Videos</h3>
+                    <p class="video-subtitle">How do doctors determine and treat Neurological diseases</p>
+                    
+                    <!-- Video 1: Neurological Health Awareness -->
+                    <a href="https://www.youtube.com/watch?v=fhXh8NyB_tg" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/fhXh8NyB_tg/mqdefault.jpg" alt="Cancer Stages">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🔬 World Osteoporosis Day 2025</h4>
+                            <p>Bone Health Awareness by Dr. Thushanth Thomas</p>
+                            <span class="duration">⏱️ 6 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 2: Bone Health for Women  -->
+                    <a href="https://www.youtube.com/watch?v=75fXj0W9eT0" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/75fXj0W9eT0/mqdefault.jpg" alt="Cure Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🤰Bone Health: Essential Care for Working Women</h4>
+                            <p>How Bone Health is crucial for women, especially as they age.</p>
+                            <span class="duration">⏱️ 30 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 3: Bone Health Orthopedic -->
+                    <a href="https://www.youtube.com/watch?v=SwaTG5MVFa0" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/SwaTG5MVFa0/mqdefault.jpg" alt="Future Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🎗️The Role of Bone Health in Orthopedic Surgery (HSS)</h4>
+                            <p>Importance of bone health and the benefit of metabolic bone testing</p>
+                            <span class="duration">⏱️ 33 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 4:  Risk Reduction  -->
+                    <a href="https://www.youtube.com/watch?v=LxVGVDyWTDA&list=PLDps2oOp60a6sZ22j6Nuyl2ESIRNdTNcE&index=1" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/LxVGVDyWTDA&list=PLDps2oOp60a6sZ22j6Nuyl2ESIRNdTNcE&index=1/mqdefault.jpg" alt="Palliative">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🧠After a Fracture (HSS)</h4>
+                            <p>Hospital for Special Surgery</p>
+                            <span class="duration">⏱️2 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 5: Understanding Osteoporosis  -->
+                    <a href="https://www.youtube.com/watch?v=iC1L3YTo14E" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/iC1L3YTo14E/mqdefault.jpg" alt="Treating Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>💊 Understanding Osteoporosis</h4>
+                            <p>Preventive measures for Osteoporosis and the significance of Dexa Scan i</p>
+                            <span class="duration">⏱4 min</span>
+                        </div>
+                    </a>
+
+                     <!-- Video 6: Orthopedic disease in women,  -->
+                    <a href="https://www.youtube.com/watch?v=KdyEuYhrjlM" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/KdyEuYhrjlM/mqdefault.jpg" alt="Treating Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>💊 Gout and Pseudogout, Joint Pain- Everything You Need To Know</h4>
+                            <p>Disease: Symptoms, Treatments & Surgery</p>
+                            <span class="duration">⏱️ 47 min</span>
+                        </div>
+                    </a>
+
+                </div>
+            </aside>
+        </div>
+            <div class="faq-container" id="preventionContainer"></div>
+        </section>
+
+        <section id="faq" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">❓Frequently Asked Questions</h2>
+            <div class="faq-container" id="faqContainer"></div>
+        </section>
+
+        <section id="chatbot" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🤖 AI Health Assistant</h2>
+            <div class="info-card" style="max-width: 900px; margin: 0 auto;">
+                  <div style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+                    <h3 style="color: white; margin-bottom: 1rem;">💬 Chat with our AI Health Advisor</h3>
+                    <p style="margin: 0; color: white; opacity: 0.95;">Get instant support on orthopedic disease topics through our smart chatbot. Ask questions about symptoms, screening, prevention, and treatments for common and rare bone/muscle diseases across all age groups—available in English or Bengali.</p>
+                </div>
+         <div class="chatbot-wrapper">
+        <!-- Left Sidebar for Health Assistant -->
+        <aside class="chatbot-sidebar">
+            <!-- Stats Card -->
+            <div class="sidebar-card stats-card">
+                <h3>📊 Conversation Stats</h3>
+                <div class="stat-row">
+                    <span class="stat-icon">💬</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Total Messages</span>
+                        <span class="stat-value" id="totalMessages">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">✅</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Bot Responses</span>
+                        <span class="stat-value" id="botResponses">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">🔘</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Button Selections</span>
+                        <span class="stat-value" id="buttonClicks">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">⌨️</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Typed Messages</span>
+                        <span class="stat-value" id="typedMessages">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">🔗</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Conversation Chain</span>
+                        <span class="stat-value" id="conversationChain">1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Helplines Card -->
+            <div class="sidebar-card helpline-card">
+                <h3>🆘 Emergency Helplines</h3>
+                <div class="helpline-row">
+                    <span class="helpline-icon">📞</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Neurology Helpline</div>
+                        <div class="helpline-number">181</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">🏥</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">National Health</div>
+                        <div class="helpline-number">104</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">💚</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Tele-MANAS</div>
+                        <div class="helpline-number">14416</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">🚨</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Emergency</div>
+                        <div class="helpline-number">112</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">👮</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Women Safety</div>
+                        <div class="helpline-number">1091</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="sidebar-card actions-card">
+                <button class="action-btn reset-btn" onclick="resetChatbot()">
+                    <span>🔄</span> Reset Chat
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <div class="chatbot-main">
+            <div class="chat-header">
+                <h2>🤖 AI Health Assistant</h2>
+                <p>Get personalized health guidance</p>
+            </div>
+            
+
+                <div id="chatContainer" style="background: var(--color-surface); border: 2px solid var(--color-border); border-radius: var(--radius-md); height: 500px; display: flex; flex-direction: column; overflow: hidden;">
+                    <div id="chatMessages" style="flex: 1; overflow-y: auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="bot-message">
+                            <div style="background: var(--color-secondary); color: var(--color-text); padding: 1rem; border-radius: var(--radius-md); max-width: 80%;">
+                                <strong>🌸 Health Assistant:</strong><br>
+                                নমস্কার! Hello! I'm your Neuro health assistant. How can I help you today?<br><br>
+                                আপনি কোন ধরনের স্বাস্থ্য সমস্যা নিয়ে কথা বলতে চান?
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 2px solid var(--color-border); padding: 1rem; background: var(--color-background);">
+                        <div style="display: flex; gap: 0.75rem;">
+                            <input type="text" id="chatInput" placeholder="Type your question here... আপনার প্রশ্ন লিখুন..." style="flex: 1; padding: 0.875rem; border: 2px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; transition: all 0.3s ease;">
+                            <button id="chatSendBtn" onclick="handleChatbot()" style="background: var(--color-primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); cursor: pointer; font-weight: 500; transition: all 0.3s ease;">
+                                Send 🚀
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wellness For Her Section -->
+        <section id="neuro-care-for-life" class="section" style="display: none;">
+           <!-- Success Stories Section -->
+                <div style="margin-top: 3rem;">
+                    <h3 style="color: var(--color-primary); text-align: center; margin-bottom: 2rem; font-size: 1.8rem; font-weight: 700;">🏆 Pioneers in Neuro Health Treatment</h3>
+                    <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 2rem;">
+                        Educational institutions and organizations championing orthopedic health programs
+                    </p>
+
+                    <h4 style="color: var(--color-primary); margin-bottom: 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🏢 Organizations Leading Neurology & Brain Health Awareness</h4>
+                    <div class="wellness-grid">
+
+                        <!-- Organization 1 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🧠</div>
+                            <h3>National Brain Research Centre (NBRC)</h3>
+                            <p><strong>National Brain Awareness Outreach</strong></p>
+                            <ul>
+                                <li>Annual ‘Brain Awareness Week’ with interactive workshops in schools and colleges</li>
+                                <li>Public seminars on dementia, epilepsy, and stroke</li>
+                                <li>Collaborative awareness campaigns with medical societies</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 2 -->
+                        <div class="wellness-card" style="border-left: 4px solid #34bab3;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>Indian Epilepsy Association (IEA)</h3>
+                            <p><strong>Empowering Epilepsy Awareness</strong></p>
+                            <ul>
+                                <li>Free epilepsy screening camps at corporates, colleges, and public parks</li>
+                                <li>Patient/family support helplines & self-care workshops</li>
+                                <li>Advocacy for seizure first aid and stigma reduction at workplaces</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 3 -->
+                        <div class="wellness-card" style="border-left: 4px solid #cb5ce0;">
+                            <div class="wellness-icon">🥼</div>
+                            <h3>Indian Stroke Association</h3>
+                            <p><strong>Stroke Prevention & FAST Campaigning</strong></p>
+                            <ul>
+                                <li>Public stroke risk camps for seniors, home-makers, corporate employees</li>
+                                <li>FAST stroke awareness sessions and simulation drills</li>
+                                <li>Research, data, and city campaigns on World Stroke Day (with neuro societies)</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 4 -->
+                        <div class="wellness-card" style="border-left: 4px solid #a3b900;">
+                            <div class="wellness-icon">🦻</div>
+                            <h3>ARMC & Multiple Sclerosis Society of India</h3>
+                            <p><strong>MS & Neuro Disability Advocacy</strong></p>
+                            <ul>
+                                <li>Awareness sessions in IT/finance firms for invisible disease support</li>
+                                <li>Disability rights and legal support seminars at workplaces and colleges</li>
+                                <li>Free therapy camps and peer mentorship for MS, spasticity, and neurodisability</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 5 -->
+                        <div class="wellness-card" style="border-left: 4px solid #ff9800;">
+                            <div class="wellness-icon">🌎</div>
+                            <h3>Alzheimer’s & Related Disorders Society of India (ARDSI)</h3>
+                            <p><strong>Memory & Dementia Care Program</strong></p>
+                            <ul>
+                                <li>Family support groups at university campuses and metro corporates</li>
+                                <li>Dementia care education in partnership with urban housing societies</li>
+                                <li>Annual National Memory Walks and Cognition Health Fairs</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 6 -->
+                        <div class="wellness-card" style="border-left: 4px solid #1976d2;">
+                            <div class="wellness-icon">🤝</div>
+                            <h3>Indian Academy of Neurology (IAN)</h3>
+                            <p><strong>National Mentorship & Brain Health Camps</strong></p>
+                            <ul>
+                                <li>City-wise free neurology screening events (urban/rural)</li>
+                                <li>School and college-based brain safety/trauma prevention awareness</li>
+                                <li>Facilitator training for seizure, movement disorder, and neuro emergency response</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 7 -->
+                        <div class="wellness-card" style="border-left: 4px solid #e53935;">
+                            <div class="wellness-icon">🏃</div>
+                            <h3>Parkinson’s Disease & Movement Disorder Society (PDMDS)</h3>
+                            <p><strong>Urban Mobility & Wellness Network</strong></p>
+                            <ul>
+                                <li>Community brain gyms and movement workshops for Parkinson’s patients at senior clubs and workplaces</li>
+                                <li>Public dance therapy, yoga camps, and carer education days</li>
+                                <li>Speech and occupational therapist network for remote/tech workers</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 8 -->
+                        <div class="wellness-card" style="border-left: 4px solid #8e24aa;">
+                            <div class="wellness-icon">👩‍💻</div>
+                            <h3>National Institute for Empowerment of Persons with Intellectual Disabilities (NIEPID)</h3>
+                            <p><strong>Inclusive College/Corporate Neuro-Disability Sensitization</strong></p>
+                            <ul>
+                                <li>Intellectual disability and autism training for corporate HR/EDU teams</li>
+                                <li>On-campus and online workshops for accessible, neuro-friendly workplaces</li>
+                                <li>Internship and placement assistance for youth with neurodevelopmental conditions</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 9 -->
+                        <div class="wellness-card" style="border-left: 4px solid #4caf50;">
+                            <div class="wellness-icon">🔎</div>
+                            <h3>Medanta Institute of Neurosciences</h3>
+                            <p><strong>Corporate & School Neurology Engagement</strong></p>
+                            <ul>
+                                <li>City-wide brain camps: screening, digital cognitive assessments for businesses</li>
+                                <li>Online webinars for working professionals on headache, stress and memory loss</li>
+                                <li>Interactive neuro health workshops at college/university festivals</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 10 -->
+                        <div class="wellness-card" style="border-left: 4px solid #ff7043;">
+                            <div class="wellness-icon">✅</div>
+                            <h3>Tata Trusts – M-power Mind Matters</h3>
+                            <p><strong>Mental Wellness for Workplace & College Youth</strong></p>
+                            <ul>
+                                <li>Neuro and emotional health workshops for IT/finance/educational staff</li>
+                                <li>Campus “Brain Health Aware” days benefitting >15,000 students/year</li>
+                                <li>Support line and digital resources for mood, anxiety, epilepsy and memory health</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 11 -->
+                        <div class="wellness-card" style="border-left: 4px solid #00bcd4;">
+                            <div class="wellness-icon">🌐</div>
+                            <h3>Indian Head Injury Foundation (IHIF)</h3>
+                            <p><strong>Brain Injury Prevention & Care Advocacy</strong></p>
+                            <ul>
+                                <li>Road safety and helmet campaigns at colleges, traffic junctions, and corporate fleets</li>
+                                <li>Neuro-rehab center support and training for TBI survivors, families, and employers</li>
+                                <li>Public first-aid and concussion management camps for sports organizations</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 12 -->
+                        <div class="wellness-card" style="border-left: 4px solid #1de9b6;">
+                            <div class="wellness-icon">🦻</div>
+                            <h3>Sound Hearing India & Hearing Loss Clinics</h3>
+                            <p><strong>Auditory-Neuro Health & Workplace Inclusion</strong></p>
+                            <ul>
+                                <li>Corporate and college screening for hearing loss and auditory neuropathy</li>
+                                <li>Education on noise safety at manufacturing/IT hubs</li>
+                                <li>Sign language workshops and technological inclusion for hearing impairment</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 13 -->
+                        <div class="wellness-card" style="border-left: 4px solid #ffb300;">
+                            <div class="wellness-icon">💡</div>
+                            <h3>Mental Health Foundation India</h3>
+                            <p><strong>Mental & Cognitive Wellness Campaigns</strong></p>
+                            <ul>
+                                <li>‘Mind Matters’ awareness in colleges, IT parks, and megacities</li>
+                                <li>Resilience, stress, and exam anxiety management for students and staff</li>
+                                <li>Helpline, digital seminars, and peer support for mood/brain health</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 14 -->
+                        <div class="wellness-card" style="border-left: 4px solid #607d8b;">
+                            <div class="wellness-icon">🦾</div>
+                            <h3>Indian Spinal Injuries Centre Foundation</h3>
+                            <p><strong>Neuro Disability & Rehab for All</strong></p>
+                            <ul>
+                                <li>Workshops for corporates on spinal safety and ergonomic best practices</li>
+                                <li>Campus-based spinal cord injury prevention and assistive device camps</li>
+                                <li>Return-to-work/school programs for those with neuro-mobility disabilities</li>
+                            </ul>
+                        </div>
+
+                        <!-- Organization 15 -->
+                        <div class="wellness-card" style="border-left: 4px solid #ab47bc;">
+                            <div class="wellness-icon">👩‍🎓</div>
+                            <h3>Centre for Autism & Other Disabilities Rehabilitation Research & Education (CADRRE)</h3>
+                            <p><strong>Neurodevelopmental Inclusion & Training Outreach</strong></p>
+                            <ul>
+                                <li>Corporate sensitization and inclusion drives for autism spectrum/neurodiverse workforces</li>
+                                <li>Teacher & management workshops in schools, colleges, and coaching centers</li>
+                                <li>Parent-child camps, digital tools, and assistive tech introduction for neurodevelopmental diversity</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                  <!-- Colleges & Educational Institutes Section -->
+                   <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🎓 Colleges & Universities Championing Neuro Health & Brain Wellness</h4>
+                        <div class="wellness-grid">
+
+                            <!-- College 1 -->
+                            <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                                <div class="wellness-icon">🧠</div>
+                                <h3>AIIMS New Delhi</h3>
+                                <p><strong>National Neurology & Stroke Advocacy</strong></p>
+                                <ul>
+                                    <li>Annual Neuro Health Camps: Free screening for epilepsy, stroke, dementia, Parkinson’s</li>
+                                    <li>Student & resident outreach on seizure/first aid and stroke warning signs</li>
+                                    <li>Community rallies and media campaigns for World Brain Day and Epilepsy Awareness Week</li>
+                                    <li>Telemedicine camps serving rural and remote regions for neuro consultation & education</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 2 -->
+                            <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                                <div class="wellness-icon">🏛️</div>
+                                <h3>PGIMER Chandigarh</h3>
+                                <p><strong>North India Brain & Nerve Wellness Hub</strong></p>
+                                <ul>
+                                    <li>‘Brain Awareness Week’—public lectures, walks, and quiz competitions</li>
+                                    <li>School-based neurodevelopmental screening and learning disability camps</li>
+                                    <li>Training of ASHA/ANM in epilepsy, stroke, and mental health first response</li>
+                                    <li>Patient-family education on dementia and movement disorders</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 3 -->
+                            <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                                <div class="wellness-icon">🎓</div>
+                                <h3>NIMHANS Bangalore</h3>
+                                <p><strong>National Neuro Education Leader</strong></p>
+                                <ul>
+                                    <li>‘Brain Museum’ and student-led neuro education tours and awareness days</li>
+                                    <li>Major Brain Health Camp every World Stroke Day—public access, risk screening, memory checks</li>
+                                    <li>Epilepsy & Parkinson’s camps with telemedicine follow-up in Karnataka and beyond</li>
+                                    <li>Supports NeuroPsychology, Speech Pathology, Rehab, and Mental Health literacy drives</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 4 -->
+                            <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                                <div class="wellness-icon">🪑</div>
+                                <h3>CMC Vellore</h3>
+                                <p><strong>South India Neuro Wellness, Rural & Tribal Focus</strong></p>
+                                <ul>
+                                    <li>Rural epilepsy and stroke early intervention camps</li>
+                                    <li>Dementia and elder care outreach—community memory clinics</li>
+                                    <li>School wellness clinics for cognitive/speech/developmental delay</li>
+                                    <li>Annual mental health and brain health quiz fest</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 5 -->
+                            <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                                <div class="wellness-icon">🏥</div>
+                                <h3>IPGMER & SSKM Kolkata</h3>
+                                <p><strong>East India’s Brain & Nerve Health Leader</strong></p>
+                                <ul>
+                                    <li>District-level camps for stroke prevention, movement disorder screening</li>
+                                    <li>Months of Memory: Dementia education, memory walk, and carer training for families</li>
+                                    <li>Workshops for rural doctors on neuroemergencies and tele-stroke protocols</li>
+                                    <li>Student & public rallies for Epilepsy Day and World Brain Week</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 6 -->
+                            <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                                <div class="wellness-icon">👩‍🎓</div>
+                                <h3>Christian Medical College Ludhiana</h3>
+                                <p><strong>Pediatric Neurodevelopment & Rural Health</strong></p>
+                                <ul>
+                                    <li>Mobile neuro clinics for childhood epilepsy and cerebral palsy</li>
+                                    <li>Neuroscience lessons and prevention clubs for teachers and students</li>
+                                    <li>Annual caregiver support workshops for families with disabilities</li>
+                                    <li>Telemedicine outreach camps for Punjab villages</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 7 -->
+                            <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                                <div class="wellness-icon">🔬</div>
+                                <h3>St. John’s Medical College, Bangalore</h3>
+                                <p><strong>Movement Disorder, Dementia & Community Health</strong></p>
+                                <ul>
+                                    <li>Dementia “Screen & Teach” camps with care planners for elders</li>
+                                    <li>Young stroke and brain injury support camp for survivors</li>
+                                    <li>School stroke/epilepsy risk factor awareness via poster and essay contests</li>
+                                    <li>Parkinson’s walkathons and speech therapy trainers for rural caregivers</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 8 -->
+                            <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                                <div class="wellness-icon">🚸</div>
+                                <h3>Grant Medical College Mumbai</h3>
+                                <p><strong>Urban/Rural Neuro Public Health, Mumbai</strong></p>
+                                <ul>
+                                    <li>Neuro health checkups and epilepsy outreach for slum and rural youth</li>
+                                    <li>Public transport and accident neurotrauma awareness</li>
+                                    <li>Community rehab and support groups for paralytic and developmental disorders</li>
+                                    <li>Student-run speech therapy and neuro rehab mentorship</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 9 -->
+                            <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                                <div class="wellness-icon">🏫</div>
+                                <h3>Sri Ramachandra Medical College Chennai</h3>
+                                <p><strong>TN State Wide Brain Camp & School Initiatives</strong></p>
+                                <ul>
+                                    <li>Brain health mobile clinics for rural Tamil Nadu</li>
+                                    <li>Parkinson’s, epilepsy, and stroke screening caravans for district hospitals</li>
+                                    <li>Youth risk education: anti-drug, anti-hypertension school clubs</li>
+                                    <li>Annual memory, behaviour and learning skills camps for all grades</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 10 -->
+                            <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                                <div class="wellness-icon">🌾</div>
+                                <h3>R G Kar Medical College Kolkata</h3>
+                                <p><strong>Community Neurohealth, North 24 Parganas</strong></p>
+                                <ul>
+                                    <li>Stroke support groups & day rehabilitation for neurodisability</li>
+                                    <li>Neurodevelopmental screening in rural schools</li>
+                                    <li>Parkinson’s and Movement Disorders patient workshops</li>
+                                    <li>Mobile clinics for epilepsy, brain injury, and memory cases</li>
+                                </ul>
+                            </div>
+                        </div>
+                    <!-- Corporate Section (Keep same as before) -->
+                   <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">❤️ Neuro Health & Wellness Apps Champions</h4>
+                    <div class="wellness-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+
+                    <div class="wellness-card" style="border-left: 4px solid #734eb6; background: linear-gradient(135deg,rgba(115,78,182,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🧠</div>
+                        <h3>NeuroNation</h3>
+                        <p><strong>Brain Training & Memory Exercises</strong></p>
+                        <ul>
+                            <li><strong>Programs:</strong> Personalized cognitive games for memory, focus, logic, and processing speed</li>
+                            <li><strong>Features:</strong> Daily streak reminders, progress analytics, social leaderboard</li>
+                            <li><strong>Impact:</strong> 45% users report better focus and cognitive skills after regular use</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #46b9b2; background: linear-gradient(135deg,rgba(70,185,178,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">📶</div>
+                        <h3>Epilepsy Journal</h3>
+                        <p><strong>Seizure Management Tracker</strong></p>
+                        <ul>
+                            <li><strong>Functions:</strong> Seizure logging, medication reminders, exportable reports for neurologists</li>
+                            <li><strong>Features:</strong> Graphs for triggers & medication adherence, seizure emergency protocols</li>
+                            <li><strong>Impact:</strong> 30% reduction in unreported seizures and improved doctor-patient communication</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #f6b93b; background: linear-gradient(135deg,rgba(246,185,59,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🧩</div>
+                        <h3>Cognifit</h3>
+                        <p><strong>Neuropsychological Assessment & Brain Games</strong></p>
+                        <ul>
+                            <li><strong>Programs:</strong> Science-based tasks for memory, attention, coordination, and reasoning</li>
+                            <li><strong>Features:</strong> Progress adapts to medical history, detailed cognitive report generator</li>
+                            <li><strong>Impact:</strong> Used in neuro rehab and by Alzheimer’s support groups worldwide</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #ff7f50; background: linear-gradient(135deg,rgba(255,127,80,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">📉</div>
+                        <h3>Headache Diary Pro</h3>
+                        <p><strong>Headache, Migraine & Trigger Diary App</strong></p>
+                        <ul>
+                            <li><strong>Log:</strong> Track headache duration, triggers, aura, and medication</li>
+                            <li><strong>Features:</strong> Reports for neurologist review, weather/barometric linkage tracking</li>
+                            <li><strong>Impact:</strong> 59% users better identify migraine food/environmental triggers</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #2196f3; background: linear-gradient(135deg,rgba(33,150,243,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">💤</div>
+                        <h3>Sleepio</h3>
+                        <p><strong>Smart Sleep Coach for Insomnia</strong></p>
+                        <ul>
+                            <li><strong>Services:</strong> Cognitive behavioral sleep therapy, personalized sleep goals and routines</li>
+                            <li><strong>Features:</strong> Sleep tracking, progress dashboards, expert video guides</li>
+                            <li><strong>Impact:</strong> 67% report better sleep within four weeks of use; less fatigue and improved focus</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #009688; background: linear-gradient(135deg,rgba(0,150,136,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🙇</div>
+                        <h3>Moodpath</h3>
+                        <p><strong>Mental Wellness & Mood Screening</strong></p>
+                        <ul>
+                            <li><strong>Focus:</strong> Anxiety and depression symptom check, positive psychology exercises</li>
+                            <li><strong>Features:</strong> Mood graph, cognitive therapy content, access to online consultation</li>
+                            <li><strong>Impact:</strong> 52% users report improvements in stress and mood</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #cddc39; background: linear-gradient(135deg,rgba(205,220,57,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">👵</div>
+                        <h3>Alzheimer’s Caregiver Buddy</h3>
+                        <p><strong>Dementia Family & Caregiver Resource</strong></p>
+                        <ul>
+                            <li><strong>Resources:</strong> Step-by-step daily tips, emergency help, medication reminders, home safety guides</li>
+                            <li><strong>Features:</strong> Video instructions, anxiety and behavior crisis help, multi-language support</li>
+                            <li><strong>Impact:</strong> 38% reduction in care stress for families over 6 months</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #ff9800; background: linear-gradient(135deg,rgba(255,152,0,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">📊</div>
+                        <h3>Dystonia Diary</h3>
+                        <p><strong>Movement Disorders Self-Monitoring Tool</strong></p>
+                        <ul>
+                            <li><strong>Services:</strong> Log muscle spasms, triggers, medications, and response to Botox/therapy</li>
+                            <li><strong>Features:</strong> Charts/timeline views, export for specialists, reminders to exercise</li>
+                            <li><strong>Impact:</strong> 22% improved specialist visit outcomes by providing symptom timelines</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #ff5722; background: linear-gradient(135deg,rgba(255,87,34,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🎮</div>
+                        <h3>Elevate</h3>
+                        <p><strong>Critical Thinking & Mental Skills Games</strong></p>
+                        <ul>
+                            <li><strong>Games:</strong> Attention, math, memory, and reasoning modules</li>
+                            <li><strong>Features:</strong> Adaptive game levels, daily challenge, improvement charts</li>
+                            <li><strong>Impact:</strong> Used by 35 million+ for brain fitness and attention</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #673ab7; background: linear-gradient(135deg,rgba(103,58,183,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🤹</div>
+                        <h3>Braingymmer</h3>
+                        <p><strong>Brain Exercise & Cognitive Challenge</strong></p>
+                        <ul>
+                            <li><strong>Workouts:</strong> Focus, problem-solving, IQ, processing speed games</li>
+                            <li><strong>Features:</strong> Family brain league, skill tracking, PC & mobile access</li>
+                            <li><strong>Impact:</strong> 45% users see improved attention and memory by 8 weeks</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #00bcd4; background: linear-gradient(135deg,rgba(0,188,212,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">📖</div>
+                        <h3>Lumosity</h3>
+                        <p><strong>Neuroscience-Backed Brain Games</strong></p>
+                        <ul>
+                            <li><strong>Modules:</strong> Memory, attention span, reasoning brain gyms</li>
+                            <li><strong>Features:</strong> Daily personalized training, aging brain protection routines</li>
+                            <li><strong>Impact:</strong> Million+ users, global research validation</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #8bc34a; background: linear-gradient(135deg,rgba(139,195,74,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🟢</div>
+                        <h3>Meditation & Mindfulness with Calm</h3>
+                        <p><strong>Stress, Sleep and Relaxation App</strong></p>
+                        <ul>
+                            <li><strong>Resources:</strong> Guided meditation for insomnia, stress and anxiety, focus music tracks</li>
+                            <li><strong>Features:</strong> Daily relaxation reminders, sleep stories for mental calm</li>
+                            <li><strong>Impact:</strong> ~60% users experience measurable improvement in resilience</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #ed4c78; background: linear-gradient(135deg,rgba(237,76,120,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🧘</div>
+                        <h3>Happify</h3>
+                        <p><strong>Positive Thinking & Mood Resilience App</strong></p>
+                        <ul>
+                            <li><strong>Activities:</strong> Cognitive exercises, therapeutic games, gratitude journals</li>
+                            <li><strong>Features:</strong> Mood tracking, happiness score improvement, psychology coaching</li>
+                            <li><strong>Impact:</strong> 85% of users report more happiness and emotional control</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #ffc107; background: linear-gradient(135deg,rgba(255,193,7,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">📆</div>
+                        <h3>Seizure Tracker</h3>
+                        <p><strong>Comprehensive Seizure Logging & Emergency Alerts</strong></p>
+                        <ul>
+                            <li><strong>Services:</strong> One-tap event recording, video upload for doctor review, safety contacts</li>
+                            <li><strong>Features:</strong> Triggers, aura log, customizable reports, medication reminders</li>
+                            <li><strong>Impact:</strong> Recognized by epilepsy specialists as top digital tool for rescue planning</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #009688; background: linear-gradient(135deg,rgba(0,150,136,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">👨‍⚕️</div>
+                        <h3>Neurotrack</h3>
+                        <p><strong>Dementia & Cognitive Health Digital Assessment</strong></p>
+                        <ul>
+                            <li><strong>Tests:</strong> Memory, attention, processing speed in-app screening</li>
+                            <li><strong>Features:</strong> Family/caregiver dashboards, results sharing, risk identification</li>
+                            <li><strong>Impact:</strong> Used by global Alzheimer’s centers for early digital detection</li>
+                        </ul>
+                    </div>
+                    <div class="wellness-card" style="border-left: 4px solid #ff7043; background: linear-gradient(135deg,rgba(255,112,67,0.05),rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🧑‍🦽</div>
+                        <h3>ReAble</h3>
+                        <p><strong>Status, Mobility, and Activities Tracker for Neuro Rehab</strong></p>
+                        <ul>
+                            <li><strong>Focus:</strong> Daily movement log, walking/hand function progress, assistive device tracking</li>
+                            <li><strong>Features:</strong> Doctor/team task scheduler, rehab reminders, family connect</li>
+                            <li><strong>Impact:</strong> 63% users reported more functional gains with app-linked therapy</li>
+                        </ul>
+                    </div>
+                    </div>
+        </section>
+
+         <!-- Government Initiatives Section -->
+        <section id="government" class="section" style="display: none;">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏛️ Government Neurological Healthcare Initiatives in West Bengal</h2>
+
+            <!-- Neurological Initiatives Overview -->
+            <div class="initiatives-banner">
+               <h3>🧠 Major Neurology Health Initiatives (Govt. of India & West Bengal)</h3>
+                    <div class="initiatives-grid">
+
+                        <div class="initiative-item">
+                            <strong>Ayushman Bharat – AB-PMJAY (Neurology Packages)</strong>
+                            <p>Insurance for hospitalization and treatment of stroke, epilepsy, brain injury, neuro-trauma, rehabilitation, MRI, and neurosurgery in empanelled hospitals nationwide</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Programme for Prevention & Control of Non-Communicable Diseases (NP-NCD)</strong>
+                            <p>Screening and referral for stroke risk, dementia, epilepsy, movement disorders, and chronic headache at PHCs and wellness centers</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Rashtriya Bal Swasthya Karyakram (RBSK) – Child Neurology Screening</strong>
+                            <p>Free school and community screening for epilepsy, cerebral palsy, developmental delay, intellectual disability (0–18 yrs)</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Pradhan Mantri Swasthya Suraksha Yojana (PMSSY, AIIMS Network)</strong>
+                            <p>New neurology/neurosurgery departments, trauma care, neurocritical ICU, and rehab facilities at AIIMS and upgraded govt. hospitals</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Mental Health Programme (NMHP)</strong>
+                            <p>District Mental Health Programme with neuropsychiatric screening, epilepsy treatment, and counseling in government hospitals/rural areas</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>District Early Intervention Centres (DEIC) – Pediatric Neurorehabilitation</strong>
+                            <p>Free therapy, disability aids, and early intervention for cerebral palsy, epilepsy, autism under Rashtriya Bal Swasthya Karyakram</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>State Disability Rehabilitation Centers (DRC)</strong>
+                            <p>Provisions of wheelchairs, mobility aids, communication boards for neurodisability, stroke, or spinal injury patients at subsidized rates</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Epilepsy Control Programme (Pilot)</strong>
+                            <p>Awareness, anti-epileptic drug kits, and capacity-building in selected districts for seizure management</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Programme for Control of Stroke (NPCS)</strong>
+                            <p>District stroke units, public education about FAST stroke recognition, and free thrombolysis/acute stroke care in public hospitals</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Jan Aushadhi – Subsidized Neurology Medicines</strong>
+                            <p>Government-run pharmacies supply low-cost anti-epileptics, anti-parkinsonians, dementia & MS medicines, and nerve supplements</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>School Health Programme – Brain/Nervous System Education</strong>
+                            <p>Awareness modules, screening for learning/behavioral/neurodevelopmental problems, and referral from government schools</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Mobile Medical Units (MMU) – Neurology Camps</strong>
+                            <p>Mobile clinics in rural WB for screening epilepsy, stroke risk, Parkinson’s, and memory loss, with referrals to hospitals</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Central Govt. Health Scheme (CGHS) – Neurology Coverage</strong>
+                            <p>Free neurology consultations, MRI, EEG, surgery, rehab for government employees and retirees</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Programme for Prevention & Control of Fluorosis (NPPCF)</strong>
+                            <p>Screening for neurological effects of fluorosis (confusion, neuropathy, muscle weakness) in affected regions; provision of safe water</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Indian Council of Medical Research (ICMR) – Neuroscience Grants</strong>
+                            <p>Funding for research on dementia, epilepsy, neurodegeneration, stroke, and neuroepidemiology in India</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>West Bengal Chief Minister’s Relief Fund</strong>
+                            <p>Financial support to poor patients for brain surgery, spinal procedures, epilepsy treatment, and neuro-rehab in approved hospitals</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Samagra Siksha Mission – Inclusive Education for Neurodevelopmental Disabilities</strong>
+                            <p>Provisions for special educators, assistive devices, and therapies for epilepsy, CP, autism and learning difficulties in schools</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Universal Immunization Programme (UIP)</strong>
+                            <p>Vaccination against polio, measles, Hib, Japanese encephalitis to prevent CNS infection, paralysis, and neurodisability</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Jan Suraksha Accident Insurance</strong>
+                            <p>Personal accident insurance covers brain/spinal trauma, neurosurgery, rehab for BPL/informal workers and road accident victims</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Pradhan Mantri Gram Sadak Yojana – Trauma Prevention</strong>
+                            <p>Improved road safety and reduced head/brain injuries in rural areas through better road connectivity</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>World Alzheimer’s Day & Brain Health Week</strong>
+                            <p>Annual national/state campaigns for dementia prevention, stroke warning signs, epilepsy education</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Digital Health Records for Neuro Disease Tracking</strong>
+                            <p>Govt. rollout of E-health records and registries to monitor epilepsy, dementia, stroke, MS, and other neurological disorders</p>
+                        </div>
+
+                        <div class="initiative-item">
+                            <strong>West Bengal State Disability Pension Scheme</strong>
+                            <p>Monthly pension for persons with permanent neurological disabilities (stroke, epilepsy, cerebral palsy, neurotrauma) after state assessment</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Telemedicine Service (eSanjeevani)</strong>
+                            <p>Free live video consultation with neurologists and neuro-specialists for rural, remote, and elderly patients from PHCs/health centers</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Senior Citizen Health Insurance Scheme (SCHIS)</strong>
+                            <p>Additional insurance coverage for elderly people with neurological disorders (such as Parkinson’s, Alzheimer’s, post-stroke rehab)</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Programme for Health Care of the Elderly (NPHCE)</strong>
+                            <p>Dedicated geriatric clinics with neurocognitive, memory, Parkinson’s, stroke, and fall-risk care in District Hospitals and Rural Health Centers</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Neurosurgery and Neuro-Rehabilitation Training (Govt. Fellowships)</strong>
+                            <p>Government-funded fellowship programs to train doctors, therapists, and nurses in brain/spinal injury, neurocritical care, and neuro-rehab</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Accessible India Campaign (Sugamya Bharat Abhiyan) – Barrier-Free Access</strong>
+                            <p>Infrastructure upgrades at hospitals, public spaces, and transport for easy access to patients with stroke, neurodisability, or wheelchair needs</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Mental Health Helplines and Suicide Prevention Support</strong>
+                            <p>Government-supported 24x7 helplines for epilepsy, dementia, depression/anxiety, and emergency support (often coordinated with neuro/mental health)</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Disability Certification and UDID (Unique Disability ID) Program</strong>
+                            <p>Online platform for neurological disability certification, government benefits access, and tracking for epilepsy, stroke, CP, neurodevelopmental disorders</p>
+                        </div>
+                    </div>
+            </div>
+
+            <!-- Interactive Map Section -->
+                <div class="map-section">
+                    <h3 style="margin-bottom: 1rem;">📍 Healthcare Drives & Centers in West Bengal Districts</h3>
+                   <p style="margin-bottom: 1.5rem; color: white;">
+                        <strong>Districts Highlighted:</strong> Murshidabad, Bankura, Birbhum, Asansol (Paschim Bardhaman), Purulia, Bardhaman (Purba Bardhaman)
+                    </p>
+                    
+                    <!-- Google My Maps Embed -->
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/d/embed?mid=10LcqEx9WHKcxQhEku84mG6lJoVGvE-Q" 
+                            width="100%" 
+                            height="600" 
+                            style="border:0; border-radius: var(--radius-lg);" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+      
+                <!-- District-wise Healthcare Centers -->
+                <div class="district-list">
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🏥 Key Neurology Healthcare Centers by District</h3>
+
+                    <div class="district-card">
+                        <h4>📍 Kolkata</h4>
+                        <ul>
+                            <li><strong>Bangur Institute of Neurosciences</strong> - Bhowanipore</li>
+                            <li>Nil Ratan Sircar (NRS) Medical College - Neurology & Neurosurgery Units</li>
+                            <li>IPGMER & SSKM Hospital - Neuromedicine & Neurogenetics Clinic</li>
+                            <li>National Neurosciences Centre</li>
+                            <li>Institute of Neurosciences Kolkata (INK)</li>
+                            <li>AMRI Hospitals - Salt Lake, Dhakuria (Comprehensive Neuro Units)</li>
+                            <li>Mobile Neuro Diagnostic and Stroke Screening Camps</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Murshidabad</h4>
+                        <ul>
+                            <li><strong>Murshidabad Medical College & Hospital</strong> - Neurology Clinic - Berhampore</li>
+                            <li>District Mental Health Programme OPD - Berhampore</li>
+                            <li>Neuro-Care Unit, Jangipur Sub-divisional Hospital</li>
+                            <li>District Early Intervention Centre (DEIC) for Child Neurology</li>
+                            <li>Community Health Centres with EEG & Telemedicine Support</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Bardhaman (Purba Bardhaman)</h4>
+                        <ul>
+                            <li><strong>Burdwan Medical College & Hospital</strong> - Neurology & Epilepsy Clinic</li>
+                            <li>Chittaranjan Seva Sadan - Neurodevelopmental OPD</li>
+                            <li>District Mental Health Programme Center</li>
+                            <li>DEIC – Pediatric Neuro Rehabilitation Unit</li>
+                            <li>Mobile Neuro Camps in Katwa & Kalna</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 North 24 Parganas</h4>
+                        <ul>
+                            <li><strong>RG Kar Medical College & Hospital</strong> - Neurosciences OPD</li>
+                            <li>Neurocritical & Stroke Care Unit - Barrackpore District Hospital</li>
+                            <li>Kalyani AIIMS (Nearby) - Comprehensive Neuro services</li>
+                            <li>Community Neuro Clinics - Barasat, Basirhat</li>
+                            <li>Mental Health & Epilepsy Camps (NHM) in rural blocks</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Darjeeling</h4>
+                        <ul>
+                            <li><strong>North Bengal Medical College</strong> - Siliguri (Neuromedicine & Neurosurgery)</li>
+                            <li>District Hospital Kurseong - Stroke/Seizure Clinics</li>
+                            <li>Mental Health & Epilepsy OPD - Siliguri</li>
+                            <li>Nepal Border Neuro Health Camps</li>
+                            <li>Telemedicine/Video Consult outreach for hilly and remote populations</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Hooghly</h4>
+                        <ul>
+                            <li><strong>Uttarpara General Hospital</strong> - Neuro OPD</li>
+                            <li>Chinsurah District Hospital - Stroke & Epilepsy Clinic</li>
+                            <li>Serampore Sub-divisional Hospital - Neurorehab Services</li>
+                            <li>Pediatric Neuro Development Clinic - Hooghly DEIC</li>
+                            <li>District Mental Health Programme - Outreach camps</li>
+                        </ul>
+                    </div>
+                </div>
+        </section>
+
+        <section id="registration" class="section" style="display: none;">
+                  <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Register</h2>
+                  <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; align-items: flex-start;">
+                    <!-- Registration form as per your format ... (omitted for brevity) -->
+                       <!-- LEFT COLUMN: Registration -->
+                    <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+                      <div class="info-card" style="width: 100%; margin: 0; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+                            <div style="text-align: center; margin-bottom: 2rem;">
+                               <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Stay Informed About Neurological Health</h3>
+                               <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Subscribe to receive monthly health tips, screening reminders, and updates on neuro health topics.</p>
+                            </div>
+                            <form id="registrationForm" onsubmit="handleRegistration(event)">
+                               <!-- Full Name -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  👤 Full Name *
+                                  </label>
+                                  <input
+                                     type="text"
+                                     id="fullName"
+                                     name="fullName"
+                                     required
+                                     placeholder="Enter your full name"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Email Address -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📧 Email Address *
+                                  </label>
+                                  <input
+                                     type="email"
+                                     id="emailAddress"
+                                     name="emailAddress"
+                                     required
+                                     placeholder="your.email@example.com"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- City of Residence -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📍 City of Residence
+                                  </label>
+                                  <input
+                                     type="text"
+                                     id="cityOfResidence"
+                                     name="cityOfResidence"
+                                     placeholder="e.g., Kolkata, Delhi, Mumbai"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Phone Number (Optional) -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📱 Phone Number (Optional)
+                                  </label>
+                                  <input
+                                     type="tel"
+                                     id="phoneNumber"
+                                     name="phoneNumber"
+                                     placeholder="+91 XXXXXXXXXX"
+                                     pattern="[0-9+\-\s]+"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Neuro Disease Type Selector -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="neuroType" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  Neuro Disease / Condition
+                                  </label>
+                                  <select id="neuroType" name="neuroType" required style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);">
+                                    <option value="">Select condition</option>
+                                    <option value="stroke">Stroke (Braina Attack)</option>
+                                    <option value="epilepsy">Epilepsy / Seizure Disorder</option>
+                                    <option value="parkinson">Parkinson’s Disease</option>
+                                    <option value="alzheimer">Alzheimer’s Disease / Dementia</option>
+                                    <option value="migraine">Migraine / Chronic Headache</option>
+                                    <option value="multiple_sclerosis">Multiple Sclerosis (MS)</option>
+                                    <option value="neuropathy">Peripheral Neuropathy / Nerve Pain</option>
+                                    <option value="bells_palsy">Bell’s Palsy</option>
+                                    <option value="cerebral_palsy">Cerebral Palsy</option>
+                                    <option value="guillain_barre">Guillain-Barre Syndrome (GBS)</option>
+                                    <option value="autism">Autism Spectrum Disorder / ADHD</option>
+                                    <option value="brain_tumor">Brain Tumor</option>
+                                    <option value="huntington">Huntington’s Disease</option>
+                                    <option value="movement_disorder">Dystonia / Movement Disorders</option>
+                                    <option value="tbi">Traumatic Brain Injury / Concussion</option>
+                                    <option value="encephalitis">Meningitis / Encephalitis</option>
+                                    <option value="myasthenia">Myasthenia Gravis</option>
+                            <!-- Add more conditions if needed -->
+                                  </select>
+                               </div>
+                               <!-- Join Group Checkbox -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label>
+                                  <input type="checkbox" id="joinCommunity" name="joinCommunity">
+                                  I want to join a community/support group for my disease type
+                                  </label>
+                               </div>
+                               <!-- Privacy Consent -->
+                               <div style="margin-bottom: 2rem;">
+                                  <label style="display: flex; align-items: start; cursor: pointer;">
+                                  <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                                  <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                                  I agree to register to this healthcare platform and understand that my data will be kept confidential and not shared with third parties. I can unsubscribe anytime.
+                                  </span>
+                                  </label>
+                               </div>
+                               <!-- Submit Button -->
+                               <button
+                                  type="submit"
+                                  style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                                  onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                                  onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                               ✓ Register Now
+                               </button>
+                               <!-- Privacy Note -->
+                               <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                                  🔒 Your data is kept confidential and will not be shared with third parties. Read our <a href="#" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
+                               </p>
+                            </form>
+                         </div>
+                      </div>
+
+                    <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+                      <div id="patientGroupsSection" style="width: 100%; margin: 0;">
+                        <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Neurology Support & Community Groups</h3>
+                        <div id="groupsList">
+                          <div class="group-card" style="border-left: 4px solid #3949ab; margin-bottom: 1rem; padding: 1rem; background: rgba(57,73,171,0.05); border-radius: 8px;">
+                            <b>Stroke Survivors Circle</b><br>
+                            <span>Active Members: 158</span><br>
+                            <span>Peer support and recovery advice for patients and caregivers after stroke/brain attack.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #ef5350; margin-bottom: 1rem; padding: 1rem; background: rgba(239,83,80,0.05); border-radius: 8px;">
+                            <b>Dementia & Alzheimer’s Support</b><br>
+                            <span>Active Members: 124</span><br>
+                            <span>Connect, share tips, and find resources on memory loss and dementia care.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #00796b; margin-bottom: 1rem; padding: 1rem; background: rgba(0,121,107,0.05); border-radius: 8px;">
+                            <b>Epilepsy Awareness Community</b><br>
+                            <span>Active Members: 172</span><br>
+                            <span>Discuss seizure management, anti-epileptic medications and daily living.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #8d6e63; margin-bottom: 1rem; padding: 1rem; background: rgba(141,110,99,0.05); border-radius: 8px;">
+                            <b>Parkinson’s Support Network</b><br>
+                            <span>Active Members: 91</span><br>
+                            <span>Tremor management, movement tips, caregiver resources, and living well with Parkinson’s.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #fbc02d; margin-bottom: 1rem; padding: 1rem; background: rgba(251,192,45,0.05); border-radius: 8px;">
+                            <b>Migraine & Headache Help</b><br>
+                            <span>Active Members: 107</span><br>
+                            <span>Find relief tips, triggers, medication advice and connect with other migraineurs.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #6d4c41; margin-bottom: 1rem; padding: 1rem; background: rgba(109,76,65,0.05); border-radius: 8px;">
+                            <b>Multiple Sclerosis Peer Connect</b><br>
+                            <span>Active Members: 73</span><br>
+                            <span>Discuss MS management, new therapies, and personal stories.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #0277bd; margin-bottom: 1rem; padding: 1rem; background: rgba(2,119,189,0.05); border-radius: 8px;">
+                            <b>Cerebral Palsy Parents & Caregivers Forum</b><br>
+                            <span>Active Members: 63</span><br>
+                            <span>Resources for managing CP, therapies, disability rights and government schemes.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #43a047; margin-bottom: 1rem; padding: 1rem; background: rgba(67,160,71,0.05); border-radius: 8px;">
+                            <b>Neuropathy and Chronic Nerve Pain Group</b><br>
+                            <span>Active Members: 81</span><br>
+                            <span>Tips and empathy for nerve pain, burning, tingling, diabetes and chemo-induced neuropathy.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #ad1457; margin-bottom: 1rem; padding: 1rem; background: rgba(173,20,87,0.05); border-radius: 8px;">
+                            <b>Guillain-Barre Syndrome (GBS) India Forum</b><br>
+                            <span>Active Members: 19</span><br>
+                            <span>Support on GBS recovery, physiotherapy, immune therapy, and rehabilitation stories.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #512da8; margin-bottom: 1rem; padding: 1rem; background: rgba(81,45,168,0.05); border-radius: 8px;">
+                            <b>Autism, ADHD & Neurodevelopmental Support</b><br>
+                            <span>Active Members: 54</span><br>
+                            <span>Help for families, teachers, therapists on autism, ADHD, learning differences.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #ef6c00; margin-bottom: 1rem; padding: 1rem; background: rgba(239,108,0,0.05); border-radius: 8px;">
+                            <b>Brain Tumor Network</b><br>
+                            <span>Active Members: 41</span><br>
+                            <span>Connect on treatment experiences, symptom relief, and research news for brain tumors/glioma/meningioma.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #15c39a; margin-bottom: 1rem; padding: 1rem; background: rgba(21,195,154,0.05); border-radius: 8px;">
+                            <b>Parkinson's & Movement Disorders Coalition</b><br>
+                            <span>Active Members: 37</span><br>
+                            <span>For dystonia, tremor, ataxia, and rare movement disorder families.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #607d8b; margin-bottom: 1rem; padding: 1rem; background: rgba(96,125,139,0.05); border-radius: 8px;">
+                            <b>ALS/MND India Support Community</b><br>
+                            <span>Active Members: 23</span><br>
+                            <span>Lifestyle, ventilator care, feeding tips, and advocacy for ALS/Motor Neuron Disease.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #e91e63; margin-bottom: 1rem; padding: 1rem; background: rgba(233,30,99,0.05); border-radius: 8px;">
+                            <b>Huntington’s Disease Peer Network</b><br>
+                            <span>Active Members: 14</span><br>
+                            <span>Genetic support, behaviors, and new therapy discussions for HD families.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #0288d1; margin-bottom: 1rem; padding: 1rem; background: rgba(2,136,209,0.05); border-radius: 8px;">
+                            <b>Young Stroke & Brain Injury Community</b><br>
+                            <span>Active Members: 46</span><br>
+                            <span>Rehab, employment, and emotional support for young survivors and families.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #388e3c; margin-bottom: 1rem; padding: 1rem; background: rgba(56,142,60,0.05); border-radius: 8px;">
+                            <b>Vestibular Disorders and Headache Group</b><br>
+                            <span>Active Members: 17</span><br>
+                            <span>Balance troubles, vertigo, Meniere’s, and migraine-related dizziness patients.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #f4511e; margin-bottom: 1rem; padding: 1rem; background: rgba(244,81,30,0.05); border-radius: 8px;">
+                            <b>NeuroCare Digital Learning Support</b><br>
+                            <span>Active Members: 28</span><br>
+                            <span>Webinars, WhatsApp, and app groups for neuro disease education and awareness.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #c62828; margin-bottom: 1rem; padding: 1rem; background: rgba(198,40,40,0.05); border-radius: 8px;">
+                            <b>Neuro Caregiver Alliance</b><br>
+                            <span>Active Members: 80</span><br>
+                            <span>Caregiver tips, mental health support, and resource networking for neuro conditions.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #1976d2; margin-bottom: 1rem; padding: 1rem; background: rgba(25,118,210,0.05); border-radius: 8px;">
+                            <b>Neuro-Advocacy & Disability Rights Forum</b><br>
+                            <span>Active Members: 34</span><br>
+                            <span>Legal, benefits, and rights-related discussion for disabled, stroke, epilepsy, and CP community.</span>
+                            <button type="button" class="connect-btn">Join Group</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+        <section id="subscription" class="section" style="display: none;">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Subscribe</h2>
+            
+            <div class="info-card" style="max-width: 650px; margin: 0 auto; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Stay Informed About Neurological Health</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Subscribe to receive monthly health tips, screening reminders, and updates on neuro health topics.</p>
+                </div>
+                
+                <form id="registrationForm" onsubmit="handleRegistration(event)">
+                    <!-- Full Name -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            👤 Full Name *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName"
+                            required 
+                            placeholder="Enter your full name"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Email Address -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📧 Email Address *
+                        </label>
+                        <input 
+                            type="email" 
+                            id="emailAddress" 
+                            name="emailAddress"
+                            required 
+                            placeholder="your.email@example.com"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- City of Residence -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📍 City of Residence
+                        </label>
+                        <input 
+                            type="text" 
+                            id="cityOfResidence" 
+                            name="cityOfResidence"
+                            placeholder="e.g., Kolkata, Delhi, Mumbai"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Phone Number (Optional) -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📱 Phone Number (Optional)
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phoneNumber" 
+                            name="phoneNumber"
+                            placeholder="+91 XXXXXXXXXX"
+                            pattern="[0-9+\-\s]+"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Subscription Preferences -->
+                    <div style="margin-bottom: 2rem; padding: 1.25rem; background: rgba(139, 79, 139, 0.05); border-radius: var(--radius-md); border-left: 4px solid var(--color-primary);">
+                        <label style="display: block; margin-bottom: 0.75rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📬 I want to receive:
+                        </label>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeMonthly" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Monthly Health Tips & Articles</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeScreening" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Screening & Checkup Reminders</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeUpdates" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Health Awareness Updates</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy Consent -->
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: flex; align-items: start; cursor: pointer;">
+                            <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                            <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                                I agree to receive health-related communications and understand that my data will be kept confidential and not shared with third parties. I can unsubscribe anytime.
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button 
+                        type="submit" 
+                        style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                        ✓ Subscribe Now
+                    </button>
+                    
+                    <!-- Privacy Note -->
+                    <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                        🔒 Your data is kept confidential and will not be shared with third parties. Read our <a href="#" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
+                    </p>
+                </form>
+                
+                <!-- Success Message (Hidden by default) -->
+                <div id="registrationSuccess" style="display: none; text-align: center; padding: 2rem;">
+                    <div style="width: 80px; height: 80px; background: var(--color-success); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);">
+                        <span style="font-size: 3rem; color: white;">✓</span>
+                    </div>
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Subscription Successful!</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 1rem;">Thank you for subscribing! You'll receive our next newsletter soon.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Helplines Section -->
+        <div class="helplines-section">
+            <h3>📞 Important Helplines</h3>
+            <div class="helplines-grid">
+                <div class="helpline-card">
+                    <strong>Neurology Helpline</strong>
+                    <p class="helpline-number">181</p>
+                </div>
+                <div class="helpline-card">
+                    <strong>National Health Helpline</strong>
+                    <p class="helpline-number">104</p>
+                </div>
+                <div class="helpline-card">
+                    <strong>Swasthya Sathi</strong>
+                    <p class="helpline-number">1800-313-1313</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="diseaseDetailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody">
+                </div>
+        </div>
+    </div>
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p>&copy; 2025 Neurological Health Awareness Platform. All rights reserved.</p>
+            <p>Disclaimer: This platform provides educational information and is not a substitute for professional medical advice.</p>
+        </div>
+    </footer>
+
+   <script src="app_neurohealth.js"></script>
+</body>
+</html>

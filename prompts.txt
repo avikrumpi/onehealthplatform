@@ -1,0 +1,8 @@
+Mentural problem use case:
+
+
+Now restructure this chatbot to proble user asking more menstural related health problems based on the above attached files through 5 buttons, and once the user clicks a button ask follow up questions subsequently for 5-6 times . Each time a user clicks a button , follow  Hybrid RAG technique to respond with the answers, from both of these documents attached then ask the follow up questions. Initially at the start , nudge the user from which female related health problem the user is facing out of 1. menstural 2. reproductive .3. PCOS, 4. breast or cervical cancer . and 5. Obsesity, hypertension , artharitis or any other female disease. Once the user confirms menstural problems, as stated continue to ask follow up questions on that and provide answers, and also ask follow up questions. The user conversational flow should continue atleast 10-12 times, before providing links of gynaecologists , hospitals and clinics based on the district of the user.
+
+
+
+Attached are 6 docs, referring to different women health problems. Now separate them into 6 different documents as stated. 1. "Periodic health.txt," 2. "Reproductive health.txt," 3. "Cancer health.txt," 4. "Other diseases.txt," 5. "Mental health.txt". There should not be loss of any line or অধ্যায়, from each of them. The goal is to separate out the themes into entirely different documents by generating new sets of 6 documents.  Reproductive health will also contain OTC product-related information other than pregnancy and women reproductive organs. অধ্যায় should start from 1 in each document and  বিভাগ  should group a set of related অধ্যায় in the same document.

@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orthopedic Health Education Platform</title>
+    <link rel="stylesheet" href="style_bonehealth.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content-wrapper">
+        <div class="header-left">
+           <div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                
+                            <!-- Floating language selector -->
+                            <div class="language-selector-float">
+                                <label for="languageSelector">Language:</label>
+                                <select id="languageSelector">
+                                    <option value="en">English</option>
+                                    <option value="hi">Hindi</option>
+                                    <option value="bn">Bengali</option>
+                                    <option value="kn">Kannada</option>
+                                </select>
+                            </div>
+    
+                    <h1 id="platformTitle">🦴Orthopedic Awareness & Care Platform</h1>
+                    
+                    <p id="platformSubtitle" style="margin-bottom: 1rem;">Comprehensive information on all orthopedic conditions and prevention strategies—covering symptoms, early detection, treatment options, and risk factors for all major bone disease types and age groups. Get trustworthy guidance tailored for individuals and families in India.</p>
+                    
+               
+                    <div class="nav-tabs">
+                        <!-- Your navigation buttons -->
+
+                        <button class="nav-tab active" data-section="diseases">Orthopedic Conditions</button>
+                                <button class="nav-tab" data-section="when-to-see">When to See a Orthopedic</button>
+                                <button class="nav-tab" data-section="doctors">Find Orthopedics</button>
+                                <button class="nav-tab" data-section="prevention">Prevention & Care</button>
+                                <button class="nav-tab" data-section="faq">FAQ</button>
+                                <button class="nav-tab" data-section="chatbot">Health Assistant</button>
+                                <button class="nav-tab" data-section="government">Government Initiatives</button>
+                                <button class="nav-tab" data-section="bone-care-for-life">Lifelong Bone Health</button>
+                                <button class="nav-tab" data-section="registration">Register</button>
+                                <button class="nav-tab" data-section="subscription">Subscribe</button>
+                    </div>
+                </div>
+                </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+        </div>
+
+    </header>
+
+    <div class="search-container">
+        <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search for health conditions, symptoms, or treatments..." oninput="handleSearch()">
+    </div>
+
+    <div class="container">
+               <section id="diseases" class="section active">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏥 Different Types of Orthopedic Diseases</h2>
+            <div class="diseases-grid" id="diseasesGrid"></div>
+            <div class="no-results" id="noResults" style="display: none;">
+                <h3>No results found</h3>
+                <p>Try searching with different keywords</p>
+            </div>
+            </section>
+
+        <section id="when-to-see" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">👩‍⚕️ When to See a Orthopedic</h2>
+            <div class="faq-container" id="whenToSeeContainer"></div>
+        </section>
+
+        <section id="doctors" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🔍 Find Orthopedic</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto 2rem;">
+                <label for="citySelect" style="display: block; margin-bottom: 0.75rem; font-size: 1.1rem; font-weight: 600; color: var(--color-text);">
+                    📍 Select Your City:
+                </label>
+                <select id="citySelect" onchange="filterDoctorsByCity()" style="width: 100%; padding: 1rem 1.5rem; font-size: 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); cursor: pointer; transition: all 0.3s ease;">
+                    <option value="">-- Select a City --</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                </select>
+            </div>
+
+            <div id="doctorsContainer"></div>
+
+            <p style="margin-top: 2rem; color: var(--color-text-secondary); font-style: italic; text-align: center;">
+                ⚠️ Always verify doctor credentials and call ahead to confirm availability and appointment procedures. These listings are for informational purposes. Please conduct your own research before visiting any healthcare provider.
+            </p>
+        </section>
+
+        <section id="prevention" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🛡️ Prevention & Care</h2>
+            <!-- Prevention and Care Section with Video Sidebar -->
+     <!-- Health Guidelines Bar (Full Width) -->
+        <div class="health-guidelines-banner">
+            <div class="banner-header">
+                <span class="banner-icon">💡</span>
+                <h3>Health Guidelines</h3>
+                <span class="banner-subtitle">Essential Patient's Bone and Joint Health Information</span>
+            </div>
+            
+            <div style="display: flex; gap: 2rem; align-items: stretch; margin-bottom: 2rem;">
+              <!-- Lifestyle Guidelines -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                  <div class="card-header">
+                      <span class="card-icon">🌟</span>
+                      <h4>Essential Bone and Joint Health Practices</h4>
+                  </div>
+                  <ul class="guideline-list">
+                       <li>Regular orthopedic health check-ups, especially after age 50 or menopause</li>
+                       <li>Maintain a calcium- and vitamin D-rich diet (dairy, leafy greens, fortified foods, eggs, fish)</li>
+                       <li>Engage in weight-bearing activities (walking, dancing, stair climbing) for 30+ minutes daily</li>
+                       <li>Add twice-weekly resistance and balance exercises (strength training, yoga, tai chi)</li>
+                       <li>Maintain a healthy body weight; reduce excess load on joints</li>
+                       <li>Quit smoking and avoid excess alcohol to protect bone density</li>
+                       <li>Aim for 7-9 hours of quality sleep for bone and tissue repair</li>
+                       <li>Stay hydrated for optimal joint lubrication</li>
+                  </ul>
+              </div>
+              <!-- Vaccination Guidelines -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                  <div class="card-header">
+                      <span class="card-icon">💉</span>
+                      <h4>Essential Vaccinations for Bone, Muscle, and Joint Health</h4>
+                  </div>
+                  <ul class="guideline-list">
+                        <li><strong>Tetanus vaccine:</strong> For injury and post-surgery protection</li>
+                        <li><strong>Influenza (flu) vaccine:</strong> Annually for chronic bone/joint conditions and elderly</li>
+                        <li><strong>COVID-19 vaccine:</strong> Strongly recommended for musculoskeletal and immune-compromised patients</li>
+                        <li><strong>Pneumococcal vaccine (PCV13/PPSV23):</strong> Prevents pneumonia and joint/bone infections in at-risk adults</li>
+                        <li><strong>Haemophilus influenzae type b (Hib) vaccine:</strong> Childhood protection against bone/joint infections</li>
+                        <li><strong>Measles-Mumps-Rubella (MMR) vaccine:</strong> Reduces risk of arthritis and joint complications</li>
+                        <li><strong>Polio vaccine:</strong> Prevents muscle weakness and deformity (childhood and risk settings)</li>
+                        <li><strong>Varicella (chickenpox) vaccine:</strong> Prevents rare bone/joint complications of chickenpox</li>
+                        <li><strong>BCG (Tuberculosis) vaccine:</strong> Prevents bone/joint TB in endemic regions</li>
+                        <li><strong>Shingles (herpes zoster) vaccine:</strong> For adults &gt;50 to prevent nerve/muscle pain</li>
+                        <li><strong>Hepatitis B vaccine:</strong> Important for those undergoing joint or bone surgery</li>
+                    </ul>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 2rem; align-items: stretch; margin-bottom: 2rem;">
+              <!-- Orthopedic Screening Guidelines -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                  <div class="card-header">
+                      <span class="card-icon">🔬</span>
+                      <h4>Bone & Joint Screening Guidelines</h4>
+                  </div>
+                  <ul class="guideline-list">
+                      <li><strong>Osteoporosis:</strong> DEXA scan for women after menopause and men >70 years or with risk factors</li>
+                      <li><strong>Vitamin D Level:</strong> Regular screening in older adults, those with fractures, or limited sunlight exposure</li>
+                      <li><strong>Calcium Level:</strong> Check if osteoporosis, malabsorption, or chronic steroid use</li>
+                      <li><strong>Bone Age X-ray:</strong> In children with growth disorders or suspected bone diseases</li>
+                      <li><strong>Spinal Health:</strong> Scoliosis screening in adolescents and postmenopausal women</li>
+                      <li><strong>Knee/Hip X-ray:</strong> If persistent pain, swelling, or instability in major joints</li>
+                      <li><strong>Fall Risk Assessment:</strong> Annual review for those >65 years, those with prior falls or gait problems</li>
+                      <li><strong>Rheumatoid Factor/ESR/CRP:</strong> If persistent joint swelling, pain, or morning stiffness</li>
+                      <li><strong>Bone Tumor Risk:</strong> Imaging or biopsy if suspicious, painful, or growing bone lumps</li>
+                      <li><strong>BMD Baseline Screening:</strong> Early screening if strong family history or previous fragility fracture</li>
+                  </ul>
+              </div>
+              <!-- Orthopedic Preventive Measures -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                  <div class="card-header">
+                      <span class="card-icon">🛡️</span>
+                      <h4>Preventive Measures for Bone & Joint Health</h4>
+                  </div>
+                  <ul class="guideline-list">
+                      <li>Get recommended childhood and adult vaccinations to prevent bone/joint infections (measles, influenza, Hib, meningococcal, pneumococcal).</li>
+                      <li>Practice safe sports: use protective gear, warm up, and cross-train to avoid overuse injuries.</li>
+                      <li>Strengthen home safety for fall prevention: install grab bars, use non-slip rugs, and keep walkways clear.</li>
+                      <li>Avoid long-term use of steroids and certain acid-reducing/antiepileptic drugs unless medically necessary.</li>
+                      <li>Manage chronic illnesses (diabetes, thyroid, kidney disease) that can raise bone/joint risk.</li>
+                      <li>Seek prompt treatment for any persistent joint pain, swelling, night pain, or unexplained deformity.</li>
+                      <li>Ensure ergonomic workstations and take regular movement breaks to prevent postural/joint injuries.</li>
+                      <li>Monitor for side effects of medications affecting bone health, especially if postmenopausal or elderly.</li>
+                      <li>For children: encourage outdoor play, limit screen/device time, and treat sports injuries early.</li>
+                      <li>For older adults: vision and hearing checks, review medications, and maintain social connections to reduce fall risk.</li>
+                      <li>Undergo genetic counseling or early screening/testing if there is a family history of brittle bone disease, repeated fractures, or metabolic bone disorder.</li>
+                      <li>Wear appropriate footwear for every activity to protect feet, ankles, knees, and spine.</li>
+                      <li>Balance calcium supplementation with dietary intake and consult a doctor before starting supplements if you have cardiac, kidney, or thyroid issues.</li>
+                      <li>Protect from workplace bone hazards: use safe lifting techniques and required personal protective equipment (PPE).</li>
+                  </ul>
+              </div>
+            </div>
+
+        <!-- ADD SPACE HERE -->
+        <div style="height: 2.5rem;"></div>
+
+        <!-- Content Area with Sidebar -->
+        <div class="prevention-wrapper">
+        <!-- Main Content Area (Prevention Container) -->
+            <div class="prevention-content">
+                <div id="preventionContainer" class="disease-grid"></div>
+            </div>
+
+            <!-- Video Sidebar (Right Side) -->
+            <aside class="prevention-video-sidebar">
+                <div class="video-resources-card">
+                    <h3>📺 Educational Videos</h3>
+                    <p class="video-subtitle">How do doctors determine and treat orthopedic diseases</p>
+                    
+                    <!-- Video 1: Orthopedic Health Awareness -->
+                    <a href="https://www.youtube.com/watch?v=fhXh8NyB_tg" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/fhXh8NyB_tg/mqdefault.jpg" alt="Cancer Stages">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🔬 World Osteoporosis Day 2025</h4>
+                            <p>Bone Health Awareness by Dr. Thushanth Thomas</p>
+                            <span class="duration">⏱️ 6 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 2: Bone Health for Women  -->
+                    <a href="https://www.youtube.com/watch?v=75fXj0W9eT0" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/75fXj0W9eT0/mqdefault.jpg" alt="Cure Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🤰Bone Health: Essential Care for Working Women</h4>
+                            <p>How Bone Health is crucial for women, especially as they age.</p>
+                            <span class="duration">⏱️ 30 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 3: Bone Health Orthopedic -->
+                    <a href="https://www.youtube.com/watch?v=SwaTG5MVFa0" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/SwaTG5MVFa0/mqdefault.jpg" alt="Future Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🎗️The Role of Bone Health in Orthopedic Surgery (HSS)</h4>
+                            <p>Importance of bone health and the benefit of metabolic bone testing</p>
+                            <span class="duration">⏱️ 33 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 4:  Risk Reduction  -->
+                    <a href="https://www.youtube.com/watch?v=LxVGVDyWTDA&list=PLDps2oOp60a6sZ22j6Nuyl2ESIRNdTNcE&index=1" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/LxVGVDyWTDA&list=PLDps2oOp60a6sZ22j6Nuyl2ESIRNdTNcE&index=1/mqdefault.jpg" alt="Palliative">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🧠After a Fracture (HSS)</h4>
+                            <p>Hospital for Special Surgery</p>
+                            <span class="duration">⏱️2 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 5: Understanding Osteoporosis  -->
+                    <a href="https://www.youtube.com/watch?v=iC1L3YTo14E" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/iC1L3YTo14E/mqdefault.jpg" alt="Treating Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>💊 Understanding Osteoporosis</h4>
+                            <p>Preventive measures for Osteoporosis and the significance of Dexa Scan i</p>
+                            <span class="duration">⏱4 min</span>
+                        </div>
+                    </a>
+
+                     <!-- Video 6: Orthopedic disease in women,  -->
+                    <a href="https://www.youtube.com/watch?v=KdyEuYhrjlM" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/KdyEuYhrjlM/mqdefault.jpg" alt="Treating Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>💊 Gout and Pseudogout, Joint Pain- Everything You Need To Know</h4>
+                            <p>Disease: Symptoms, Treatments & Surgery</p>
+                            <span class="duration">⏱️ 47 min</span>
+                        </div>
+                    </a>
+
+                </div>
+            </aside>
+        </div>
+            <div class="faq-container" id="preventionContainer"></div>
+        </section>
+
+        <section id="faq" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">❓Frequently Asked Questions</h2>
+            <div class="faq-container" id="faqContainer"></div>
+        </section>
+
+        <section id="chatbot" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🤖 AI Health Assistant</h2>
+            <div class="info-card" style="max-width: 900px; margin: 0 auto;">
+                  <div style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+                    <h3 style="color: white; margin-bottom: 1rem;">💬 Chat with our AI Health Advisor</h3>
+                    <p style="margin: 0; color: white; opacity: 0.95;">Get instant support on orthopedic disease topics through our smart chatbot. Ask questions about symptoms, screening, prevention, and treatments for common and rare bone/muscle diseases across all age groups—available in English or Bengali.</p>
+                </div>
+         <div class="chatbot-wrapper">
+        <!-- Left Sidebar for Health Assistant -->
+        <aside class="chatbot-sidebar">
+            <!-- Stats Card -->
+            <div class="sidebar-card stats-card">
+                <h3>📊 Conversation Stats</h3>
+                <div class="stat-row">
+                    <span class="stat-icon">💬</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Total Messages</span>
+                        <span class="stat-value" id="totalMessages">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">✅</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Bot Responses</span>
+                        <span class="stat-value" id="botResponses">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">🔘</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Button Selections</span>
+                        <span class="stat-value" id="buttonClicks">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">⌨️</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Typed Messages</span>
+                        <span class="stat-value" id="typedMessages">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">🔗</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Conversation Chain</span>
+                        <span class="stat-value" id="conversationChain">1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Helplines Card -->
+            <div class="sidebar-card helpline-card">
+                <h3>🆘 Emergency Helplines</h3>
+                <div class="helpline-row">
+                    <span class="helpline-icon">📞</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Orthopedic Vascular Helpline</div>
+                        <div class="helpline-number">181</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">🏥</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">National Health</div>
+                        <div class="helpline-number">104</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">💚</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Tele-MANAS</div>
+                        <div class="helpline-number">14416</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">🚨</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Emergency</div>
+                        <div class="helpline-number">112</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">👮</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Women Safety</div>
+                        <div class="helpline-number">1091</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="sidebar-card actions-card">
+                <button class="action-btn reset-btn" onclick="resetChatbot()">
+                    <span>🔄</span> Reset Chat
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <div class="chatbot-main">
+            <div class="chat-header">
+                <h2>🤖 AI Health Assistant</h2>
+                <p>Get personalized health guidance</p>
+            </div>
+            
+
+                <div id="chatContainer" style="background: var(--color-surface); border: 2px solid var(--color-border); border-radius: var(--radius-md); height: 500px; display: flex; flex-direction: column; overflow: hidden;">
+                    <div id="chatMessages" style="flex: 1; overflow-y: auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="bot-message">
+                            <div style="background: var(--color-secondary); color: var(--color-text); padding: 1rem; border-radius: var(--radius-md); max-width: 80%;">
+                                <strong>🌸 Health Assistant:</strong><br>
+                                নমস্কার! Hello! I'm your women's health assistant. How can I help you today?<br><br>
+                                আপনি কোন ধরনের স্বাস্থ্য সমস্যা নিয়ে কথা বলতে চান?
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 2px solid var(--color-border); padding: 1rem; background: var(--color-background);">
+                        <div style="display: flex; gap: 0.75rem;">
+                            <input type="text" id="chatInput" placeholder="Type your question here... আপনার প্রশ্ন লিখুন..." style="flex: 1; padding: 0.875rem; border: 2px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; transition: all 0.3s ease;">
+                            <button id="chatSendBtn" onclick="handleChatbot()" style="background: var(--color-primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); cursor: pointer; font-weight: 500; transition: all 0.3s ease;">
+                                Send 🚀
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Wellness For Her Section -->
+        <section id="bone-care-for-life" class="section" style="display: none;">
+           <!-- Success Stories Section -->
+                <div style="margin-top: 3rem;">
+                    <h3 style="color: var(--color-primary); text-align: center; margin-bottom: 2rem; font-size: 1.8rem; font-weight: 700;">🏆 Pioneers in Orthopedic Treatment</h3>
+                    <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 2rem;">
+                        Educational institutions and organizations championing orthopedic health programs
+                    </p>
+
+                    <!-- Organizations Section -->
+                    <h4 style="color: var(--color-primary); margin-bottom: 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🏢 Corporates Leading Orthopedic Awareness</h4>
+                        <div class="wellness-grid">
+                        <!-- Corporate 1 -->
+                           <!-- CORPORATE Orthopedic HEALTH INITIATIVES -->
+
+                            <!-- Corporate 1 -->
+                          <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🦴</div>
+                            <h3>Apollo Hospitals Foundation</h3>
+                            <p><strong>Pan-India Bone & Joint Health Programs</strong></p>
+                            <ul>
+                                <li>Free orthopedic & bone health screening camps for corporate offices and families</li>
+                                <li>Employee wellness programs on posture, arthritis prevention & ergonomic workspaces</li>
+                                <li>Annual bone mineral density (BMD) checks for aging employees</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 2 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🦵</div>
+                            <h3>Fortis Healthcare Foundation</h3>
+                            <p><strong>Workplace Musculoskeletal Wellness</strong></p>
+                            <ul>
+                                <li>Corporate joint health risk assessments and physiotherapy consults</li>
+                                <li>Mobile musculoskeletal screening units at plants, factories & offices</li>
+                                <li>Injury prevention and safe lifting workshops for manual workers</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 3 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🏋️</div>
+                            <h3>Max Healthcare Institute</h3>
+                            <p><strong>National Bone Wellness Awareness Campaigns</strong></p>
+                            <ul>
+                                <li>World Bone and Joint Day events with employee participation</li>
+                                <li>Online risk assessment tools for osteoporosis and arthritis</li>
+                                <li>Healthy bones seminars, fitness challenges, and physical therapy camps for staff</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 4 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🌍</div>
+                            <h3>Indian Orthopaedic Association (IOA)</h3>
+                            <p><strong>National Musculoskeletal Wellness Network</strong></p>
+                            <ul>
+                                <li>Community bone health walks & bone density testing for corporates</li>
+                                <li>Seminars on work ergonomics, accident & fall prevention strategies</li>
+                                <li>Advocacy for orthopedic-friendly workplace policies and safety standards</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 5 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🦾</div>
+                            <h3>Dr. Reddy's Laboratories Foundation</h3>
+                            <p><strong>Musculoskeletal Disease Prevention in the Workplace</strong></p>
+                            <ul>
+                                <li>Free bone health camps for employees & families in manufacturing units</li>
+                                <li>Training programs on preventing repetitive strain injuries (RSI)</li>
+                                <li>Subsidized bone/joint medications and physiotherapy for workers</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 6 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">💪</div>
+                            <h3>Mahindra & Mahindra</h3>
+                            <p><strong>Workplace Ortho & Joint Wellness Program</strong></p>
+                            <ul>
+                                <li>Joint health and mobility screening for shift workers & assembly line staff</li>
+                                <li>Employee injury rehab support and back-to-work physiotherapy integration</li>
+                                <li>Flexibility and stretching breaks built into factory routines</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 7 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🏢</div>
+                            <h3>Aditya Birla Group - CSR Initiative</h3>
+                            <p><strong>Multi-City Corporate Bone Health Champions</strong></p>
+                            <ul>
+                                <li>Employee musculoskeletal wellness checks with digital x-ray and BMD van</li>
+                                <li>Online workshops on desk posture, work-from-home ergonomics, and upper limb safety</li>
+                                <li>Corporate partnerships for discounted orthopedic consultations & rehabilitation</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 8 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">👨‍💻</div>
+                            <h3>Infosys Foundation - OrthoTech Wellness</h3>
+                            <p><strong>IT/Tech Staff Bone Health Engagement</strong></p>
+                            <ul>
+                                <li>Screening IT staff for postural issues, RSI and joint pain via smart tools</li>
+                                <li>Standing desk pilots, use of desk-break/walk reminders and team yoga</li>
+                                <li>Education on healthy digital work for spinal and upper limb wellness</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 9 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">✅</div>
+                            <h3>HDFC Bank Foundation</h3>
+                            <p><strong>Bone Density & Mobility Wellness Drive</strong></p>
+                            <ul>
+                                <li>Free foot/ankle and knee screenings for older staff and frontline workers</li>
+                                <li>Office fitness and stretching programs for joint preservation</li>
+                                <li>Financial incentive programs for annual musculoskeletal health checkups</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 10 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🩺</div>
+                            <h3>Tata Consultancy Services (TCS) - Employee Musculoskeletal Health</h3>
+                            <p><strong>Digital Ortho Health & Ergonomics</strong></p>
+                            <ul>
+                                <li>Annual back, neck, and joint health assessment for all global staff</li>
+                                <li>Telehealth physiotherapy, posture coaching, and ergonomic redesigns for remote workers</li>
+                                <li>Wearable and smartphone-based movement challenge programs to reduce sedentary risk</li>
+                            </ul>
+                        </div>
+                        </div>
+
+                  <!-- Colleges & Educational Institutes Section -->
+                    <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🎓 Colleges & Universities Championing Ortho Health & Musculoskeletal System Health Wellness</h4>
+                    <div class="wellness-grid">
+
+                        <!-- College 1 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🦴</div>
+                            <h3>AIIMS New Delhi</h3>
+                            <p><strong>New Delhi - National Orthopedic Excellence</strong></p>
+                            <ul>
+                                <li>Department of Orthopedics leads bone health research & fracture epidemiology</li>
+                                <li>Student training in injury prevention, trauma response & rural bone camps</li>
+                                <li>Annual Bone & Joint Health Week: free osteoporosis and arthritis camps</li>
+                                <li>Workshops on posture, joint safety, and sports injury prevention</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 2 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>Christian Medical College (CMC)</h3>
+                            <p><strong>Vellore, Tamil Nadu - 50 Years of Ortho Outreach</strong></p>
+                            <ul>
+                                <li>Historic bone & joint disability rehabilitation programs</li>
+                                <li>Inter-college bone health talks and posture education for young adults</li>
+                                <li>Nursing and allied health training in orthopedic care</li>
+                                <li>Community outreach for rickets, clubfoot, and spinal deformity detection</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 3 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🏥</div>
+                            <h3>St. John's Medical College</h3>
+                            <p><strong>Bangalore – Ortho Prevention & Care</strong></p>
+                            <ul>
+                                <li>Focus on bone health in campus wellness projects</li>
+                                <li>Annual Bone & Joint Day with free screening for students and staff</li>
+                                <li>Student groups run posture, stretching, and ergonomic counseling sessions</li>
+                                <li>Public seminars on fall, fracture, and sports injury prevention</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 4 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">📚</div>
+                            <h3>Manipal Academy of Higher Education</h3>
+                            <p><strong>Manipal, Karnataka - Musculoskeletal Health Focus</strong></p>
+                            <ul>
+                                <li>Holistic campus wellness with yoga, arthritis and mobility workshops</li>
+                                <li>Bone mineral density (BMD) & vitamin D screening at semester start</li>
+                                <li>Peer-led fitness and injury prevention mentoring programs</li>
+                                <li>Orthopedic awareness modules integrated into medical curriculum</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 5 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🦵</div>
+                            <h3>Delhi University - Miranda House</h3>
+                            <p><strong>Delhi - Women's Musculoskeletal Wellness</strong></p>
+                            <ul>
+                                <li>Student wellness club with bone health awareness focus</li>
+                                <li>Workshops on osteoporosis prevention, healthy diet, and exercise for women</li>
+                                <li>Seminars on posture, backpack safety and injury prevention</li>
+                                <li>Screenings for vitamin D/calcium status and bone wellness</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 6 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🏃</div>
+                            <h3>NIT Rourkee</h3>
+                            <p><strong>Uttarakhand - Tech Community Joint Health</strong></p>
+                            <ul>
+                                <li>Student campaigns targeting sitting/desk posture and movement</li>
+                                <li>Workshops on stretching, ergonomic desk setup & safe lifting</li>
+                                <li>Fitness and knee/ankle health programs for runners and athletes</li>
+                                <li>On-campus musculoskeletal screening camps for students & staff</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 7 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">💪</div>
+                            <h3>Bharati Vidyapeeth Deemed University</h3>
+                            <p><strong>Mumbai & Pune - Bone Health Research & Outreach</strong></p>
+                            <ul>
+                                <li>Screening camps for osteoporosis & vitamin D deficiency among students</li>
+                                <li>Community bone health talks and awareness treks</li>
+                                <li>Mobile clinics for rural orthopedic disease and injury prevention</li>
+                                <li>Student-led surveys on musculoskeletal complaints in the young population</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 8 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🦾</div>
+                            <h3>Jawaharlal Nehru University (JNU)</h3>
+                            <p><strong>New Delhi – Student Ortho Wellness Advocacy</strong></p>
+                            <ul>
+                                <li>Peer group programs on yoga, flexibility & musculoskeletal self-care</li>
+                                <li>Seminars on work-from-home ergonomics and stretch breaks</li>
+                                <li>Free bone/joint health checkups in partnership with Delhi hospitals</li>
+                                <li>Social research on posture, injuries and musculoskeletal issues in college youth</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 9 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">📖</div>
+                            <h3>Symbiosis Institute of Health Sciences</h3>
+                            <p><strong>Pune - Public Health & Bone Disorders</strong></p>
+                            <ul>
+                                <li>Seminars on osteoporosis prevention, nutrition, and early detection</li>
+                                <li>Student research on musculoskeletal pain epidemiology</li>
+                                <li>Annual outreach to schools on children’s bone health</li>
+                                <li>Workshops on exercise for healthy bones and joints</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 10 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4;">
+                            <div class="wellness-icon">🌟</div>
+                            <h3>Grant Medical College</h3>
+                            <p><strong>Mumbai – Historic Bone Health Champion</strong></p>
+                            <ul>
+                                <li>Community outreach on trauma, injury prevention, helmet & seatbelt education</li>
+                                <li>Orthopedic disease trends and research in urban populations</li>
+                                <li>Free bone density & deformity screening for underprivileged students</li>
+                                <li>Student initiatives for accident rehabilitation & bone health literacy</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Corporate Section (Keep same as before) -->
+                   <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">❤️ Orthopedic Health & Wellness Apps Champions</h4>
+                    <div class="wellness-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+
+                        <!-- App 1 -->
+                    <div class="wellness-card" style="border-left: 4px solid #609cd4; background: linear-gradient(135deg, rgba(96, 156, 212, 0.05), rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🦴</div>
+                        <h3>Cure.fit</h3>
+                        <p><strong>Comprehensive Bone & Joint Wellness App</strong></p>
+                        <ul>
+                            <li><strong>Programs:</strong> Physiotherapy-guided rehab, joint health yoga, bone strengthening fitness routines</li>
+                            <li><strong>Services:</strong> On-demand ortho consults, personalized injury prevention plans, home exercise videos for knee/back pain</li>
+                            <li><strong>Features:</strong> AI posture detection, ergonomic advice for remote/work-from-home users, daily activity tracking, reminders to move</li>
+                            <li><strong>Impact:</strong> 65% reduction in chronic musculoskeletal pain among users; improved mobility and flexibility scores</li>
+                        </ul>
+                    </div>
+
+                    <!-- App 2 -->
+                    <div class="wellness-card" style="border-left: 4px solid #609cd4; background: linear-gradient(135deg, rgba(96, 156, 212, 0.05), rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">📱</div>
+                        <h3>Posture Reminder</h3>
+                        <p><strong>Real-time Posture Correction & Back Pain Prevention</strong></p>
+                        <ul>
+                            <li><strong>Focus:</strong> Upright sitting reminders, frequent movement prompts, posture tracking for computer/phone users</li>
+                            <li><strong>Services:</strong> Personalized notifications, posture score weekly trends, exercises to reverse "tech neck" & slouching</li>
+                            <li><strong>Features:</strong> Camera-based posture analysis, audio/visual alerts, integration with standing desks, analytics dashboard</li>
+                            <li><strong>Impact:</strong> 70% adherence to healthy posture routines; 55% decrease in desk-related back/neck pain</li>
+                        </ul>
+                    </div>
+
+                    <!-- App 3 -->
+                    <div class="wellness-card" style="border-left: 4px solid #609cd4; background: linear-gradient(135deg, rgba(96, 156, 212, 0.05), rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🦵</div>
+                        <h3>JOGO Therapy</h3>
+                        <p><strong>AI-Based Physiotherapy & Orthopedic Recovery</strong></p>
+                        <ul>
+                            <li><strong>Programs:</strong> Home rehab for knee/hip/shoulder replacement, back pain, arthritis, sprain injuries</li>
+                            <li><strong>Services:</strong> Tele-physiotherapy with tailored exercise videos, progress tracking, pain & mobility assessments</li>
+                            <li><strong>Features:</strong> EMG biofeedback, gamified exercise routines for motivation, reminders & coaching</li>
+                            <li><strong>Impact:</strong> 78% adherence to rehab sessions; 2x faster recovery reported vs. traditional unsupervised home programs</li>
+                        </ul>
+                    </div>
+
+                    <!-- App 4 -->
+                    <div class="wellness-card" style="border-left: 4px solid #609cd4; background: linear-gradient(135deg, rgba(96, 156, 212, 0.05), rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">👟</div>
+                        <h3>Pacer Pedometer</h3>
+                        <p><strong>Walking & Bone Strengthening Activity Tracker</strong></p>
+                        <ul>
+                            <li><strong>Focus:</strong> Guided walking programs for bone density, step goals for osteoporosis prevention, senior fitness routines</li>
+                            <li><strong>Features:</strong> Step-counting, daily/weekly/monthly goal setting, virtual walking challenges for group motivation</li>
+                            <li><strong>Services:</strong> Movement reminder for sedentary users, tips for safe outdoor walking, fall risk reduction plans</li>
+                            <li><strong>Impact:</strong> Increase in average weekly steps by 30%; improved lower limb strength and balance for seniors</li>
+                        </ul>
+                    </div>
+
+                    <!-- App 5 -->
+                    <div class="wellness-card" style="border-left: 4px solid #609cd4; background: linear-gradient(135deg, rgba(96, 156, 212, 0.05), rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🦾</div>
+                        <h3>mySugr Ortho Tracker</h3>
+                        <p><strong>Daily Joint Pain Logging & Exercise Diary</strong></p>
+                        <ul>
+                            <li><strong>Programs:</strong> Daily pain/fatigue logging, activity/exercise journaling for arthritis and ortho conditions</li>
+                            <li><strong>Features:</strong> Symptoms chart over time, medication/therapy reminders, exportable progress reports for doctors</li>
+                            <li><strong>Impact:</strong> 35% reduction in pain flare-ups among consistent users; better insight for doctors to personalize treatment</li>
+                        </ul>
+                    </div>
+
+                    <!-- App 6 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4; background: linear-gradient(135deg, rgba(96, 156, 212, 0.05), rgba(255,255,255,0.95));">                        <div class="wellness-icon">🏋️</div>
+                        <h3>Physio Plus Tech</h3>
+                        <p><strong>Connected Physio Care for Ortho Recovery</strong></p>
+                        <ul>
+                            <li><strong>Programs:</strong> Hip, knee, spine, and shoulder recovery plans post-injury/surgery</li>
+                            <li><strong>Services:</strong> Live video consults, personalized home exercise, progress tracking for mobility & strength</li>
+                            <li><strong>Features:</strong> Certified therapy team support, reminders for each session, pain/mobility improvement graphing</li>
+                            <li><strong>Impact:</strong> 90% patient satisfaction; 50% faster return-to-normal activities post-joint replacement</li>
+                        </ul>
+                    </div>
+
+                    <!-- App 7 -->
+                    <div class="wellness-card" style="border-left: 4px solid #609cd4; background: linear-gradient(135deg, rgba(96, 156, 212, 0.05), rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🌟</div>
+                        <h3>Calcivita</h3>
+                        <p><strong>Osteoporosis Prevention & Bone Nutrition</strong></p>
+                        <ul>
+                            <li><strong>Services:</strong> Daily calcium and vitamin D reminders, dairy/green intake tracking, nutrition tips for all ages</li>
+                            <li><strong>Features:</strong> Food logging for calcium/vitamin D, supplement tracking, educational content on bone-friendly diets</li>
+                            <li><strong>Impact:</strong> 60% improvement in calcium intake among users; reported decline in vitamin D deficiency cases</li>
+                        </ul>
+                    </div>
+
+                    <!-- App 8 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4; background: linear-gradient(135deg, rgba(96, 156, 212, 0.05), rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🤸</div>
+                        <h3>StretchMinder</h3>
+                        <p><strong>Flexibility & Musculoskeletal Wellness Guide</strong></p>
+                        <ul>
+                            <li><strong>Programs:</strong> Guided stretching routines for bones/joints, daily yoga sequences, stiffness prevention for office workers</li>
+                            <li><strong>Features:</strong> Animated exercise demos, progress badges, hydration and movement reminders</li>
+                            <li><strong>Impact:</strong> 40% less joint stiffness in regular users; improved joint range of motion and comfort</li>
+                        </ul>
+                    </div>
+
+                    <!-- App 9 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4; background: linear-gradient(135deg, rgba(96, 156, 212, 0.05), rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">🪨</div>
+                        <h3>OsteoTools</h3>
+                        <p><strong>Bone Density Screening & Risk Assessment</strong></p>
+                        <ul>
+                            <li><strong>Services:</strong> Osteoporosis screening quiz, BMD report interpretation, personalized risk profiles</li>
+                            <li><strong>Features:</strong> Checklists for fracture risk, reminders for DEXA testing, local diagnostics finder</li>
+                            <li><strong>Impact:</strong> Early identification of 30% more high-risk users for BMD testing; higher screening adherence</li>
+                        </ul>
+                    </div>
+
+                    <!-- App 10 -->
+                        <div class="wellness-card" style="border-left: 4px solid #609cd4; background: linear-gradient(135deg, rgba(96, 156, 212, 0.05), rgba(255,255,255,0.95));">
+                        <div class="wellness-icon">☀️</div>
+                        <h3>D-Sunshine</h3>
+                        <p><strong>Vitamin D Health for Strong Bones</strong></p>
+                        <ul>
+                            <li><strong>Focus:</strong> Safe sunlight exposure tracker, vitamin D log, deficiency education</li>
+                            <li><strong>Features:</strong> Sun timer, regional UV alerts, supplement/food intake logs, doctor chat for safe dosing</li>
+                            <li><strong>Impact:</strong> 55% improvement in vitamin D sufficiency for users; more balanced sun habits</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <!-- Government Initiatives Section -->
+        <section id="government" class="section" style="display: none;">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏛️ Government Healthcare Initiatives in West Bengal</h2>
+            
+            <!-- Key Initiatives Overview -->
+            <div class="initiatives-banner">
+               <h3>🦴 Major Orthopedic Health Initiatives (Govt. of India)</h3>
+                    <div class="initiatives-grid">
+                        <div class="initiative-item">
+                            <strong>Ayushman Bharat – AB-PMJAY (Orthopedic Care)</strong>
+                            <p>Insurance cover up to ₹5 lakh per family/year for fracture management, joint replacement, spine surgery, trauma care, and orthopedic conditions at empanelled hospitals nationwide</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Programme for Prevention and Control of Non-Communicable Diseases (NP-NCD)</strong>
+                            <p>Population and school-based screening for osteoporosis, vitamin D deficiency, musculoskeletal pain, early arthritis, and fracture risk in primary health centers</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Rashtriya Bal Swasthya Karyakram (RBSK) – Child Bone & Joint Screening</strong>
+                            <p>Free screening for congenital bone disorders, deformities (clubfoot, scoliosis, rickets) and orthopedic disabilities in children (0–18 years)</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Pradhan Mantri Swasthya Suraksha Yojana (PMSSY, AIIMS Network)</strong>
+                            <p>Establishment of advanced orthopedic surgery units, trauma care centers, and rehabilitation facilities in AIIMS and upgraded government hospitals</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>District Early Intervention Centres (DEIC) – Pediatric Orthopedic Rehabilitation</strong>
+                            <p>Multi-disciplinary centers for early diagnosis, physiotherapy and assistive devices for children with clubfoot, cerebral palsy, and orthopedic disabilities</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Bone Health Day (October 20)</strong>
+                            <p>Annual nationwide awareness campaign on osteoporosis, fracture prevention, and healthy lifestyle for bone health by Ministry of Health</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Health Mission (NHM) – Free Screening for Bone Disease</strong>
+                            <p>Free routine bone density, X-ray, and vitamin D checks at primary health centers; regular camps in rural areas for arthritis and joint pain</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Orthopedic Trauma Registry Initiative</strong>
+                            <p>District-level trauma registries to collect, track, and analyze road accident and fall-related bone injuries for improved health system response</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Mobile Medical Units (MMU) – Rural Orthopedic Camps</strong>
+                            <p>Mobile vans for free bone health checkups, basic physiotherapy, plastering and fracture stabilization, and referral to district hospital</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Jan Aushadhi – Subsidized Orthopedic Medicines</strong>
+                            <p>Government-run pharmacies providing low-cost calcium, vitamin D, osteoporosis medicines, and pain relief for arthritis nationwide</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>School Health Programme – Bone and Joint Education</strong>
+                            <p>Incorporating bone health, exercise, safe play, and fracture prevention in government school curricula; regular school health camps</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Programme for Prevention & Control of Fluorosis (NPPCF)</strong>
+                            <p>Screening and management of bone/joint problems due to fluoride poisoning in endemic states; safe water and treatment at block level</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Central Government Health Scheme (CGHS) – Orthopedic Services</strong>
+                            <p>Free orthopedic consultations, investigations, joint replacement surgery, and physiotherapy for government employees and retirees at CGHS-approved hospitals</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>ESI Scheme – Workplace Injury Rehabilitation</strong>
+                            <p>Coverage for orthopedic trauma, occupational injuries, and fracture care for insured workers; access to government rehab centers</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Indian Council of Medical Research (ICMR) – Musculoskeletal Research Grants</strong>
+                            <p>Funding for epidemiological studies on osteoporosis, osteoarthritis, spinal disorders, and fracture prevention in India</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>State Disability Rehabilitation Centers (DRC) – Assistive Devices</strong>
+                            <p>Provision of wheelchairs, crutches, orthoses, and artificial limbs for people with orthopedic disabilities at subsidized cost</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Ayush Mission (NAM) – Bone Health Promotion</strong>
+                            <p>Integration of Ayurveda, Yoga, and Naturopathy therapies for musculoskeletal wellness, chronic joint pain, and fall prevention</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Beti Bachao Beti Padhao – Girl Child Bone Nutrition Awareness</strong>
+                            <p>Focused campaigns for calcium, vitamin D, and anemia correction in adolescent girls to prevent osteoporosis and future fractures</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Rashtriya Vayoshri Yojana – Elderly Mobility Support</strong>
+                            <p>Free distribution of walking aids, prosthetic devices, spectacles, and hearing aids to senior citizens with bone and joint disabilities</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Pradhan Mantri Gram Sadak Yojana – Trauma Prevention in Rural India</strong>
+                            <p>Improving road infrastructure to reduce accident-related bone and joint injuries in rural regions</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Jan Suraksha Accident Insurance Schemes</strong>
+                            <p>Personal accident insurance with coverage for fracture, trauma surgeries, and rehabilitation for BPL families and informal sector workers</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Tobacco Control Programme – Bone Disease Prevention</strong>
+                            <p>Awareness and bans reduce smoking rates, lowering osteoporosis and low bone mass risk due to tobacco use</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>District Hospital Ortho Services Strengthening</strong>
+                            <p>Government funds to upgrade orthopedic operation theaters, trauma centers, and physiotherapy units at district and block hospitals</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Universal Immunization Programme (UIP) – Bone Infection Prevention</strong>
+                            <p>Vaccines (Hib, measles) reduce risk of bone/joint infections (osteomyelitis, septic arthritis) in children</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>World Osteoporosis Day & National Bone Health Week</strong>
+                            <p>Annual campaigns for public education on bone-healthy nutrition, fracture risks, and prevention led by Ministry of Health</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Digital Health Records for Orthopedic Disease Tracking</strong>
+                            <p>Rollout of electronic health records in government hospitals for better tracking of bone/joint disease outcomes and recurrence</p>
+                        </div>
+                    </div>
+            <!-- Interactive Map Section -->
+                <div class="map-section">
+                    <h3 style="margin-bottom: 1rem;">📍 Healthcare Drives & Centers in West Bengal Districts</h3>
+                   <p style="margin-bottom: 1.5rem; color: white;">
+                        <strong>Districts Highlighted:</strong> Murshidabad, Bankura, Birbhum, Asansol (Paschim Bardhaman), Purulia, Bardhaman (Purba Bardhaman)
+                    </p>
+                    
+                    <!-- Google My Maps Embed -->
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/d/embed?mid=10LcqEx9WHKcxQhEku84mG6lJoVGvE-Q" 
+                            width="100%" 
+                            height="600" 
+                            style="border:0; border-radius: var(--radius-lg);" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+      
+                <!-- District-wise Healthcare Centers -->
+                <div class="district-list">
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🏥 Key Healthcare Centers by District</h3>
+                    
+                   <div class="district-card">
+                        <h4>📍 Murshidabad</h4>
+                        <ul>
+                            <li><strong>Murshidabad Medical College & Hospital</strong> - Berhampore</li>
+                            <li>District Women & Child Health Centre - Berhampore</li>
+                            <li>Community Health Centres in Kandi, Lalgola, Domkal</li>
+                            <li>District Cancer Screening OPD - Berhampore</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Bankura</h4>
+                        <ul>
+                            <li><strong>Bankura Sammilani Medical College</strong> - Bankura</li>
+                            <li>Swasthya Sathi Cancer Care Partner Hospitals</li>
+                            <li>AYUSH Suswasthya Kendras across blocks</li>
+                            <li>District Cancer Clinic - Bankura</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Birbhum</h4>
+                        <ul>
+                            <li><strong>Rampurhat Government Medical College</strong> - Rampurhat</li>
+                            <li>Suri District Hospital Cancer Screening OPD</li>
+                            <li>Community Health Centres in Bolpur, Suri</li>
+                            <li>Mobile Oncology Camp - rural blocks</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Asansol (Paschim Bardhaman)</h4>
+                        <ul>
+                            <li><strong>Asansol District Hospital</strong> - Asansol</li>
+                            <li>Durgapur Sub-Divisional Hospital</li>
+                            <li>Women's health camps & cancer screening drives</li>
+                            <li>District Cancer Chemotherapy Unit - Durgapur</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Purulia</h4>
+                        <ul>
+                            <li><strong>Purulia Government Medical College</strong> - Purulia</li>
+                            <li>Muktidhara Initiative for tribal women</li>
+                            <li>Mobile health vans for remote cancer screening</li>
+                            <li>Cancer Clinic at District Hospital</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Bardhaman (Purba Bardhaman)</h4>
+                        <ul>
+                            <li><strong>Burdwan Medical College & Hospital</strong> - Bardhaman</li>
+                            <li>Maternal health & cancer screening under Swasthya Ingit</li>
+                            <li>District health centres in Katwa, Kalna</li>
+                            <li>Women's Oncology OPD - Bardhaman</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Kolkata</h4>
+                        <ul>
+                            <li><strong>Nil Ratan Sircar Medical College & Hospital</strong> - Kolkata</li>
+                            <li>Chittaranjan National Cancer Institute</li>
+                            <li>PG Hospital Cancer Centre</li>
+                            <li>Swasthya Sathi empanelled private cancer hospitals</li>
+                            <li>Mobile diagnostic & outreach camps in slum/rural blocks</li>
+                        </ul>
+                    </div>
+
+
+        </section>
+
+
+        <section id="registration" class="section" style="display: none;">
+                  <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Register</h2>
+                  <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; align-items: flex-start;">
+                    <!-- LEFT COLUMN: Registration -->
+                    <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+                      <div class="info-card" style="width: 100%; margin: 0; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+                            <div style="text-align: center; margin-bottom: 2rem;">
+                               <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Stay Informed About Ortho, Bone, and Muscular Health</h3>
+                               <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Subscribe to receive monthly health tips, screening reminders, and updates on orthopedic health topics.</p>
+                            </div>
+                            <form id="registrationForm" onsubmit="handleRegistration(event)">
+                               <!-- Full Name -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  👤 Full Name *
+                                  </label>
+                                  <input
+                                     type="text"
+                                     id="fullName"
+                                     name="fullName"
+                                     required
+                                     placeholder="Enter your full name"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Email Address -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📧 Email Address *
+                                  </label>
+                                  <input
+                                     type="email"
+                                     id="emailAddress"
+                                     name="emailAddress"
+                                     required
+                                     placeholder="your.email@example.com"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- City of Residence -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📍 City of Residence
+                                  </label>
+                                  <input
+                                     type="text"
+                                     id="cityOfResidence"
+                                     name="cityOfResidence"
+                                     placeholder="e.g., Kolkata, Delhi, Mumbai"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Phone Number (Optional) -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📱 Phone Number (Optional)
+                                  </label>
+                                  <input
+                                     type="tel"
+                                     id="phoneNumber"
+                                     name="phoneNumber"
+                                     placeholder="+91 XXXXXXXXXX"
+                                     pattern="[0-9+\-\s]+"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Ortho Disease Type Selector -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="orthoType" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  Ortho Disease / Condition
+                                  </label>
+                                  <select id="orthoType" name="orthoType" required style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);">
+                                     <option value="">Select condition</option>
+                                    <option value="fracture">Bone Fracture</option>
+                                    <option value="osteoporosis">Osteoporosis</option>
+                                    <option value="arthritis">Arthritis</option>
+                                    <option value="osteoarthritis">Osteoarthritis</option>
+                                    <option value="rheumatoid_arthritis">Rheumatoid Arthritis</option>
+                                    <option value="spondylitis">Spondylitis</option>
+                                    <option value="scoliosis">Scoliosis</option>
+                                    <option value="herniated_disk">Herniated Disk</option>
+                                    <option value="muscle_strain">Muscle Strain</option>
+                                    <option value="tendinitis">Tendinitis</option>
+                                    <option value="bone_tumor">Bone Tumor</option>
+                                    <option value="joint_replacement">Joint Replacement</option>
+                            <!-- Add more conditions if needed -->
+                                  </select>
+                               </div>
+                               <!-- Join Group Checkbox -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label>
+                                  <input type="checkbox" id="joinCommunity" name="joinCommunity">
+                                  I want to join a community/support group for my disease type
+                                  </label>
+                               </div>
+                               <!-- Privacy Consent -->
+                               <div style="margin-bottom: 2rem;">
+                                  <label style="display: flex; align-items: start; cursor: pointer;">
+                                  <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                                  <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                                  I agree to register to this healthcare platform and understand that my data will be kept confidential and not shared with third parties. I can unsubscribe anytime.
+                                  </span>
+                                  </label>
+                               </div>
+                               <!-- Submit Button -->
+                               <button
+                                  type="submit"
+                                  style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                                  onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                                  onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                               ✓ Register Now
+                               </button>
+                               <!-- Privacy Note -->
+                               <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                                  🔒 Your data is kept confidential and will not be shared with third parties. Read our <a href="#" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
+                               </p>
+                            </form>
+                         </div>
+                      </div>
+
+
+                    <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+                      <div id="patientGroupsSection" style="width: 100%; margin: 0;">
+                        <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Ortho, Bone & Muscle Support Communities</h3>
+                        <div id="groupsList">
+                          <div class="group-card" style="border-left: 4px solid #0277bd; margin-bottom: 1rem; padding: 1rem; background: rgba(2,119,189,0.05); border-radius: 8px;">
+                            <b>Bone Health Awareness Hub</b><br>
+                            <span>Active Members: 210</span><br>
+                            <span>Get advice on bone strength, calcium, osteoporosis, and fracture recovery.</span><br>
+                            <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #689f38; margin-bottom: 1rem; padding: 1rem; background: rgba(104,159,56,0.05); border-radius: 8px;">
+                            <b>Muscle Wellness Collective</b><br>
+                            <span>Active Members: 142</span><br>
+                            <span>Talk about muscle pain, strain, injury rehabilitation, and exercise tips.</span><br>
+                            <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #8d6e63; margin-bottom: 1rem; padding: 1rem; background: rgba(141,110,99,0.05); border-radius: 8px;">
+                            <b>Arthritis & Joint Care Network</b><br>
+                            <span>Active Members: 175</span><br>
+                            <span>Share management strategies, therapy options, and support for all joint issues.</span><br>
+                            <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #e53935; margin-bottom: 1rem; padding: 1rem; background: rgba(229,57,53,0.05); border-radius: 8px;">
+                            <b>Orthopedic Injury Recovery Group</b><br>
+                            <span>Active Members: 118</span><br>
+                            <span>For fracture, sports injury, cast care, and post-surgery support.</span><br>
+                            <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #43a047; margin-bottom: 1rem; padding: 1rem; background: rgba(67,160,71,0.05); border-radius: 8px;">
+                            <b>Spine Health Support Forum</b><br>
+                            <span>Active Members: 96</span><br>
+                            <span>Discuss back pain, posture, spondylitis, and spinal surgery experiences.</span><br>
+                            <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #fbc02d; margin-bottom: 1rem; padding: 1rem; background: rgba(251,192,45,0.05); border-radius: 8px;">
+                            <b>Pediatric Bone & Growth Circle</b><br>
+                            <span>Active Members: 69</span><br>
+                            <span>Dedicated to child bone health, growth issues, and parent education.</span><br>
+                            <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #6d4c41; margin-bottom: 1rem; padding: 1rem; background: rgba(109,76,65,0.05); border-radius: 8px;">
+                            <b>Rheumatology Peer Connect</b><br>
+                            <span>Active Members: 51</span><br>
+                            <span>Autoimmune, inflammation, and complex musculoskeletal disorders community.</span><br>
+                            <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                          </div>
+                          <div class="group-card" style="border-left: 4px solid #512da8; margin-bottom: 1rem; padding: 1rem; background: rgba(81,45,168,0.05); border-radius: 8px;">
+                            <b>Rare Bone Diseases Forum</b><br>
+                            <span>Active Members: 20</span><br>
+                            <span>Connect on osteoporosis, Paget’s, bone tumors, and rare conditions.</span><br>
+                            <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                          </div>
+                            <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+                          <div id="patientGroupsSection" style="width: 100%; margin: 0;">
+                            <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Ortho, Bone & Muscle Support Communities</h3>
+                            <div id="groupsList">
+
+                              <!-- Existing groups from previous reply (8 items) -->
+                              <div class="group-card" style="border-left: 4px solid #0277bd; margin-bottom: 1rem; padding: 1rem; background: rgba(2,119,189,0.05); border-radius: 8px;">
+                                <b>Bone Health Awareness Hub</b><br>
+                                <span>Active Members: 210</span><br>
+                                <span>Get advice on bone strength, calcium, osteoporosis, and fracture recovery.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #689f38; margin-bottom: 1rem; padding: 1rem; background: rgba(104,159,56,0.05); border-radius: 8px;">
+                                <b>Muscle Wellness Collective</b><br>
+                                <span>Active Members: 142</span><br>
+                                <span>Talk about muscle pain, strain, injury rehabilitation, and exercise tips.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #8d6e63; margin-bottom: 1rem; padding: 1rem; background: rgba(141,110,99,0.05); border-radius: 8px;">
+                                <b>Arthritis & Joint Care Network</b><br>
+                                <span>Active Members: 175</span><br>
+                                <span>Share management strategies, therapy options, and support for all joint issues.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #e53935; margin-bottom: 1rem; padding: 1rem; background: rgba(229,57,53,0.05); border-radius: 8px;">
+                                <b>Orthopedic Injury Recovery Group</b><br>
+                                <span>Active Members: 118</span><br>
+                                <span>For fracture, sports injury, cast care, and post-surgery support.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #43a047; margin-bottom: 1rem; padding: 1rem; background: rgba(67,160,71,0.05); border-radius: 8px;">
+                                <b>Spine Health Support Forum</b><br>
+                                <span>Active Members: 96</span><br>
+                                <span>Discuss back pain, posture, spondylitis, and spinal surgery experiences.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #fbc02d; margin-bottom: 1rem; padding: 1rem; background: rgba(251,192,45,0.05); border-radius: 8px;">
+                                <b>Pediatric Bone & Growth Circle</b><br>
+                                <span>Active Members: 69</span><br>
+                                <span>Dedicated to child bone health, growth issues, and parent education.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #6d4c41; margin-bottom: 1rem; padding: 1rem; background: rgba(109,76,65,0.05); border-radius: 8px;">
+                                <b>Rheumatology Peer Connect</b><br>
+                                <span>Active Members: 51</span><br>
+                                <span>Autoimmune, inflammation, and complex musculoskeletal disorders community.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #512da8; margin-bottom: 1rem; padding: 1rem; background: rgba(81,45,168,0.05); border-radius: 8px;">
+                                <b>Rare Bone Diseases Forum</b><br>
+                                <span>Active Members: 20</span><br>
+                                <span>Connect on osteoporosis, Paget’s, bone tumors, and rare conditions.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+
+                              <!-- Additional 12 Ortho, Bone & Muscle Groups -->
+                              <div class="group-card" style="border-left: 4px solid #ef6c00; margin-bottom: 1rem; padding: 1rem; background: rgba(239,108,0,0.05); border-radius: 8px;">
+                                <b>Sports Injury Prevention Club</b><br>
+                                <span>Active Members: 87</span><br>
+                                <span>Guidance on avoiding injuries, warmup, and safe sports practices.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #ab47bc; margin-bottom: 1rem; padding: 1rem; background: rgba(171,71,188,0.05); border-radius: 8px;">
+                                <b>Posture & Ergonomics Group</b><br>
+                                <span>Active Members: 73</span><br>
+                                <span>Discuss desk posture, workstation tips, and preventing repetitive strain.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #3949ab; margin-bottom: 1rem; padding: 1rem; background: rgba(57,73,171,0.05); border-radius: 8px;">
+                                <b>Geriatric Bone Wellness Forum</b><br>
+                                <span>Active Members: 58</span><br>
+                                <span>Healthy aging, fall prevention, and managing age-related bone disorders.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #fdd835; margin-bottom: 1rem; padding: 1rem; background: rgba(253,216,53,0.05); border-radius: 8px;">
+                                <b>Women's Bone Health Group</b><br>
+                                <span>Active Members: 64</span><br>
+                                <span>Tips and support for osteoporosis, menopause, and pregnancy-related bone concerns.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #ad1457; margin-bottom: 1rem; padding: 1rem; background: rgba(173,20,87,0.05); border-radius: 8px;">
+                                <b>Pain Management & Mobility Group</b><br>
+                                <span>Active Members: 115</span><br>
+                                <span>Learn about movement, pain relief, braces, and physiotherapy options.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #01579b; margin-bottom: 1rem; padding: 1rem; background: rgba(1,87,155,0.05); border-radius: 8px;">
+                                <b>Scoliosis & Spine Curvature Support</b><br>
+                                <span>Active Members: 36</span><br>
+                                <span>Peer support, bracing, therapy, and living with spinal curvature.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #d84315; margin-bottom: 1rem; padding: 1rem; background: rgba(216,67,21,0.05); border-radius: 8px;">
+                                <b>Hip & Knee Replacement Circle</b><br>
+                                <span>Active Members: 48</span><br>
+                                <span>Pre/post-surgery experiences, questions, and mobility restoration tips.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #f57c00; margin-bottom: 1rem; padding: 1rem; background: rgba(245,124,0,0.05); border-radius: 8px;">
+                                <b>Child & Adolescent Sports Injuries</b><br>
+                                <span>Active Members: 27</span><br>
+                                <span>Safe sport training, growing bone care, and overuse injury prevention.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #ff7043; margin-bottom: 1rem; padding: 1rem; background: rgba(255,112,67,0.05); border-radius: 8px;">
+                                <b>Foot, Heel & Ankle Wellness Group</b><br>
+                                <span>Active Members: 51</span><br>
+                                <span>Talk about sprains, plantar fasciitis, foot care, and balance exercises.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #e53935; margin-bottom: 1rem; padding: 1rem; background: rgba(229,57,53,0.05); border-radius: 8px;">
+                                <b>Tendon, Ligament & Soft Tissue Forum</b><br>
+                                <span>Active Members: 44</span><br>
+                                <span>A place for tendonitis, ligament injuries, and post-therapy tips.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #43a047; margin-bottom: 1rem; padding: 1rem; background: rgba(67,160,71,0.05); border-radius: 8px;">
+                                <b>Physical Therapy Tips & Success Stories</b><br>
+                                <span>Active Members: 83</span><br>
+                                <span>Share PT routines, ask questions, and motivate each other’s progress.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #c62828; margin-bottom: 1rem; padding: 1rem; background: rgba(198,40,40,0.05); border-radius: 8px;">
+                                <b>Bursitis & Chronic Pain Group</b><br>
+                                <span>Active Members: 37</span><br>
+                                <span>For those coping with chronic pain, bursitis, and long-term inflammation.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #512da8; margin-bottom: 1rem; padding: 1rem; background: rgba(81,45,168,0.05); border-radius: 8px;">
+                                <b>Genetic Bone Disorders Community</b><br>
+                                <span>Active Members: 11</span><br>
+                                <span>Osteogenesis imperfecta, brittle bone disease, and rare genetic cases.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                              </div>
+                              <div class="group-card" style="border-left: 4px solid #1976d2; margin-bottom: 1rem; padding: 1rem; background: rgba(25,118,210,0.05); border-radius: 8px;">
+                                <b>Shoulder, Elbow & Wrist Support</b><br>
+                                <span>Active Members: 46</span><br>
+                                <span>Rotator cuff, tennis elbow, carpal tunnel, and limb mobility.</span><br>
+                                <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                        </div>
+                      </div>
+                    </div>
+            </section>
+
+
+
+        <section id="subscription" class="section" style="display: none;">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Subscribe</h2>
+            
+            <div class="info-card" style="max-width: 650px; margin: 0 auto; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Stay Informed About Bone, Muscle and Orthopedic Health</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Subscribe to receive monthly health tips, screening reminders, and updates on women's health topics.</p>
+                </div>
+                
+                <form id="registrationForm" onsubmit="handleRegistration(event)">
+                    <!-- Full Name -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            👤 Full Name *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName"
+                            required 
+                            placeholder="Enter your full name"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Email Address -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📧 Email Address *
+                        </label>
+                        <input 
+                            type="email" 
+                            id="emailAddress" 
+                            name="emailAddress"
+                            required 
+                            placeholder="your.email@example.com"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- City of Residence -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📍 City of Residence
+                        </label>
+                        <input 
+                            type="text" 
+                            id="cityOfResidence" 
+                            name="cityOfResidence"
+                            placeholder="e.g., Kolkata, Delhi, Mumbai"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Phone Number (Optional) -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📱 Phone Number (Optional)
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phoneNumber" 
+                            name="phoneNumber"
+                            placeholder="+91 XXXXXXXXXX"
+                            pattern="[0-9+\-\s]+"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Subscription Preferences -->
+                    <div style="margin-bottom: 2rem; padding: 1.25rem; background: rgba(139, 79, 139, 0.05); border-radius: var(--radius-md); border-left: 4px solid var(--color-primary);">
+                        <label style="display: block; margin-bottom: 0.75rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📬 I want to receive:
+                        </label>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeMonthly" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Monthly Health Tips & Articles</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeScreening" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Screening & Checkup Reminders</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeUpdates" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Health Awareness Updates</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy Consent -->
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: flex; align-items: start; cursor: pointer;">
+                            <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                            <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                                I agree to receive health-related communications and understand that my data will be kept confidential and not shared with third parties. I can unsubscribe anytime.
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button 
+                        type="submit" 
+                        style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                        ✓ Subscribe Now
+                    </button>
+                    
+                    <!-- Privacy Note -->
+                    <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                        🔒 Your data is kept confidential and will not be shared with third parties. Read our <a href="#" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
+                    </p>
+                </form>
+                
+                <!-- Success Message (Hidden by default) -->
+                <div id="registrationSuccess" style="display: none; text-align: center; padding: 2rem;">
+                    <div style="width: 80px; height: 80px; background: var(--color-success); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);">
+                        <span style="font-size: 3rem; color: white;">✓</span>
+                    </div>
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Subscription Successful!</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 1rem;">Thank you for subscribing! You'll receive our next newsletter soon.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Helplines Section -->
+        <div class="helplines-section">
+            <h3>📞 Important Helplines</h3>
+            <div class="helplines-grid">
+                <div class="helpline-card">
+                    <strong>Orthopedic Helpline</strong>
+                    <p class="helpline-number">181</p>
+                </div>
+                <div class="helpline-card">
+                    <strong>National Health Helpline</strong>
+                    <p class="helpline-number">104</p>
+                </div>
+                <div class="helpline-card">
+                    <strong>Swasthya Sathi</strong>
+                    <p class="helpline-number">1800-313-1313</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="diseaseDetailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody">
+                </div>
+        </div>
+    </div>
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p>&copy; 2025 Orthopedic Health Awareness Platform. All rights reserved.</p>
+            <p>Disclaimer: This platform provides educational information and is not a substitute for professional medical advice.</p>
+        </div>
+    </footer>
+
+   <script src="app_bonehealth.js"></script>
+</body>
+</html>

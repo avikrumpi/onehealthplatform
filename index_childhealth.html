@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children's Health Education and Awareness Platform</title>
+    <link rel="stylesheet" href="style_childhealth.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content-wrapper">
+        <div class="header-left">
+           <div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                
+                            <!-- Floating language selector -->
+                            <div class="language-selector-float">
+                                <label for="languageSelector">Language:</label>
+                                <select id="languageSelector">
+                                    <option value="en">English</option>
+                                    <option value="hi">Hindi</option>
+                                    <option value="bn">Bengali</option>
+                                    <option value="kn">Kannada</option>
+                                </select>
+                            </div>
+    
+                    <h1 id="platformTitle">🌈 Children's Health Platform</h1>
+                    
+                    <p id="platformSubtitle" style="margin-bottom: 1rem;">Comprehensive information about children's health conditions and prevention strategies</p>
+                    
+               
+                    <div class="nav-tabs">
+                        <!-- Your navigation buttons -->
+
+                        <button class="nav-tab active" data-section="diseases">Health Conditions</button>
+                                <button class="nav-tab" data-section="when-to-see">When to See a Paediatrician</button>
+                                <button class="nav-tab" data-section="doctors">Find Paediatricians</button>
+                                <button class="nav-tab" data-section="prevention">Prevention & Care</button>
+                                <button class="nav-tab" data-section="faq">FAQ</button>
+                                <button class="nav-tab" data-section="chatbot">Health Assistant</button>
+                                <button class="nav-tab" data-section="government">Government Initiatives</button>
+                                <button class="nav-tab" data-section="wellness-for-all">Wellness for Children</button>
+                                <button class="nav-tab" data-section="registration">Register</button>
+                                <button class="nav-tab" data-section="subscription">Subscribe</button>
+                    </div>
+                </div>
+                </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+        </div>
+
+    </header>
+
+    <div class="search-container">
+        <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search for health conditions, symptoms, or treatments..." oninput="handleSearch()">
+    </div>
+
+    <div class="container">
+               <section id="diseases" class="section active">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏥 Children's Different Health Conditions</h2>
+            <div class="diseases-grid" id="diseasesGrid"></div>
+            <div class="no-results" id="noResults" style="display: none;">
+                <h3>No results found</h3>
+                <p>Try searching with different keywords</p>
+            </div>
+            </section>
+
+        <section id="when-to-see" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">👩‍⚕️ When to See a Paediatrician</h2>
+            <div class="faq-container" id="whenToSeeContainer"></div>
+        </section>
+
+        <section id="doctors" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🔍 Find Paediatricians</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto 2rem;">
+                <label for="citySelect" style="display: block; margin-bottom: 0.75rem; font-size: 1.1rem; font-weight: 600; color: var(--color-text);">
+                    📍 Select Your City:
+                </label>
+                <select id="citySelect" onchange="filterDoctorsByCity()" style="width: 100%; padding: 1rem 1.5rem; font-size: 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); cursor: pointer; transition: all 0.3s ease;">
+                    <option value="">-- Select a City --</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                </select>
+            </div>
+
+            <div id="doctorsContainer"></div>
+
+            <p style="margin-top: 2rem; color: var(--color-text-secondary); font-style: italic; text-align: center;">
+                ⚠️ Always verify doctor credentials and call ahead to confirm availability and appointment procedures. These listings are for informational purposes. Please conduct your own research before visiting any healthcare provider.
+            </p>
+        </section>
+
+        <section id="prevention" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🛡️ Prevention & Care</h2><!-- Prevention and Care Section with Video Sidebar -->
+
+            <!-- Health Guidelines Bar (Full Width) -->
+        <div class="health-guidelines-banner">
+            <div class="banner-header">
+                <span class="banner-icon">💡</span>
+                <h3>Health Guidelines</h3>
+                <span class="banner-subtitle">Essential Children's Health Information</span>
+            </div>
+            
+            <div class="guidelines-horizontal">
+                <!-- Guideline 1: Essential Health Practices -->
+                <div class="guideline-card">
+                    <div class="card-header">
+                        <span class="card-icon">🌟</span>
+                        <h4>Essential Health Practices</h4>
+                    </div>
+                    <ul class="guideline-list">
+                      <li><strong>BCG Vaccine:</strong> At birth—protects against severe forms of tuberculosis</li>
+                      <li><strong>Hepatitis B Vaccine:</strong> First dose at birth, with additional doses at 6, 10, and 14 weeks</li>
+                      <li><strong>Oral Polio Vaccine (OPV):</strong> Birth dose, then at 6, 10, 14 weeks, and booster at 16–24 months</li> 
+                      <li><strong>DTP (Diphtheria, Tetanus, Pertussis):</strong> At 6, 10, and 14 weeks; boosters at 16–24 months and 4–6 years</li> 
+                      <li><strong>Haemophilus Influenzae type B (Hib):</strong> At 6, 10, 14 weeks, and booster at 16–24 months</li> 
+                      <li><strong>Rotavirus Vaccine:</strong> First dose at 6 weeks, second and third doses at 10 and 14 weeks</li> 
+                      <li><strong>Pneumococcal Conjugate Vaccine (PCV):</strong> At 6, 10, 14 weeks; booster at 12–15 months</li> 
+                      <li><strong>Measles and Rubella (MR/MMR):</strong> First dose at 9–12 months and second dose at 16–24 months; further boosters may be given at 4–6 years</li> 
+                      <li><strong>Varicella (Chickenpox) Vaccine:</strong> At 12–18 months (some guidelines recommend a booster at 4–6 years)</li> 
+                      <li><strong>Hepatitis A Vaccine:</strong> First dose at 12 months, second dose 6–12 months later</li>
+                      <li><strong>Typhoid Vaccine:</strong> Single dose at age 2 years and boosters every 3 years as needed</li> 
+                      <li><strong>Influenza Vaccine:</strong> Annually starting at 6 months (two doses the first year)</li> 
+                      <li><strong>Japanese Encephalitis Vaccine:</strong> At 9 and 16 months old (in endemic regions)</li> 
+                      <li><strong>HPV Vaccine (Human Papillomavirus):</strong> Two-dose series begins at age 9–12 years, with completion by age 14</li> 
+                      <li><strong>Tdap (Tetanus, Diphtheria, Acellular Pertussis):</strong> At 10–12 years and every 10 years thereafter</li> 
+                      <li><strong>Meningococcal Vaccine:</strong> First dose at age 11–12 years and booster at 16 years</li> 
+                      <li><strong>Regular health screenings and check-ups:</strong> Annual pediatrician visits for growth, development, and health assessments</li> 
+                      <li><strong>Vision screening:</strong> At birth, before school entry, and as recommended by pediatrician</li> 
+                      <li><strong>Hearing screening:</strong> At birth and as needed throughout childhood</li> 
+                      <li><strong>Dental check-ups:</strong> Every 6 months starting at age 1 year</li>
+                    </ul>
+                </div>
+
+                <!-- Guideline 2: Screening Guidelines -->
+                <div class="guideline-card">
+                    <div class="card-header">
+                        <span class="card-icon">🔬</span>
+                        <h4>Screening Guidelines</h4>
+                    </div>
+                    <ul class="guideline-list">
+                        <li><strong>Vision Health:</strong> Regular eye screening at birth, during infancy, preschool, and school-age to detect vision problems early</li>
+                        <li><strong>Hearing Health:</strong> Hearing tests at birth, before school entry, and during childhood to catch hearing loss promptly</li>
+                        <li><strong>Growth & BMI:</strong> Height, weight, and BMI measurements during each pediatric check-up to monitor for obesity or growth problems</li>
+                        <li><strong>Blood Pressure:</strong> Annual blood pressure checks for children over age 3 to detect hypertension or heart/kidney risks</li>
+                        <li><strong>Dental Health:</strong> Dental exams and cleanings every 6 months to prevent cavities and gum disease</li>
+                        <li><strong>Anemia Screen:</strong> emoglobin and hematocrit tests at key ages or for children at risk of iron deficiency</li>
+                        <li><strong>Lead Poisoning:</strong> Lead blood tests between ages 1–2 or in high-risk environments to prevent developmental disorders</li>
+                        <li><strong>Cholesterol Screening:</strong> Universal lipid profile once between ages 9–11 and again 17–21 years (or earlier for high-risk children)</li>
+                        <li><strong>Diabetes Monitoring:</strong> Blood sugar checks for children with obesity, family history, or signs of insulin resistance</li>
+                        <li><strong>Immunization Status:</strong> Annual review of vaccines with catch-up on missed doses to prevent infectious diseases</li>
+                    </ul>
+                </div>
+
+                <!-- Guideline 3: Preventive Measures -->
+                <div class="guideline-card">
+                    <div class="card-header">
+                        <span class="card-icon">🛡️</span>
+                        <h4>Preventive Measures</h4>
+                    </div>
+                    <ul class="guideline-list">
+                        <li>Complete all childhood vaccines according to schedule to prevent infectious diseases</li>
+                        <li>Wash hands frequently to reduce risk of viral and bacterial illnesses</li>
+                        <li>Encourage at least 60 minutes of active play or sports daily</li>
+                        <li>Eat fruits, vegetables, whole grains, and lean proteins every day</li>
+                        <li>Brush teeth twice daily with fluoride toothpaste and schedule dental check-ups</li>
+                        <li>Maintain adequate sleep : 9–12 hours for children (ages 6–12) and 8–10 hours for teens</li>
+
+                        <li>Hydration:Drink water often throughout the day, especially during activities and hot weather</li>
+                        <li>Healthy Weight Maintenance: Monitor BMI and focus on healthy diet and activity to prevent obesity</li>
+                        <li>Mental Health Support : Encourage open conversations and seek help for stress, sadness, or anxiety</li>
+                        <li>Avoid Smoking & Secondhand Smoke:Teach children to avoid tobacco exposure completely</li>
+                        <li>Saftey & Awareness: Teach rules for personal safety, emergency contacts, and how to get help</li>
+                        <li>Begin HPV vaccine starting at age 9–12 to prevent later cancers</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area with Sidebar -->
+        <div class="prevention-wrapper">
+        <!-- Main Content Area (Prevention Container) -->
+            <div class="prevention-content">
+                <div id="preventionContainer" class="disease-grid"></div>
+            </div>
+
+            <!-- Video Sidebar (Right Side) -->
+           <aside class="prevention-video-sidebar">
+            <div class="video-resources-card">
+                <h3>📺 Educational Videos for Children's Health</h3>
+                <p class="video-subtitle">Expert talks on child health & wellness</p>
+                
+                <!-- Video 1: Vaccination Importance -->
+                <a href="https://www.youtube.com/watch?v=vhHpOXJE8Yk" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/vhHpOXJE8Yk/mqdefault.jpg" alt="Childhood Immunization">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>💉 Why Vaccines Matter</h4>
+                        <p>Preparing your child for a vaccination</p>
+                        <span class="duration">⏱️ 4 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 2: Nutrition -->
+                <a href="https://www.youtube.com/watch?v=a-084pqI05U" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/a-084pqI05U/mqdefault.jpg" alt="Child Nutrition">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>🍎 Healthy Eating for Kids - Learn About Carbohydrates, Fats, Proteins, Vitamins and Mineral Salts</h4>
+                        <p>What and how to feed growing kids</p>
+                        <span class="duration">⏱️ 7 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 3: Childhood Respiratory Diseases -->
+                <a href="https://www.youtube.com/watch?v=OaZ2TzObZ70" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/OaZ2TzObZ70/mqdefault.jpg" alt="Asthma and Respiratory Problems in Kids">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>🌬️ Asthma & Respiratory Issues</h4>
+                        <p>Recognizing & managing asthma in children</p>
+                        <span class="duration">⏱️ 9 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 4: Mental Health in Children -->
+                <a href="https://www.youtube.com/watch?v=rkE29fpmsSI" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/rkE29fpmsSI/mqdefault.jpg" alt="Child Mental Health">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>🧠 Supporting Mental Health</h4>
+                        <p>Mental Health For Kids – Positive Habits For Good Mental Health</p>
+                        <span class="duration">⏱️ 11 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 5: Preventing Childhood Obesity -->
+                <a href="https://www.youtube.com/watch?v=TsZlTe_4LTU" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/TsZlTe_4LTU/mqdefault.jpg" alt="Preventing Childhood Obesity">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>⚖️ Preventing Childhood Obesity</h4>
+                        <p>Addressing childhood obesity today to protect the health of future generations</p>
+                        <span class="duration">⏱️ 6 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 6: Hygiene and Handwashing -->
+                <a href="https://www.youtube.com/watch?v=l6XGE-Xuq3M" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/l6XGE-Xuq3M/mqdefault.jpg" alt="Handwashing for Kids">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>🖐️ Handwashing & Germs</h4>
+                        <p>Hygiene Habits for Kids - Compilation - Handwashing, Personal Hygiene and Tooth Brushing</p>
+                        <span class="duration">⏱️ 3 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 7: Childhood Diabetes -->
+                <a href="https://www.youtube.com/watch?v=nuQT0KPpuuw" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/nuQT0KPpuuw/mqdefault.jpg" alt="Childhood Diabetes">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>💉 Understanding Childhood Diabetes</h4>
+                        <p>Symptoms of Type 1 Diabetes in Children</p>
+                        <span class="duration">⏱️ 8 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 8: Common Allergies -->
+                <a href="https://www.youtube.com/watch?v=G4Li-iwpyVk" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/G4Li-iwpyVk/mqdefault.jpg" alt="Childhood Allergies">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>🌼 Managing Allergies</h4>
+                        <p>What are the common allergies in children?</p>
+                        <span class="duration">⏱️ 5 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 9: Deworming & Parasite Prevention -->
+                <a href="https://www.youtube.com/watch?v=-VDF9TDI_Rk" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/-VDF9TDI_Rk/mqdefault.jpg" alt="Deworming for Children">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>🐛 Deworming for Healthy Growth</h4>
+                        <p>Why Dr. Chandrashekar, Pediatrician talks about Worm Infection in Children</p>
+                        <span class="duration">⏱️ 3 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 10: Preventing Childhood Injuries -->
+                <a href="https://www.youtube.com/watch?v=F0HHB5T-z80" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/F0HHB5T-z80/mqdefault.jpg" alt="Childhood Injury Prevention">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>🚸 Preventing Injuries & Accidents</h4>
+                        <p>Preventing Childhood Injuries</p>
+                        <span class="duration">⏱️ 6 min</span>
+                    </div>
+                </a>
+
+            </div>
+        </aside>
+        </div>
+            <div class="faq-container" id="preventionContainer"></div>
+        </section>
+
+        <section id="faq" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">❓Frequently Asked Questions</h2>
+            <div class="faq-container" id="faqContainer"></div>
+        </section>
+
+        <section id="chatbot" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🤖 AI Health Assistant</h2>
+            <div class="info-card" style="max-width: 900px; margin: 0 auto;">
+                  <div style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+                    <h3 style="color: white; margin-bottom: 1rem;">💬 Chat with our AI Health Advisor</h3>
+                    <p style="margin: 0; color: white; opacity: 0.95;">Get personalized health guidance through our intelligent chatbot for children. Ask questions about common childhood illnesses, nutrition, growth, vaccination, skin and respiratory problems, or any other child health topic in English or Bengali. Let our smart assistant help you care for your child's health with reliable information, tips, and answers.</p>
+                    <p style="margin: 0; color: white; opacity: 0.95;">Get personalized health guidance through our intelligent chatbot for children. Ask questions about common childhood illnesses, nutrition, growth, vaccination, skin and respiratory problems, or any other child health topic in English or Bengali. Let our smart assistant help you care for your child's health with reliable information, tips, and answers.</p>
+                </div>
+         <div class="chatbot-wrapper">
+        <!-- Left Sidebar for Health Assistant -->
+        <aside class="chatbot-sidebar">
+            <!-- Stats Card -->
+            <div class="sidebar-card stats-card">
+                <h3>📊 Conversation Stats</h3>
+                <div class="stat-row">
+                    <span class="stat-icon">💬</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Total Messages</span>
+                        <span class="stat-value" id="totalMessages">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">✅</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Bot Responses</span>
+                        <span class="stat-value" id="botResponses">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">🔘</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Button Selections</span>
+                        <span class="stat-value" id="buttonClicks">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">⌨️</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Typed Messages</span>
+                        <span class="stat-value" id="typedMessages">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">🔗</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Conversation Chain</span>
+                        <span class="stat-value" id="conversationChain">1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Helplines Card -->
+            <div class="sidebar-card helpline-card">
+                <h3>🆘 Emergency Helplines</h3>
+                <div class="helpline-row">
+                    <span class="helpline-icon">📞</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Child Helpline</div>
+                        <div class="helpline-number">181</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">🏥</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">National Health</div>
+                        <div class="helpline-number">104</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">💚</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Tele-MANAS</div>
+                        <div class="helpline-number">14416</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">🚨</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Emergency</div>
+                        <div class="helpline-number">112</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">👮</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Child Safety</div>
+                        <div class="helpline-number">1091</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="sidebar-card actions-card">
+                <button class="action-btn reset-btn" onclick="resetChatbot()">
+                    <span>🔄</span> Reset Chat
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <div class="chatbot-main">
+            <div class="chat-header">
+                <h2>🤖 AI Health Assistant</h2>
+                <p>Get personalized health guidance</p>
+            </div>
+            
+
+                <div id="chatContainer" style="background: var(--color-surface); border: 2px solid var(--color-border); border-radius: var(--radius-md); height: 500px; display: flex; flex-direction: column; overflow: hidden;">
+                    <div id="chatMessages" style="flex: 1; overflow-y: auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="bot-message">
+                            <div style="background: var(--color-secondary); color: var(--color-text); padding: 1rem; border-radius: var(--radius-md); max-width: 80%;">
+                                <strong>🌸 Health Assistant:</strong><br>
+                                নমস্কার! Hello! I'm your child's health assistant. How can I help you today?<br><br>
+                                আপনি কোন ধরনের স্বাস্থ্য সমস্যা নিয়ে কথা বলতে চান?
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 2px solid var(--color-border); padding: 1rem; background: var(--color-background);">
+                        <div style="display: flex; gap: 0.75rem;">
+                            <input type="text" id="chatInput" placeholder="Type your question here... আপনার প্রশ্ন লিখুন..." style="flex: 1; padding: 0.875rem; border: 2px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; transition: all 0.3s ease;">
+                            <button id="chatSendBtn" onclick="handleChatbot()" style="background: var(--color-primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); cursor: pointer; font-weight: 500; transition: all 0.3s ease;">
+                                Send 🚀
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Wellness For Her Section -->
+        <section id="wellness-for-all" class="section" style="display: none;">
+           <!-- Success Stories Section -->
+                <div style="margin-top: 3rem;">
+                    <h3 style="color: var(--color-primary); text-align: center; margin-bottom: 2rem; font-size: 1.8rem; font-weight: 700;">🏆 Pioneers in Children's Wellness</h3>
+                    <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 2rem;">
+                        Educational institutions and organizations championing child's health programs
+                    </p>
+
+                    <!-- Schools Section -->
+                    <h4 style="color: var(--color-primary); margin-bottom: 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🏫 Schools Leading the Way</h4>
+                    <div class="wellness-grid">
+                       <!-- School 1: Surana Vidyalaya -->
+                      <div class="wellness-card" style="border-left: 4px solid #5E60CE;">
+                          <div class="wellness-icon">🏫</div>
+                          <h3>Surana Vidyalaya</h3>
+                          <p><strong>Electronic City, Bangalore</strong></p>
+                          <ul>
+                              <li>Daily mindfulness and stress reduction sessions</li>
+                              <li>Community health partnerships with local clinics</li>
+                              <li>Student mental wellness and counselling workshops</li>
+                          </ul>
+                      </div>
+
+                      <!-- School 2: SSVM (Sri Sri Ravishankar Vidya Mandir) -->
+                      <div class="wellness-card" style="border-left: 4px solid #5E60CE;">
+                          <div class="wellness-icon">🧘‍♂️</div>
+                          <h3>Sri Sri Ravishankar Vidya Mandir</h3>
+                          <p><strong>Bangalore</strong></p>
+                          <ul>
+                              <li>Structured yoga and fitness curriculum</li>
+                              <li>Emotional wellness initiatives (peer mentoring, workshops)</li>
+                              <li>Nutrition and health education drives</li>
+                          </ul>
+                      </div>
+
+                      <!-- School 3: Don Bosco School -->
+                      <div class="wellness-card" style="border-left: 4px solid #5E60CE;">
+                          <div class="wellness-icon">🚑</div>
+                          <h3>Don Bosco School</h3>
+                          <p><strong>Sreerampura, Mysore</strong></p>
+                          <ul>
+                              <li>Free annual health screening camps</li>
+                              <li>Partnered outreach with Narayana Health</li>
+                              <li>Awareness programs for child health and hygiene</li>
+                          </ul>
+                      </div>
+
+                      <!-- School 4: Cauvery Group of Institutions -->
+                      <div class="wellness-card" style="border-left: 4px solid #5E60CE;">
+                          <div class="wellness-icon">🩺</div>
+                          <h3>Cauvery Group of Institutions</h3>
+                          <p><strong>Mysore</strong></p>
+                          <ul>
+                              <li>Allied health sciences and physiotherapy clubs</li>
+                              <li>Mental health and counselling support</li>
+                              <li>Ayurveda-based nutrition awareness workshops</li>
+                          </ul>
+                      </div>
+
+                      <!-- School 5: AddressHealth Nurturing Schools Program -->
+                      <div class="wellness-card" style="border-left: 4px solid #5E60CE;">
+                          <div class="wellness-icon">👩‍⚕️</div>
+                          <h3>AddressHealth Partner Schools</h3>
+                          <p><strong>Bangalore & Mysore</strong></p>
+                          <ul>
+                              <li>School-based mental health support teams</li>
+                              <li>Behavioural and emotional wellbeing programs</li>
+                              <li>Regular health check-ups and workshops</li>
+                          </ul>
+                      </div>
+
+                      <!-- School 6: CBSE School Wellness Initiative -->
+                      <div class="wellness-card" style="border-left: 4px solid #5E60CE;">
+                          <div class="wellness-icon">🌿</div>
+                          <h3>CBSE Schools, South Bangalore & Mysore</h3>
+                          <p><strong>Bangalore & Mysore</strong></p>
+                          <ul>
+                              <li>Physical education and sports for holistic wellness</li>
+                              <li>Mindfulness and meditation sessions</li>
+                              <li>Community health and parent engagement camps</li>
+                          </ul>
+                      </div>
+                    </div>
+
+                    <!-- Colleges Section -->
+                    <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🎓 Colleges Empowering Students's Health</h4>
+                    <div class="wellness-grid">
+                       <!-- College 1: Mount Carmel College -->
+                        <div class="wellness-card" style="border-left: 4px solid #B9E0F2;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>Mount Carmel College</h3>
+                            <p><strong>Bangalore</strong></p>
+                            <ul>
+                                <li>Top-ranked women's college</li>
+                                <li>Comprehensive health & wellness programs</li>
+                                <li>Mental health counseling center</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 2: BMS College for Women -->
+                        <div class="wellness-card" style="border-left: 4px solid #B9E0F2;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>BMS College for Women</h3>
+                            <p><strong>Bangalore</strong></p>
+                            <ul>
+                                <li>54+ years legacy in women's education</li>
+                                <li>Health awareness campaigns</li>
+                                <li>Women's wellness cell</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 3: Jyoti Nivas College -->
+                        <div class="wellness-card" style="border-left: 4px solid #B9E0F2;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>Jyoti Nivas College</h3>
+                            <p><strong>Bangalore</strong></p>
+                            <ul>
+                                <li>Premier women's institution</li>
+                                <li>Reproductive health education</li>
+                                <li>Mental wellness programs</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 4: GSSS Institute of Engineering & Technology for Women -->
+                        <div class="wellness-card" style="border-left: 4px solid #B9E0F2;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>GSSS Institute of Engineering & Technology for Women</h3>
+                            <p><strong>Mysore</strong></p>
+                            <ul>
+                                <li>Women's engineering education since 2003</li>
+                                <li>Health & wellness initiatives</li>
+                                <li>Holistic development focus</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 5: Maharani Lakshmi Ammanni College -->
+                        <div class="wellness-card" style="border-left: 4px solid #B9E0F2;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>Maharani Lakshmi Ammanni College</h3>
+                            <p><strong>Bangalore</strong></p>
+                            <ul>
+                                <li>NAAC accredited women's college</li>
+                                <li>Student health & wellness programs</li>
+                                <li>Empowerment through education</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 6: S-VYASA Yoga University -->
+                        <div class="wellness-card" style="border-left: 4px solid #B9E0F2;">
+                            <div class="wellness-icon">🧘</div>
+                            <h3>S-VYASA Yoga University</h3>
+                            <p><strong>Bangalore</strong></p>
+                            <ul>
+                                <li>Yoga, mind-body, and resilience focus</li>
+                                <li>Evidence-based student wellness research</li>
+                                <li>Therapeutic and preventive health programs</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 7: Cauvery College of Health Sciences -->
+                        <div class="wellness-card" style="border-left: 4px solid #B9E0F2;">
+                            <div class="wellness-icon">🩺</div>
+                            <h3>Cauvery College of Health Sciences</h3>
+                            <p><strong>Mysore</strong></p>
+                            <ul>
+                                <li>Advanced physiotherapy and nursing clubs</li>
+                                <li>Well-equipped skill and anatomy labs</li>
+                                <li>Holistic student development: sports & health fests</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 8: Kristu Jayanti College -->
+                        <div class="wellness-card" style="border-left: 4px solid #B9E0F2;">
+                            <div class="wellness-icon">🌿</div>
+                            <h3>Kristu Jayanti College (Autonomous)</h3>
+                            <p><strong>Bangalore</strong></p>
+                            <ul>
+                                <li>Women Empowerment, Mental Health and Hygiene Events</li>
+                                <li>Expert lectures on self-care and mental health</li>
+                                <li>Active student-led wellness clubs</li>
+                            </ul>
+                        </div>
+
+                      <!-- College 9: Jain (Deemed-to-be University), Bangalore -->
+                      <div class="wellness-card" style="border-left: 4px solid #B9E0F2;">
+                          <div class="wellness-icon">🏆</div>
+                          <h3>Jain (Deemed-to-be University)</h3>
+                          <p><strong>Bangalore</strong></p>
+                          <ul>
+                              <li>Comprehensive Physical Education and Sports program</li>
+                              <li>State-of-the-art gym, sports facilities, and training fields</li>
+                              <li>Practical internships with fitness centers and sports organisations</li>
+                              <li>Annual athletic meets and intercollegiate competitions</li>
+                              <li>Expert-led fitness training and nutrition workshops</li>
+                          </ul>
+                      </div>
+                    </div>
+
+                    <!-- Corporate Section (Keep same as before) -->
+                    <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🏢 Corporate Wellness Champions</h4>
+                    <div class="wellness-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                        <!-- Corporate 1 -->
+                        <!-- Corporate 1: Curefit (cult.fit) -->
+                      <div class="wellness-card" style="border-left: 4px solid #32B89C; background: linear-gradient(135deg, rgba(50, 184, 156, 0.05), rgba(255, 255, 255, 0.95));">
+                        <div class="wellness-icon">💼</div>
+                        <h3>Curefit (cult.fit)</h3>
+                        <p><strong>Corporate Wellness Leader</strong></p>
+                        <ul>
+                            <li><strong>Women-focused programs:</strong> PCOS management, maternity wellness, menopause support</li>
+                            <li><strong>Services:</strong> Online fitness classes, personalized nutrition plans, mental wellness sessions</li>
+                            <li><strong>Features:</strong> Ergonomics training, stress management, digital health tracking</li>
+                            <li><strong>Impact:</strong> 70% reduction in stress levels, improved sleep quality</li>
+                        </ul>
+                    </div>
+
+                    <!-- Corporate 2: Mantra Care -->
+                    <div class="wellness-card" style="border-left: 4px solid #32B89C; background: linear-gradient(135deg, rgba(50, 184, 156, 0.05), rgba(255, 255, 255, 0.95));">
+                        <div class="wellness-icon">💼</div>
+                        <h3>Mantra Care</h3>
+                        <p><strong>Women's Health & Wellness Programs</strong></p>
+                        <ul>
+                            <li><strong>Specialized care:</strong> PCOS/PCOD, hormonal balance, pregnancy support, menopause management</li>
+                            <li><strong>Services:</strong> 1-1 live coaching, multilingual support (100+ languages), mental wellness counseling</li>
+                            <li><strong>Features:</strong> Advanced health analysis, menstrual tracker, preventive care screening</li>
+                            <li><strong>Impact:</strong> Significant improvements in weight management and overall well-being</li>
+                        </ul>
+                    </div>
+
+                    <!-- Corporate 3: AddressHealth -->
+                    <div class="wellness-card" style="border-left: 4px solid #32B89C; background: linear-gradient(135deg, rgba(50, 184, 156, 0.05), rgba(255, 255, 255, 0.95));">
+                        <div class="wellness-icon">💼</div>
+                        <h3>AddressHealth</h3>
+                        <p><strong>School Health & Wellness Programs</strong></p>
+                        <ul>
+                            <li><strong>Services:</strong> In-school regular health check-ups for children</li>
+                            <li><strong>Mental health:</strong> Early screening, behavioral wellness programs</li>
+                            <li><strong>Physical health:</strong> Fitness challenges, nutrition consulting, vaccination camps</li>
+                            <li><strong>Impact:</strong> Reach of 400,000+ students across urban and semi-urban schools</li>
+                        </ul>
+                    </div>
+
+                    <!-- Corporate 4: Apollo Shine Foundation -->
+                    <div class="wellness-card" style="border-left: 4px solid #32B89C; background: linear-gradient(135deg, rgba(50, 184, 156, 0.05), rgba(255, 255, 255, 0.95));">
+                        <div class="wellness-icon">💼</div>
+                        <h3>Apollo Shine Foundation</h3>
+                        <p><strong>Corporate-School Wellness Program</strong></p>
+                        <ul>
+                            <li><strong>Health education:</strong> Child safety, digital awareness, hygiene sessions</li>
+                            <li><strong>Medical:</strong> On-call doctor support, periodic screenings for chronic conditions</li>
+                            <li><strong>Physical:</strong> Sports programs, yoga and outdoor activities</li>
+                            <li><strong>Impact:</strong> Improved health indices in participating schools</li>
+                        </ul>
+                    </div>
+
+                    <!-- Corporate 5: Kids Mental Health Foundation -->
+                    <div class="wellness-card" style="border-left: 4px solid #32B89C; background: linear-gradient(135deg, rgba(50, 184, 156, 0.05), rgba(255, 255, 255, 0.95));">
+                        <div class="wellness-icon">💼</div>
+                        <h3>Kids Mental Health Foundation</h3>
+                        <p><strong>Corporate Partnerships for Kids</strong></p>
+                        <ul>
+                            <li><strong>Programs:</strong> Emotional wellness workshops, mental health toolkits</li>
+                            <li><strong>Collaborations:</strong> CSR-funded outreach, digital health for children</li>
+                            <li><strong>Features:</strong> School counselor training, online awareness programs</li>
+                            <li><strong>Impact:</strong> Nationwide reach; new resources for parents and educators</li>
+                        </ul>
+                    </div>
+
+                    <!-- Corporate 6: Jarma Wellness -->
+                    <div class="wellness-card" style="border-left: 4px solid #32B89C; background: linear-gradient(135deg, rgba(50, 184, 156, 0.05), rgba(255, 255, 255, 0.95));">
+                        <div class="wellness-icon">💼</div>
+                        <h3>Jarma Wellness</h3>
+                        <p><strong>Preventive Health Solutions</strong></p>
+                        <ul>
+                            <li><strong>Programs:</strong> School health camps, BMI and vitals monitoring</li>
+                            <li><strong>Specialized wellness:</strong> Dental screenings, vision checks, nutrition assessment</li>
+                            <li><strong>Digital:</strong> Health apps, child wellness portals</li>
+                            <li><strong>Impact:</strong> Over 250,000 children reached through preventive care programs</li>
+                        </ul>
+                    </div>
+             </div>
+        </section>
+
+        <!-- Government Initiatives Section -->
+        <section id="government" class="section" style="display: none;">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏛️ Government Healthcare Initiatives</h2>
+            
+            <!-- Key Initiatives Overview -->
+            <div class="initiatives-banner">
+                <h3>🎯 Key Children's Vaccination Drives and Health Programs</h3>
+                <div class="initiatives-grid">
+                    <div class="initiative-item"> 
+                      <strong>Mission Indradhanush</strong> <p>Nationwide immunization drive targeting children (0-2 years) and pregnant women for full coverage of all key vaccines</p> 
+                    </div> 
+                    <div class="initiative-item"> <strong>Universal Immunization Programme (UIP)</strong> <p>Provision of free vaccines against BCG, Polio, DTP, Hepatitis B, Hib, Measles, Rubella, Rotavirus, and more at government setups</p> </div> 
+                    <div class="initiative-item"> <strong>Rashtriya Bal Swasthya Karyakram (RBSK)</strong> <p>Early identification and free treatment of 4Ds—defects at birth, diseases, deficiencies, and developmental delays (including disability) for children 0–18 years</p> </div> 
+                    <div class="initiative-item"> <strong>Janani Suraksha Yojana (JSY)</strong> <p>Cash assistance for institutional delivery to reduce maternal and child mortality</p> </div> 
+                    <div class="initiative-item"> <strong>Intensified Pulse Polio Programme</strong> <p>Supplementary OPV rounds for children under 5 to eradicate polio in India</p> </div> 
+                    <div class="initiative-item"> <strong>National Deworming Day</strong> <p>Biannual deworming of children aged 1–19 years with Albendazole, improving nutrition and health</p> </div> 
+                    <div class="initiative-item"> <strong>Mamta Scheme (West Bengal)</strong> <p>Free immunization and child healthcare services for mothers and children at government health facilities</p> </div> 
+                    <div class="initiative-item"> <strong>Sishu Saathi Scheme</strong> <p>Free pediatric cardiac surgeries for children of West Bengal at select government and private hospitals</p> </div>
+                    <div class="initiative-item"> <strong>Poshan Abhiyaan</strong> <p>Comprehensive nutrition program for children under 6, pregnant women, and lactating mothers to combat malnutrition and anemia through fortification and community engagement</p> </div> 
+                    <div class="initiative-item"> <strong>Mid-Day Meal Scheme</strong> <p>Nutritious, free cooked meals for primary and upper-primary school children to improve nutritional status and promote school attendance</p> </div>
+                    <div class="initiative-item"> <strong>Integrated Child Development Services (ICDS)</strong> <p>Provides preschool education, supplementary nutrition, immunization, health check-ups, and referral services at Anganwadi Centres for children 0–6 years and mothers</p> </div> 
+                    <div class="initiative-item"> <strong>Bal Swasthya Poshan Mah</strong> <p>Monthly child health and nutrition awareness campaign with special drives for growth monitoring, deworming, and Vitamin A supplementation</p> </div> 
+                    <div class="initiative-item"> <strong>Vitamin A Supplementation Programme</strong> <p>Biannual distribution of Vitamin A syrup to children aged 9 months to 5 years to prevent deficiency and related visual impairment</p> </div> 
+                    <div class="initiative-item"> <strong>Adolescent Health Programme (RKSK)</strong> <p>Focused services for 10–19-year-olds including nutrition, menstrual hygiene, mental health, sexual and reproductive health awareness</p> </div> 
+                    <div class="initiative-item"> <strong>Mother and Child Tracking System (MCTS)</strong> <p>Digital monitoring of antenatal, postnatal, immunization, and nutrition services to ensure timely care for mothers and children</p> </div> 
+                    <div class="initiative-item"> <strong>Operation Smile</strong> <p>Free corrective surgeries for children with cleft lip and palate, coordinated with public hospitals across West Bengal</p> </div> 
+                    <div class="initiative-item"> <strong>Mobile Medical Units (MMU)/Child Health Camps</strong> <p>Outreach vans and periodic camps in rural and remote areas providing basic healthcare, immunization, and screening for children</p> </div> 
+                    <div class="initiative-item"> <strong>Rashtriya Kishor Swasthya Karyakram (RKSK) Menstrual Hygiene Scheme</strong> <p>Provision of low-cost sanitary pads, menstrual hygiene education, and counseling for adolescent girls through schools and health centers</p> </div>
+
+
+                    <div class="initiative-item"> <strong>Balika Samriddhi Yojana</strong> <p>Promotes education and health of girl children through financial incentives and scholarships for school-going girls</p> </div> 
+                    <div class="initiative-item"> <strong>School Health Programme (SHP)</strong> <p>Annual health screenings, immunizations, and health education sessions for school children covering nutrition, hygiene, and vaccination awareness</p> </div> 
+                    <div class="initiative-item"> <strong>Safe Motherhood & Child Survival Programme</strong> <p>Antenatal, postnatal care, and institutional delivery promotion aiming to reduce maternal and child mortality and morbidity</p> </div> 
+                    <div class="initiative-item"> <strong>Child Protection Services (CPS)</strong> <p>Rescue, rehabilitation, and support for children in distress, including orphans, victims of abuse, and trafficking, through government and NGO networks</p> </div>
+                    <div class="initiative-item"> <strong>Universal Salt Iodization Programme</strong> <p>Ensures supply of iodized salt to prevent iodine deficiency disorders in children and pregnant women</p> </div> 
+                    <div class="initiative-item"> <strong>Rabindra Sishu Shiksha Prakalpa</strong> <p>Early childhood education and care centers for children aged 3-6 years, especially in underserved areas</p> </div> 
+                    <div class="initiative-item"> <strong>Village Health and Nutrition Day (VHND)</strong> <p>Monthly outreach in rural villages for immunizations, growth monitoring, nutrition counseling, and antenatal care</p> </div> 
+                    <div class="initiative-item"> <strong>ICDS Supplementary Nutrition Programme</strong> <p>Provides free supplementary nutrition to children aged 6 months-6 years, pregnant/lactating mothers at Anganwadi centers</p> </div> 
+                    <div class="initiative-item"> <strong>Swachh Bharat Mission (School Toilets & Hygiene)</strong> <p>Construction of separate toilets for boys & girls, handwashing stations, and hygiene education in primary and secondary schools</p> </div> 
+                    <div class="initiative-item"> <strong>Child Helpline (1098)</strong> <p>24-hour emergency phone service for children in need of care, protection, medical aid, or rescue</p> </div> 
+                    <div class="initiative-item"> <strong>Mother’s Absolute Affection (MAA) Programme</strong> <p>National breastfeeding promotion and counseling drive supporting newborn nutrition for optimal health</p> </div> 
+                    <div class="initiative-item"> <strong>Pulse Polio Immunization Campaign</strong> <p>Special national drives providing free polio drops to all children under 5 years twice yearly</p> </div> 
+                    <div class="initiative-item"> <strong>National Nutritional Anaemia Control Programme</strong> <p>Distribution of iron and folic acid supplementation for prevention and treatment of anaemia in children and mothers</p> </div> 
+                    <div class="initiative-item"> <strong>Child-Friendly Panchayat Initiative</strong> <p>Local governing bodies committed to child rights, safety, nutrition, education and play spaces at the community level</p> </div> 
+                    <div class="initiative-item"> <strong>Operation Red Spot (Measles-Rubella Elimination)</strong> <p>Mass immunization campaign to eliminate measles and rubella among children under 15 years</p> </div> 
+                    <div class="initiative-item"> <strong>National Programme for Control of Blindness (NPCB)</strong> <p>Vision screening, cataract surgeries, and glasses distribution for children to achieve "Vision 2020"</p> </div> 
+                    <div class="initiative-item"> <strong>District Early Intervention Centre (DEIC)</strong> <p>Specialized centers at district hospitals for screening, therapy, and rehabilitation for children with birth defects & disabilities</p> </div> 
+                    <div class="initiative-item"> <strong>Shishu Aloy Programme</strong> <p>West Bengal initiative focusing on development & education of children below 6 through better early childhood learning environments</p> </div> 
+
+                </div>
+            </div>
+
+            <!-- Interactive Map Section -->
+                <div class="map-section">
+                    <h3 style="margin-bottom: 1rem;">📍 Healthcare Drives & Centers in West Bengal Districts</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--color-text-secondary);">
+                        <strong>Districts Highlighted:</strong> Murshidabad, Bankura, Birbhum, Asansol (Paschim Bardhaman), Purulia, Bardhaman (Purba Bardhaman)
+                    </p>
+                    
+                    <!-- Google My Maps Embed -->
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/d/embed?mid=10LcqEx9WHKcxQhEku84mG6lJoVGvE-Q" 
+                            width="100%" 
+                            height="600" 
+                            style="border:0; border-radius: var(--radius-lg);" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+      
+                <!-- District-wise Healthcare Centers -->
+                <div class="district-list">
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🏥 Key Healthcare Centers by District</h3>
+                    
+                    <div class="district-card">
+                        <h4>📍 Kolkata</h4>
+                        <ul>
+                            <ul> 
+                            <li><strong>B.C. Roy Memorial Hospital for Children</strong> - Sealdah</li> 
+                            <li><strong>Institute of Child Health (ICH Kolkata)</strong> - Park Circus</li> 
+                            <li><strong>Seth Sukhlal Karnani Memorial Hospital</strong> - Kolkata</li> 
+                            <li><strong>R.G. Kar Medical College & Hospital</strong> - Shyambazar</li> 
+                            <li>Bhagirathi Neotia Woman & Child Care Centre - New Town</li> 
+                            <li>Nil Ratan Sircar Medical College & Hospital (Pediatrics) - Sealdah</li> 
+                            <li>National Medical College & Hospital (Pediatrics Unit) - Kolkata</li> 
+                            <li>Peerless Hospital & B.K. Roy Research Centre (Child Health) - Garia</li>
+                            <li>Apollo Gleneagles Hospital (Pediatrics and Neonatology) - Salt Lake</li> 
+                            <li>Calcutta Medical Research Institute (Paediatric Ward) - Alipore</li> 
+
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Birbhum</h4>
+                        <ul> 
+                          <li><strong>Suri District Hospital</strong> - Suri</li> 
+                          <li><strong>Bolpur Sub-Divisional Hospital</strong> - Bolpur</li> 
+                          <li><strong>Rampurhat Government Medical College and Hospital</strong> - Rampurhat</li> 
+                          <li>Ahmedpur Rural Hospital - Ahmedpur</li> <li>Sainthia Sahara Hospital - Sainthia</li>
+                          <li>Murarai Rural Hospital - Murarai</li> <li>Pratap Nursing Home - Prantik</li> 
+                          <li>Addyasakti Medical Centre - Bolpur</li> </ul> 
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Bankura</h4>
+                        <ul> 
+                          <li><strong>Bankura Sammilani Medical College and Hospital</strong> - Bankura</li> 
+                          <li><strong>Seva Niketan Hospital</strong> - Bankura</li> 
+                          <li><strong>Bankura Nursing Home</strong> - Bankura</li> 
+                          <li>Bishnupur Super Specialty Hospital - Bishnupur</li> 
+                          <li>Chhatna Block Primary Health Centre - Chhatna</li> 
+                          <li>Amarkanan Rural Hospital - Amarkanan</li> 
+                          <li>Kotulpur Rural Hospital - Kotulpur</li> 
+                          <li>Sarenga Block Primary Health Centre - Sarenga</li> 
+                          <li>Sonamukhi Rural Hospital - Sonamukhi</li> 
+                          <li>Bishnupur Nursing Home - Bishnupur</li> 
+                        </ul> 
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Murshidabad)</h4>
+                        <ul> 
+                          <li><strong>Murshidabad Medical College & Hospital</strong> - Berhampore</li> 
+                          <li>District Women & Child Health Centre - Berhampore</li> 
+                          <li>Community Health Centre - Kandi</li> 
+                          <li>Community Health Centre - Lalgola</li> <li>Community Health Centre - Domkal</li> 
+                          <li>Jangipur Sub-Divisional Hospital - Jangipur</li> 
+                          <li>Sankalpo Clinic Pvt. Ltd. - Ranibagan</li> 
+                          <li>Lalbagh Sub-Divisional Hospital - Lalbagh</li> </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Bardhaman</h4>
+                        <ul> 
+                          <li><strong>Burdwan Medical College & Hospital</strong> - Bardhaman</li> 
+                          <li>Dreamland Nursing Home - Baburbag</li> 
+                          <li>The Sun Hospital - Khagragorh</li> 
+                          <li>Woodlands Hospital - Bardhaman</li> 
+                          <li>Children’s Hospital & Research Institute - Kalna</li>
+                          <li>Satyanarayan Memorial Hospital - Memari</li> 
+                          <li>Railway Hospital Children’s Ward - Bardhaman</li> 
+                          <li>Subhankar Nursing Home - Bardhaman</li> </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Asansol</h4>
+                        <ul>
+                           <li><strong>Shri Hospital (Paediatrics)</strong> - Asansol</li> 
+                           <li>Asansol District Hospital - Asansol</li> 
+                           <li>Chittaranjan Central Hospital (Pediatric)</li> 
+                           <li>Burnpur Hospital (Child Health) - Burnpur</li> 
+                           <li>Eastern Railway Hospital - Asansol</li> 
+                           <li>Life Care Nursing Home - Asansol</li> 
+                           <li>Mother & Child Hospital - Kulti</li> 
+                           <li>MC Child Medical Care - Asansol</li> 
+                      </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+
+           <section id="registration" class="section" style="display: none;">
+          <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Register</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; align-items: flex-start;">
+            <!-- LEFT COLUMN: Registration -->
+            <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+              <div class="info-card" style="width: 100%; margin: 0; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                  <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Stay Informed About Children's Health</h3>
+                  <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Subscribe to receive monthly health tips, screening reminders, and updates on child health topics.</p>
+                </div>
+                <form id="registrationForm" onsubmit="handleRegistration(event)">
+                  <div style="margin-bottom: 1.5rem;">
+                    <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                      👤 Full Name *
+                    </label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name"
+                      style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                      onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                      onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                  </div>
+                  <div style="margin-bottom: 1.5rem;">
+                    <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                      📧 Email Address *
+                    </label>
+                    <input type="email" id="emailAddress" name="emailAddress" required placeholder="your.email@example.com"
+                      style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                      onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                      onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                  </div>
+                  <div style="margin-bottom: 1.5rem;">
+                    <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                        📍 City of Residence
+                    </label>
+                    <input type="text" id="cityOfResidence" name="cityOfResidence" placeholder="e.g., Kolkata, Delhi, Mumbai"
+                      style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                      onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                      onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                  </div>
+                  <div style="margin-bottom: 1.5rem;">
+                    <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                        📱 Phone Number (Optional)
+                    </label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+91 XXXXXXXXXX" pattern="[0-9+\-\s]+"
+                      style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                      onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                      onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                  </div>
+                  <!-- Children Disease Type Selector -->
+                  <div style="margin-bottom: 1.5rem;">
+                    <label for="childrenCondType" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                      Child Disease / Condition
+                    </label>
+                    <select id="childrenCondType" name="childrenCondType" required style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);">
+                      <option value="">Select condition</option>
+                      <option value="asthma">Childhood Asthma</option>
+                      <option value="autism">Autism Spectrum Disorder</option>
+                      <option value="adhd">ADHD / Behavioral Disorders</option>
+                      <option value="allergy">Allergies (Food, Environmental)</option>
+                      <option value="obesity">Childhood Obesity</option>
+                      <option value="diabetes">Type 1 Childhood Diabetes</option>
+                      <option value="epilepsy">Epilepsy / Seizure Disorders</option>
+                      <option value="growth">Growth & Developmental Delay</option>
+                      <option value="anaemia">Anemia & Iron Deficiency</option>
+                      <option value="nutrition">Malnutrition & Vitamin Deficiency</option>
+                      <option value="heart">Congenital Heart Disease</option>
+                      <option value="infection">Recurring Infections (Tonsillitis, ENT)</option>
+                      <option value="immunization">Immunization Updates</option>
+                      <option value="cancer">Childhood Cancer (Leukemia, Lymphoma)</option>
+                      <option value="respiratory">Respiratory Infections (Bronchiolitis, Pneumonia)</option>
+                      <option value="skin">Skin Disorders (Eczema, Atopic Dermatitis)</option>
+                      <option value="gi">Digestive Issues (Constipation, Reflux, Celiac)</option>
+                      <option value="vision">Vision & Eye Conditions</option>
+                      <option value="hearing">Hearing Loss & Ear Diseases</option>
+                      <option value="urology">Urinary Tract & Kidney Conditions</option>
+                      <option value="mental">Child Mental Health & Wellbeing</option>
+                      <option value="injury">Accident, Safety, and First Aid</option>
+                      <option value="speech">Speech & Language Delay</option>
+                      <option value="adolescent">Adolescent Health (Teens)</option>
+                      <option value="allergyother">Other Chronic Allergy / Immune Disorders</option>
+                    </select>
+                  </div>
+                  <div style="margin-bottom: 1.5rem;">
+                    <label>
+                      <input type="checkbox" id="joinCommunity" name="joinCommunity">
+                      I want to join a community/support group for this disease type
+                    </label>
+                  </div>
+                  <div style="margin-bottom: 2rem;">
+                    <label style="display: flex; align-items: start; cursor: pointer;">
+                      <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                      <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                        I agree to register to this healthcare platform and understand that my data will be kept confidential and not shared with third parties. I can unsubscribe anytime.
+                      </span>
+                    </label>
+                  </div>
+                  <button type="submit"
+                      style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                      onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                    ✓ Register Now
+                  </button>
+                  <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                    🔒 Your data is kept confidential and will not be shared with third parties. Read our <a href="#" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
+                  </p>
+                </form>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN: CHILD HEALTH COMMUNITY GROUPS -->
+            <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+              <div id="patientGroupsSection" style="width: 100%; margin: 0;">
+                <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Children's Health Support Communities</h3>
+                <div id="groupsList">
+                  <div class="group-card" style="border-left: 4px solid #e53935; margin-bottom: 1rem; padding: 1rem; background: rgba(229,57,53,0.05); border-radius: 8px;">
+                      <b>Childhood Asthma Support</b><br>
+                      <span>Active Members: 154</span><br>
+                      <span>Managing asthma symptoms, medications, and triggers in children.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #ab47bc; margin-bottom: 1rem; padding: 1rem; background: rgba(171,71,188,0.05); border-radius: 8px;">
+                      <b>Autism & Neurodevelopment Circle</b><br>
+                      <span>Active Members: 138</span><br>
+                      <span>Support and resources for autism spectrum and developmental disorders.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #00acc1; margin-bottom: 1rem; padding: 1rem; background: rgba(0,172,193,0.05); border-radius: 8px;">
+                      <b>Pediatric Diabetes Families</b><br>
+                      <span>Active Members: 98</span><br>
+                      <span>Type 1 diabetes, glucose monitors, insulin care, and meal planning.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #fbc02d; margin-bottom: 1rem; padding: 1rem; background: rgba(251,192,45,0.05); border-radius: 8px;">
+                      <b>ADHD & Behavioral Support Forum</b><br>
+                      <span>Active Members: 112</span><br>
+                      <span>Tools and support for parents of children coping with ADHD and behavioral issues.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #8d6e63; margin-bottom: 1rem; padding: 1rem; background: rgba(141,110,99,0.05); border-radius: 8px;">
+                      <b>Childhood Cancer Care Collective</b><br>
+                      <span>Active Members: 64</span><br>
+                      <span>Caring for children with cancer, treatment journeys, and emotional support.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #43a047; margin-bottom: 1rem; padding: 1rem; background: rgba(67,160,71,0.05); border-radius: 8px;">
+                      <b>Growth & Development Club</b><br>
+                      <span>Active Members: 77</span><br>
+                      <span>Discuss milestones, delays, and interventions for growth and development.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #e65100; margin-bottom: 1rem; padding: 1rem; background: rgba(230,81,0,0.05); border-radius: 8px;">
+                      <b>Pediatric Nutrition & Healthy Eating</b><br>
+                      <span>Active Members: 110</span><br>
+                      <span>Healthy food habits, micronutrient deficiencies, and diet for children.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #d84040; margin-bottom: 1rem; padding: 1rem; background: rgba(216,64,64,0.05); border-radius: 8px;">
+                      <b>Infection & Immunization Updates</b><br>
+                      <span>Active Members: 92</span><br>
+                      <span>Vaccines, seasonal infections, and preventing childhood illnesses.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #fb8c00; margin-bottom: 1rem; padding: 1rem; background: rgba(251,140,0,0.05); border-radius: 8px;">
+                      <b>Pediatric Respiratory Wellness</b><br>
+                      <span>Active Members: 72</span><br>
+                      <span>Cold, cough, pneumonia, and chronic breathing trouble in kids.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #ad1457; margin-bottom: 1rem; padding: 1rem; background: rgba(173,20,87,0.05); border-radius: 8px;">
+                      <b>Digestive Health & Food Allergy Group</b><br>
+                      <span>Active Members: 56</span><br>
+                      <span>Constipation, celiac, lactose issues, food allergies, and GI motility.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #01579b; margin-bottom: 1rem; padding: 1rem; background: rgba(1,87,155,0.05); border-radius: 8px;">
+                      <b>Childhood Obesity & Metabolic Health</b><br>
+                      <span>Active Members: 54</span><br>
+                      <span>Weight management, exercise, and healthy habits for kids.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #827717; margin-bottom: 1rem; padding: 1rem; background: rgba(130,119,23,0.05); border-radius: 8px;">
+                      <b>Pediatric Allergies (Food & Environment)</b><br>
+                      <span>Active Members: 65</span><br>
+                      <span>Managing food allergies, pollen, pet dander reactions in children.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #4e342e; margin-bottom: 1rem; padding: 1rem; background: rgba(78,52,46,0.05); border-radius: 8px;">
+                      <b>Vision, Eye & Ear Health</b><br>
+                      <span>Active Members: 41</span><br>
+                      <span>Eye screenings, glasses, hearing aids, and sensory health in children.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #0d47a1; margin-bottom: 1rem; padding: 1rem; background: rgba(13,71,161,0.05); border-radius: 8px;">
+                      <b>Speech & Language Development</b><br>
+                      <span>Active Members: 50</span><br>
+                      <span>Speech therapy, language milestones, and communication aids for kids.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #fdd835; margin-bottom: 1rem; padding: 1rem; background: rgba(253,216,53,0.05); border-radius: 8px;">
+                      <b>Child Mental Health & Wellbeing</b><br>
+                      <span>Active Members: 73</span><br>
+                      <span>Anxiety, stress, ADHD, mood and behavioral health for children.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #689f38; margin-bottom: 1rem; padding: 1rem; background: rgba(104,159,56,0.05); border-radius: 8px;">
+                      <b>Child Safety, Injury & First Aid</b><br>
+                      <span>Active Members: 58</span><br>
+                      <span>Home safety, school injuries, burns, and first aid for children.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #6d4c41; margin-bottom: 1rem; padding: 1rem; background: rgba(109,76,65,0.05); border-radius: 8px;">
+                      <b>Pediatric Kidney & Urology Care</b><br>
+                      <span>Active Members: 34</span><br>
+                      <span>Bedwetting, urinary tract infections, and pediatric kidney concerns.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                  <div class="group-card" style="border-left: 4px solid #1e88e5; margin-bottom: 1rem; padding: 1rem; background: rgba(30,136,229,0.05); border-radius: 8px;">
+                      <b>Adolescent & Teen Health Collective</b><br>
+                      <span>Active Members: 53</span><br>
+                      <span>Teenage issues, puberty, social media, peer support, self-care, and vaccination.</span><br>
+                      <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section id="subscription" class="section" style="display: none;">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Subscribe</h2>
+            
+            <div class="info-card" style="max-width: 650px; margin: 0 auto; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Stay Informed About Children's Health</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Subscribe to receive monthly health tips, screening reminders, and updates on child's health topics.</p>
+                </div>
+                
+                <form id="registrationForm" onsubmit="handleRegistration(event)">
+                    <!-- Full Name -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            👤 Full Name *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName"
+                            required 
+                            placeholder="Enter your full name"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Email Address -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📧 Email Address *
+                        </label>
+                        <input 
+                            type="email" 
+                            id="emailAddress" 
+                            name="emailAddress"
+                            required 
+                            placeholder="your.email@example.com"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- City of Residence -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📍 City of Residence
+                        </label>
+                        <input 
+                            type="text" 
+                            id="cityOfResidence" 
+                            name="cityOfResidence"
+                            placeholder="e.g., Kolkata, Delhi, Mumbai"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Phone Number (Optional) -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📱 Phone Number (Optional)
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phoneNumber" 
+                            name="phoneNumber"
+                            placeholder="+91 XXXXXXXXXX"
+                            pattern="[0-9+\-\s]+"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Subscription Preferences -->
+                    <div style="margin-bottom: 2rem; padding: 1.25rem; background: rgba(139, 79, 139, 0.05); border-radius: var(--radius-md); border-left: 4px solid var(--color-primary);">
+                        <label style="display: block; margin-bottom: 0.75rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📬 I want to receive:
+                        </label>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeMonthly" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Monthly Health Tips & Articles</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeScreening" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Screening & Checkup Reminders</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeUpdates" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Health Awareness Updates</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy Consent -->
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: flex; align-items: start; cursor: pointer;">
+                            <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                            <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                                I agree to receive health-related communications and understand that my data will be kept confidential and not shared with third parties. I can unsubscribe anytime.
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button 
+                        type="submit" 
+                        style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                        ✓ Subscribe Now
+                    </button>
+                    
+                    <!-- Privacy Note -->
+                    <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                        🔒 Your data is kept confidential and will not be shared with third parties. Read our <a href="#" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
+                    </p>
+                </form>
+                
+                <!-- Success Message (Hidden by default) -->
+                <div id="registrationSuccess" style="display: none; text-align: center; padding: 2rem;">
+                    <div style="width: 80px; height: 80px; background: var(--color-success); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);">
+                        <span style="font-size: 3rem; color: white;">✓</span>
+                    </div>
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Subscription Successful!</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 1rem;">Thank you for subscribing! You'll receive our next newsletter soon.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Helplines Section -->
+        <div class="helplines-section">
+            <h3>📞 Important Helplines</h3>
+            <div class="helplines-grid">
+                <div class="helpline-card">
+                    <strong>Child Helpline</strong>
+                    <p class="helpline-number">181</p>
+                </div>
+                <div class="helpline-card">
+                    <strong>National Health Helpline</strong>
+                    <p class="helpline-number">104</p>
+                </div>
+                <div class="helpline-card">
+                    <strong>Swasthya Sathi</strong>
+                    <p class="helpline-number">1800-313-1313</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="diseaseDetailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody">
+                </div>
+        </div>
+    </div>
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p>&copy; 2025 Children's Health Awareness Platform. All rights reserved.</p>
+            <p>Disclaimer: This platform provides educational information and is not a substitute for professional medical advice.</p>
+        </div>
+    </footer>
+
+    <script src="app_childhealth.js"></script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seva Health Network</title>
+
+  <style>
+    :root {
+      --primary: #0ea5a4;
+      --primary-dark: #0d958f;
+      --text-dark: #0f172a;
+      --text-light: #475569;
+      --bg-light: #f7fafc;
+      --radius: 14px;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+      margin: 0;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    /* HERO SECTION */
+    header {
+      background: linear-gradient(90deg, #0ea5a4 0%, #06b6d4 100%);
+      color: white;
+      padding: 48px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 800;
+    }
+    header p {
+      margin: 12px auto 0;
+      font-size: 18px;
+      max-width: 700px;
+      opacity: .96;
+    }
+
+    /* Language Selector Top Right */
+    .language-select {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .language-select select {
+      padding: 10px 14px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    /* CONTEXT PARAGRAPH */
+    .context {
+      max-width: 880px;
+      margin: 36px auto 12px;
+      font-size: 18px;
+      color: var(--text-light);
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    /* GRID */
+    .grid {
+      max-width: 1080px;
+      margin: 50px auto 70px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 6px 18px rgba(2, 6, 23, 0.07);
+      transition: transform .12s ease, box-shadow .12s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e5e7eb;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 32px rgba(2, 6, 23, 0.10);
+      border-color: #d1d5db;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+    }
+    .card small {
+      font-size: 13px;
+      color: var(--primary);
+    }
+    .card p {
+      margin: 0 0 14px;
+      color: var(--text-light);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .button {
+      padding: 10px 14px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-top: auto;
+      display: inline-block;
+      transition: background .12s;
+    }
+    .button:hover {
+      background: var(--primary-dark);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      color: #64748b;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- HERO / HEADER -->
+<header>
+  <h1 data-i18n="header_title">Seva Health Network</h1>
+  <p data-i18n="header_subtitle">Trusted health platforms — localized for India</p>
+
+  <div class="language-select">
+    <select id="languageSwitcher">
+      <option value="en">English</option>
+      <option value="hi">हिन्दी</option>
+      <option value="bn">বাংলা</option>
+      <option value="kn">ಕನ್ನಡ</option>
+    </select>
+  </div>
+</header>
+
+<!-- CONTEXT PARAGRAPH -->
+<div class="context" data-i18n="context_paragraph">
+  Seva Health Network brings together specialized healthcare platforms designed for everyday Indian families.
+  Each offering—focusing on bone, cancer, child, heart, neuro, and women’s wellness—is built with evidence-based
+  guidance, localized insights, and simplified access to trusted health resources.
+</div>
+
+<!-- PLATFORMS GRID -->
+<div class="grid">
+
+  <div class="card">
+    <h3>🦴 Orthopedic Awareness & Care Platform</h3>
+    <p data-i18n="bone_desc">Bone health guidance, fracture care, rehabilitation resources and preventive plans.</p>
+    <a class="button" href="index_bonehealth.html" data-i18n="open_btn">Explore</a>
+  </div>
+
+  <div class="card">
+    <h3>🎗️ Cancer Awareness & Care Platform</h3>
+    <p data-i18n="cancer_desc">Screening, diagnostics, treatment navigation and supportive care tailored for India.</p>
+    <a class="button" href="index_cancerhealth.html" data-i18n="open_btn">Explore</a>
+  </div>
+
+  <div class="card">
+    <h3>🌈 Children's Health Platform</h3>
+    <p data-i18n="child_desc">Child growth tracking, vaccination reminders, nutrition & paediatric guidance.</p>
+    <a class="button" href="index_childhealth.html" data-i18n="open_btn">Explore</a>
+  </div>
+
+  <div class="card">
+    <h3>❤️ Cardiovascular Awareness & Care Platform</h3>
+    <p data-i18n="heart_desc">Cardiac risk screening, rehabilitation, lifestyle coaching and remote monitoring.</p>
+    <a class="button" href="index_hearthealth.html" data-i18n="open_btn">Explore</a>
+  </div>
+
+  <div class="card">
+    <h3>🧠 Neurology Awareness & Care Platform</h3>
+    <p data-i18n="neuro_desc">Neurology resources, stroke recovery, dementia support and tele-neuro consultations.</p>
+    <a class="button" href="index_neurohealth.html" data-i18n="open_btn">Explore</a>
+  </div>
+
+  <div class="card">
+    <h3>🌸 Women's Health Platform</h3>
+    <p data-i18n="women_desc">Women’s health across lifecycle: reproductive, maternal, menopause and wellness.</p>
+    <a class="button" href="index_womenhealth.html" data-i18n="open_btn">Explore</a>
+  </div>
+
+</div>
+
+<footer>
+  © <span id="year"></span> <span data-i18n="footer_text">Seva Health Network — localized health platforms</span>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const translations = {
+
+    /* ------------------- ENGLISH ------------------- */
+    en: {
+      header_title: "Seva Health Network",
+      header_subtitle: "Trusted health platforms — localized for India",
+      context_paragraph: "Seva Health Network brings together specialized healthcare platforms designed for everyday Indian families. Each offering—focusing on bone, cancer, child, heart, neuro, and women’s wellness—is built with evidence-based guidance, localized insights, and simplified access to trusted health resources.",
+      bone_desc: "Bone health guidance, fracture care, rehabilitation resources and preventive plans.",
+      cancer_desc: "Screening, diagnostics, treatment navigation and supportive care tailored for India.",
+      child_desc: "Child growth tracking, vaccination reminders, nutrition & paediatric guidance.",
+      heart_desc: "Cardiac risk screening, rehabilitation, lifestyle coaching and remote monitoring.",
+      neuro_desc: "Neurology resources, stroke recovery, dementia support and tele-neuro consultations.",
+      women_desc: "Women’s health across lifecycle: reproductive, maternal, menopause and wellness.",
+      open_btn: "Open",
+      footer_text: "Seva Health Network — localized health platforms"
+    },
+
+    /* ------------------- HINDI ------------------- */
+    hi: {
+      header_title: "सेवा हेल्थ नेटवर्क",
+      header_subtitle: "भारत के लिए स्थानीयकृत विश्वसनीय स्वास्थ्य प्लेटफ़ॉर्म",
+      context_paragraph: "सेवा हेल्थ नेटवर्क भारत के परिवारों के लिए विशेष रूप से तैयार किए गए स्वास्थ्य प्लेटफ़ॉर्म प्रदान करता है। प्रत्येक सेवा—हड्डी, कैंसर, बच्चों, हृदय, न्यूरो और महिलाओं के स्वास्थ्य पर केंद्रित—विश्वसनीय मार्गदर्शन, स्थानीय जानकारी और सरल पहुँच प्रदान करती है।",
+      bone_desc: "हड्डियों की देखभाल, फ्रैक्चर गाइडेंस, पुनर्वास और रोकथाम सुझाव।",
+      cancer_desc: "स्क्रीनिंग, डायग्नोस्टिक्स, उपचार मार्गदर्शन और सहायक देखभाल।",
+      child_desc: "बच्चे की वृद्धि, टीकाकरण, पोषण और बाल स्वास्थ्य सलाह।",
+      heart_desc: "हृदय जोखिम जांच, पुनर्वास और जीवनशैली मार्गदर्शन।",
+      neuro_desc: "न्यूरो देखभाल, स्ट्रोक रिकवरी और परामर्श सेवाएँ।",
+      women_desc: "महिलाओं के स्वास्थ्य की संपूर्ण देखभाल — मातृत्व, प्रजनन और वेलनेस।",
+      open_btn: "खोलें",
+      footer_text: "सेवा हेल्थ नेटवर्क — स्थानीयकृत स्वास्थ्य प्लेटफ़ॉर्म"
+    },
+
+    /* ------------------- BENGALI ------------------- */
+    bn: {
+      header_title: "সেবা হেলথ নেটওয়ার্ক",
+      header_subtitle: "ভারতের জন্য বিশ্বস্ত ও স্থানীয় স্বাস্থ্য প্ল্যাটফর্ম",
+      context_paragraph: "সেবা হেলথ নেটওয়ার্ক ভারতীয় পরিবারদের জন্য তৈরি বিশেষ স্বাস্থ্য প্ল্যাটফর্মগুলি একত্রিত করে। হাড়, ক্যান্সার, শিশু, হৃদয়, নিউরো এবং নারী স্বাস্থ্য—প্রতিটি সেবা নির্ভরযোগ্য তথ্য, স্থানীয় প্রেক্ষাপট এবং সহজ অ্যাক্সেস প্রদান করে।",
+      bone_desc: "হাড়ের যত্ন, ফ্র্যাকচার গাইডেন্স ও পুনর্বাসন সহায়তা।",
+      cancer_desc: "স্ক্রিনিং, ডায়াগনোস্টিক ও চিকিৎসা সহায়তা।",
+      child_desc: "শিশুর বৃদ্ধি, টিকাকরণ ও পুষ্টি সংক্রান্ত নির্দেশিকা।",
+      heart_desc: "হৃদযন্ত্র ঝুঁকি স্ক্রিনিং ও জীবনধারা পরামর্শ।",
+      neuro_desc: "নিউরো কেয়ার, স্ট্রোক রিকভারি ও অনলাইন পরামর্শ।",
+      women_desc: "নারীদের স্বাস্থ্য—মাতৃত্ব, প্রজনন, মেনোপজ ও সুস্থতা।",
+      open_btn: "খুলুন",
+      footer_text: "সেবা হেলথ নেটওয়ার্ক — স্থানীয় স্বাস্থ্য প্ল্যাটফর্ম"
+    },
+
+    /* ------------------- KANNADA ------------------- */
+    kn: {
+      header_title: "ಸೇವಾ ಹೆಲ್ತ್ ನೆಟ್ವರ್ಕ್",
+      header_subtitle: "ಭಾರತಕ್ಕೆ ಸ್ಥಳೀಯಕೃತ ವಿಶ್ವಾಸಾರ್ಹ ಆರೋಗ್ಯ ವೇದಿಕೆಗಳು",
+      context_paragraph: "ಸೇವಾ ಹೆಲ್ತ್ ನೆಟ್ವರ್ಕ್ ಭಾರತದ ಕುಟುಂಬಗಳಿಗಾಗಿ ರೂಪಿಸಿದ ವಿಶೇಷ ಆರೋಗ್ಯ ವೇದಿಕೆಗಳನ್ನು ಒಟ್ಟುಗೂಡಿಸುತ್ತದೆ. ಎಲುಬು, ಕ್ಯಾನ್ಸರ್, ಮಕ್ಕಳ, ಹೃದಯ, ನ್ಯೂರೋ ಮತ್ತು ಮಹಿಳಾ ಆರೋಗ್ಯ—ಪ್ರತಿ ಸೇವೆಯೂ ವಿಶ್ವಾಸಾರ್ಹ ಮಾರ್ಗದರ್ಶನ, ಸ್ಥಳೀಯ ಒಳನೋಟ ಮತ್ತು ಸುಲಭ ಪ್ರವೇಶವನ್ನು ನೀಡುತ್ತದೆ.",
+      bone_desc: "ಎಲುಬು ಆರೋಗ್ಯ, ಮುರಿತ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಪುನರ್ವಸತಿ.",
+      cancer_desc: "ಸ್ಕ್ರೀನಿಂಗ್, ಡಯಗ್ನೋಸಿಸ್ ಮತ್ತು ಚಿಕಿತ್ಸಾ ಸಹಾಯ.",
+      child_desc: "ಮಕ್ಕಳ ಬೆಳವಣಿಗೆ, ಲಸಿಕೆ ಮತ್ತು ಪೌಷ್ಠಿಕ ಮಾರ್ಗದರ್ಶನ.",
+      heart_desc: "ಹೃದಯ ಅಪಾಯ ಪರೀಕ್ಷೆ ಮತ್ತು ಜೀವನಶೈಲಿ ಮಾರ್ಗದರ್ಶನ.",
+      neuro_desc: "ನ್ಯೂರೋ ಕಾಳಜಿ, ಸ್ಟ್ರೋಕ್ ರಿಕವರಿ ಮತ್ತು ಸಲಹೆ.",
+      women_desc: "ಮಹಿಳೆಯರ ಆರೋಗ್ಯ—ಮಾತೃತ್ವ, ಪ್ರಜನನ ಮತ್ತು ಆರೋಗ್ಯ.",
+      open_btn: "ತೆರೆಯಿರಿ",
+      footer_text: "ಸೇವಾ ಹೆಲ್ತ್ ನೆಟ್ವರ್ಕ್ — ಸ್ಥಳೀಯ ಆರೋಗ್ಯ ವೇದಿಕೆ"
+    }
+  };
+
+  /* LANGUAGE SWITCHER */
+  const switcher = document.getElementById("languageSwitcher");
+  switcher.addEventListener("change", () => {
+    const lang = switcher.value;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      el.textContent = translations[lang][key];
+    });
+  });
+</script>
+
+</body>
+</html>

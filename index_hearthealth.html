@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiovascular Health Education Platform</title>
+    <link rel="stylesheet" href="style_hearthealth.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content-wrapper">
+        <div class="header-left">
+           <div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                
+                            <!-- Floating language selector -->
+                            <div class="language-selector-float">
+                                <label for="languageSelector">Language:</label>
+                                <select id="languageSelector">
+                                    <option value="en">English</option>
+                                    <option value="hi">Hindi</option>
+                                    <option value="bn">Bengali</option>
+                                    <option value="kn">Kannada</option>
+                                </select>
+                            </div>
+    
+                    <h1 id="platformTitle">❤️Cardiovascular Awareness & Care Platform</h1>
+                    
+                    <p id="platformSubtitle" style="margin-bottom: 1rem;">Comprehensive information on all heart conditions and prevention strategies—covering symptoms, early detection, treatment options, and risk factors for all major heart disease types and age groups. Get trustworthy guidance tailored for individuals and families in India.</p>
+                    
+
+                    <div class="nav-tabs">
+                        <!-- Your navigation buttons -->
+
+                        <button class="nav-tab active" data-section="diseases">Cardiovascular Conditions</button>
+                                <button class="nav-tab" data-section="when-to-see">When to See a Cardiologist</button>
+                                <button class="nav-tab" data-section="doctors">Find Cardiologists</button>
+                                <button class="nav-tab" data-section="prevention">Prevention & Care</button>
+                                <button class="nav-tab" data-section="faq">FAQ</button>
+                                <button class="nav-tab" data-section="chatbot">Health Assistant</button>
+                                <button class="nav-tab" data-section="government">Government Initiatives</button>
+                                <button class="nav-tab" data-section="heart-care-for-life">Heart Care for Life</button>
+                                <button class="nav-tab" data-section="registration">Register</button>
+                                <button class="nav-tab" data-section="subscription">Subscribe</button>
+                    </div>
+                </div>
+                </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+        </div>
+
+    </header>
+
+    <div class="search-container">
+        <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search for health conditions, symptoms, or treatments..." oninput="handleSearch()">
+    </div>
+
+    <div class="container">
+               <section id="diseases" class="section active">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏥 Different Types of Heart Diseases</h2>
+            <div class="diseases-grid" id="diseasesGrid"></div>
+            <div class="no-results" id="noResults" style="display: none;">
+                <h3>No results found</h3>
+                <p>Try searching with different keywords</p>
+            </div>
+            </section>
+
+        <section id="when-to-see" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">👩‍⚕️ When to See a Cardiologist</h2>
+            <div class="faq-container" id="whenToSeeContainer"></div>
+        </section>
+
+        <section id="doctors" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🔍 Find Cardiologist</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto 2rem;">
+                <label for="citySelect" style="display: block; margin-bottom: 0.75rem; font-size: 1.1rem; font-weight: 600; color: var(--color-text);">
+                    📍 Select Your City:
+                </label>
+                <select id="citySelect" onchange="filterDoctorsByCity()" style="width: 100%; padding: 1rem 1.5rem; font-size: 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); cursor: pointer; transition: all 0.3s ease;">
+                    <option value="">-- Select a City --</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                </select>
+            </div>
+
+            <div id="doctorsContainer"></div>
+
+            <p style="margin-top: 2rem; color: var(--color-text-secondary); font-style: italic; text-align: center;">
+                ⚠️ Always verify doctor credentials and call ahead to confirm availability and appointment procedures. These listings are for informational purposes. Please conduct your own research before visiting any healthcare provider.
+            </p>
+        </section>
+
+        <section id="prevention" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🛡️ Prevention & Care</h2>
+            <!-- Prevention and Care Section with Video Sidebar -->
+             <!-- Health Guidelines Bar (Full Width) -->
+                <div style="display: flex; gap: 2rem; align-items: stretch; margin-bottom: 2rem;">
+          <!-- Heart/ Cardiovascular Lifestyle Guidelines -->
+          <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+            <div class="card-header">
+              <span class="card-icon">❤️</span>
+              <h4>Essential Heart & Cardiovascular Health Practices</h4>
+            </div>
+            <ul class="guideline-list">
+              <li>Schedule regular blood pressure and cholesterol checks (at least once a year after age 40 or at-risk)</li>
+              <li>Follow a heart-healthy diet high in fruits, vegetables, whole grains, nuts, seeds, and lean proteins</li>
+              <li>Limit salt, saturated fat, trans fat, and processed foods</li>
+              <li>Exercise at least 30 minutes a day, 5 days a week (brisk walking, cycling, swimming, dancing)</li>
+              <li>Maintain a healthy weight and waist circumference</li>
+              <li>Quit smoking and avoid all tobacco products</li>
+              <li>Limit or avoid alcohol consumption</li>
+              <li>Stay hydrated and manage stress through mindfulness, yoga, or social support</li>
+              <li>Prioritize 7-8 hours of restful sleep each night</li>
+              <li>Monitor blood sugar, especially if diabetic or pre-diabetic</li>
+            </ul>
+          </div>
+          <!-- Vaccination Guidelines for Cardiovascular Health -->
+          <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+            <div class="card-header">
+              <span class="card-icon">💉</span>
+              <h4>Essential Vaccinations for Heart & Vascular Health</h4>
+            </div>
+            <ul class="guideline-list">
+              <li><strong>Influenza (flu) vaccine:</strong> Reduces risk of heart attack and complications in heart disease patients</li>
+              <li><strong>COVID-19 vaccine:</strong> Critical for people with heart disease or risk factors</li>
+              <li><strong>Pneumococcal vaccine (PCV13/PPSV23):</strong> Prevents pneumonia and can reduce cardiac complications in vulnerable adults</li>
+              <li><strong>Shingles (herpes zoster) vaccine:</strong> Reduces risk of stroke and complications in people over 50</li>
+              <li><strong>Tetanus–diphtheria–pertussis (Tdap) vaccine:</strong> Important for adults; prevents disease that may strain the heart</li>
+              <li><strong>Hepatitis B vaccine:</strong> For people with heart failure, diabetes, or those on long-term care</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 2rem; align-items: stretch; margin-bottom: 2rem;">
+          <!-- Cardiovascular Screening Guidelines -->
+          <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+            <div class="card-header">
+              <span class="card-icon">🔬</span>
+              <h4>Heart & Cardiovascular Screening Guidelines</h4>
+            </div>
+            <ul class="guideline-list">
+              <li><strong>Blood Pressure:</strong> Annual screening for all adults, more frequently if high or at-risk</li>
+              <li><strong>Lipid Profile:</strong> Check cholesterol every 4-6 years (more often if high/at-risk)</li>
+              <li><strong>Blood Sugar/Diabetes:</strong> Fasting or HbA1c testing as per risk/medical advice</li>
+              <li><strong>ECG (Electrocardiogram):</strong> Baseline after age 40 or with any heart risk factors/symptoms</li>
+              <li><strong>Stress Test:</strong> If chest pain, symptoms, or high-risk profile</li>
+              <li><strong>Echo/Ultrasound:</strong> If abnormal sounds, high BP, or known heart disease</li>
+              <li><strong>Ankle-Brachial Index:</strong> Screen for peripheral artery disease in smokers, diabetics, elderly</li>
+              <li><strong>Carotid Doppler:</strong> For stroke risk assessment in selected patients</li>
+              <li><strong>Coronary Calcium Scan:</strong> May help in selected patients for risk estimation (doctor-guided)</li>
+              <li><strong>Body Mass Index (BMI):</strong> Calculate yearly or when there is weight change</li>
+            </ul>
+          </div>
+          <!-- Cardiovascular Preventive Measures -->
+          <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+            <div class="card-header">
+              <span class="card-icon">🛡️</span>
+              <h4>Preventive Measures for Heart & Vascular Health</h4>
+            </div>
+            <ul class="guideline-list">
+              <li>Take prescribed medications for blood pressure, sugar, and cholesterol as directed</li>
+              <li>Manage chronic illnesses (hypertension, diabetes, kidney disease) closely</li>
+              <li>Attend regular doctor follow-ups and heart check programs</li>
+              <li>Respond promptly to chest pain, unexplained breathlessness, or fainting – call emergency services if needed</li>
+              <li>Practice stress management (deep breathing, meditation, hobbies, professional support)</li>
+              <li>Eat a heart-healthy diet and avoid excess processed or fatty foods</li>
+              <li>Keep an emergency contact and medicine list handy</li>
+              <li>Use safe practices to prevent infections (handwashing, dental health, avoid sick contacts)</li>
+              <li>Get vaccinated as per guidelines, especially influenza and pneumococcal vaccines</li>
+              <li>Engage in social and family support programs for better recovery and healthy lifestyle</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <!-- Content Area with Sidebar -->
+        <div class="prevention-wrapper">
+        <!-- Main Content Area (Prevention Container) -->
+            <div class="prevention-content">
+                <div id="preventionContainer" class="disease-grid"></div>
+            </div>
+
+            <!-- Video Sidebar (Right Side) -->
+            <aside class="prevention-video-sidebar">
+                <div class="video-resources-card">
+                    <h3>📺 Educational Videos</h3>
+                    <p class="video-subtitle">How do doctors determine and treat cardiovascular diseases</p>
+                    
+                    <!-- Video 1: Cardio Health Awareness -->
+                    <a href="https://www.youtube.com/watch?v=CWFyxn0qDEU" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/CWFyxn0qDEU/mqdefault.jpg" alt="Cancer Stages">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🔬 Understanding heart and circulatory system</h4>
+                            <p>The Heart and Circulatory System - How They Work</p>
+                            <span class="duration">⏱️ 3 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 2: Prevent Heart disease -->
+                    <a href="https://www.youtube.com/watch?v=Fu1u11iRKAE" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/Fu1u11iRKAE/mqdefault.jpg" alt="Cure Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🤰The Heart Truth, a program sponsored by NHLBI, part of the National Institutes of Health</h4>
+                            <p>Take Action to Prevent Heart Disease</p>
+                            <span class="duration">⏱️ 10 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 3: Heart attack Treatment -->
+                    <a href="https://www.youtube.com/watch?v=P-Ed7o18hTw" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/P-Ed7o18hTw/mqdefault.jpg" alt="Future Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🎗️Emergency situation of a Heart Attack</h4>
+                            <p>What to do if having Heart Attack? | Dr K.K Saxena | Apollo Hospital Delhi</p>
+                            <span class="duration">⏱️ 2 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 4:  Risk Reduction  -->
+                    <a href="https://www.youtube.com/watch?v=mvU3w_tUIrs" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/mvU3w_tUIrs/mqdefault.jpg" alt="Palliative">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🧠Heart Disease Risk Reduction</h4>
+                            <p>8 Ways to Reduce Your Coronary Artery Disease Risk</p>
+                            <span class="duration">⏱️ 4 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 5: Coronary Artery Disease Treatment  -->
+                    <a href="https://www.youtube.com/watch?v=rv1mM7rdYUQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/rv1mM7rdYUQ/mqdefault.jpg" alt="Treating Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>💊 Coronary artery disease</h4>
+                            <p>Coronary Artery Disease Treatment - Temple Heart & Vascular Institute</p>
+                            <span class="duration">⏱️2 min</span>
+                        </div>
+                    </a>
+
+                     <!-- Video 6: Cardiovascular disease in women,  -->
+                    <a href="https://www.youtube.com/watch?v=ROJahkQj8B4" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/ROJahkQj8B4/mqdefault.jpg" alt="Treating Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>💊 Cardiovascular disease in women,</h4>
+                            <p>Ask the Heart Doctor | Women’s Heart Disease: Symptoms, Treatments & Surgery</p>
+                            <span class="duration">⏱️ 47 min</span>
+                        </div>
+                    </a>
+
+                </div>
+            </aside>
+        </div>
+            <div class="faq-container" id="preventionContainer"></div>
+        </section>
+
+        <section id="faq" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">❓Frequently Asked Questions</h2>
+            <div class="faq-container" id="faqContainer"></div>
+        </section>
+
+        <section id="chatbot" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🤖 AI Health Assistant</h2>
+            <div class="info-card" style="max-width: 900px; margin: 0 auto;">
+                  <div style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+                    <h3 style="color: white; margin-bottom: 1rem;">💬 Chat with our AI Health Advisor</h3>
+                    <p style="margin: 0; color: white; opacity: 0.95;">Get instant support on heart disease topics through our smart chatbot. Ask questions about symptoms, screening, prevention, and treatments for common and rare heart diseases across all age groups—available in English or Bengali.</p>
+                </div>
+         <div class="chatbot-wrapper">
+        <!-- Left Sidebar for Health Assistant -->
+        <aside class="chatbot-sidebar">
+            <!-- Stats Card -->
+            <div class="sidebar-card stats-card">
+                <h3>📊 Conversation Stats</h3>
+                <div class="stat-row">
+                    <span class="stat-icon">💬</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Total Messages</span>
+                        <span class="stat-value" id="totalMessages">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">✅</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Bot Responses</span>
+                        <span class="stat-value" id="botResponses">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">🔘</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Button Selections</span>
+                        <span class="stat-value" id="buttonClicks">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">⌨️</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Typed Messages</span>
+                        <span class="stat-value" id="typedMessages">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">🔗</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Conversation Chain</span>
+                        <span class="stat-value" id="conversationChain">1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Helplines Card -->
+            <div class="sidebar-card helpline-card">
+                <h3>🆘 Emergency Helplines</h3>
+                <div class="helpline-row">
+                    <span class="helpline-icon">📞</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Cardio Vascular Helpline</div>
+                        <div class="helpline-number">181</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">🏥</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">National Health</div>
+                        <div class="helpline-number">104</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">💚</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Tele-MANAS</div>
+                        <div class="helpline-number">14416</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">🚨</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Emergency</div>
+                        <div class="helpline-number">112</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">👮</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Women Safety</div>
+                        <div class="helpline-number">1091</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="sidebar-card actions-card">
+                <button class="action-btn reset-btn" onclick="resetChatbot()">
+                    <span>🔄</span> Reset Chat
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <div class="chatbot-main">
+            <div class="chat-header">
+                <h2>🤖 AI Health Assistant</h2>
+                <p>Get personalized health guidance</p>
+            </div>
+            
+
+                <div id="chatContainer" style="background: var(--color-surface); border: 2px solid var(--color-border); border-radius: var(--radius-md); height: 500px; display: flex; flex-direction: column; overflow: hidden;">
+                    <div id="chatMessages" style="flex: 1; overflow-y: auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="bot-message">
+                            <div style="background: var(--color-secondary); color: var(--color-text); padding: 1rem; border-radius: var(--radius-md); max-width: 80%;">
+                                <strong>🌸 Health Assistant:</strong><br>
+                                নমস্কার! Hello! I'm your women's health assistant. How can I help you today?<br><br>
+                                আপনি কোন ধরনের স্বাস্থ্য সমস্যা নিয়ে কথা বলতে চান?
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 2px solid var(--color-border); padding: 1rem; background: var(--color-background);">
+                        <div style="display: flex; gap: 0.75rem;">
+                            <input type="text" id="chatInput" placeholder="Type your question here... আপনার প্রশ্ন লিখুন..." style="flex: 1; padding: 0.875rem; border: 2px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; transition: all 0.3s ease;">
+                            <button id="chatSendBtn" onclick="handleChatbot()" style="background: var(--color-primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); cursor: pointer; font-weight: 500; transition: all 0.3s ease;">
+                                Send 🚀
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Wellness For Her Section -->
+        <section id="heart-care-for-life" class="section" style="display: none;">
+           <!-- Success Stories Section -->
+                <div style="margin-top: 3rem;">
+                    <h3 style="color: var(--color-primary); text-align: center; margin-bottom: 2rem; font-size: 1.8rem; font-weight: 700;">🏆 Pioneers in Cardiovascular Treatment</h3>
+                    <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 2rem;">
+                        Educational institutions and organizations championing heart health programs
+                    </p>
+
+                    <!-- Organizations Section -->
+                    <h4 style="color: var(--color-primary); margin-bottom: 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🏢 Corporates Leading Cardiovascular Awareness</h4>
+                        <div class="wellness-grid">
+                        <!-- Corporate 1 -->
+                           <!-- CORPORATE CARDIOVASCULAR HEALTH INITIATIVES -->
+
+                            <!-- Corporate 1 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">❤️</div>
+                                <h3>Apollo Hospitals Foundation</h3>
+                                <p><strong>Pan-India Heart Health Programs</strong></p>
+                                <ul>
+                                    <li>Free cardiovascular screening camps in urban & rural areas</li>
+                                    <li>Employee wellness programs on hypertension & cholesterol management</li>
+                                    <li>School children heart health education & physical fitness initiatives</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 2 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">🏥</div>
+                                <h3>Fortis Healthcare Foundation</h3>
+                                <p><strong>Workplace Cardiac Wellness</strong></p>
+                                <ul>
+                                    <li>Corporate employee heart risk assessment programs</li>
+                                    <li>Mobile heart screening units at offices & factories</li>
+                                    <li>Stress management & lifestyle modification workshops</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 3 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">💼</div>
+                                <h3>Max Healthcare Institute</h3>
+                                <p><strong>Heart Awareness Campaigns - National Level</strong></p>
+                                <ul>
+                                    <li>World Heart Day campaigns (September 29) with community participation</li>
+                                    <li>Online cardiovascular risk assessment tools & consultations</li>
+                                    <li>Free health seminars on diet, exercise, & stress reduction for corporates</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 4 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">🌐</div>
+                                <h3>Indian Heart Association (IHA)</h3>
+                                <p><strong>National Heart Disease Prevention Network</strong></p>
+                                <ul>
+                                    <li>Community heart health awareness walks & marathons</li>
+                                    <li>Educational seminars on prevention, risk factors & lifestyle</li>
+                                    <li>Advocacy for workplace heart health policies & fitness initiatives</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 5 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">👨‍⚕️</div>
+                                <h3>Bharati Vidyapeeth Deemed University</h3>
+                                <p><strong>Mumbai & Pune - Cardiac Research & Education</strong></p>
+                                <ul>
+                                    <li>Free heart health camps in collaboration with local industries</li>
+                                    <li>Student-led awareness programs on heart disease prevention</li>
+                                    <li>Research on cardiovascular epidemiology in Indian populations</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 6 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">🏢</div>
+                                <h3>Aditya Birla Group - CSR Initiative</h3>
+                                <p><strong>Multi-City Heart Health Awareness</strong></p>
+                                <ul>
+                                    <li>Employee cardiovascular wellness programs with fitness tracking</li>
+                                    <li>Annual heart screening & lipid panel camps</li>
+                                    <li>Partnerships with cardiologists for workplace wellness talks</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 7 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">✅</div>
+                                <h3>HDFC Bank Foundation</h3>
+                                <p><strong>Heart Health & Financial Wellness</strong></p>
+                                <ul>
+                                    <li>Free cardiovascular health camps in branch locations</li>
+                                    <li>Employee heart health insurance awareness programs</li>
+                                    <li>Digital awareness on heart disease risk factors & prevention</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 8 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">💚</div>
+                                <h3>Reliance Industries Foundation</h3>
+                                <p><strong>Pan-India Cardiac Wellness</strong></p>
+                                <ul>
+                                    <li>Mobile health clinics for cardiovascular screening in underserved regions</li>
+                                    <li>Funding for cardiac research at national institutions</li>
+                                    <li>Employee lifestyle programs on diet, exercise & stress management</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 9 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">🏋️</div>
+                                <h3>Asian Paints CSR - Heart for Health</h3>
+                                <p><strong>Workplace Fitness & Cardiac Awareness</strong></p>
+                                <ul>
+                                    <li>In-office gym facilities & fitness coaching programs</li>
+                                    <li>Quarterly cardiovascular health seminars by cardiologists</li>
+                                    <li>Healthy lifestyle challenges with heart health focus</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 10 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">🩺</div>
+                                <h3>Tata Consultancy Services (TCS) - Employee Wellness</h3>
+                                <p><strong>Digital Health & Cardiac Screening</strong></p>
+                                <ul>
+                                    <li>Annual cardiac risk assessment for 500,000+ employees globally</li>
+                                    <li>Telemedicine consultations with cardiologists</li>
+                                    <li>Wearable-based heart rate & activity monitoring programs</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 11 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">❤️‍🩹</div>
+                                <h3>Dr. Reddy's Laboratories Foundation</h3>
+                                <p><strong>Cardiovascular Disease Prevention in Rural India</strong></p>
+                                <ul>
+                                    <li>Free heart health camps in 50+ rural villages across 8 states</li>
+                                    <li>Training of health workers on cardiovascular screening & education</li>
+                                    <li>Subsidized cardiovascular medications for under-privileged communities</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 12 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">🏥</div>
+                                <h3>ITC Limited - Wellbeing Program</h3>
+                                <p><strong>Employee & Community Heart Health</strong></p>
+                                <ul>
+                                    <li>Comprehensive annual health check-ups including cardiac screening</li>
+                                    <li>Yoga, meditation, & fitness programs for stress reduction</li>
+                                    <li>Awareness sessions on hypertension, cholesterol & diabetes prevention</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 13 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">👩‍💼</div>
+                                <h3>Infosys Foundation - Heart Health Initiative</h3>
+                                <p><strong>Tech Community Cardiovascular Wellness</strong></p>
+                                <ul>
+                                    <li>Awareness on sedentary lifestyle risks among IT professionals</li>
+                                    <li>Standing desk & ergonomic setup recommendations</li>
+                                    <li>Regular heart health webinars with leading cardiologists</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 14 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">🌍</div>
+                                <h3>ICICI Bank Foundation - #HeartForHeart Campaign</h3>
+                                <p><strong>National Cardiovascular Awareness</strong></p>
+                                <ul>
+                                    <li>Digital campaigns on heart disease myths & prevention facts</li>
+                                    <li>Monthly heart health webinars & e-learning modules</li>
+                                    <li>Partnerships with hospitals for employee screening programs</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 15 -->
+                            <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                                <div class="wellness-icon">💪</div>
+                                <h3>Mahindra & Mahindra - Wellness at Work</h3>
+                                <p><strong>Automotive Industry Heart Health Programs</strong></p>
+                                <ul>
+                                    <li>Shift-based fitness programs addressing occupational stress</li>
+                                    <li>On-site cardiovascular screening & wellness counseling</li>
+                                    <li>Subsidized health insurance with cardiac coverage</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                  <!-- Colleges & Educational Institutes Section -->
+                    <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🎓 Colleges & Universities Championing Heart Health & Cardiovascular Wellness</h4>
+                    <div class="wellness-grid">
+
+                        <!-- College 1 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">❤️</div>
+                            <h3>AIIMS New Delhi</h3>
+                            <p><strong>New Delhi - National Excellence</strong></p>
+                            <ul>
+                                <li>Preventive Cardiology Department with research on CVD epidemiology</li>
+                                <li>Student training in cardiac care & public health initiatives</li>
+                                <li>Annual heart health awareness weeks for student community</li>
+                                <li>Free cardiovascular screening camps at educational institutions</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 2 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>Christian Medical College (CMC)</h3>
+                            <p><strong>Vellore, Tamil Nadu</strong></p>
+                            <ul>
+                                <li>50+ years of cardiovascular research & innovation</li>
+                                <li>Student-led heart health awareness in neighboring colleges</li>
+                                <li>Cardiac rehabilitation training for nursing & allied health students</li>
+                                <li>Community outreach on hypertension & lifestyle prevention</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 3 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">🏥</div>
+                            <h3>St. John's Medical College</h3>
+                            <p><strong>Bangalore - Cardiology Excellence</strong></p>
+                            <ul>
+                                <li>Established Department of Cardiology with prevention focus</li>
+                                <li>Medical student projects on cardiac risk factor awareness</li>
+                                <li>Workshops on stress management & exercise for cardiac health</li>
+                                <li>Cardiovascular disease prevention seminars in colleges</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 4 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">📚</div>
+                            <h3>Manipal Academy of Higher Education</h3>
+                            <p><strong>Manipal, Karnataka - Holistic Health Focus</strong></p>
+                            <ul>
+                                <li>Integrated health & wellness campus programs for students</li>
+                                <li>Cardiac screening camps at semester start for early detection</li>
+                                <li>Yoga & meditation programs addressing stress-induced HTN</li>
+                                <li>Peer mentoring on heart-healthy lifestyle choices</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 5 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">🫀</div>
+                            <h3>Delhi University - Delhi School of Economics</h3>
+                            <p><strong>Delhi - Student Wellness</strong></p>
+                            <ul>
+                                <li>Health education programs on cardiovascular disease prevention</li>
+                                <li>Student wellness club focusing on fitness & mental health</li>
+                                <li>Regular health fairs with free BP & basic cardiac screening</li>
+                                <li>Awareness campaigns on stress & heart health among students</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 6 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">🏃</div>
+                            <h3>National Institute of Technology (NIT) Rourkee</h3>
+                            <p><strong>Uttarakhand - Tech Community Health</strong></p>
+                            <ul>
+                                <li>Campus fitness initiatives addressing sedentary lifestyle among IT students</li>
+                                <li>Cardiology awareness workshops countering desk-job CVD risks</li>
+                                <li>Student-led projects on mobile health apps for heart monitoring</li>
+                                <li>Sports & recreation programs promoting cardiovascular fitness</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 7 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">💪</div>
+                            <h3>Bharati Vidyapeeth Deemed University</h3>
+                            <p><strong>Mumbai & Pune - Cardiac Research Hub</strong></p>
+                            <ul>
+                                <li>Dedicated Cardiac Research Centre with epidemiological studies</li>
+                                <li>Student internship programs in preventive cardiology</li>
+                                <li>Community heart health screening drives in collaboration with colleges</li>
+                                <li>Publications on CVD prevention tailored for Indian populations</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 8 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">🧘</div>
+                            <h3>Jawaharlal Nehru University (JNU)</h3>
+                            <p><strong>New Delhi - Wellness Advocacy</strong></p>
+                            <ul>
+                                <li>Health & wellness programs for student community</li>
+                                <li>Advocacy work on lifestyle disease prevention</li>
+                                <li>Free health checkups including BP & basic cardiac screening</li>
+                                <li>Collaborative research on social determinants of CVD</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 9 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">📖</div>
+                            <h3>University of Delhi - Miranda House</h3>
+                            <p><strong>Delhi - Women's Health Focus</strong></p>
+                            <ul>
+                                <li>Women's cardiovascular health education & awareness</li>
+                                <li>Menopause & hormonal CVD risk education for older students</li>
+                                <li>Mental health & stress management addressing female-specific stressors</li>
+                                <li>Fitness & wellness programs tailored for women</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 10 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>PGIMER Chandigarh</h3>
+                            <p><strong>Chandigarh - Cardiology Excellence</strong></p>
+                            <ul>
+                                <li>Advanced cardiology training & research programs</li>
+                                <li>Collaborative student projects on CVD prevention in North India</li>
+                                <li>Cardiac screening camps in neighboring medical colleges</li>
+                                <li>Training of cardiac nurses & allied health professionals</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 11 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">🌟</div>
+                            <h3>Symbiosis Institute of Health Sciences</h3>
+                            <p><strong>Pune - Preventive & Public Health Focus</strong></p>
+                            <ul>
+                                <li>Public health programs emphasizing CVD prevention strategies</li>
+                                <li>Student research on cardiovascular epidemiology in India</li>
+                                <li>Community engagement in heart health awareness</li>
+                                <li>Training in dietary interventions for HTN & cholesterol</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 12 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">🎯</div>
+                            <h3>Grant Medical College</h3>
+                            <p><strong>Mumbai - Historic Medical Excellence</strong></p>
+                            <ul>
+                                <li>Cardiology department with community outreach programs</li>
+                                <li>Student-led health camps in Mumbai colleges for cardiac screening</li>
+                                <li>Medical education emphasizing prevention & lifestyle modification</li>
+                                <li>Research on CVD trends in urban Indian populations</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 13 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">❤️‍🩹</div>
+                            <h3>Amity University</h3>
+                            <p><strong>Multiple Cities - Campus Wellness Initiatives</strong></p>
+                            <ul>
+                                <li>Comprehensive student wellness programs including cardiac fitness</li>
+                                <li>Regular health fairs with free BP monitoring & ECG screening</li>
+                                <li>Stress management workshops addressing academic stress & HTN risk</li>
+                                <li>Athletic programs promoting cardiovascular fitness</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 14 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">🏫</div>
+                            <h3>Institute of Home Economics (IHE), Delhi University</h3>
+                            <p><strong>Delhi - Nutrition & Wellness</strong></p>
+                            <ul>
+                                <li>Nutrition programs focused on heart-healthy eating for students</li>
+                                <li>Dietary counseling on low-sodium & DASH diet principles</li>
+                                <li>Research on food & cardiovascular health in Indian context</li>
+                                <li>Food awareness campaigns addressing HTN prevention through diet</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 15 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">🎓</div>
+                            <h3>Sri Ramakrishna Mission Vivekananda College</h3>
+                            <p><strong>Chennai - Holistic Student Development</strong></p>
+                            <ul>
+                                <li>Wellness programs integrating yoga & exercise for cardiac health</li>
+                                <li>Health seminars on stress, mental health, & CVD prevention</li>
+                                <li>Cardiovascular screening camps for student community</li>
+                                <li>Emphasis on lifestyle prevention & holistic wellbeing</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 16 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">💼</div>
+                            <h3>IIT Bombay - Student Wellness Center</h3>
+                            <p><strong>Mumbai - Tech Campus Health Focus</strong></p>
+                            <ul>
+                                <li>Addressing sedentary lifestyle risks among engineering students</li>
+                                <li>Fitness & cardiovascular health programs</li>
+                                <li>Mental health support for stress-induced hypertension</li>
+                                <li>Collaborative projects on health monitoring technologies</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 17 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">🌐</div>
+                            <h3>University of Hyderabad</h3>
+                            <p><strong>Hyderabad - Holistic Campus Health</strong></p>
+                            <ul>
+                                <li>Comprehensive health & wellness initiatives for student body</li>
+                                <li>Cardiovascular disease prevention research & programs</li>
+                                <li>Free screening camps addressing CVD risk factors</li>
+                                <li>Health awareness weeks emphasizing heart health</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 18 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">🏃‍♀️</div>
+                            <h3>Tamil Nadu Dr. Ambedkar Law University</h3>
+                            <p><strong>Chennai - Student Wellness</strong></p>
+                            <ul>
+                                <li>Campus fitness programs & recreational activities for all students</li>
+                                <li>Health education on work-stress & CVD prevention</li>
+                                <li>Annual health screening for student community</li>
+                                <li>Wellness cell promoting healthy lifestyle choices</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 19 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">📱</div>
+                            <h3>BITS Pilani</h3>
+                            <p><strong>Multiple Cities - Tech-Enabled Health</strong></p>
+                            <ul>
+                                <li>Innovation in digital health monitoring for student wellness</li>
+                                <li>Mobile health app development for CVD prevention</li>
+                                <li>Campus fitness initiatives using wearable technology</li>
+                                <li>Research on digital health solutions for cardiovascular care</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 20 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88;">
+                            <div class="wellness-icon">🎨</div>
+                            <h3>Banaras Hindu University (BHU)</h3>
+                            <p><strong>Varanasi - Traditional & Modern Health</strong></p>
+                            <ul>
+                                <li>Integration of traditional practices (yoga, meditation) with modern cardiology</li>
+                                <li>Student wellness programs addressing lifestyle disease prevention</li>
+                                <li>Cardiovascular health awareness campaigns</li>
+                                <li>Research on integrative approaches to heart health</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Corporate Section (Keep same as before) -->
+                   <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">❤️ Cardiovascular Health & Wellness Apps Champions</h4>
+                    <div class="wellness-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+
+                        <!-- App 1 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">❤️</div>
+                            <h3>HealthifyMe</h3>
+                            <p><strong>AI-Powered Heart Health & Fitness Companion</strong></p>
+                            <ul>
+                                <li><strong>Specialized programs:</strong> Hypertension management, heart-healthy diet plans, cholesterol control, post-MI cardiac rehabilitation</li>
+                                <li><strong>Services:</strong> Personalized nutrition guidance, real-time BP/glucose tracking, 1-on-1 coaching with certified cardiologists</li>
+                                <li><strong>Features:</strong> AI meal planner for low-sodium diets, exercise routines for heart health, stress management meditation, medication reminders</li>
+                                <li><strong>Impact:</strong> 40% users achieved BP control within 90 days; average weight loss of 8 kg improving cardiovascular health</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 2 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">🫀</div>
+                            <h3>MediBuddy (medibuddy.in)</h3>
+                            <p><strong>Comprehensive Cardiovascular Care Platform</strong></p>
+                            <ul>
+                                <li><strong>Programs:</strong> Preventive cardiology screening, arrhythmia tracking, stroke prevention, cardiac rehabilitation post-surgery</li>
+                                <li><strong>Services:</strong> 24/7 telehealth with cardiologists, home ECG/BP monitoring devices integration, medication adherence tracking</li>
+                                <li><strong>Features:</strong> Digital health records, insurance claim management, nearby cardiology clinics locator, emergency cardiac alert system</li>
+                                <li><strong>Impact:</strong> 75% increase in preventive screening adherence; 60% reduction in emergency hospitalizations</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 3 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">💓</div>
+                            <h3>Fittr</h3>
+                            <p><strong>Cardiac-Specific Fitness & Lifestyle Tracking</strong></p>
+                            <ul>
+                                <li><strong>Focus areas:</strong> Heart-rate-optimized workouts, stress reduction through biofeedback, arrhythmia-friendly exercise plans</li>
+                                <li><strong>Services:</strong> Wearable device integration (Apple Watch, Fitbit, Garmin), real-time heart rate monitoring during exercise, personalized intensity zones</li>
+                                <li><strong>Features:</strong> Daily activity goals tailored to cardiac capacity, HRV (Heart Rate Variability) tracking, recovery optimization, social challenges</li>
+                                <li><strong>Impact:</strong> 45% improvement in cardiovascular fitness within 12 weeks; sustained exercise adherence in 70% of users</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 4 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">🧘</div>
+                            <h3>Mindfulness & Heart Health (Calm)</h3>
+                            <p><strong>Stress Management for Cardiovascular Wellness</strong></p>
+                            <ul>
+                                <li><strong>Programs:</strong> Cardiac stress-relief meditations, breathing exercises for anxiety/panic, sleep optimization for heart recovery</li>
+                                <li><strong>Services:</strong> Guided mindfulness sessions (5-30 min), sleep audio for better rest, stress tracking and mood journaling</li>
+                                <li><strong>Features:</strong> HRV biofeedback during meditation, personalized relaxation playlists, expert cardiologist-approved content</li>
+                                <li><strong>Impact:</strong> 30% reduction in stress-induced BP spikes; 50% improvement in sleep quality leading to better BP control</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 5 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">🏥</div>
+                            <h3>1mg (1mg.com)</h3>
+                            <p><strong>Integrated Cardiovascular Care Ecosystem</strong></p>
+                            <ul>
+                                <li><strong>Specialized services:</strong> Online cardiology consultations, home BP monitoring device delivery, heart-healthy medicine delivery</li>
+                                <li><strong>Services:</strong> Lab tests for cardiac markers (troponin, BNP), home collection with report interpretation by cardiologists</li>
+                                <li><strong>Features:</strong> Medication reminders, prescription auto-refill for cardiac drugs, health records storage, nearby heart hospitals finder</li>
+                                <li><strong>Impact:</strong> 80% medication adherence rate; early detection of cardiac complications through regular monitoring</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 6 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">📊</div>
+                            <h3>BP Mate (Blood Pressure Companion)</h3>
+                            <p><strong>Hypertension Management & Monitoring</strong></p>
+                            <ul>
+                                <li><strong>Focus areas:</strong> Daily BP tracking with trends, medication adherence, lifestyle modification for HTN control</li>
+                                <li><strong>Services:</strong> Integration with smart BP monitors, push notifications for high readings, doctor data sharing</li>
+                                <li><strong>Features:</strong> BP targets & goals, salt intake calculator, exercise guidelines, stress reduction techniques, food sodium tracker</li>
+                                <li><strong>Impact:</strong> 55% of users achieved BP target (<130/80) within 6 months; 90% medication adherence improvement</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 7 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">💊</div>
+                            <h3>MyFitnessPal (Cardiac Edition)</h3>
+                            <p><strong>Nutrition & Weight Management for Heart Health</strong></p>
+                            <ul>
+                                <li><strong>Programs:</strong> Low-sodium diet tracking, DASH diet plans, heart-healthy calorie goals, cholesterol-lowering nutrition</li>
+                                <li><strong>Services:</strong> Food database with cardiac-specific nutrients (sodium, saturated fat, fiber), barcode scanning for instant logging</li>
+                                <li><strong>Features:</strong> Personalized macronutrient targets, sodium intake limit alerts, restaurant nutrition info, meal prep suggestions</li>
+                                <li><strong>Impact:</strong> Average 5 kg weight loss in 3 months; improved lipid profiles in 65% of users; sustained dietary adherence</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 8 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">⚡</div>
+                            <h3>Kardia (AliveCor ECG App)</h3>
+                            <p><strong>Personal ECG & Arrhythmia Detection</strong></p>
+                            <ul>
+                                <li><strong>Services:</strong> At-home ECG recording using smartphone, real-time arrhythmia detection (AFib, flutter), ECG sharing with cardiologists</li>
+                                <li><strong>Features:</strong> Portable ECG device integration, instant abnormality alerts, trend analysis, cardiology consultation through app</li>
+                                <li><strong>Impact:</strong> Early AFib detection in asymptomatic patients; 50% reduction in ER visits due to palpitations; informed treatment decisions</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 9 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">🚴</div>
+                            <h3>Strava (Heart-Healthy Activity Tracking)</h3>
+                            <p><strong>Cardiovascular Exercise & Community Motivation</strong></p>
+                            <ul>
+                                <li><strong>Programs:</strong> Guided cardio workouts (cycling, running, swimming), heart-rate-zone training for cardiac benefits, group challenges</li>
+                                <li><strong>Services:</strong> Social fitness community, achievement badges, real-time activity feedback, personalized route recommendations</li>
+                                <li><strong>Features:</strong> Heart rate zone tracking, VO2 max estimation, elevation gain analysis, weekly activity summaries with health insights</li>
+                                <li><strong>Impact:</strong> 65% sustained exercise compliance; average cardiorespiratory fitness improvement of 20% in 6 months</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 10 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">🏃</div>
+                            <h3>Nike Training Club (Cardiac Rehab Programs)</h3>
+                            <p><strong>Guided Exercise for Heart Recovery</strong></p>
+                            <ul>
+                                <li><strong>Focus areas:</strong> Post-MI cardiac rehabilitation, low-impact workouts, progressive strength training for cardiac patients</li>
+                                <li><strong>Services:</strong> Expert-led video workouts (10-45 min), personalized progression, form correction, beginner-friendly options</li>
+                                <li><strong>Features:</strong> Cardio & strength mix for optimal heart training, rest day recommendations, injury prevention tips, motivational coaching</li>
+                                <li><strong>Impact:</strong> 70% completion rate of cardiac rehab programs; improved exercise capacity within 8 weeks post-surgery</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 11 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">🧬</div>
+                            <h3>Thyrocare (Preventive Cardiology Panel)</h3>
+                            <p><strong>Comprehensive Cardiovascular Risk Assessment</strong></p>
+                            <ul>
+                                <li><strong>Services:</strong> Home collection for lipid profiles, cardiac markers, homocysteine, Lp(a), inflammation markers (CRP, hsCRP)</li>
+                                <li><strong>Features:</strong> AI-powered risk score calculation, personalized health recommendations, doctor video consultation included, digital reports</li>
+                                <li><strong>Impact:</strong> Early detection of elevated lipids in 35% of asymptomatic users; treatment initiation preventing 40% of potential cardiac events</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 12 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">❤️‍🩹</div>
+                            <h3>Heart Health Network (Community Support)</h3>
+                            <p><strong>Peer Support for Cardiac Patients</strong></p>
+                            <ul>
+                                <li><strong>Programs:</strong> Survivor support groups, post-MI peer mentoring, family education, emotional resilience workshops</li>
+                                <li><strong>Services:</strong> Live peer support sessions, expert Q&A with cardiologists, patient stories & testimonials, resource library</li>
+                                <li><strong>Features:</strong> Group video chats, private forums, progress sharing, motivation feeds, cardiac medication info hub</li>
+                                <li><strong>Impact:</strong> 85% reduction in depression post-MI; improved quality of life; better treatment adherence through peer encouragement</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 13 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">🍎</div>
+                            <h3>DASH Diet Companion App</h3>
+                            <p><strong>DASH Diet Implementation for Hypertension</strong></p>
+                            <ul>
+                                <li><strong>Programs:</strong> Structured 12-week DASH protocol, low-sodium meal plans, daily sodium tracking, potassium & magnesium optimization</li>
+                                <li><strong>Services:</strong> Weekly meal planning, grocery lists with cardiac-friendly items, restaurant guide with DASH options</li>
+                                <li><strong>Features:</strong> Recipe suggestions (>500 DASH meals), nutrition labels scanned for sodium content, family meal planning, cooking tips</li>
+                                <li><strong>Impact:</strong> Average BP reduction of 10-15 mmHg within 8 weeks; sustained dietary adherence leading to long-term HTN control</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 14 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">🚨</div>
+                            <h3>Cardiac Alert & Emergency Response</h3>
+                            <p><strong>Real-Time Cardiac Emergency Support</strong></p>
+                            <ul>
+                                <li><strong>Services:</strong> One-tap emergency call routing to nearest cardiac hospital, ambulance dispatch coordination, cardiology telemedicine during events</li>
+                                <li><strong>Features:</strong> Emergency contact notification, real-time location sharing with hospital, medical history pre-filled for ER, AED locator nearby</li>
+                                <li><strong>Impact:</strong> Average response time reduced from 15 to 8 minutes; improved survival rates in acute MI; reduced door-to-balloon time</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 15 -->
+                        <div class="wellness-card" style="border-left: 4px solid #f77f88; background: linear-gradient(135deg, rgba(247, 127, 136, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">📱</div>
+                            <h3>Wearable Health Integration Hub</h3>
+                            <p><strong>Unified Cardiovascular Monitoring via Wearables</strong></p>
+                            <ul>
+                                <li><strong>Compatible devices:</strong> Apple Watch, Fitbit, Garmin, Samsung Galaxy Watch, Oura Ring for continuous HR/HRV/BP monitoring</li>
+                                <li><strong>Services:</strong> Cloud sync of all vital data, AI anomaly detection, cardiology dashboard for clinical review, trend analysis</li>
+                                <li><strong>Features:</strong> ECG recordings on compatible watches, SPO2 tracking, sleep & recovery insights, exercise recommendations based on current state</li>
+                                <li><strong>Impact:</strong> Proactive early warning system catching 80% of cardiac anomalies before patient symptoms; data-driven cardiology decisions</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+        </section>
+
+        <!-- Government Initiatives Section -->
+        <section id="government" class="section" style="display: none;">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏛️ Government Healthcare Initiatives in West Bengal</h2>
+            
+            <!-- Key Initiatives Overview -->
+            <div class="initiatives-banner">
+               <h3>❤️ Major Cardiovascular Health Initiatives (Govt. of India)</h3>
+                <div class="initiatives-grid">
+                    <!-- Initiative 1 -->
+                    <div class="initiative-item">
+                        <strong>Ayushman Bharat - PMJAY (AB-PM-JAY)</strong>
+                        <p>Health cover up to ₹5 lakh per family/year for secondary & tertiary cardiovascular care (bypass surgery, angioplasty, valve replacement) at empanelled hospitals nationwide</p>
+                    </div>
+
+                    <!-- Initiative 2 -->
+                    <div class="initiative-item">
+                        <strong>National Programme for Prevention and Control of Cancer, Diabetes, Cardiovascular Diseases and Stroke (NPCDCS)</strong>
+                        <p>Population-based screening for hypertension, high cholesterol, and CVD risk factors; strengthening cardiovascular care infrastructure in primary health centers; blood pressure monitoring camps</p>
+                    </div>
+
+                    <!-- Initiative 3 -->
+                    <div class="initiative-item">
+                        <strong>Pradhan Mantri Swasthya Suraksha Yojana (PMSSY)</strong>
+                        <p>Establishing AIIMS-like institutes and upgrading existing government medical colleges with advanced cardiology, cardiac surgery, and interventional cardiology facilities</p>
+                    </div>
+
+                    <!-- Initiative 4 -->
+                    <div class="initiative-item">
+                        <strong>National Health Mission (NHM) - Cardiovascular Screening</strong>
+                        <p>Free routine screening for hypertension, diabetes, and CVD risk at all primary health centers, sub-centers, and Auxiliary Nurse Midwife (ANM) clinics; awareness camps on heart health</p>
+                    </div>
+
+                    <!-- Initiative 5 -->
+                    <div class="initiative-item">
+                        <strong>National Heart Care Services Network</strong>
+                        <p>Setting up cardiac care hubs in district hospitals; telemedicine consultations with cardiologists; emergency cardiac services in tier-2 and tier-3 cities</p>
+                    </div>
+
+                    <!-- Initiative 6 -->
+                    <div class="initiative-item">
+                        <strong>Rashtriya Arogya Nidhi (RAN)</strong>
+                        <p>Financial assistance for poor and below-poverty-line patients undergoing expensive cardiac procedures (CABG, angioplasty, valve replacement) in government hospitals</p>
+                    </div>
+
+                    <!-- Initiative 7 -->
+                    <div class="initiative-item">
+                        <strong>Integrated Disease Surveillance Programme (IDSP) - CVD Module</strong>
+                        <p>Monitoring and surveillance of cardiovascular disease incidence, mortality, and risk factors for evidence-based policy decisions and resource allocation</p>
+                    </div>
+
+                    <!-- Initiative 8 -->
+                    <div class="initiative-item">
+                        <strong>State Health Resource Centre (SHRC) CVD Programs</strong>
+                        <p>State-run initiatives for hypertension awareness, lifestyle modification programs, diet counseling, and exercise promotion in schools and communities</p>
+                    </div>
+
+                    <!-- Initiative 9 -->
+                    <div class="initiative-item">
+                        <strong>Mobile Medical Units (MMUs) - Cardiac Screening</strong>
+                        <p>Mobile screening vans in rural and semi-urban areas for free blood pressure checks, ECG, and lipid profiling; referral to nearest cardiac center if needed</p>
+                    </div>
+
+                    <!-- Initiative 10 -->
+                    <div class="initiative-item">
+                        <strong>National Hypertension Control Programme</strong>
+                        <p>Systematic identification and management of hypertensive patients in primary care settings; free antihypertensive medications at government health centers; target: control 50% of diagnosed hypertensives</p>
+                    </div>
+
+                    <!-- Initiative 11 -->
+                    <div class="initiative-item">
+                        <strong>Indradhanush Nutritional Awareness Program</strong>
+                        <p>Government health education on heart-healthy diets, reducing salt intake, increasing fruits/vegetables; coordination with nutrition departments in schools</p>
+                    </div>
+
+                    <!-- Initiative 12 -->
+                    <div class="initiative-item">
+                        <strong>National Tobacco Control Programme (NTCP) - CVD Prevention</strong>
+                        <p>Campaigns to reduce tobacco use (leading CVD risk factor); school-based education; workplace smoking bans; taxation on tobacco products</p>
+                    </div>
+
+                    <!-- Initiative 13 -->
+                    <div class="initiative-item">
+                        <strong>Fit India Movement (Ministry of Sports)</strong>
+                        <p>National campaign promoting fitness, exercise, yoga, and sports; school & workplace fitness programs; marathon events for cardiovascular awareness</p>
+                    </div>
+
+                    <!-- Initiative 14 -->
+                    <div class="initiative-item">
+                        <strong>NITI Aayog - Heart Health Strategy Document</strong>
+                        <p>Policy recommendations for prevention, early detection, and treatment of CVD; focus on strengthening cardiac care infrastructure in tier-2 cities</p>
+                    </div>
+
+                    <!-- Initiative 15 -->
+                    <div class="initiative-item">
+                        <strong>Indian Council of Medical Research (ICMR) - CVD Research</strong>
+                        <p>Conducting epidemiological studies on cardiovascular disease burden, risk factors, and outcomes in Indian populations; funding research on affordable interventions</p>
+                    </div>
+
+                    <!-- Initiative 16 -->
+                    <div class="initiative-item">
+                        <strong>All India Institute of Medical Sciences (AIIMS) - Preventive Cardiology Wing</strong>
+                        <p>National-level training, research, and clinical services for cardiovascular disease prevention; public awareness campaigns; cardiac rehabilitation programs</p>
+                    </div>
+
+                    <!-- Initiative 17 -->
+                    <div class="initiative-item">
+                        <strong>Post Graduate Institute of Medical Education & Research (PGIMER) Chandigarh</strong>
+                        <p>Referral center for advanced cardiac care; training of cardiac surgeons and cardiologists; research on CVD epidemiology in North India</p>
+                    </div>
+
+                    <!-- Initiative 18 -->
+                    <div class="initiative-item">
+                        <strong>Institute of Cardiovascular Diseases Bengaluru</strong>
+                        <p>Dedicated government institute for cardiac patient care, training, and research; subsidized cardiac procedures for economically weaker sections</p>
+                    </div>
+
+                    <!-- Initiative 19 -->
+                    <div class="initiative-item">
+                        <strong>Fortis ESI Labour Act - Employee Health Insurance for CVD</strong>
+                        <p>Government-mandated health insurance for organized sector workers covering cardiac procedures, medications, and rehabilitation</p>
+                    </div>
+
+                    <!-- Initiative 20 -->
+                    <div class="initiative-item">
+                        <strong>State-Level Heart Registries & Data Collection</strong>
+                        <p>Many states maintaining cardiac disease registries for trend monitoring; data used to guide prevention strategies and resource allocation</p>
+                    </div>
+
+                    <!-- Initiative 21 -->
+                    <div class="initiative-item">
+                        <strong>National Diabetes and Cardiovascular Disease Prevention Program (NDCVDP)</strong>
+                        <p>Coordinated efforts for screening, early detection, and management of diabetes and hypertension to prevent CVD; partnership with NGOs and private hospitals</p>
+                    </div>
+
+                    <!-- Initiative 22 -->
+                    <div class="initiative-item">
+                        <strong>School Health Programme - CVD Awareness</strong>
+                        <p>Incorporating cardiovascular health, nutrition, and fitness in school curricula; annual health checkups including BP screening in government schools</p>
+                    </div>
+
+                    <!-- Initiative 23 -->
+                    <div class="initiative-item">
+                        <strong>RSBY (Rashtriya Swasthya Bima Yojana) - Cardiac Coverage</strong>
+                        <p>Health insurance for unorganized sector workers with coverage for hospitalization costs for acute coronary syndrome and other cardiac emergencies</p>
+                    </div>
+
+                    <!-- Initiative 24 -->
+                    <div class="initiative-item">
+                        <strong>National AYUSH Mission (NAM) - Cardiac Wellness</strong>
+                        <p>Integration of Yoga, Ayurveda, and traditional medicine for cardiovascular health maintenance, stress reduction, and cardiac rehabilitation</p>
+                    </div>
+
+                    <!-- Initiative 25 -->
+                    <div class="initiative-item">
+                        <strong>Central Government Health Scheme (CGHS) - Cardiac Services</strong>
+                        <p>Comprehensive cardiac care (consultation, investigations, surgery) for central government employees and retirees at CGHS-empanelled hospitals</p>
+                    </div>
+
+                    <!-- Initiative 26 -->
+                    <div class="initiative-item">
+                        <strong>Jan Arogya Abhiyan (Campaign for Health)</strong>
+                        <p>Community-based awareness on NCDs including CVD; village health guides trained in hypertension detection; linkage with health centers</p>
+                    </div>
+
+                    <!-- Initiative 27 -->
+                    <div class="initiative-item">
+                        <strong>Monitoring of CVD Risk Factors in National Surveillance Data (GSHS, CISH)</strong>
+                        <p>Global School-based Health Surveys and India's own chronic disease surveillance to track HTN, obesity, and CVD burden in youth and adults</p>
+                    </div>
+
+                    <!-- Initiative 28 -->
+                    <div class="initiative-item">
+                        <strong>Free Antihypertensive & Statin Medications at Government Pharmacies</strong>
+                        <p>Availability of essential cardiac medications (beta-blockers, ACE inhibitors, calcium channel blockers, statins) free-of-cost at public health centers</p>
+                    </div>
+
+                    <!-- Initiative 29 -->
+                    <div class="initiative-item">
+                        <strong>District Hospital Cardiology Services Strengthening</strong>
+                        <p>Government investment in upgrading district hospital cardiac wards, ECG machines, echocardiography equipment, and trained cardiac staff</p>
+                    </div>
+
+                    <!-- Initiative 30 -->
+                    <div class="initiative-item">
+                        <strong>World Heart Day & National Heart Health Campaign (September-October)</strong>
+                        <p>Annual national campaign by Ministry of Health on CVD awareness; media campaigns, community events, marathon runs; distribution of educational materials</p>
+                    </div>
+                </div>
+
+            <!-- Interactive Map Section -->
+                <div class="map-section">
+                    <h3 style="margin-bottom: 1rem;">📍 Healthcare Drives & Centers in West Bengal Districts</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--color-text-secondary);">
+                        <strong>Districts Highlighted:</strong> Murshidabad, Bankura, Birbhum, Asansol (Paschim Bardhaman), Purulia, Bardhaman (Purba Bardhaman)
+                    </p>
+                    
+                    <!-- Google My Maps Embed -->
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/d/embed?mid=10LcqEx9WHKcxQhEku84mG6lJoVGvE-Q" 
+                            width="100%" 
+                            height="600" 
+                            style="border:0; border-radius: var(--radius-lg);" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+      
+                <!-- District-wise Healthcare Centers -->
+                <div class="district-list">
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🏥 Key Healthcare Centers by District</h3>
+                    
+                   <div class="district-card">
+                        <h4>📍 Murshidabad</h4>
+                        <ul>
+                            <li><strong>Murshidabad Medical College & Hospital</strong> - Berhampore</li>
+                            <li>District Women & Child Health Centre - Berhampore</li>
+                            <li>Community Health Centres in Kandi, Lalgola, Domkal</li>
+                            <li>District Cancer Screening OPD - Berhampore</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Bankura</h4>
+                        <ul>
+                            <li><strong>Bankura Sammilani Medical College</strong> - Bankura</li>
+                            <li>Swasthya Sathi Cancer Care Partner Hospitals</li>
+                            <li>AYUSH Suswasthya Kendras across blocks</li>
+                            <li>District Cancer Clinic - Bankura</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Birbhum</h4>
+                        <ul>
+                            <li><strong>Rampurhat Government Medical College</strong> - Rampurhat</li>
+                            <li>Suri District Hospital Cancer Screening OPD</li>
+                            <li>Community Health Centres in Bolpur, Suri</li>
+                            <li>Mobile Oncology Camp - rural blocks</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Asansol (Paschim Bardhaman)</h4>
+                        <ul>
+                            <li><strong>Asansol District Hospital</strong> - Asansol</li>
+                            <li>Durgapur Sub-Divisional Hospital</li>
+                            <li>Women's health camps & cancer screening drives</li>
+                            <li>District Cancer Chemotherapy Unit - Durgapur</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Purulia</h4>
+                        <ul>
+                            <li><strong>Purulia Government Medical College</strong> - Purulia</li>
+                            <li>Muktidhara Initiative for tribal women</li>
+                            <li>Mobile health vans for remote cancer screening</li>
+                            <li>Cancer Clinic at District Hospital</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Bardhaman (Purba Bardhaman)</h4>
+                        <ul>
+                            <li><strong>Burdwan Medical College & Hospital</strong> - Bardhaman</li>
+                            <li>Maternal health & cancer screening under Swasthya Ingit</li>
+                            <li>District health centres in Katwa, Kalna</li>
+                            <li>Women's Oncology OPD - Bardhaman</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Kolkata</h4>
+                        <ul>
+                            <li><strong>Nil Ratan Sircar Medical College & Hospital</strong> - Kolkata</li>
+                            <li>Chittaranjan National Cancer Institute</li>
+                            <li>PG Hospital Cancer Centre</li>
+                            <li>Swasthya Sathi empanelled private cancer hospitals</li>
+                            <li>Mobile diagnostic & outreach camps in slum/rural blocks</li>
+                        </ul>
+                    </div>
+                </section>
+
+
+                  <section id="registration" class="section" style="display: none;">
+                  <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Register</h2>
+                  <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; align-items: flex-start;">
+                    <!-- LEFT COLUMN: Registration -->
+                    <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+                      <div class="info-card" style="width: 100%; margin: 0; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+                            <div style="text-align: center; margin-bottom: 2rem;">
+                               <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Stay Informed About Cardio Health</h3>
+                               <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Subscribe to receive monthly health tips, screening reminders, and updates on cancer and cardiac health topics.</p>
+                            </div>
+                            <form id="registrationForm" onsubmit="handleRegistration(event)">
+                               <!-- Full Name -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  👤 Full Name *
+                                  </label>
+                                  <input
+                                     type="text"
+                                     id="fullName"
+                                     name="fullName"
+                                     required
+                                     placeholder="Enter your full name"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Email Address -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📧 Email Address *
+                                  </label>
+                                  <input
+                                     type="email"
+                                     id="emailAddress"
+                                     name="emailAddress"
+                                     required
+                                     placeholder="your.email@example.com"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- City of Residence -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📍 City of Residence
+                                  </label>
+                                  <input
+                                     type="text"
+                                     id="cityOfResidence"
+                                     name="cityOfResidence"
+                                     placeholder="e.g., Kolkata, Delhi, Mumbai"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Phone Number (Optional) -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📱 Phone Number (Optional)
+                                  </label>
+                                  <input
+                                     type="tel"
+                                     id="phoneNumber"
+                                     name="phoneNumber"
+                                     placeholder="+91 XXXXXXXXXX"
+                                     pattern="[0-9+\-\s]+"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Cardio Disease Type Selector -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="cardioType" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  Cardio Disease / Condition
+                                  </label>
+                                  <select id="cardioType" name="cardioType" required style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);">
+                                     <option value="">Select condition</option>
+                                     <option value="general">General Heart Health</option>
+                                     <option value="hypertension">Hypertension (High Blood Pressure)</option>
+                                     <option value="coronary_artery">Coronary Artery Disease</option>
+                                     <option value="heart_attack">Heart Attack</option>
+                                     <option value="arrhythmia">Arrhythmia</option>
+                                     <option value="heart_failure">Heart Failure</option>
+                                     <option value="stroke">Stroke</option>
+                                     <option value="congenital">Congenital Heart Disease</option>
+                                     <option value="peripheral">Peripheral Artery Disease</option>
+                                     <option value="valve">Heart Valve Disease</option>
+                                     <option value="aortic">Aortic Disease</option>
+                                     <option value="women">Women's Heart Health</option>
+                                     <option value="men">Men's Cardio Wellbeing</option>
+                                     <option value="cholesterol">Cholesterol & Lipid Disorders</option>
+                                     <option value="cardiac_rehab">Cardiac Rehabilitation</option>
+                                     <option value="young_adults">Young Hearts/Adults</option>
+                                     <option value="senior">Senior Heart Wellness</option>
+                                     <option value="diet">Heart-Healthy Diet & Lifestyle</option>
+                                     <option value="smoking_cessation">Smoking Cessation (Cardiac)</option>
+                                     <option value="family_support">Family & Caregiver Cardio Support</option>
+                                     <option value="rare">Rare Cardiac Diseases</option>
+                                  </select>
+                               </div>
+                               <!-- Join Group Checkbox -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label>
+                                  <input type="checkbox" id="joinCommunity" name="joinCommunity">
+                                  I want to join a community/support group for my disease type
+                                  </label>
+                               </div>
+                               <!-- Privacy Consent -->
+                               <div style="margin-bottom: 2rem;">
+                                  <label style="display: flex; align-items: start; cursor: pointer;">
+                                  <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                                  <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                                  I agree to register to this healthcare platform and understand that my data will be kept confidential and not shared with third parties. I can unsubscribe anytime.
+                                  </span>
+                                  </label>
+                               </div>
+                               <!-- Submit Button -->
+                               <button
+                                  type="submit"
+                                  style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                                  onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                                  onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                               ✓ Register Now
+                               </button>
+                               <!-- Privacy Note -->
+                               <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                                  🔒 Your data is kept confidential and will not be shared with third parties. Read our <a href="#" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
+                               </p>
+                            </form>
+                         </div>
+                      </div>
+
+                      <!-- RIGHT COLUMN: Join Groups / Communities -->
+                            <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+                              <div id="patientGroupsSection" style="width: 100%; margin: 0;">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Cardio Support Communities</h3>
+                                <div id="groupsList">
+                               <!-- Cancer Groups -->
+                             <div class="group-card" style="border-left: 4px solid #e53935; margin-bottom: 1rem; padding: 1rem; background: rgba(229,57,53,0.05); border-radius: 8px;">
+                               <b>Heart Health Support Hub</b><br>
+                               <span>Active Members: 312</span><br>
+                               <span>Connect, ask general questions, and get guidance for any heart concern.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #fbc02d; margin-bottom: 1rem; padding: 1rem; background: rgba(251,192,45,0.05); border-radius: 8px;">
+                               <b>Hypertension & BP Warriors</b><br>
+                               <span>Active Members: 228</span><br>
+                               <span>Tips, tracking routines, medication queries, and lifestyle support.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #1565c0; margin-bottom: 1rem; padding: 1rem; background: rgba(21,101,192,0.05); border-radius: 8px;">
+                               <b>Coronary Artery Disease Circle</b><br>
+                               <span>Active Members: 194</span><br>
+                               <span>Discussion group for CAD, treatment stories, and living well.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #8d6e63; margin-bottom: 1rem; padding: 1rem; background: rgba(141,110,99,0.05); border-radius: 8px;">
+                               <b>Myocardial Infarction Survivors</b><br>
+                               <span>Active Members: 121</span><br>
+                               <span>Support, survivor stories, rehab and heart-healthy lifestyle discussion.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #fbc02d; margin-bottom: 1rem; padding: 1rem; background: rgba(251,192,45,0.05); border-radius: 8px;">
+                               <b>Heart Rhythm & Arrhythmia Support</b><br>
+                               <span>Active Members: 143</span><br>
+                               <span>For those with atrial fibrillation and all arrhythmia concerns.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #43a047; margin-bottom: 1rem; padding: 1rem; background: rgba(67,160,71,0.05); border-radius: 8px;">
+                               <b>Congestive Heart Failure Community</b><br>
+                               <span>Active Members: 87</span><br>
+                               <span>Share care plans, symptom trackers, dietary and daily support.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #3949ab; margin-bottom: 1rem; padding: 1rem; background: rgba(57,73,171,0.05); border-radius: 8px;">
+                               <b>Stroke Prevention & Recovery</b><br>
+                               <span>Active Members: 178</span><br>
+                               <span>For stroke survivors, caregivers, and all preventative questions.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #ab47bc; margin-bottom: 1rem; padding: 1rem; background: rgba(171,71,188,0.05); border-radius: 8px;">
+                               <b>Congenital Heart Defects Peers</b><br>
+                               <span>Active Members: 59</span><br>
+                               <span>Community for adults and children living with CHD.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #ffa000; margin-bottom: 1rem; padding: 1rem; background: rgba(255,160,0,0.05); border-radius: 8px;">
+                               <b>Peripheral Artery Disease Network</b><br>
+                               <span>Active Members: 76</span><br>
+                               <span>Focused on PAD, leg pain, mobility, and circulation tips.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #5d4037; margin-bottom: 1rem; padding: 1rem; background: rgba(93,64,55,0.05); border-radius: 8px;">
+                               <b>Heart Valve Support Group</b><br>
+                               <span>Active Members: 66</span><br>
+                               <span>For discussions on valve disease, repair, and replacement.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #004d40; margin-bottom: 1rem; padding: 1rem; background: rgba(0,77,64,0.05); border-radius: 8px;">
+                               <b>Aortic Disease Awareness Group</b><br>
+                               <span>Active Members: 31</span><br>
+                               <span>Aneurysm, dissection, genetic risk, and surgical support.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #c2185b; margin-bottom: 1rem; padding: 1rem; background: rgba(194,24,91,0.05); border-radius: 8px;">
+                               <b>Women's Heart Health Collective</b><br>
+                               <span>Active Members: 137</span><br>
+                               <span>Community for heart issues unique to women, from pregnancy to menopause.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #1976d2; margin-bottom: 1rem; padding: 1rem; background: rgba(25,118,210,0.05); border-radius: 8px;">
+                               <b>Men's Cardio Wellbeing Network</b><br>
+                               <span>Active Members: 78</span><br>
+                               <span>Male-specific heart risk awareness, lifestyle and mental health.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #ffb300; margin-bottom: 1rem; padding: 1rem; background: rgba(255,179,0,0.05); border-radius: 8px;">
+                               <b>Cholesterol & Lipid Management Forum</b><br>
+                               <span>Active Members: 103</span><br>
+                               <span>Questions on statins, triglycerides, and healthy nutrition.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #689f38; margin-bottom: 1rem; padding: 1rem; background: rgba(104,159,56,0.05); border-radius: 8px;">
+                               <b>Cardiac Rehabilitation Motivation Group</b><br>
+                               <span>Active Members: 48</span><br>
+                               <span>For post-procedure recovery, exercise tips and wellness routines.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #0288d1; margin-bottom: 1rem; padding: 1rem; background: rgba(2,136,209,0.05); border-radius: 8px;">
+                               <b>Young Hearts Community</b><br>
+                               <span>Active Members: 39</span><br>
+                               <span>Heart health awareness and peer chat for ages 16-35.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #bcaaa4; margin-bottom: 1rem; padding: 1rem; background: rgba(188,170,164,0.05); border-radius: 8px;">
+                               <b>Senior Heart Wellness Group</b><br>
+                               <span>Active Members: 95</span><br>
+                               <span>Connect for heart health advice over 60, medication, and aging tips.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #388e3c; margin-bottom: 1rem; padding: 1rem; background: rgba(56,142,60,0.05); border-radius: 8px;">
+                               <b>Heart-Healthy Diet & Recipes</b><br>
+                               <span>Active Members: 112</span><br>
+                               <span>Share heart-friendly recipes and nutrition advice.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #757575; margin-bottom: 1rem; padding: 1rem; background: rgba(117,117,117,0.05); border-radius: 8px;">
+                               <b>Cardiac Smokers Quit Group</b><br>
+                               <span>Active Members: 52</span><br>
+                               <span>For quitting tobacco and reducing heart disease risk.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #6d4c41; margin-bottom: 1rem; padding: 1rem; background: rgba(109,76,65,0.05); border-radius: 8px;">
+                               <b>Families & Caregivers Cardio Support</b><br>
+                               <span>Active Members: 90</span><br>
+                               <span>Space for family, friends, and caregivers to share and support.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #512da8; margin-bottom: 1rem; padding: 1rem; background: rgba(81,45,168,0.05); border-radius: 8px;">
+                               <b>Rare Cardiac Diseases Forum</b><br>
+                               <span>Active Members: 28</span><br>
+                               <span>For myocarditis, endocarditis, inherited syndromes, and more.</span><br>
+                               <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                               <!-- Add more group cards as needed, following the pattern above. -->
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </section>
+
+
+
+        <section id="subscription" class="section" style="display: none;">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Subscribe</h2>
+            
+            <div class="info-card" style="max-width: 650px; margin: 0 auto; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Stay Informed About Women's Health</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Subscribe to receive monthly health tips, screening reminders, and updates on women's health topics.</p>
+                </div>
+                
+                <form id="registrationForm" onsubmit="handleRegistration(event)">
+                    <!-- Full Name -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            👤 Full Name *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName"
+                            required 
+                            placeholder="Enter your full name"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Email Address -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📧 Email Address *
+                        </label>
+                        <input 
+                            type="email" 
+                            id="emailAddress" 
+                            name="emailAddress"
+                            required 
+                            placeholder="your.email@example.com"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- City of Residence -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📍 City of Residence
+                        </label>
+                        <input 
+                            type="text" 
+                            id="cityOfResidence" 
+                            name="cityOfResidence"
+                            placeholder="e.g., Kolkata, Delhi, Mumbai"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Phone Number (Optional) -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📱 Phone Number (Optional)
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phoneNumber" 
+                            name="phoneNumber"
+                            placeholder="+91 XXXXXXXXXX"
+                            pattern="[0-9+\-\s]+"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Subscription Preferences -->
+                    <div style="margin-bottom: 2rem; padding: 1.25rem; background: rgba(139, 79, 139, 0.05); border-radius: var(--radius-md); border-left: 4px solid var(--color-primary);">
+                        <label style="display: block; margin-bottom: 0.75rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📬 I want to receive:
+                        </label>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeMonthly" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Monthly Health Tips & Articles</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeScreening" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Screening & Checkup Reminders</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeUpdates" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Health Awareness Updates</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy Consent -->
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: flex; align-items: start; cursor: pointer;">
+                            <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                            <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                                I agree to receive health-related communications and understand that my data will be kept confidential and not shared with third parties. I can unsubscribe anytime.
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button 
+                        type="submit" 
+                        style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                        ✓ Subscribe Now
+                    </button>
+                    
+                    <!-- Privacy Note -->
+                    <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                        🔒 Your data is kept confidential and will not be shared with third parties. Read our <a href="#" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
+                    </p>
+                </form>
+                
+                <!-- Success Message (Hidden by default) -->
+                <div id="registrationSuccess" style="display: none; text-align: center; padding: 2rem;">
+                    <div style="width: 80px; height: 80px; background: var(--color-success); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);">
+                        <span style="font-size: 3rem; color: white;">✓</span>
+                    </div>
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Subscription Successful!</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 1rem;">Thank you for subscribing! You'll receive our next newsletter soon.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Helplines Section -->
+        <div class="helplines-section">
+            <h3>📞 Important Helplines</h3>
+            <div class="helplines-grid">
+                <div class="helpline-card">
+                    <strong>Cardiovascular Helpline</strong>
+                    <p class="helpline-number">181</p>
+                </div>
+                <div class="helpline-card">
+                    <strong>National Health Helpline</strong>
+                    <p class="helpline-number">104</p>
+                </div>
+                <div class="helpline-card">
+                    <strong>Swasthya Sathi</strong>
+                    <p class="helpline-number">1800-313-1313</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="diseaseDetailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody">
+                </div>
+        </div>
+    </div>
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p>&copy; 2025 Cardiovascular Health Awareness Platform. All rights reserved.</p>
+            <p>Disclaimer: This platform provides educational information and is not a substitute for professional medical advice.</p>
+        </div>
+    </footer>
+
+   <script src="app_hearthealth.js"></script>
+</body>
+</html>

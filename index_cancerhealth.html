@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Health Education Platform</title>
+    <link rel="stylesheet" href="style_cancerhealth.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content-wrapper">
+        <div class="header-left">
+           <div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                
+                            <!-- Floating language selector -->
+                            <div class="language-selector-float">
+                                <label for="languageSelector">Language:</label>
+                                <select id="languageSelector">
+                                    <option value="en">English</option>
+                                    <option value="hi">Hindi</option>
+                                    <option value="bn">Bengali</option>
+                                    <option value="kn">Kannada</option>
+                                </select>
+                            </div>
+    
+                    <h1 id="platformTitle">🎗️ Cancer Awareness & Care Platform</h1>
+                    
+                    <p id="platformSubtitle" style="margin-bottom: 1rem;">Comprehensive information on cancer conditions and prevention strategies—covering symptoms, early detection, treatment options, and risk factors for all major cancer types and age groups. Get trustworthy guidance tailored for individuals and families in India.</p>
+                    
+               
+                    <div class="nav-tabs">
+                        <!-- Your navigation buttons -->
+
+                        <button class="nav-tab active" data-section="diseases">Health Conditions</button>
+                                <button class="nav-tab" data-section="when-to-see">When to See a Oncologist</button>
+                                <button class="nav-tab" data-section="doctors">Find Oncologists</button>
+                                <button class="nav-tab" data-section="prevention">Prevention & Care</button>
+                                <button class="nav-tab" data-section="faq">FAQ</button>
+                                <button class="nav-tab" data-section="chatbot">Health Assistant</button>
+                                <button class="nav-tab" data-section="government">Government Initiatives</button>
+                                <button class="nav-tab" data-section="cancer-care-for-life">Cancer Care for Life</button>
+                                <button class="nav-tab" data-section="registration">Register</button>
+                                <button class="nav-tab" data-section="subscription">Subscribe</button>
+                    </div>
+                </div>
+                </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+        </div>
+
+    </header>
+
+    <div class="search-container">
+        <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search for health conditions, symptoms, or treatments..." oninput="handleSearch()">
+    </div>
+
+    <div class="container">
+               <section id="diseases" class="section active">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏥 Different Types of Cancers</h2>
+            <div class="diseases-grid" id="diseasesGrid"></div>
+            <div class="no-results" id="noResults" style="display: none;">
+                <h3>No results found</h3>
+                <p>Try searching with different keywords</p>
+            </div>
+            </section>
+
+        <section id="when-to-see" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">👩‍⚕️ When to See a Oncologist</h2>
+            <div class="faq-container" id="whenToSeeContainer"></div>
+        </section>
+
+        <section id="doctors" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🔍 Find Oncologist</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto 2rem;">
+                <label for="citySelect" style="display: block; margin-bottom: 0.75rem; font-size: 1.1rem; font-weight: 600; color: var(--color-text);">
+                    📍 Select Your City:
+                </label>
+                <select id="citySelect" onchange="filterDoctorsByCity()" style="width: 100%; padding: 1rem 1.5rem; font-size: 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); cursor: pointer; transition: all 0.3s ease;">
+                    <option value="">-- Select a City --</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                </select>
+            </div>
+
+            <div id="doctorsContainer"></div>
+
+            <p style="margin-top: 2rem; color: var(--color-text-secondary); font-style: italic; text-align: center;">
+                ⚠️ Always verify doctor credentials and call ahead to confirm availability and appointment procedures. These listings are for informational purposes. Please conduct your own research before visiting any healthcare provider.
+            </p>
+        </section>
+
+        <section id="prevention" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🛡️ Prevention & Care</h2>
+            <!-- Prevention and Care Section with Video Sidebar -->
+     <!-- Health Guidelines Bar (Full Width) -->
+        <div class="health-guidelines-banner">
+            <div class="banner-header">
+                <span class="banner-icon">💡</span>
+                <h3>Health Guidelines</h3>
+                <span class="banner-subtitle">Essential Cancer Patient's Health Information</span>
+            </div>
+
+            <div style="display: flex; gap: 2rem; align-items: stretch; margin-bottom: 2rem;">
+                <div style="display: flex; gap: 2rem; align-items: stretch; margin-bottom: 2rem;">
+              <!-- Cancer Lifestyle Guidelines -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                <div class="card-header">
+                  <span class="card-icon">🌱</span>
+                  <h4>Essential Cancer Prevention & Healthy Living Practices</h4>
+                </div>
+                <ul class="guideline-list">
+                  <li>Schedule age-appropriate cancer screenings (breast, cervical, colon, oral, prostate) regularly</li>
+                  <li>Eat a high-fiber, antioxidant-rich diet (fruits, vegetables, whole grains, pulses)</li>
+                  <li>Limit processed, charred, and red meat products</li>
+                  <li>Exercise at least 150 minutes per week: brisk walking, swimming, cycling, yoga</li>
+                  <li>Maintain a healthy body weight and waist circumference</li>
+                  <li>Quit smoking; avoid tobacco, betel nut, and excessive alcohol</li>
+                  <li>Protect skin with sunscreen, hats, and coverage outdoors</li>
+                  <li>Prioritize sleep and stress management—practice mindfulness and seek social support</li>
+                  <li>Use safe practices in sexual health and avoid risky behaviors</li>
+                  <li>Stay hydrated and promote healthy digestion</li>
+                </ul>
+              </div>
+              <!-- Vaccination Guidelines for Cancer Prevention -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                <div class="card-header">
+                  <span class="card-icon">💉</span>
+                  <h4>Essential Cancer-Related Vaccinations</h4>
+                </div>
+                <ul class="guideline-list">
+                  <li><strong>HPV vaccine:</strong> Protects against cervical, anal, oral, and other HPV-related cancers</li>
+                  <li><strong>Hepatitis B vaccine:</strong> Prevents hepatitis B infection—a major liver cancer cause</li>
+                  <li><strong>Hepatitis A vaccine:</strong> For people at risk for chronic liver disease and secondary liver cancer</li>
+                  <li><strong>Influenza (flu) vaccine:</strong> Reduces infection risk in immunocompromised/cancer patients</li>
+                  <li><strong>Pneumococcal vaccine:</strong> For patients with weakened immunity during or after cancer treatment</li>
+                  <li><strong>COVID-19 vaccine:</strong> Strongly advised for all cancer patients and survivors</li>
+                  <li><strong>Varicella & shingles (herpes zoster) vaccine:</strong> Prevents viral complications in immunosuppressed patients</li>
+                  <li><strong>Haemophilus influenzae type b (Hib) vaccine:</strong> For stem cell transplant and high-risk cancer populations</li>
+                </ul>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 2rem; align-items: stretch; margin-bottom: 2rem;">
+              <!-- Cancer Screening Guidelines -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                <div class="card-header">
+                  <span class="card-icon">🔬</span>
+                  <h4>Cancer Risk & Screening Guidelines</h4>
+                </div>
+                <ul class="guideline-list">
+                  <li><strong>Breast Cancer:</strong> Annual mammogram screening after age 40, or earlier with family history</li>
+                  <li><strong>Cervical Cancer:</strong> Pap smear every 3 years for women 21–65, plus HPV testing</li>
+                  <li><strong>Colon Cancer:</strong> Colonoscopy every 10 years after age 50, or earlier for high-risk patients</li>
+                  <li><strong>Oral Cancer:</strong> Annual oral cavity and throat exam if tobacco/alcohol user</li>
+                  <li><strong>Prostate Cancer:</strong> PSA blood test and prostate exam after age 50, earlier if family risk</li>
+                  <li><strong>Skin Cancer:</strong> Dermatologist full-body exam for high risk or with suspicious moles</li>
+                  <li><strong>Liver Cancer:</strong> Ultrasound and AFP blood test for hepatitis or cirrhosis, as advised</li>
+                  <li><strong>Lung Cancer:</strong> Low-dose CT scan for smokers or chronic lung disease patients, as recommended</li>
+                  <li><strong>Genetic Counseling:</strong> For those with strong family history (BRCA, Lynch syndrome, etc.)</li>
+                  <li><strong>Immunodeficiency Risk:</strong> Infection prevention and screening for cancer patients on chemotherapy</li>
+                </ul>
+              </div>
+              <!-- Cancer Preventive Measures -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                <div class="card-header">
+                  <span class="card-icon">🛡️</span>
+                  <h4>Healthy Preventive Measures for Cancer Survivors</h4>
+                </div>
+                <ul class="guideline-list">
+                  <li>Continue regular medical follow-up and early symptom reporting for relapse screening</li>
+                  <li>Engage in physical activity during and after cancer treatment (as advised)</li>
+                  <li>Eat a balanced, nutrient-rich diet to support immune recovery</li>
+                  <li>Avoid risky health behaviors (smoking, tobacco, excessive alcohol)</li>
+                  <li>Practice safe sun exposure and self-exams for skin changes</li>
+                  <li>Maintain strong social and family support—participate in survivor communities</li>
+                  <li>Monitor for secondary cancers or treatment-related complications</li>
+                  <li>Get regular vaccinations, especially flu, pneumococcal, HPV, COVID-19</li>
+                  <li>Access mental health counseling to support recovery</li>
+                  <li>Participate in screening programs if at hereditary risk</li>
+                  <li>Inform healthcare providers about any long-term symptoms or medication effects</li>
+                  <li>Engage with local support groups and educational programs</li>
+                </ul>
+              </div>
+            </div>
+            </div>
+
+
+        <!-- Content Area with Sidebar -->
+        <div class="prevention-wrapper">
+        <!-- Main Content Area (Prevention Container) -->
+            <div class="prevention-content">
+                <div id="preventionContainer" class="disease-grid"></div>
+            </div>
+
+            <!-- Video Sidebar (Right Side) -->
+            <aside class="prevention-video-sidebar">
+                <div class="video-resources-card">
+                    <h3>📺 Educational Videos</h3>
+                    <p class="video-subtitle">How do doctors determine and treat cancer</p>
+                    
+                    <!-- Video 1: Cancer Awareness -->
+                    <a href="https://www.youtube.com/watch?v=qwCBEgjUluU" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/qwCBEgjUluU/mqdefault.jpg" alt="Cancer Stages">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🔬 Understanding Stage of Cancer</h4>
+                            <p>How different types of cancer can impact the staging</p>
+                            <span class="duration">⏱️ 6 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 2: Cure cancer -->
+                    <a href="https://www.youtube.com/watch?v=exoz7JSgOKQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/exoz7JSgOKQ/mqdefault.jpg" alt="Cure Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🤰 Cure Cancer</h4>
+                            <p>9 Warning Signs You Must Never Ignore! Doctor Explains</p>
+                            <span class="duration">⏱️ 25 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 3: Future Cancer Treatment -->
+                    <a href="https://www.youtube.com/watch?v=ItQmJt0ZNFo" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/ItQmJt0ZNFo/mqdefault.jpg" alt="Future Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🎗️ Clinical Oncology</h4>
+                            <p>Future of Cancer Treatment </p>
+                            <span class="duration">⏱️ 1 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 4: Palliative Care -->
+                    <a href="https://www.youtube.com/watch?v=eUaU6S-DtIw" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/eUaU6S-DtIw/mqdefault.jpg" alt="Palliative">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>🧠 Palliative Care</h4>
+                            <p>Introduction for Patients and their Families</p>
+                            <span class="duration">⏱️ 8 min</span>
+                        </div>
+                    </a>
+
+                    <!-- Video 5: Breast Cancer -->
+                    <a href="https://www.youtube.com/watch?v=64tUb6B0jSU" target="_blank" rel="noopener noreferrer" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/64tUb6B0jSU/mqdefault.jpg" alt="Treating Cancer">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-details">
+                            <h4>💊 Cancer Treatment</h4>
+                            <p>General Principles of Cancer Treatment</p>
+                            <span class="duration">⏱️ 68 min</span>
+                        </div>
+                    </a>
+                </div>
+            </aside>
+        </div>
+            <div class="faq-container" id="preventionContainer"></div>
+        </section>
+
+        <section id="faq" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">❓Frequently Asked Questions</h2>
+            <div class="faq-container" id="faqContainer"></div>
+        </section>
+
+        <section id="chatbot" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🤖 AI Health Assistant</h2>
+            <div class="info-card" style="max-width: 900px; margin: 0 auto;">
+                  <div style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+                    <h3 style="color: white; margin-bottom: 1rem;">💬 Chat with our AI Health Advisor</h3>
+                    <p style="margin: 0; color: white; opacity: 0.95;">Get instant support on cancer topics through our smart chatbot. Ask questions about symptoms, screening, prevention, and treatments for common and rare cancers across all age groups—available in English or Bengali.</p>
+                </div>
+         <div class="chatbot-wrapper">
+        <!-- Left Sidebar for Health Assistant -->
+        <aside class="chatbot-sidebar">
+            <!-- Stats Card -->
+            <div class="sidebar-card stats-card">
+                <h3>📊 Conversation Stats</h3>
+                <div class="stat-row">
+                    <span class="stat-icon">💬</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Total Messages</span>
+                        <span class="stat-value" id="totalMessages">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">✅</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Bot Responses</span>
+                        <span class="stat-value" id="botResponses">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">🔘</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Button Selections</span>
+                        <span class="stat-value" id="buttonClicks">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">⌨️</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Typed Messages</span>
+                        <span class="stat-value" id="typedMessages">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">🔗</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Conversation Chain</span>
+                        <span class="stat-value" id="conversationChain">1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Helplines Card -->
+            <div class="sidebar-card helpline-card">
+                <h3>🆘 Emergency Helplines</h3>
+                <div class="helpline-row">
+                    <span class="helpline-icon">📞</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Cancer Helpline</div>
+                        <div class="helpline-number">181</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">🏥</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">National Health</div>
+                        <div class="helpline-number">104</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">💚</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Tele-MANAS</div>
+                        <div class="helpline-number">14416</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">🚨</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Emergency</div>
+                        <div class="helpline-number">112</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">👮</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Cancer Patient Safety</div>
+                        <div class="helpline-number">1091</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="sidebar-card actions-card">
+                <button class="action-btn reset-btn" onclick="resetChatbot()">
+                    <span>🔄</span> Reset Chat
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <div class="chatbot-main">
+            <div class="chat-header">
+                <h2>🤖 AI Health Assistant</h2>
+                <p>Get personalized health guidance</p>
+            </div>
+            
+
+                <div id="chatContainer" style="background: var(--color-surface); border: 2px solid var(--color-border); border-radius: var(--radius-md); height: 500px; display: flex; flex-direction: column; overflow: hidden;">
+                    <div id="chatMessages" style="flex: 1; overflow-y: auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="bot-message">
+                            <div style="background: var(--color-secondary); color: var(--color-text); padding: 1rem; border-radius: var(--radius-md); max-width: 80%;">
+                                <strong>🌸 Health Assistant:</strong><br>
+                                নমস্কার! Hello! I'm your cancer health assistant. How can I help you today?<br><br>
+                                আপনি কোন ধরনের স্বাস্থ্য সমস্যা নিয়ে কথা বলতে চান?
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 2px solid var(--color-border); padding: 1rem; background: var(--color-background);">
+                        <div style="display: flex; gap: 0.75rem;">
+                            <input type="text" id="chatInput" placeholder="Type your question here... আপনার প্রশ্ন লিখুন..." style="flex: 1; padding: 0.875rem; border: 2px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; transition: all 0.3s ease;">
+                            <button id="chatSendBtn" onclick="handleChatbot()" style="background: var(--color-primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); cursor: pointer; font-weight: 500; transition: all 0.3s ease;">
+                                Send 🚀
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Wellness For Her Section -->
+        <section id="cancer-care-for-life" class="section" style="display: none;">
+           <!-- Success Stories Section -->
+                <div style="margin-top: 3rem;">
+                    <h3 style="color: var(--color-primary); text-align: center; margin-bottom: 2rem; font-size: 1.8rem; font-weight: 700;">🏆 Pioneers in Cancer Treatment</h3>
+                    <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 2rem;">
+                        Educational institutions and organizations championing women's health programs
+                    </p>
+
+                    <!-- Organizations Section -->
+                    <h4 style="color: var(--color-primary); margin-bottom: 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🏢 Corporates Leading Cancer Awareness</h4>
+                        <div class="wellness-grid">
+                            <!-- Corporate 1 -->
+                            <div class="wellness-card" style="border-left: 4px solid #00796b;">
+                                <div class="wellness-icon">💼</div>
+                                <h3>Tata Memorial Centre</h3>
+                                <p><strong>Mumbai, Maharashtra</strong></p>
+                                <ul>
+                                    <li>Nationwide cancer awareness workshops</li>
+                                    <li>Early screening drives in urban/rural areas</li>
+                                    <li>School & workplace educational campaigns</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 2 -->
+                            <div class="wellness-card" style="border-left: 4px solid #00796b;">
+                                <div class="wellness-icon">🏥</div>
+                                <h3>Reliance Foundation</h3>
+                                <p><strong>Pan-India Outreach</strong></p>
+                                <ul>
+                                    <li>Cancer prevention education programs</li>
+                                    <li>Mobile screening units for underserved regions</li>
+                                    <li>Funding for cancer research and patient support</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 3 -->
+                            <div class="wellness-card" style="border-left: 4px solid #00796b;">
+                                <div class="wellness-icon">👩‍💼</div>
+                                <h3>Cipla Foundation</h3>
+                                <p><strong>National Cancer Awareness Month Campaigns</strong></p>
+                                <ul>
+                                    <li>Free information sessions at colleges, corporates</li>
+                                    <li>Collaborations with NGOs for breast & cervical cancer awareness</li>
+                                    <li>Support of survivor networks and wellness groups</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 4 -->
+                            <div class="wellness-card" style="border-left: 4px solid #00796b;">
+                                <div class="wellness-icon">🌐</div>
+                                <h3>Indian Cancer Society</h3>
+                                <p><strong>All-India & Regional Chapters</strong></p>
+                                <ul>
+                                    <li>Community cancer awareness walks & screening</li>
+                                    <li>Workplace and school seminars</li>
+                                    <li>Palliative care advocacy and volunteer training</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 5 -->
+                            <div class="wellness-card" style="border-left: 4px solid #00796b;">
+                                <div class="wellness-icon">🏢</div>
+                                <h3>Aditya Birla Health Insurance</h3>
+                                <p><strong>Mumbai, Kolkata, Bengaluru</strong></p>
+                                <ul>
+                                    <li>Employee cancer prevention programs</li>
+                                    <li>Workplace screening, diet workshops</li>
+                                    <li>Partnering with hospitals for annual check-ups</li>
+                                </ul>
+                            </div>
+
+                            <!-- Corporate 6 -->
+                            <div class="wellness-card" style="border-left: 4px solid #00796b;">
+                                <div class="wellness-icon">✅</div>
+                                <h3>HDFC ERGO Insurance</h3>
+                                <p><strong>Pan-India Cancer Awareness Campaigns</strong></p>
+                                <ul>
+                                    <li>Free cancer preventive health camps</li>
+                                    <li>Women’s health day events for employees</li>
+                                    <li>Cancer risk assessment tools and helplines</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    <!-- Colleges Section -->
+                    <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🎓 Colleges Empowering Cancer Health</h4>
+                    <div class="wellness-grid">
+                        <!-- College 1 -->
+                        <div class="wellness-card" style="border-left: 4px solid #00796b;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>Mount Carmel College</h3>
+                            <p><strong>Bangalore</strong></p>
+                            <ul>
+                                <li>Top-ranked women's college</li>
+                                <li>Cancer awareness workshops in partnership with local hospitals</li>
+                                <li>Student cancer screening and risk assessment camps</li>
+                                <li>Mental health counseling center</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 2 -->
+                        <div class="wellness-card" style="border-left: 4px solid #00796b;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>BMS College for Women</h3>
+                            <p><strong>Bangalore</strong></p>
+                            <ul>
+                                <li>54+ years legacy in women's education</li>
+                                <li>Health awareness campaigns</li>
+                                <li>Women's wellness cell</li>
+                                <li>Women’s cancer prevention lectures and seminars</li>
+                                <li>Collaboration with oncology clinics for education</li>
+                                <li>Dedicated wellness cell for cancer patients</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 3 -->
+                        <div class="wellness-card" style="border-left: 4px solid #00796b;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>Jyoti Nivas College</h3>
+                            <p><strong>Bangalore</strong></p>
+                            <ul>
+                                <li>Premier women's institution</li>
+                                <li>Cancer patient support groups on campus</li>
+                                <li>Reproductive health and gynecologic cancer awareness</li>
+                                <li>Mental wellness programs</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 4 -->
+                        <div class="wellness-card" style="border-left: 4px solid #00796b;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>GSSS Institute of Engineering & Technology for Women</h3>
+                            <p><strong>Mysore</strong></p>
+                            <ul>
+                                <li>Women's engineering education since 2003</li>
+                                <li>Annual pink ribbon cancer awareness campaigns</li>
+                                <li>Peer-led cancer education forums and events</li>
+                                <li>Engineering innovation projects for cancer care</li>
+                            </ul>
+                        </div>
+
+                        <!-- College 5 -->
+                        <div class="wellness-card" style="border-left: 4px solid #00796b;">
+                            <div class="wellness-icon">🏛️</div>
+                            <h3>Maharani Lakshmi Ammanni College</h3>
+                            <p><strong>Bangalore</strong></p>
+                            <ul>
+                                 <li>Healthy living programs for cancer patients and survivors</li>
+                                 <li>Student-run health and cancer support initiatives</li>
+                                 <li>Empowerment through education and patient resources</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Corporate Section (Keep same as before) -->
+                    <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🏢 Corporate Wellness Champions</h4>
+                    <div class="wellness-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                        <!-- Corporate 1 -->
+                        <div class="wellness-card" style="border-left: 4px solid #00796b; background: linear-gradient(135deg, rgba(50, 184, 156, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">💼</div>
+                            
+                            <h3>OncoWel (oncowel.app)</h3>
+                                <p><strong>Cancer Wellness Platform</strong></p>
+                                <ul>
+                                    <li><strong>Specialized programs:</strong> Breast cancer recovery, post-chemo fitness, diet for cancer survivors</li>
+                                    <li><strong>Services:</strong> Tele-oncology consults, personalized symptom tracking, group support sessions</li>
+                                    <li><strong>Features:</strong> Digital cancer care plans, medication/bloodwork reminders, emotional resilience modules</li>
+                                    <li><strong>Impact:</strong> Improved treatment adherence; 60% users reported better energy and lowered anxiety</li>
+                                </ul>
+                            </div>
+
+
+                             <div class="wellness-card" style="border-left: 4px solid #00796b; background: linear-gradient(135deg, rgba(50, 184, 156, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">💼</div>
+                            <h3>Nyra (nyrahealth.com)</h3>
+                                <p><strong>Women's Cancer Companion</strong></p>
+                                <ul>
+                                    <li><strong>Programs:</strong> Chemotherapy side effect tracker, menopause after cancer, mental health for survivors</li>
+                                    <li><strong>Services:</strong> Multilingual counseling, breast self-exam tutorials, gynecologic cancer education</li>
+                                    <li><strong>Features:</strong> Peer mentor chat, AI-powered symptom triage, regular motivational nudges</li>
+                                    <li><strong>Impact:</strong> Higher emotional wellbeing and adherence to follow-up screenings</li>
+                            </ul>
+                        </div>
+
+
+                        <!-- Corporate 3 -->
+                        <div class="wellness-card" style="border-left: 4px solid #00796b; background: linear-gradient(135deg, rgba(50, 184, 156, 0.05), rgba(255, 255, 255, 0.95));">
+                            <div class="wellness-icon">💼</div>
+                            <h3>Cancerfit (cancerfit.in)</h3>
+                                <p><strong>Integrative Cancer Wellness</strong></p>
+                                <ul>
+                                    <li><strong>Focus areas:</strong> Strength training for survivors, fatigue management, pain control and physical rehab</li>
+                                    <li><strong>Services:</strong> At-home exercise guides, nutrition for immunity, pelvic floor rehabilitation</li>
+                                    <li><strong>Features:</strong> Wearable device integration, daily health check-in, social motivation group chat</li>
+                                    <li><strong>Impact:</strong> 50% reduction in reported fatigue post-program, improved mobility in 3 months</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Government Initiatives Section -->
+        <section id="government" class="section" style="display: none;">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏛️ Government Healthcare Initiatives in West Bengal</h2>
+            
+            <!-- Key Initiatives Overview -->
+            <div class="initiatives-banner">
+                <h3>🎗️ Major Cancer Care Initiatives (Govt. of India)</h3>
+                <div class="initiatives-grid">
+                    <div class="initiative-item">
+                        <strong>Ayushman Bharat - PMJAY</strong>
+                        <p>Health cover up to ₹5 lakh per family/year for secondary & tertiary cancer care at empanelled hospitals</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>National Programme for Prevention and Control of Cancer, Diabetes, Cardiovascular Diseases and Stroke (NPCDCS)</strong>
+                        <p>Population-based screening for common cancers (oral, breast, cervical); strengthening cancer care infrastructure</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>National Cancer Registry Programme (NCRP)</strong>
+                        <p>Systematic cancer data collection for research, policy, and resource allocation</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>Pradhan Mantri Swasthya Suraksha Yojana (PMSSY)</strong>
+                        <p>Establishing AIIMS-like institutes and upgrading existing government medical colleges with cancer, oncology care facilities</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>Screening & Early Detection under NHM</strong>
+                        <p>Free routine screening for breast, cervical, and oral cancer at public health centers</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>INDIA Cancer Societies Support (NGO Collaboration)</strong>
+                        <p>Partnership for patient support, financial help, and awareness – e.g. Indian Cancer Society, CanSupport, and more</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>National AYUSH Mission (NAM)</strong>
+                        <p>Integrating traditional medicine (Ayurveda, Yoga) for cancer palliative care and wellness</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>Rashtriya Arogya Nidhi (RAN)</strong>
+                        <p>Financial assistance for poor patients undergoing cancer treatment in government hospitals</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>VAN Cancer Care Programme (States)</strong>
+                        <p>State-run mobile cancer screening & early detection units, especially in rural areas</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>National Tobacco Control Programme (NTCP)</strong>
+                        <p>Cancer prevention through tobacco cessation campaigns, school education, and enforcement</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Map Section -->
+                <div class="map-section">
+                    <h3 style="margin-bottom: 1rem;">📍 Healthcare Drives & Centers in West Bengal Districts</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--color-text-secondary);">
+                        <strong>Districts Highlighted:</strong> Murshidabad, Bankura, Birbhum, Asansol (Paschim Bardhaman), Purulia, Bardhaman (Purba Bardhaman)
+                    </p>
+                    
+                    <!-- Google My Maps Embed -->
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/d/embed?mid=10LcqEx9WHKcxQhEku84mG6lJoVGvE-Q" 
+                            width="100%" 
+                            height="600" 
+                            style="border:0; border-radius: var(--radius-lg);" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+      
+                <!-- District-wise Healthcare Centers -->
+                <div class="district-list">
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🏥 Key Healthcare Centers by District</h3>
+                    
+                   <div class="district-card">
+                        <h4>📍 Murshidabad</h4>
+                        <ul>
+                            <li><strong>Murshidabad Medical College & Hospital</strong> - Berhampore</li>
+                            <li>District Women & Child Health Centre - Berhampore</li>
+                            <li>Community Health Centres in Kandi, Lalgola, Domkal</li>
+                            <li>District Cancer Screening OPD - Berhampore</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Bankura</h4>
+                        <ul>
+                            <li><strong>Bankura Sammilani Medical College</strong> - Bankura</li>
+                            <li>Swasthya Sathi Cancer Care Partner Hospitals</li>
+                            <li>AYUSH Suswasthya Kendras across blocks</li>
+                            <li>District Cancer Clinic - Bankura</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Birbhum</h4>
+                        <ul>
+                            <li><strong>Rampurhat Government Medical College</strong> - Rampurhat</li>
+                            <li>Suri District Hospital Cancer Screening OPD</li>
+                            <li>Community Health Centres in Bolpur, Suri</li>
+                            <li>Mobile Oncology Camp - rural blocks</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Asansol (Paschim Bardhaman)</h4>
+                        <ul>
+                            <li><strong>Asansol District Hospital</strong> - Asansol</li>
+                            <li>Durgapur Sub-Divisional Hospital</li>
+                            <li>Women's health camps & cancer screening drives</li>
+                            <li>District Cancer Chemotherapy Unit - Durgapur</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Purulia</h4>
+                        <ul>
+                            <li><strong>Purulia Government Medical College</strong> - Purulia</li>
+                            <li>Muktidhara Initiative for tribal women</li>
+                            <li>Mobile health vans for remote cancer screening</li>
+                            <li>Cancer Clinic at District Hospital</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Bardhaman (Purba Bardhaman)</h4>
+                        <ul>
+                            <li><strong>Burdwan Medical College & Hospital</strong> - Bardhaman</li>
+                            <li>Maternal health & cancer screening under Swasthya Ingit</li>
+                            <li>District health centres in Katwa, Kalna</li>
+                            <li>Women's Oncology OPD - Bardhaman</li>
+                        </ul>
+                    </div>
+
+                    <div class="district-card">
+                        <h4>📍 Kolkata</h4>
+                        <ul>
+                            <li><strong>Nil Ratan Sircar Medical College & Hospital</strong> - Kolkata</li>
+                            <li>Chittaranjan National Cancer Institute</li>
+                            <li>PG Hospital Cancer Centre</li>
+                            <li>Swasthya Sathi empanelled private cancer hospitals</li>
+                            <li>Mobile diagnostic & outreach camps in slum/rural blocks</li>
+                        </ul>
+                    </div>
+        </section>
+
+
+        <section id="registration" class="section" style="display: none;">
+                  <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Register</h2>
+                  <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; align-items: flex-start;">
+                    <!-- LEFT COLUMN: Registration -->
+                    <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+                      <div class="info-card" style="width: 100%; margin: 0; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+                            <div style="text-align: center; margin-bottom: 2rem;">
+                               <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Stay Informed About Cancer Health</h3>
+                               <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Subscribe to receive monthly health tips, screening reminders, and updates on cancer health topics.</p>
+                            </div>
+                            <form id="registrationForm" onsubmit="handleRegistration(event)">
+                               <!-- Full Name -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  👤 Full Name *
+                                  </label>
+                                  <input
+                                     type="text"
+                                     id="fullName"
+                                     name="fullName"
+                                     required
+                                     placeholder="Enter your full name"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Email Address -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📧 Email Address *
+                                  </label>
+                                  <input
+                                     type="email"
+                                     id="emailAddress"
+                                     name="emailAddress"
+                                     required
+                                     placeholder="your.email@example.com"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- City of Residence -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📍 City of Residence
+                                  </label>
+                                  <input
+                                     type="text"
+                                     id="cityOfResidence"
+                                     name="cityOfResidence"
+                                     placeholder="e.g., Kolkata, Delhi, Mumbai"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Phone Number (Optional) -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📱 Phone Number (Optional)
+                                  </label>
+                                  <input
+                                     type="tel"
+                                     id="phoneNumber"
+                                     name="phoneNumber"
+                                     placeholder="+91 XXXXXXXXXX"
+                                     pattern="[0-9+\-\s]+"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Cancer Disease Type Selector -->
+                               <div style="margin-bottom: 1.5rem;">
+                              <label for="cancerType" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                Cancer Disease / Condition
+                              </label>
+                              <select id="cancerType" name="cancerType" required style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);">
+                                <option value="">Select condition</option>
+                                <option value="breast">Breast Cancer</option>
+                                <option value="cervical">Cervical Cancer</option>
+                                <option value="lung">Lung Cancer</option>
+                                <option value="ovarian">Ovarian Cancer</option>
+                                <option value="oral">Oral Cancer</option>
+                                <option value="colorectal">Colorectal Cancer</option>
+                                <option value="stomach">Stomach Cancer</option>
+                                <option value="thyroid">Thyroid Cancer</option>
+                                <option value="uterine">Uterine Cancer</option>
+                                <option value="blood">Blood Cancer (Leukemia, Lymphoma, Myeloma)</option>
+                                <option value="esophageal">Esophageal Cancer</option>
+                                <option value="lymphoma">Lymphoma</option>
+                                <option value="pancreatic">Pancreatic Cancer</option>
+                                <option value="prostate">Prostate Cancer</option>
+                                <option value="skin">Skin Cancer (Melanoma, Carcinoma)</option>
+                                <option value="brain">Brain Tumor / Brain Cancer</option>
+                                <option value="kidney">Kidney Cancer</option>
+                                <option value="bladder">Bladder Cancer</option>
+                                <option value="liver">Liver Cancer</option>
+                                <option value="sarcoma">Sarcoma (Bone/Soft Tissue)</option>
+                                <option value="testicular">Testicular Cancer</option>
+                                <option value="gallbladder">Gallbladder Cancer</option>
+                                <option value="multiple_myeloma">Multiple Myeloma</option>
+                                <option value="head_neck">Head & Neck Cancer</option>
+                                <option value="eye">Eye / Retinoblastoma</option>
+                                <option value="penile">Penile Cancer</option>
+                                <option value="vulvar">Vulvar Cancer</option>
+                                <option value="anal">Anal Cancer</option>
+                              </select>
+                            </div>
+
+                               <!-- Join Group Checkbox -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label>
+                                  <input type="checkbox" id="joinCommunity" name="joinCommunity">
+                                  I want to join a community/support group for my disease type
+                                  </label>
+                               </div>
+                               <!-- Privacy Consent -->
+                               <div style="margin-bottom: 2rem;">
+                                  <label style="display: flex; align-items: start; cursor: pointer;">
+                                  <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                                  <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                                  I agree to register to this healthcare platform and understand that my data will be kept confidential and not shared with third parties. I can unsubscribe anytime.
+                                  </span>
+                                  </label>
+                               </div>
+                               <!-- Submit Button -->
+                               <button
+                                  type="submit"
+                                  style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                                  onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                                  onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                               ✓ Register Now
+                               </button>
+                               <!-- Privacy Note -->
+                               <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                                  🔒 Your data is kept confidential and will not be shared with third parties. Read our <a href="#" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
+                               </p>
+                            </form>
+                         </div>
+                      </div>
+
+                      <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+                  <div id="patientGroupsSection" style="width: 100%; margin: 0;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Cancer Disease Support Communities</h3>
+                    <div id="groupsList">
+
+                      <div class="group-card" style="border-left: 4px solid #e53935; margin-bottom: 1rem; padding: 1rem; background: rgba(229,57,53,0.05); border-radius: 8px;">
+                        <b>Breast Cancer Support Group</b><br>
+                        <span>Active Members: 170</span><br>
+                        <span>Connect with others, share experiences, join webinars.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #ab47bc; margin-bottom: 1rem; padding: 1rem; background: rgba(171,71,188,0.05); border-radius: 8px;">
+                        <b>Cervical Cancer Fighters</b><br>
+                        <span>Active Members: 105</span><br>
+                        <span>Patient stories, awareness, expert Q&amp;A.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #00acc1; margin-bottom: 1rem; padding: 1rem; background: rgba(0,172,193,0.05); border-radius: 8px;">
+                        <b>Lung Cancer Warriors</b><br>
+                        <span>Active Members: 98</span><br>
+                        <span>Daily chat, coping strategies, lung health tips.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #fbc02d; margin-bottom: 1rem; padding: 1rem; background: rgba(251,192,45,0.05); border-radius: 8px;">
+                        <b>Ovarian Cancer Network</b><br>
+                        <span>Active Members: 73</span><br>
+                        <span>Support, research updates, live community meetings.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #8d6e63; margin-bottom: 1rem; padding: 1rem; background: rgba(141,110,99,0.05); border-radius: 8px;">
+                        <b>Oral Cancer Champions</b><br>
+                        <span>Active Members: 68</span><br>
+                        <span>Survivor stories, prevention tips, peer support.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #43a047; margin-bottom: 1rem; padding: 1rem; background: rgba(67,160,71,0.05); border-radius: 8px;">
+                        <b>Colorectal Cancer Collective</b><br>
+                        <span>Active Members: 91</span><br>
+                        <span>Connect, learn, share your journey – together.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #e65100; margin-bottom: 1rem; padding: 1rem; background: rgba(230,81,0,0.05); border-radius: 8px;">
+                        <b>Stomach Cancer Hope Group</b><br>
+                        <span>Active Members: 56</span><br>
+                        <span>Expert guidance, patient journeys, nutrition tips.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #d84040; margin-bottom: 1rem; padding: 1rem; background: rgba(216,64,64,0.05); border-radius: 8px;">
+                        <b>Thyroid Cancer Warriors</b><br>
+                        <span>Active Members: 60</span><br>
+                        <span>Daily chat, coping strategies, patient meetups.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #fb8c00; margin-bottom: 1rem; padding: 1rem; background: rgba(251,140,0,0.05); border-radius: 8px;">
+                        <b>Uterine Cancer Circle</b><br>
+                        <span>Active Members: 39</span><br>
+                        <span>Empowering women, sharing care resources, expert talks.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #ad1457; margin-bottom: 1rem; padding: 1rem; background: rgba(173,20,87,0.05); border-radius: 8px;">
+                        <b>Blood Cancer Alliance</b><br>
+                        <span>Active Members: 120</span><br>
+                        <span>Meet peers, join virtual sessions, get trusted info.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #01579b; margin-bottom: 1rem; padding: 1rem; background: rgba(1,87,155,0.05); border-radius: 8px;">
+                        <b>Esophageal Cancer Support</b><br>
+                        <span>Active Members: 22</span><br>
+                        <span>Find friends, get direct support, join webinars.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #827717; margin-bottom: 1rem; padding: 1rem; background: rgba(130,119,23,0.05); border-radius: 8px;">
+                        <b>Lymphoma Warriors Community</b><br>
+                        <span>Active Members: 59</span><br>
+                        <span>Educational events, peer stories, expert connect.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #4e342e; margin-bottom: 1rem; padding: 1rem; background: rgba(78,52,46,0.05); border-radius: 8px;">
+                        <b>Pancreatic Cancer Peer Group</b><br>
+                        <span>Active Members: 34</span><br>
+                        <span>Connect to others, share therapy decisions, Q&amp;A.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #0d47a1; margin-bottom: 1rem; padding: 1rem; background: rgba(13,71,161,0.05); border-radius: 8px;">
+                        <b>Prostate Cancer Network</b><br>
+                        <span>Active Members: 71</span><br>
+                        <span>Support, men's health tips, stories and updates.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #fdd835; margin-bottom: 1rem; padding: 1rem; background: rgba(253,216,53,0.05); border-radius: 8px;">
+                        <b>Skin Cancer Care Forum</b><br>
+                        <span>Active Members: 47</span><br>
+                        <span>Prevention, coping, share experiences and events.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #388e3c; margin-bottom: 1rem; padding: 1rem; background: rgba(56,142,60,0.05); border-radius: 8px;">
+                        <b>Head & Neck Cancer Support</b><br>
+                        <span>Active Members: 29</span><br>
+                        <span>Specific help for head, neck, throat, and laryngeal cancer concerns.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+                      <div class="group-card" style="border-left: 4px solid #bcaaa4; margin-bottom: 1rem; padding: 1rem; background: rgba(188,170,164,0.05); border-radius: 8px;">
+                        <b>Kidney & Bladder Cancer Network</b><br>
+                        <span>Active Members: 21</span><br>
+                        <span>Connect for advice on kidney, bladder, and urinary tract cancers, treatment, and support.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+                      <div class="group-card" style="border-left: 4px solid #ad1457; margin-bottom: 1rem; padding: 1rem; background: rgba(173,20,87,0.05); border-radius: 8px;">
+                        <b>Liver Cancer Support Group</b><br>
+                        <span>Active Members: 16</span><br>
+                        <span>Patient experiences, hepatology advice, nutrition and emotional guidance.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+                      <div class="group-card" style="border-left: 4px solid #43a047; margin-bottom: 1rem; padding: 1rem; background: rgba(67,160,71,0.05); border-radius: 8px;">
+                        <b>Multiple Myeloma Peer Connect</b><br>
+                        <span>Active Members: 24</span><br>
+                        <span>Connect with fellow patients, caregivers, and myeloma specialists.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+                      <div class="group-card" style="border-left: 4px solid #1565c0; margin-bottom: 1rem; padding: 1rem; background: rgba(21,101,192,0.05); border-radius: 8px;">
+                        <b>Brain Tumor & Cancer Circle</b><br>
+                        <span>Active Members: 35</span><br>
+                        <span>Brain tumor awareness, treatment journeys, and cognitive care support.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+                      <div class="group-card" style="border-left: 4px solid #ff7043; margin-bottom: 1rem; padding: 1rem; background: rgba(255,112,67,0.05); border-radius: 8px;">
+                        <b>Sarcoma Support Network</b><br>
+                        <span>Active Members: 19</span><br>
+                        <span>Soft tissue and bone sarcoma peer support, research updates, Q&A.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+                      <div class="group-card" style="border-left: 4px solid #4e342e; margin-bottom: 1rem; padding: 1rem; background: rgba(78,52,46,0.05); border-radius: 8px;">
+                        <b>Testicular Cancer Support Forum</b><br>
+                        <span>Active Members: 13</span><br>
+                        <span>Male reproductive cancer, awareness, young adult resources, and peer connection.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+                      <div class="group-card" style="border-left: 4px solid #01579b; margin-bottom: 1rem; padding: 1rem; background: rgba(1,87,155,0.05); border-radius: 8px;">
+                        <b>Gallbladder & GI Cancers Network</b><br>
+                        <span>Active Members: 17</span><br>
+                        <span>Connect for gallbladder, gastrointestinal, and related digestive cancer topics.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+                      <div class="group-card" style="border-left: 4px solid #c62828; margin-bottom: 1rem; padding: 1rem; background: rgba(198,40,40,0.05); border-radius: 8px;">
+                        <b>Anal & Lower GI Cancer Peer Group</b><br>
+                        <span>Active Members: 11</span><br>
+                        <span>Community for anal, rectal, and lower GI tract cancer journeys.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+                      <div class="group-card" style="border-left: 4px solid #512da8; margin-bottom: 1rem; padding: 1rem; background: rgba(81,45,168,0.05); border-radius: 8px;">
+                        <b>Eye / Retinoblastoma Support Group</b><br>
+                        <span>Active Members: 8</span><br>
+                        <span>Pediatric and adult eye cancer, retinoblastoma awareness, resources.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+                      <div class="group-card" style="border-left: 4px solid #fbc02d; margin-bottom: 1rem; padding: 1rem; background: rgba(251,192,45,0.05); border-radius: 8px;">
+                        <b>Penile Cancer Peer Circle</b><br>
+                        <span>Active Members: 6</span><br>
+                        <span>Resources, emotional support, and survivor experiences for penile cancer.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+
+                      <div class="group-card" style="border-left: 4px solid #43a047; margin-bottom: 1rem; padding: 1rem; background: rgba(67,160,71,0.05); border-radius: 8px;">
+                        <b>Vulvar Cancer Support Network</b><br>
+                        <span>Active Members: 5</span><br>
+                        <span>Women's cancer, education, and awareness for vulvar disease.</span><br>
+                        <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </section>
+
+
+        <section id="subscription" class="section" style="display: none;">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Subscribe</h2>
+            
+            <div class="info-card" style="max-width: 650px; margin: 0 auto; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Stay Informed About Women's Health</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Subscribe to receive monthly health tips, screening reminders, and updates on women's health topics.</p>
+                </div>
+                
+                <form id="registrationForm" onsubmit="handleRegistration(event)">
+                    <!-- Full Name -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            👤 Full Name *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName"
+                            required 
+                            placeholder="Enter your full name"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Email Address -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📧 Email Address *
+                        </label>
+                        <input 
+                            type="email" 
+                            id="emailAddress" 
+                            name="emailAddress"
+                            required 
+                            placeholder="your.email@example.com"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- City of Residence -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📍 City of Residence
+                        </label>
+                        <input 
+                            type="text" 
+                            id="cityOfResidence" 
+                            name="cityOfResidence"
+                            placeholder="e.g., Kolkata, Delhi, Mumbai"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Phone Number (Optional) -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📱 Phone Number (Optional)
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phoneNumber" 
+                            name="phoneNumber"
+                            placeholder="+91 XXXXXXXXXX"
+                            pattern="[0-9+\-\s]+"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Subscription Preferences -->
+                    <div style="margin-bottom: 2rem; padding: 1.25rem; background: rgba(139, 79, 139, 0.05); border-radius: var(--radius-md); border-left: 4px solid var(--color-primary);">
+                        <label style="display: block; margin-bottom: 0.75rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📬 I want to receive:
+                        </label>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeMonthly" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Monthly Health Tips & Articles</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeScreening" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Screening & Checkup Reminders</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeUpdates" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Health Awareness Updates</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy Consent -->
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: flex; align-items: start; cursor: pointer;">
+                            <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                            <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                                I agree to receive health-related communications and understand that my data will be kept confidential and not shared with third parties. I can unsubscribe anytime.
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button 
+                        type="submit" 
+                        style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                        ✓ Subscribe Now
+                    </button>
+                    
+                    <!-- Privacy Note -->
+                    <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                        🔒 Your data is kept confidential and will not be shared with third parties. Read our <a href="#" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
+                    </p>
+                </form>
+                
+                <!-- Success Message (Hidden by default) -->
+                <div id="registrationSuccess" style="display: none; text-align: center; padding: 2rem;">
+                    <div style="width: 80px; height: 80px; background: var(--color-success); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);">
+                        <span style="font-size: 3rem; color: white;">✓</span>
+                    </div>
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Subscription Successful!</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 1rem;">Thank you for subscribing! You'll receive our next newsletter soon.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Helplines Section -->
+        <div class="helplines-section">
+            <h3>📞 Important Helplines</h3>
+            <div class="helplines-grid">
+                <div class="helpline-card">
+                    <strong>Cancer Helpline</strong>
+                    <p class="helpline-number">181</p>
+                </div>
+                <div class="helpline-card">
+                    <strong>National Health Helpline</strong>
+                    <p class="helpline-number">104</p>
+                </div>
+                <div class="helpline-card">
+                    <strong>Swasthya Sathi</strong>
+                    <p class="helpline-number">1800-313-1313</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="diseaseDetailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody">
+                </div>
+        </div>
+    </div>
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p>&copy; 2025 Cancer Health Awareness Platform. All rights reserved.</p>
+            <p>Disclaimer: This platform provides educational information and is not a substitute for professional medical advice.</p>
+        </div>
+    </footer>
+
+   <script src="app_cancerhealth.js"></script>
+</body>
+</html>
