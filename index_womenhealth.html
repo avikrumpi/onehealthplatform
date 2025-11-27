@@ -27,9 +27,8 @@
                     <h1 id="platformTitle">🌸 Women's Health Platform</h1>
                     
                     <p id="platformSubtitle" style="margin-bottom: 1rem;">Comprehensive information about women's health conditions and prevention strategies</p>
-                    <div class="nav-tabs">
                         <!-- Your navigation buttons -->
-
+                        <div id="nav-tabs-en" class="nav-tabs" style="display:block;">
                         <button class="nav-tab active" data-section="diseases">Health Conditions</button>
                                 <button class="nav-tab" data-section="when-to-see">When to See a Gynecologist</button>
                                 <button class="nav-tab" data-section="doctors">Find Gynecologists</button>
@@ -41,15 +40,26 @@
                                 <button class="nav-tab" data-section="registration">Register</button>
                                 <button class="nav-tab" data-section="subscription">Subscribe</button>
                     </div>
-                </div>
-                </div>
-                </div>
 
-            </div>
-            
+                        <div id="nav-tabs-hi" class="nav-tabs" style="display:none;">
+                        <!-- Navigation buttons in Hindi -->
+                        <button class="nav-tab active" data-section="diseases">महिला स्वास्थ्य स्थितियाँ</button>
+                        <button class="nav-tab" data-section="when-to-see">कब जाएँ स्त्रीरोग विशेषज्ञ के पास</button>
+                        <button class="nav-tab" data-section="doctors">स्त्रीरोग विशेषज्ञ खोजें</button>
+                        <button class="nav-tab" data-section="prevention">रोकथाम और देखभाल</button>
+                        <button class="nav-tab" data-section="faq">प्रश्नोत्तर (FAQ)</button>
+                        <button class="nav-tab" data-section="chatbot">हेल्थ असिस्टेंट</button>
+                        <button class="nav-tab" data-section="government">सरकारी पहल</button>
+                        <button class="nav-tab" data-section="wellness-for-her">उसकी सेहत व वेलनेस</button>
+                        <button class="nav-tab" data-section="registration">रजिस्टर करें</button>
+                        <button class="nav-tab" data-section="subscription">सब्सक्राइब करें</button>
+                    </div>
+
+                </div>
+                </div>
+                </div>
         </div>
 
-        </div>
 
     </header>
 
@@ -72,38 +82,372 @@
             <div class="faq-container" id="whenToSeeContainer"></div>
         </section>
 
-        <section id="doctors" class="section">
-            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🔍 Find Gynecologists</h2>
-            
-            <div style="max-width: 800px; margin: 0 auto 2rem;">
-                <label for="citySelect" style="display: block; margin-bottom: 0.75rem; font-size: 1.1rem; font-weight: 600; color: var(--color-text);">
-                    📍 Select Your City:
-                </label>
-                <select id="citySelect" onchange="filterDoctorsByCity()" style="width: 100%; padding: 1rem 1.5rem; font-size: 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); cursor: pointer; transition: all 0.3s ease;">
-                    <option value="">-- Select a City --</option>
-                    <option value="Delhi">Delhi</option>
-                    <option value="Mumbai">Mumbai</option>
-                    <option value="Bangalore">Bangalore</option>
-                    <option value="Chennai">Chennai</option>
-                    <option value="Hyderabad">Hyderabad</option>
-                    <option value="Kolkata">Kolkata</option>
-                    <option value="Pune">Pune</option>
-                    <option value="Ahmedabad">Ahmedabad</option>
-                </select>
-            </div>
-
-            <div id="doctorsContainer"></div>
-
-            <p style="margin-top: 2rem; color: var(--color-text-secondary); font-style: italic; text-align: center;">
-                ⚠️ Always verify doctor credentials and call ahead to confirm availability and appointment procedures. These listings are for informational purposes. Please conduct your own research before visiting any healthcare provider.
-            </p>
+             <section id="when-to-see" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">👩‍⚕️ When to See a Gynecologist</h2>
+            <div class="faq-container" id="whenToSeeContainer"></div>
         </section>
+
+         <section id="doctors" class="section" style="display:flex; flex-wrap:wrap; gap:2rem; align-items:stretch;">
+              <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">👩‍⚕️ Women's Health: Doctors & Essentials</h2>
+              <div style="display:flex; flex-wrap:wrap; gap:2rem; align-items:stretch;">
+                <!-- LEFT: Doctors Finder -->
+                <div style="flex:1 1 350px; min-width:320px; max-width:480px;">
+                  <h3 style="color: var(--color-primary); margin-bottom: 1rem;">🔍 Find Gynecologists</h3>
+                  <div style="margin-bottom: 2rem;">
+                      <label for="citySelect" style="display: block; margin-bottom: 0.75rem; font-size: 1.1rem; font-weight: 600; color: var(--color-text);">
+                          📍 Select Your City:
+                      </label>
+                      <select id="citySelect" onchange="filterDoctorsByCity()" style="width: 100%; padding: 1rem 1.5rem; font-size: 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); cursor: pointer; transition: all 0.3s ease;">
+                          <option value="">-- Select a City --</option>
+                          <option value="Delhi" selected>Delhi</option>
+                          <option value="Mumbai">Mumbai</option>
+                          <option value="Bangalore">Bangalore</option>
+                          <option value="Chennai">Chennai</option>
+                          <option value="Hyderabad">Hyderabad</option>
+                          <option value="Kolkata">Kolkata</option>
+                          <option value="Pune">Pune</option>
+                          <option value="Ahmedabad">Ahmedabad</option>
+                      </select>
+                  </div>
+                  <div id="doctorsContainer"></div>
+                  <p style="margin-top: 2rem; color: var(--color-text-secondary); font-style: italic; text-align: left;">
+                      ⚠️ Always verify doctor credentials and call ahead to confirm availability and appointment procedures. These listings are for informational purposes. Please conduct your own research before visiting any healthcare provider.
+                  </p>
+                </div>
+                <!-- RIGHT: Women Health Products -->
+                  <div style="flex:1 1 350px; min-width:320px;">
+
+                <div id="wellnessProdsEn" style="display:block flex:1 1 350px; min-width:320px;">
+                 <!-- Women's Health Products Section -->
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">🛍️ Featured Women's Health Products</h3>
+                    <div class="wellness-grid" style="grid-template-columns: 1fr;">
+                      <!-- 1 Sofy Anti-Bacterial Sanitary Pads -->
+                      <div class="wellness-card" style="border-left: 4px solid #E6638A; background: linear-gradient(135deg, rgba(230, 99, 138, 0.08), #fff 90%);">
+                        <div class="wellness-icon">🩸</div>
+                        <h3>Sofy Anti-Bacterial Sanitary Pads</h3>
+                        <ul>
+                          <li><strong>Features:</strong> Antibacterial sheet, odor control, leak lock</li>
+                          <li><strong>Pack Size:</strong> 20 pads</li>
+                          <li><strong>Price:</strong> ₹185</li>
+                          <li><a href="https://www.sofy.in/product/anti-bacteria-extra-long-sanitary-pad" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                      <!-- 2 DivaCup Menstrual Cup -->
+                      <div class="wellness-card" style="border-left: 4px solid #8B4F8B; background: linear-gradient(135deg, rgba(139,79,139,0.08), #fff 90%);">
+                        <div class="wellness-icon">🩺</div>
+                        <h3>DivaCup Menstrual Cup</h3>
+                        <ul>
+                          <li><strong>Material:</strong> Medical-grade silicone</li>
+                          <li><strong>Sizes:</strong> Small & Large</li>
+                          <li><strong>Price:</strong> ₹620</li>
+                          <li><a href="https://divacup.com/" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                      <!-- 3 Plush Period Panties -->
+                      <div class="wellness-card" style="border-left: 4px solid #E88EB5; background: linear-gradient(135deg, rgba(232,142,181,0.09), #fff 99%);">
+                        <div class="wellness-icon">🩳</div>
+                        <h3>Plush Period Panties</h3>
+                        <ul>
+                          <li><strong>Features:</strong> Absorbent, breathable, machine washable</li>
+                          <li><strong>Pack Size:</strong> 2 panties</li>
+                          <li><strong>Price:</strong> ₹399</li>
+                          <li><a href="https://plushforher.com/collections/period-panties" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                      <!-- 4 Shatavari Granules (Himalaya) -->
+                      <div class="wellness-card" style="border-left: 4px solid #F4C2D9; background: linear-gradient(135deg, rgba(244,194,217,0.09), #fff 99%);">
+                        <div class="wellness-icon">🍼</div>
+                        <h3>Shatavari Granules (Himalaya)</h3>
+                        <ul>
+                          <li><strong>Benefit:</strong> Boosts lactation, natural herbal supplement</li>
+                          <li><strong>Dosage:</strong> 1-2 tablespoons per day</li>
+                          <li><strong>Price:</strong> ₹280</li>
+                          <li><a href="https://himalayawellness.in/products/shatavari-granules" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                      <!-- 5 Mumma's Lactation Cookies -->
+                      <div class="wellness-card" style="border-left: 4px solid #4CAF50; background: linear-gradient(135deg, rgba(76,175,80,0.07), #fff 99%);">
+                        <div class="wellness-icon">🍪</div>
+                        <h3>Mumma's Lactation Cookies</h3>
+                        <ul>
+                          <li><strong>Ingredients:</strong> Oats, flaxseed, brewer’s yeast, coconut oil</li>
+                          <li><strong>Packs:</strong> 12 cookies</li>
+                          <li><strong>Price:</strong> ₹299</li>
+                          <li><a href="https://www.mummas.in/lactation-cookies/" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                      <!-- 6 Saheli Oral Contraceptive -->
+                      <div class="wellness-card" style="border-left: 4px solid #2196F3; background: linear-gradient(135deg, rgba(33,150,243,0.06), #fff 98%);">
+                        <div class="wellness-icon">💊</div>
+                        <h3>Saheli Oral Contraceptive</h3>
+                        <ul>
+                          <li><strong>Features:</strong> Weekly non-hormonal contraceptive pill</li>
+                          <li><strong>Pack Size:</strong> 30 tablets</li>
+                          <li><strong>Price:</strong> ₹90</li>
+                          <li><a href="https://www.naco.gov.in/saheli-oral-contraceptive-pill" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                      <!-- 7 Velvet Female Condom -->
+                      <div class="wellness-card" style="border-left: 4px solid #32B89C; background: linear-gradient(135deg, rgba(50,184,156,0.06), #fff 98%);">
+                        <div class="wellness-icon">⚡</div>
+                        <h3>Velvet Female Condom</h3>
+                        <ul>
+                          <li><strong>Type:</strong> Lubricated Female Condom</li>
+                          <li><strong>Pack Size:</strong> 3 condoms</li>
+                          <li><strong>Price:</strong> ₹120</li>
+                          <li><a href="https://www.adiarhealth.com/products/velvet-female-condoms" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                      <!-- 8 Pee Safe Toilet Seat Sanitizer -->
+                      <div class="wellness-card" style="border-left: 4px solid #e67e22; background: linear-gradient(135deg, rgba(230,126,34,0.08), #fff 90%);">
+                        <div class="wellness-icon">🧴</div>
+                        <h3>Pee Safe Toilet Seat Sanitizer</h3>
+                        <ul>
+                          <li><strong>Purpose:</strong> Kills germs, deodorizes, easy to carry</li>
+                          <li><strong>Size:</strong> 75ml spray</li>
+                          <li><strong>Price:</strong> ₹120</li>
+                          <li><a href="https://www.peesafe.com/collections/toilet-seat-sanitizer-spray" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                      <!-- 9 Sirona Menstrual Cup Sterilizer -->
+                      <div class="wellness-card" style="border-left: 4px solid #e84393; background: linear-gradient(135deg, rgba(232,67,147,0.08), #fff 90%);">
+                        <div class="wellness-icon">🔥</div>
+                        <h3>Sirona Menstrual Cup Sterilizer</h3>
+                        <ul>
+                          <li><strong>Feature:</strong> Electric, portable sterilizer bag</li>
+                          <li><strong>Use:</strong> Safe disinfection of menstrual cups</li>
+                          <li><strong>Price:</strong> ₹399</li>
+                          <li><a href="https://www.thesirona.com/products/menstrual-cup-sterilizer" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                      <!-- 10 Everteen Natural Intimate Wash -->
+                      <div class="wellness-card" style="border-left: 4px solid #16a085; background: linear-gradient(135deg, rgba(22,160,133,0.09), #fff 99%);">
+                        <div class="wellness-icon">🧼</div>
+                        <h3>Everteen Natural Intimate Wash</h3>
+                        <ul>
+                          <li><strong>Benefit:</strong> Maintains vaginal pH, soap-free, herbal</li>
+                          <li><strong>Size:</strong> 105ml</li>
+                          <li><strong>Price:</strong> ₹180</li>
+                          <li><a href="https://www.everteen.co.in/intimate-wash.html" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                      <!-- 11 Lemme Be Organic Cotton Tampons -->
+                      <div class="wellness-card" style="border-left: 4px solid #a3cb38; background: linear-gradient(135deg, rgba(163,203,56,0.07), #fff 99%);">
+                        <div class="wellness-icon">🧃</div>
+                        <h3>Lemme Be Organic Cotton Tampons</h3>
+                        <ul>
+                          <li><strong>Feature:</strong> Biodegradable, easy insertion</li>
+                          <li><strong>Pack Size:</strong> 20 tampons</li>
+                          <li><strong>Price:</strong> ₹239</li>
+                          <li><a href="https://lemmebe.com/collections/tampons/products/organic-cotton-tampons" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                      <!-- 12 Amrutanjan Menstrual Pain Relief Patch -->
+                      <div class="wellness-card" style="border-left: 4px solid #f8c291; background: linear-gradient(135deg, rgba(248,194,145,0.12), #fff 99%);">
+                        <div class="wellness-icon">🌡️</div>
+                        <h3>Amrutanjan Menstrual Pain Relief Patch</h3>
+                        <ul>
+                          <li><strong>Feature:</strong> Wearable, 8hr relief, natural oils</li>
+                          <li><strong>Pack:</strong> 5 patches</li>
+                          <li><strong>Price:</strong> ₹139</li>
+                          <li><a href="https://www.amrutanjan.com/product/menstrual-pain-relief-patch-for-women/" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                      <!-- 13 Pro-Ease Feminine Hygiene Wipes -->
+                      <div class="wellness-card" style="border-left: 4px solid #00b894; background: linear-gradient(135deg, rgba(0,184,148,0.07), #fff 99%);">
+                        <div class="wellness-icon">🧻</div>
+                        <h3>Pro-Ease Feminine Hygiene Wipes</h3>
+                        <ul>
+                          <li><strong>Features:</strong> pH-balanced, gentle, convenient</li>
+                          <li><strong>Pack:</strong> 20 wipes</li>
+                          <li><strong>Price:</strong> ₹129</li>
+                          <li><a href="https://proeasehygiene.com/products/feminine-hygiene-wipes-20-count" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                      <!-- 14 i-Pill Emergency Contraceptive -->
+                      <div class="wellness-card" style="border-left: 4px solid #fd79a8; background: linear-gradient(135deg, rgba(253,121,168,0.09), #fff 99%);">
+                        <div class="wellness-icon">⏰</div>
+                        <h3>i-Pill Emergency Contraceptive</h3>
+                        <ul>
+                          <li><strong>Features:</strong> Single-use, must take within 72 hours</li>
+                          <li><strong>Pack:</strong> 1 pill</li>
+                          <li><strong>Price:</strong> ₹110</li>
+                          <li><a href="https://www.netmeds.com/non-prescriptions/i-pill-emergency-contraceptive-tablet-1-s" target="_blank" rel="noopener noreferrer">Buy Now</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+
+
+                <div id="wellnessProdsHi" style="display:none">
+                 <!-- Women's Health Products Section -->
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">🛍️ विशेष महिला स्वास्थ्य उत्पाद</h3>
+                    <div class="wellness-grid" style="grid-template-columns: 1fr;">
+                      <!-- 1 सोफी एंटी-बैक्टीरियल सैनिटरी पैड्स -->
+                        <div class="wellness-card" style="border-left: 4px solid #FFD6DB; background: linear-gradient(135deg, rgba(255,214,219,0.12), #fff 95%);">
+                          <div class="wellness-icon">🩸</div>
+                          <h3>सोफी एंटी-बैक्टीरियल सैनिटरी पैड्स</h3>
+                          <ul>
+                            <li><strong>विशेषताएँ:</strong> एंटीबैक्टीरियल शीट, गंध नियंत्रण, लीक लॉक</li>
+                            <li><strong>पैक साइज़:</strong> 20 पैड्स</li>
+                            <li><strong>मूल्य:</strong> ₹185</li>
+                            <li><a href="https://www.sofy.in/product/anti-bacteria-extra-long-sanitary-pad" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                        <!-- 2 डिवा कप मेंस्ट्रुअल कप -->
+                        <div class="wellness-card" style="border-left: 4px solid #8B4F8B; background: linear-gradient(135deg, rgba(139,79,139,0.08), #fff 90%);">
+                          <div class="wellness-icon">🩺</div>
+                          <h3>डिवा कप मेंस्ट्रुअल कप</h3>
+                          <ul>
+                            <li><strong>सामग्री:</strong> मेडिकल-ग्रेड सिलिकॉन</li>
+                            <li><strong>आकार:</strong> स्मॉल और लार्ज</li>
+                            <li><strong>मूल्य:</strong> ₹620</li>
+                            <li><a href="https://divacup.com/" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                        <!-- 3 प्लश पीरियड पैंटीज़ -->
+                        <div class="wellness-card" style="border-left: 4px solid #E88EB5; background: linear-gradient(135deg, rgba(232,142,181,0.09), #fff 99%);">
+                          <div class="wellness-icon">🩳</div>
+                          <h3>प्लश पीरियड पैंटीज़</h3>
+                          <ul>
+                            <li><strong>विशेषताएँ:</strong> शोषक, सांस लेने योग्य, मशीन में धोने योग्य</li>
+                            <li><strong>पैक साइज़:</strong> 2 पैंटीज़</li>
+                            <li><strong>मूल्य:</strong> ₹399</li>
+                            <li><a href="https://plushforher.com/collections/period-panties" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                        <!-- 4 शतावरी ग्रैन्यूल्स (हिमालय) -->
+                        <div class="wellness-card" style="border-left: 4px solid #F4C2D9; background: linear-gradient(135deg, rgba(244,194,217,0.09), #fff 99%);">
+                          <div class="wellness-icon">🍼</div>
+                          <h3>शतावरी ग्रैन्यूल्स (हिमालय)</h3>
+                          <ul>
+                            <li><strong>लाभ:</strong> दूध बढ़ाने वाला, प्राकृतिक हर्बल सप्लीमेंट</li>
+                            <li><strong>खुराक:</strong> रोज़ाना 1-2 चम्मच</li>
+                            <li><strong>मूल्य:</strong> ₹280</li>
+                            <li><a href="https://himalayawellness.in/products/shatavari-granules" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                        <!-- 5 मम्माज़ लैक्टेशन कुकीज़ -->
+                        <div class="wellness-card" style="border-left: 4px solid #4CAF50; background: linear-gradient(135deg, rgba(76,175,80,0.07), #fff 99%);">
+                          <div class="wellness-icon">🍪</div>
+                          <h3>मम्माज़ लैक्टेशन कुकीज़</h3>
+                          <ul>
+                            <li><strong>सामग्री:</strong> ओट्स, अलसी, ब्रुअर्स यीस्ट, नारियल तेल</li>
+                            <li><strong>पैक:</strong> 12 कुकीज़</li>
+                            <li><strong>मूल्य:</strong> ₹299</li>
+                            <li><a href="https://www.mummas.in/lactation-cookies/" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                        <!-- 6 सहेली ओरल गर्भनिरोधक -->
+                        <div class="wellness-card" style="border-left: 4px solid #2196F3; background: linear-gradient(135deg, rgba(33,150,243,0.06), #fff 98%);">
+                          <div class="wellness-icon">💊</div>
+                          <h3>सहेली ओरल गर्भनिरोधक</h3>
+                          <ul>
+                            <li><strong>विशेषता:</strong> साप्ताहिक गैर-हार्मोनल गर्भनिरोधक टैबलेट</li>
+                            <li><strong>पैक साइज़:</strong> 30 टैबलेट</li>
+                            <li><strong>मूल्य:</strong> ₹90</li>
+                            <li><a href="https://www.naco.gov.in/saheli-oral-contraceptive-pill" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                        <!-- 7 वेल्वेट महिला कंडोम -->
+                        <div class="wellness-card" style="border-left: 4px solid #32B89C; background: linear-gradient(135deg, rgba(50,184,156,0.06), #fff 98%);">
+                          <div class="wellness-icon">⚡</div>
+                          <h3>वेल्वेट महिला कंडोम</h3>
+                          <ul>
+                            <li><strong>प्रकार:</strong> चिकनाई युक्त महिला कंडोम</li>
+                            <li><strong>पैक साइज़:</strong> 3 कंडोम</li>
+                            <li><strong>मूल्य:</strong> ₹120</li>
+                            <li><a href="https://www.adiarhealth.com/products/velvet-female-condoms" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                        <!-- 8 पी सेफ टॉयलेट सीट सैनिटाइज़र -->
+                        <div class="wellness-card" style="border-left: 4px solid #e67e22; background: linear-gradient(135deg, rgba(230,126,34,0.08), #fff 90%);">
+                          <div class="wellness-icon">🧴</div>
+                          <h3>पी सेफ टॉयलेट सीट सैनिटाइज़र</h3>
+                          <ul>
+                            <li><strong>उपयोग:</strong> कीटाणु नष्ट करता है, दुर्गंध हटाता है, ले जाने में आसान</li>
+                            <li><strong>साइज़:</strong> 75ml स्प्रे</li>
+                            <li><strong>मूल्य:</strong> ₹120</li>
+                            <li><a href="https://www.peesafe.com/collections/toilet-seat-sanitizer-spray" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                        <!-- 9 सिरोना मेंस्ट्रुअल कप सेनेटाइज़र -->
+                        <div class="wellness-card" style="border-left: 4px solid #e84393; background: linear-gradient(135deg, rgba(232,67,147,0.08), #fff 90%);">
+                          <div class="wellness-icon">🔥</div>
+                          <h3>सिरोना मेंस्ट्रुअल कप सेनेटाइज़र</h3>
+                          <ul>
+                            <li><strong>विशेषता:</strong> इलेक्ट्रिक, पोर्टेबल सेनेटाइज़र बैग</li>
+                            <li><strong>उपयोग:</strong> मेंस्ट्रुअल कप्स की सुरक्षित सफाई</li>
+                            <li><strong>मूल्य:</strong> ₹399</li>
+                            <li><a href="https://www.thesirona.com/products/menstrual-cup-sterilizer" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                        <!-- 10 एवरटीन नेचुरल इंटिमेट वॉश -->
+                        <div class="wellness-card" style="border-left: 4px solid #16a085; background: linear-gradient(135deg, rgba(22,160,133,0.09), #fff 99%);">
+                          <div class="wellness-icon">🧼</div>
+                          <h3>एवरटीन नेचुरल इंटिमेट वॉश</h3>
+                          <ul>
+                            <li><strong>लाभ:</strong> योनि का pH संतुलित रखता है, साबुन रहित, हर्बल</li>
+                            <li><strong>साइज़:</strong> 105ml</li>
+                            <li><strong>मूल्य:</strong> ₹180</li>
+                            <li><a href="https://www.everteen.co.in/intimate-wash.html" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                        <!-- 11 लेmme बी ऑर्गेनिक कॉटन टैम्पॉन्स -->
+                        <div class="wellness-card" style="border-left: 4px solid #a3cb38; background: linear-gradient(135deg, rgba(163,203,56,0.07), #fff 99%);">
+                          <div class="wellness-icon">🧃</div>
+                          <h3>लेmme बी ऑर्गेनिक कॉटन टैम्पॉन्स</h3>
+                          <ul>
+                            <li><strong>विशेषता:</strong> बायोडिग्रेडेबल, इस्तेमाल में आसान</li>
+                            <li><strong>पैक साइज़:</strong> 20 टैम्पॉन्स</li>
+                            <li><strong>मूल्य:</strong> ₹239</li>
+                            <li><a href="https://lemmebe.com/collections/tampons/products/organic-cotton-tampons" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                        <!-- 12 अमृतांजन मेंस्ट्रुअल पेन रिलीफ पैच -->
+                        <div class="wellness-card" style="border-left: 4px solid #f8c291; background: linear-gradient(135deg, rgba(248,194,145,0.12), #fff 99%);">
+                          <div class="wellness-icon">🌡️</div>
+                          <h3>अमृतांजन मेंस्ट्रुअल पेन रिलीफ पैच</h3>
+                          <ul>
+                            <li><strong>विशेषता:</strong> पहनने योग्य, 8 घंटे राहत, प्राकृतिक तेल</li>
+                            <li><strong>पैक:</strong> 5 पैच</li>
+                            <li><strong>मूल्य:</strong> ₹139</li>
+                            <li><a href="https://www.amrutanjan.com/product/menstrual-pain-relief-patch-for-women/" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                        <!-- 13 प्रो-ईज़ फेमिनिन हाईजीन वाइप्स -->
+                        <div class="wellness-card" style="border-left: 4px solid #00b894; background: linear-gradient(135deg, rgba(0,184,148,0.07), #fff 99%);">
+                          <div class="wellness-icon">🧻</div>
+                          <h3>प्रो-ईज़ फेमिनिन हाईजीन वाइप्स</h3>
+                          <ul>
+                            <li><strong>विशेषताएँ:</strong> pH संतुलित, कोमल, सुविधाजनक</li>
+                            <li><strong>पैक:</strong> 20 वाइप्स</li>
+                            <li><strong>मूल्य:</strong> ₹129</li>
+                            <li><a href="https://proeasehygiene.com/products/feminine-hygiene-wipes-20-count" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                        <!-- 14 आई-पिल इमरजेंसी गर्भनिरोधक -->
+                        <div class="wellness-card" style="border-left: 4px solid #fd79a8; background: linear-gradient(135deg, rgba(253,121,168,0.09), #fff 99%);">
+                          <div class="wellness-icon">⏰</div>
+                          <h3>आई-पिल इमरजेंसी गर्भनिरोधक</h3>
+                          <ul>
+                            <li><strong>विशेषताएँ:</strong> एक बार इस्तेमाल, 72 घंटे के भीतर लेना जरूरी</li>
+                            <li><strong>पैक:</strong> 1 टैबलेट</li>
+                            <li><strong>मूल्य:</strong> ₹110</li>
+                            <li><a href="https://www.netmeds.com/non-prescriptions/i-pill-emergency-contraceptive-tablet-1-s" target="_blank" rel="noopener noreferrer">अभी खरीदें</a></li>
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+              </div>
+            </section>
 
         <section id="prevention" class="section">
             <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🛡️ Prevention & Care</h2>
             <!-- Prevention and Care Section with Video Sidebar -->
      <!-- Health Guidelines Bar (Full Width) -->
-        <div class="health-guidelines-banner">
+        <div id="guidelines-en" style="display:block;">
             <div class="banner-header">
                 <span class="banner-icon">💡</span>
                 <h3>Health Guidelines</h3>
@@ -159,6 +503,64 @@
                 </div>
             </div>
         </div>
+
+            <div id="guidelines-hi" style="display:none;">
+            <div class="banner-header">
+                <span class="banner-icon">💡</span>
+                <h3>स्वास्थ्य दिशानिर्देश</h3>
+                <span class="banner-subtitle">महिलाओं के लिए आवश्यक स्वास्थ्य जानकारी</span>
+            </div>
+
+            <div class="guidelines-horizontal">
+                <!-- दिशा-निर्देश 1: आवश्यक स्वास्थ्य आदतें -->
+                <div class="guideline-card">
+                    <div class="card-header">
+                        <span class="card-icon">🌟</span>
+                        <h4>आवश्यक स्वास्थ्य आदतें</h4>
+                    </div>
+                    <ul class="guideline-list">
+                        <li>नियमित स्वास्थ्य जांच और चेक-अप</li>
+                        <li>पोषक तत्वों से भरपूर संतुलित आहार लें</li>
+                        <li>नियमित शारीरिक गतिविधि (प्रतिदिन 30 मिनट)</li>
+                        <li>तनाव प्रबंधन और मानसिक स्वास्थ्य</li>
+                        <li>पर्याप्त नींद (7-9 घंटे)</li>
+                        <li>पर्याप्त पानी पीएं</li>
+                    </ul>
+                </div>
+
+                <!-- दिशा-निर्देश 2: स्क्रीनिंग दिशानिर्देश -->
+                <div class="guideline-card">
+                    <div class="card-header">
+                        <span class="card-icon">🔬</span>
+                        <h4>स्क्रीनिंग दिशानिर्देश</h4>
+                    </div>
+                    <ul class="guideline-list">
+                        <li><strong>स्तन कैंसर:</strong> 40 वर्ष के बाद हर साल मैमोग्राम</li>
+                        <li><strong>सर्वाइकल कैंसर:</strong> 21-65 वर्ष की आयु में हर 3 साल पर पैप टेस्ट</li>
+                        <li><strong>हड्डी स्वास्थ्य:</strong> रजोनिवृत्ति के बाद डेक्सा स्कैन</li>
+                        <li><strong>हृदय स्वास्थ्य:</strong> ब्लड प्रेशर और कोलेस्ट्रॉल की जांच</li>
+                        <li><strong>डायबिटीज़:</strong> नियमित ब्लड शुगर जांच</li>
+                    </ul>
+                </div>
+
+                <!-- दिशा-निर्देश 3: निवारक उपाय -->
+                <div class="guideline-card">
+                    <div class="card-header">
+                        <span class="card-icon">🛡️</span>
+                        <h4>निवारक उपाय</h4>
+                    </div>
+                    <ul class="guideline-list">
+                        <li>सर्वाइकल कैंसर से बचाव के लिए एचपीवी टीकाकरण</li>
+                        <li>नियमित रूप से स्तन का स्व-परीक्षण</li>
+                        <li>स्वस्थ वजन बनाए रखें</li>
+                        <li>शराब का सेवन सीमित करें</li>
+                        <li>धूम्रपान से बचें</li>
+                        <li>एसपीएफ सुरक्षा के साथ सुरक्षित सूर्य संपर्क</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
 
         <!-- Content Area with Sidebar -->
         <div class="prevention-wrapper">
@@ -379,8 +781,9 @@
 
                 <!-- Wellness For Her Section -->
         <section id="wellness-for-her" class="section" style="display: none;">
-           <!-- Success Stories Section -->
-                <div style="margin-top: 3rem;">
+
+            <!-- Success Stories Section -->
+                <div id="w-guidelines-en" style="display: block;">
                     <h3 style="color: var(--color-primary); text-align: center; margin-bottom: 2rem; font-size: 1.8rem; font-weight: 700;">🏆 Pioneers in Women's Wellness</h3>
                     <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 2rem;">
                         Educational institutions and organizations championing women's health programs
@@ -544,10 +947,179 @@
                         </div>
                     </div>
                 </div>
+
+
+            <!-- सफलता की कहानियाँ अनुभाग -->
+            <div id="w-guidelines-hi" style="display: none;">
+                <h3 style="color: var(--color-primary); text-align: center; margin-bottom: 2rem; font-size: 1.8rem; font-weight: 700;">🏆 महिलाओं के स्वास्थ्य में अग्रणी संस्थाएँ</h3>
+                <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 2rem;">
+                    महिलाओं के स्वास्थ्य कार्यक्रमों को आगे बढ़ाने वाली शैक्षणिक संस्थाएँ और संगठन
+                </p>
+
+                <!-- स्कूल अनुभाग -->
+                <h4 style="color: var(--color-primary); margin-bottom: 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🏫 आगे बढ़ते विद्यालय</h4>
+                <div class="wellness-grid">
+                    <!-- स्कूल 1 -->
+                    <div class="wellness-card" style="border-left: 4px solid #FF6B9D;">
+                        <div class="wellness-icon">🎓</div>
+                        <h3>Orchids International School</h3>
+                        <p><strong>मैसूर रोड, बेंगलुरु</strong></p>
+                        <ul>
+                            <li>समग्र विकास कार्यक्रम</li>
+                            <li>मानसिक स्वास्थ्य व सेहत पर ध्यान</li>
+                            <li>खेलकूद व शारीरिक फिटनेस गतिविधियाँ</li>
+                        </ul>
+                    </div>
+
+                    <!-- स्कूल 2 -->
+                    <div class="wellness-card" style="border-left: 4px solid #FF6B9D;">
+                        <div class="wellness-icon">🎓</div>
+                        <h3>Goodwill Girls High School</h3>
+                        <p><strong>मैसूर</strong></p>
+                        <ul>
+                            <li>महिलाओं पर केंद्रित शिक्षा</li>
+                            <li>स्वास्थ्य जागरूकता कार्यक्रम</li>
+                            <li>खेल के माध्यम से सशक्तिकरण</li>
+                        </ul>
+                    </div>
+
+                    <!-- स्कूल 3 -->
+                    <div class="wellness-card" style="border-left: 4px solid #FF6B9D;">
+                        <div class="wellness-icon">🎓</div>
+                        <h3>Mount Litera Zee School</h3>
+                        <p><strong>मैसूर</strong></p>
+                        <ul>
+                            <li>व्यापक सेहत कार्यक्रम</li>
+                            <li>मानसिक स्वास्थ्य काउंसलिंग</li>
+                            <li>पोषण व फिटनेस शिक्षा</li>
+                        </ul>
+                    </div>
+
+                    <!-- स्कूल 4 -->
+                    <div class="wellness-card" style="border-left: 4px solid #FF6B9D;">
+                        <div class="wellness-icon">🎓</div>
+                        <h3>Wisdom School</h3>
+                        <p><strong>मैसूर (CBSE)</strong></p>
+                        <ul>
+                            <li>लड़कियों के स्वास्थ्य और स्वच्छता पर ध्यान</li>
+                            <li>नियमित स्वास्थ्य जांच</li>
+                            <li>जीवन कौशल शिक्षा</li>
+                        </ul>
+                    </div>
+
+                    <!-- स्कूल 5 -->
+                    <div class="wellness-card" style="border-left: 4px solid #FF6B9D;">
+                        <div class="wellness-icon">🎓</div>
+                        <h3>DPS Mysore Road</h3>
+                        <p><strong>बेंगलुरु</strong></p>
+                        <ul>
+                            <li>किशोर स्वास्थ्य कार्यक्रम</li>
+                            <li>तनाव प्रबंधन कार्यशालाएँ</li>
+                            <li>खेल व योग गतिविधियाँ</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- कॉलेज अनुभाग -->
+                <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🎓 महिलाओं के स्वास्थ्य को सशक्त बनाने वाले कॉलेज</h4>
+                <div class="wellness-grid">
+                    <!-- कॉलेज 1 -->
+                    <div class="wellness-card" style="border-left: 4px solid #8B4F8B;">
+                        <div class="wellness-icon">🏛️</div>
+                        <h3>Mount Carmel College</h3>
+                        <p><strong>बेंगलुरु</strong></p>
+                        <ul>
+                            <li>शीर्ष रैंक वाला महिला कॉलेज</li>
+                            <li>व्यापक स्वास्थ्य व सेहत कार्यक्रम</li>
+                            <li>मानसिक स्वास्थ्य काउंसलिंग सेंटर</li>
+                        </ul>
+                    </div>
+
+                    <!-- कॉलेज 2 -->
+                    <div class="wellness-card" style="border-left: 4px solid #8B4F8B;">
+                        <div class="wellness-icon">🏛️</div>
+                        <h3>BMS College for Women</h3>
+                        <p><strong>बेंगलुरु</strong></p>
+                        <ul>
+                            <li>54+ वर्षों की महिला शिक्षा की विरासत</li>
+                            <li>स्वास्थ्य जागरूकता अभियान</li>
+                            <li>महिला वेलनेस सेल</li>
+                        </ul>
+                    </div>
+
+                    <!-- कॉलेज 3 -->
+                    <div class="wellness-card" style="border-left: 4px solid #8B4F8B;">
+                        <div class="wellness-icon">🏛️</div>
+                        <h3>Jyoti Nivas College</h3>
+                        <p><strong>बेंगलुरु</strong></p>
+                        <ul>
+                            <li>प्रख्यात महिला संस्थान</li>
+                            <li>प्रजनन स्वास्थ्य शिक्षा</li>
+                            <li>मानसिक स्वास्थ्य कार्यक्रम</li>
+                        </ul>
+                    </div>
+
+                    <!-- कॉलेज 4 -->
+                    <div class="wellness-card" style="border-left: 4px solid #8B4F8B;">
+                        <div class="wellness-icon">🏛️</div>
+                        <h3>GSSS Institute of Engineering & Technology for Women</h3>
+                        <p><strong>मैसूर</strong></p>
+                        <ul>
+                            <li>2003 से महिला इंजीनियरिंग शिक्षा</li>
+                            <li>स्वास्थ्य व सेहत पहल</li>
+                            <li>समग्र विकास पर केंद्रित</li>
+                        </ul>
+                    </div>
+
+                    <!-- कॉलेज 5 -->
+                    <div class="wellness-card" style="border-left: 4px solid #8B4F8B;">
+                        <div class="wellness-icon">🏛️</div>
+                        <h3>Maharani Lakshmi Ammanni College</h3>
+                        <p><strong>बेंगलुरु</strong></p>
+                        <ul>
+                            <li>NAAC मान्यता प्राप्त महिला कॉलेज</li>
+                            <li>छात्र स्वास्थ्य व सेहत कार्यक्रम</li>
+                            <li>शिक्षा के माध्यम से सशक्तिकरण</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- कॉर्पोरेट अनुभाग -->
+                <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">🏢 कॉर्पोरेट वेलनेस चैंपियंस</h4>
+                <div class="wellness-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                    <!-- कॉर्पोरेट 1 -->
+                    <div class="wellness-card" style="border-left: 4px solid #32B89C; background: linear-gradient(135deg, rgba(50, 184, 156, 0.05), rgba(255, 255, 255, 0.95));">
+                        <div class="wellness-icon">💼</div>
+                        <h3>Curefit (cult.fit)</h3>
+                        <p><strong>कॉर्पोरेट वेलनेस अग्रणी</strong></p>
+                        <ul>
+                            <li><strong>महिला केंद्रित कार्यक्रम:</strong> PCOS प्रबंधन, मातृत्व स्वास्थ्य, रजोनिवृत्ति समर्थन</li>
+                            <li><strong>सेवाएँ:</strong> ऑनलाइन फिटनेस क्लास, पर्सनल न्यूट्रीशन प्लान, मानसिक स्वास्थ्य सत्र</li>
+                            <li><strong>विशेषताएँ:</strong> एर्गोनॉमिक्स प्रशिक्षण, तनाव नियंत्रण, डिजिटल स्वास्थ्य ट्रैकिंग</li>
+                            <li><strong>प्रभाव:</strong> तनाव में 70% तक कमी, नींद की गुणवत्ता बेहतर</li>
+                        </ul>
+                    </div>
+
+                    <!-- कॉर्पोरेट 2 -->
+                    <div class="wellness-card" style="border-left: 4px solid #32B89C; background: linear-gradient(135deg, rgba(50, 184, 156, 0.05), rgba(255, 255, 255, 0.95));">
+                        <div class="wellness-icon">💼</div>
+                        <h3>Mantra Care</h3>
+                        <p><strong>महिला स्वास्थ्य एवं वेलनेस कार्यक्रम</strong></p>
+                        <ul>
+                            <li><strong>विशेष देखभाल:</strong> PCOS/PCOD, हार्मोनल संतुलन, गर्भावस्था समर्थन, रजोनिवृत्ति प्रबंधन</li>
+                            <li><strong>सेवाएँ:</strong> 1-1 लाइव कोचिंग, 100+ भाषाओं में सपोर्ट, मानसिक स्वास्थ्य काउंसलिंग</li>
+                            <li><strong>विशेषताएँ:</strong> एडवांस हेल्थ एनालिसिस, पीरियड ट्रैकर, निवारक स्वास्थ्य जांच</li>
+                            <li><strong>प्रभाव:</strong> वजन नियंत्रण व समग्र स्वास्थ्य में महत्वपूर्ण सुधार</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- Government Initiatives Section -->
-        <section id="government" class="section" style="display: none;">
+        <section id="government" class="section">
+        <div id="government-en"  style="display: block;">
             <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏛️ Government Healthcare Initiatives in West Bengal</h2>
             
             <!-- Key Initiatives Overview -->
@@ -661,7 +1233,121 @@
                 </div>
             </div>
 
-                <section id="registration" class="section" style="display: none;">
+
+        <div id="government-hi" style="display: none;">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏛️ पश्चिम बंगाल में सरकारी स्वास्थ्य पहल</h2>
+
+            <!-- मुख्य योजनाओं का अवलोकन -->
+            <div class="initiatives-banner">
+                <h3>🎯 प्रमुख महिला स्वास्थ्य कार्यक्रम</h3>
+                <div class="initiatives-grid">
+                    <div class="initiative-item">
+                        <strong>स्वास्थ्य साथी योजना</strong>
+                        <p>द्वितीयक और तृतीयक इलाज के लिए प्रति वर्ष ₹5 लाख तक का स्वास्थ्य कवर</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>कन्याश्री प्रकल्प</strong>
+                        <p>लड़कियों की शिक्षा व विवाह में देरी के लिए सशर्त नकद हस्तांतरण</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>आयुष सुस्वास्थ्य केंद्र</strong>
+                        <p>पश्चिम बंगाल के विभिन्न स्थानों पर स्वास्थ्य और वेलनेस केंद्र</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>ट्रिपल एलिमिनेशन प्रोग्राम</strong>
+                        <p>एचआईवी, सिफलिस और हेपेटाइटिस बी के माँ से शिशु में संचरण की समाप्ति</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>महिला समृद्धि योजना (MSY)</strong>
+                        <p>एससी महिला उद्यमियों के लिए वित्तीय सहायता (बांकुरा)</p>
+                    </div>
+                    <div class="initiative-item">
+                        <strong>रूपश्री प्रकल्प</strong>
+                        <p>आर्थिक रूप से पिछड़े परिवारों की बेटियों की शादी के लिए ₹25,000 की अनुदान राशि</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- इंटरएक्टिव मैप अनुभाग -->
+            <div class="map-section">
+                <h3 style="margin-bottom: 1rem;">📍 पश्चिम बंगाल के जिलों में स्वास्थ्य शिविर एवं केंद्र</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--color-text-secondary);">
+                    <strong>मुख्य जिले:</strong> मुर्शिदाबाद, बांकुरा, बीरभूम, आसनसोल (पश्चिम बर्दवान), पुरुलिया, बर्दवान (पूर्व बर्दवान)
+                </p>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/d/embed?mid=10LcqEx9WHKcxQhEku84mG6lJoVGvE-Q"
+                        width="100%"
+                        height="600"
+                        style="border:0; border-radius: var(--radius-lg);"
+                        allowfullscreen=""
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- जिलावार स्वास्थ्य केंद्र -->
+            <div class="district-list">
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🏥 जिलों के प्रमुख स्वास्थ्य केंद्र</h3>
+
+                <div class="district-card">
+                    <h4>📍 मुर्शिदाबाद</h4>
+                    <ul>
+                        <li><strong>मुर्शिदाबाद मेडिकल कॉलेज एवं अस्पताल</strong> - बेहरामपुर</li>
+                        <li>जिला महिला एवं बाल स्वास्थ्य केंद्र - बेहरामपुर</li>
+                        <li>कांडी, लालगोला, डोमकल में सामुदायिक स्वास्थ्य केंद्र</li>
+                    </ul>
+                </div>
+
+                <div class="district-card">
+                    <h4>📍 बांकुरा</h4>
+                    <ul>
+                        <li><strong>बांकुरा सम्मिलनी मेडिकल कॉलेज</strong> - बांकुरा</li>
+                        <li>महिला समृद्धि योजना (MSY) केंद्र</li>
+                        <li>ब्लॉकों में आयुष सुस्वास्थ्य केंद्र</li>
+                    </ul>
+                </div>
+
+                <div class="district-card">
+                    <h4>📍 बीरभूम</h4>
+                    <ul>
+                        <li><strong>रामपुरहाट गवर्नमेंट मेडिकल कॉलेज</strong> - रामपुरहाट</li>
+                        <li>स्वास्थ्य साथी सूचीबद्ध अस्पताल</li>
+                        <li>सूरी, बोलपुर में सामुदायिक स्वास्थ्य केंद्र</li>
+                    </ul>
+                </div>
+
+                <div class="district-card">
+                    <h4>📍 आसनसोल (पश्चिम बर्दवान)</h4>
+                    <ul>
+                        <li><strong>आसनसोल जिला अस्पताल</strong> - आसनसोल</li>
+                        <li>दुर्गापुर सब-डिवीजनल अस्पताल</li>
+                        <li>महिलाओं के स्वास्थ्य शिविर एवं स्क्रीनिंग ड्राइव्स</li>
+                    </ul>
+                </div>
+
+                <div class="district-card">
+                    <h4>📍 पुरुलिया</h4>
+                    <ul>
+                        <li><strong>पुरुलिया गवर्नमेंट मेडिकल कॉलेज</strong> - पुरुलिया</li>
+                        <li>आदिवासी महिलाओं के लिए मुक्तिधारा पहल</li>
+                        <li>ग्रामीण क्षेत्रों के लिए मोबाइल हेल्थ वैन</li>
+                    </ul>
+                </div>
+
+                <div class="district-card">
+                    <h4>📍 बर्दवान (पूर्व बर्दवान)</h4>
+                    <ul>
+                        <li><strong>बर्दवान मेडिकल कॉलेज एवं अस्पताल</strong> - बर्दवान</li>
+                        <li>स्वास्थ्य इंगित के तहत मातृत्व स्वास्थ्य सेवाएँ</li>
+                        <li>कटवा, कालना में जिला स्वास्थ्य केंद्र</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+            <section id="registration" class="section" style="display: block;">
+                <div id="registration-en" style="display: block;">
                   <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Register</h2>
                   <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; align-items: flex-start;">
                     <!-- LEFT COLUMN: Registration -->
@@ -909,11 +1595,265 @@
                     </div>
                   </div>
                 </div>
+                  </div>
+                </div>
 
-        </section>
+                <div id="registration-hi" style="display: none;">
+                <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 रजिस्टर करें</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; align-items: flex-start;">
+                  <!-- बाईं ओर: पंजीकरण -->
+                  <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+                    <div class="info-card" style="width: 100%; margin: 0; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+                      <div style="text-align: center; margin-bottom: 2rem;">
+                        <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">महिलाओं के स्वास्थ्य की जानकारी रखें</h3>
+                        <p style="color: var(--color-text-secondary); font-size: 0.95rem;">मासिक स्वास्थ्य टिप्स, स्क्रीनिंग रिमाइंडर व महिलाओं के स्वास्थ्य से जुड़ी अपडेट पाने के लिए सब्सक्राइब करें।</p>
+                      </div>
+                      <form id="registrationForm" onsubmit="handleRegistration(event)">
+                        <!-- पूरा नाम -->
+                        <div style="margin-bottom: 1.5rem;">
+                          <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            👤 पूरा नाम *
+                          </label>
+                          <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            required
+                            placeholder="अपना पूरा नाम लिखें"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                        </div>
+                        <!-- ईमेल पता -->
+                        <div style="margin-bottom: 1.5rem;">
+                          <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📧 ईमेल पता *
+                          </label>
+                          <input
+                            type="email"
+                            id="emailAddress"
+                            name="emailAddress"
+                            required
+                            placeholder="your.email@example.com"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                        </div>
+                        <!-- निवास स्थान -->
+                        <div style="margin-bottom: 1.5rem;">
+                          <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📍 निवास का शहर
+                          </label>
+                          <input
+                            type="text"
+                            id="cityOfResidence"
+                            name="cityOfResidence"
+                            placeholder="जैसे: कोलकाता, दिल्ली, मुंबई"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                        </div>
+                        <!-- फोन नंबर (वैकल्पिक) -->
+                        <div style="margin-bottom: 1.5rem;">
+                          <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📱 फोन नंबर (वैकल्पिक)
+                          </label>
+                          <input
+                            type="tel"
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            placeholder="+91 XXXXXXXXXX"
+                            pattern="[0-9+\-\s]+"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                        </div>
+                        <!-- महिला रोग / स्थिति चयनकर्ता -->
+                        <div style="margin-bottom: 1.5rem;">
+                          <label for="gynaecoType" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            महिला रोग / स्थिति
+                          </label>
+                          <select id="gynaecoType" name="gynaecoType" required style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);">
+                            <option value="">स्थिति चुनें</option>
+                            <option value="pcos">पॉलीसिस्टिक ओवरी सिंड्रोम (PCOS)</option>
+                            <option value="menstrual_disorder">मासिक धर्म संबंधी विकार (अनियमित पीरियड, एमेनोरिया, डिसमेनोरिया)</option>
+                            <option value="fibroids">गर्भाशय फाइब्रॉयड</option>
+                            <option value="endometriosis">एंडोमेट्रियोसिस</option>
+                            <option value="premenstrual_syndrome">प्रीमेन्स्टुअल सिंड्रोम (PMS)</option>
+                            <option value="menopause">मेनोपॉज़ (लक्षण, प्रबंधन)</option>
+                            <option value="pregnancy_complication">गर्भावस्था संबंधी जटिलताएँ (प्री-इक्लेम्पसिया, जेस्टेशनल डायबिटीज़, एनीमिया)</option>
+                            <option value="infertility">बाँझपन / सबफर्टिलिटी</option>
+                            <option value="ovarian_cysts">ओवरी सिस्ट</option>
+                            <option value="pelvic_inflammatory">पेल्विक इंफ्लामेटरी डिज़ीज़ (PID)</option>
+                            <option value="vaginal_infection">योनि संक्रमण (यीस्ट, BV, ट्रिकोमोनियासिस)</option>
+                            <option value="sexual_dysfunction">महिला लैंगिक विकार (लिबिडो, दर्द)</option>
+                            <option value="uterine_prolapse">गर्भाशय का ढलकना</option>
+                            <option value="breast_conditions">स्तन संबंधी स्थिति (फाइब्रोकिस्टिक ब्रेस्ट, मैस्टाइटिस)</option>
+                            <option value="gestational_diabetes">गर्भकालीन मधुमेह</option>
+                            <option value="postpartum_depression">प्रसूति पश्चात अवसाद</option>
+                            <option value="osteoporosis">ऑस्टियोपोरोसिस (महिलाओं के लिए विशिष्ट)</option>
+                            <option value="bladder_incontinence">मूत्र असंयम / ब्लैडर विकार</option>
+                            <option value="cervical_dysplasia">सर्वाइकल डिस्प्लेसिया/पूर्व कैंसर घाव</option>
+                            <option value="std">यौन संक्रामित रोग (HPV, हर्पेस, क्लैमिडिया, गोनोरिया, HIV)</option>
+                            <option value="female_cancers">स्त्री कैंसर (सर्वाइकल, ओवरी, गर्भाशय, वल्वर, योनि)</option>
+                            <option value="mastalgia">स्तन में दर्द (मास्टाल्जिया)</option>
+                            <option value="hyperemesis">हाइपरएमेसिस ग्रेविडेरम</option>
+                            <option value="placental_abnormality">प्लेसेंटल असामान्यता</option>
+                            <option value="iron_deficiency">आयरन की कमी से एनीमिया (महिलाओं के लिए)</option>
+                            <option value="lactation_issue">स्तनपान व दूध उत्पादन संबंधी समस्या</option>
+                            <option value="preeclampsia">प्री-इक्लेम्पसिया / इक्लेम्पसिया</option>
+                            <option value="polymenorrhea">पॉलीमेनोरिया / बार-बार पीरियड</option>
+                            <option value="dyspareunia">डिस्पेरुनिया (यौन संबंध के समय दर्द)</option>
+                            <option value="vulvodynia">वल्वोडिनिया</option>
+                            <option value="vaginismus">वैजिनिज़्मस</option>
+                            <option value="preeclampsia">प्री-इक्लेम्पसिया / इक्लेम्पसिया</option>
+                            <option value="gestational_hypertension">गर्भकालीन उच्च रक्तचाप</option>
+                            <option value="chronic_pelvic_pain">दीर्घकालिक पेल्विक दर्द</option>
+                            <option value="hirsutism">हिरसूटिज़्म (अधिक बाल बढ़ना)</option>
+                            <option value="bartholins_cyst">बार्थोलीन की सिस्ट</option>
+                            <option value="vaginitis">वैजिनाइटिस</option>
+                            <option value="osteopenia">ऑस्टियोपीनिया</option>
+                            <option value="adhesions">पेल्विक एड्हीजन</option>
+                          </select>
+                        </div>
+
+                        <!-- कम्यूनिटी जॉइन करने का विकल्प -->
+                        <div style="margin-bottom: 1.5rem;">
+                          <label>
+                            <input type="checkbox" id="joinCommunity" name="joinCommunity">
+                            मैं अपनी स्थिति के लिए कम्यूनिटी/सपोर्ट ग्रुप से जुड़ना चाहती हूँ
+                          </label>
+                        </div>
+                        <!-- गोपनीयता स्वीकृति -->
+                        <div style="margin-bottom: 2rem;">
+                          <label style="display: flex; align-items: start; cursor: pointer;">
+                            <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                            <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                              मैं इस हेल्थकेयर प्लेटफार्म पर पंजीकरण के लिए सहमत हूँ और समझती हूँ कि मेरे डेटा को गोपनीय रखा जाएगा और किसी तीसरे पक्ष के साथ साझा नहीं किया जाएगा। मैं कभी भी अनसब्सक्राइब कर सकती हूँ।
+                            </span>
+                          </label>
+                        </div>
+                        <!-- सबमिट बटन -->
+                        <button
+                          type="submit"
+                          style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                          onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                          ✓ अभी रजिस्टर करें
+                        </button>
+                        <!-- गोपनीयता नोट -->
+                        <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                          🔒 आपके डेटा को गोपनीय रखा जाएगा और किसी तीसरे पक्ष को साझा नहीं किया जाएगा। हमारी <a href="#" style="color: var(--color-primary); text-decoration: underline;">प्राइवेसी नीति</a> पढ़ें।
+                        </p>
+                      </form>
+                    </div>
+                  </div>
+
+                  <!-- दाईं ओर: सपोर्ट कम्यूनिटी -->
+                  <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+                    <div id="patientGroupsSection" style="width: 100%; margin: 0;">
+                      <h3 style="color: var(--color-primary); margin-bottom: 1rem;">महिला स्वास्थ्य सपोर्ट कम्युनिटी</h3>
+                      <div id="groupsList">
+                        <div class="group-card" style="border-left: 4px solid #e53935; margin-bottom: 1rem; padding: 1rem; background: rgba(229,57,53,0.05); border-radius: 8px;">
+                          <b>मासिक धर्म वेलनेस फोरम</b><br>
+                          <span>सक्रिय सदस्य: 152</span><br>
+                          <span>पीरियड संबंधी समस्याएँ, PMS टिप्स, सैनिटरी विकल्प और चक्रों के बारे में पूछें।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #ab47bc; margin-bottom: 1rem; padding: 1rem; background: rgba(171,71,188,0.05); border-radius: 8px;">
+                          <b>PCOS एवं हार्मोनल हेल्थ सर्कल</b><br>
+                          <span>सक्रिय सदस्य: 130</span><br>
+                          <span>PCOS, अनियमित चक्र, वजन संबंधी समस्याएँ व फर्टिलिटी पर चर्चा करें।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #00acc1; margin-bottom: 1rem; padding: 1rem; background: rgba(0,172,193,0.05); border-radius: 8px;">
+                          <b>गर्भावस्था व मातृ स्वास्थ्य सपोर्ट</b><br>
+                          <span>सक्रिय सदस्य: 101</span><br>
+                          <span>गर्भावस्था देखभाल, सुरक्षित प्रेग्नेंसी, पोषण, और जन्म संबंधी सलाह।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #fbc02d; margin-bottom: 1rem; padding: 1rem; background: rgba(251,192,45,0.05); border-radius: 8px;">
+                          <b>मेनोपॉज़ प्रबंधन नेटवर्क</b><br>
+                          <span>सक्रिय सदस्य: 86</span><br>
+                          <span>मेनोपॉज़ अनुभव साझा करें, हॉट फ्लैशेज, हड्डी और हार्ट हेल्थ सलाह पाएँ।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #8d6e63; margin-bottom: 1rem; padding: 1rem; background: rgba(141,110,99,0.05); border-radius: 8px;">
+                          <b>फर्टिलिटी व फैमिली प्लानिंग फोरम</b><br>
+                          <span>सक्रिय सदस्य: 72</span><br>
+                          <span>गर्भधारण, IVF, कंडोम/गर्भनिरोधक विकल्प व बाँझपन समस्याओं पर चर्चा।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #43a047; margin-bottom: 1rem; padding: 1rem; background: rgba(67,160,71,0.05); border-radius: 8px;">
+                          <b>स्त्रीरोग स्वास्थ्य सहयोग</b><br>
+                          <span>सक्रिय सदस्य: 63</span><br>
+                          <span>गर्भाशय फाइब्रॉयड, एंडोमेट्रियोसिस, सिस्ट, अधिक ब्लीडिंग व पेल्विक दर्द।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #e65100; margin-bottom: 1rem; padding: 1rem; background: rgba(230,81,0,0.05); border-radius: 8px;">
+                          <b>प्रजनन अधिकार व लैंगिक सेहत</b><br>
+                          <span>सक्रिय सदस्य: 99</span><br>
+                          <span>लैंगिक स्वास्थ्य, अधिकार, सहमति, लिबिडो समस्या, STD व सुरक्षा सलाह।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #d84040; margin-bottom: 1rem; padding: 1rem; background: rgba(216,64,64,0.05); border-radius: 8px;">
+                          <b>महिला पोषण व लाइफस्टाइल समूह</b><br>
+                          <span>सक्रिय सदस्य: 60</span><br>
+                          <span>आहार, व्यायाम, माइंड-बॉडी वेलनेस, और मेटाबोलिक सिंड्रोम प्रबंधन।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #fb8c00; margin-bottom: 1rem; padding: 1rem; background: rgba(251,140,0,0.05); border-radius: 8px;">
+                          <b>गर्भावस्था हानि व भावनात्मक सहयोग</b><br>
+                          <span>सक्रिय सदस्य: 41</span><br>
+                          <span>गर्भपात, मृत शिशु, भावनात्मक उपचार व कम्युनिटी सपोर्ट की दिशा में आगे बढ़ें।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #ad1457; margin-bottom: 1rem; padding: 1rem; background: rgba(173,20,87,0.05); border-radius: 8px;">
+                          <b>किशोर व युवा महिला स्वास्थ्य</b><br>
+                          <span>सक्रिय सदस्य: 47</span><br>
+                          <span>यौवन परिवर्तन, मानसिक स्वास्थ्य, सेल्फ केयर व किशोर स्वास्थ्य चुनौतियाँ।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #01579b; margin-bottom: 1rem; padding: 1rem; background: rgba(1,87,155,0.05); border-radius: 8px;">
+                          <b>महिला मानसिक स्वास्थ्य एवं सहयोग</b><br>
+                          <span>सक्रिय सदस्य: 54</span><br>
+                          <span>बेचैनी, अवसाद, शरीर की छवि, ट्रॉमा व आत्मसम्मान के मुद्दे।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #827717; margin-bottom: 1rem; padding: 1rem; background: rgba(130,119,23,0.05); border-radius: 8px;">
+                          <b>प्रसूति व नई माँ सपोर्ट ग्रुप</b><br>
+                          <span>सक्रिय सदस्य: 61</span><br>
+                          <span>स्तनपान, नींद, मानसिक स्वास्थ्य व डिलीवरी बाद रिकवरी के लिए चर्चा।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #4e342e; margin-bottom: 1rem; padding: 1rem; background: rgba(78,52,46,0.05); border-radius: 8px;">
+                          <b>हिंसा रोकथाम व महिला सुरक्षा</b><br>
+                          <span>सक्रिय सदस्य: 33</span><br>
+                          <span>सुरक्षित जगह, लैंगिक हिंसा, दुर्व्यवहार रोकथाम, समर्थन व कानूनी संसाधन।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #0d47a1; margin-bottom: 1rem; padding: 1rem; background: rgba(13,71,161,0.05); border-radius: 8px;">
+                          <b>महिला हार्ट व बोन वेलनेस</b><br>
+                          <span>सक्रिय सदस्य: 40</span><br>
+                          <span>दिल स्वास्थ्य, हड्डी की मजबूती, ऑस्टियोपोरोसिस, महिलाओं के लिए लाइफस्टाइल टिप्स।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                        <div class="group-card" style="border-left: 4px solid #fdd835; margin-bottom: 1rem; padding: 1rem; background: rgba(253,216,53,0.05); border-radius: 8px;">
+                          <b>महिला निवारक स्वास्थ्य सामुदाय</b><br>
+                          <span>सक्रिय सदस्य: 84</span><br>
+                          <span>स्क्रीनिंग, वैक्सीन, चेकअप, गर्भधारण से पहले सलाह व निवारक उपाय।</span><br>
+                          <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">समूह में जुड़ें</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+               </section>
 
 
-        <section id="subscription" class="section" style="display: none;">
+        <section id="subscription" class="section" >
+            <div id="subscription-en" style="display: block;">
             <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Subscribe</h2>
             
             <div class="info-card" style="max-width: 650px; margin: 0 auto; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
@@ -1042,6 +1982,135 @@
                     <p style="color: var(--color-text-secondary); font-size: 1rem;">Thank you for subscribing! You'll receive our next newsletter soon.</p>
                 </div>
             </div>
+            </div>
+
+            <div id="subscription-hi" style="display: none;">
+            <div class="info-card" style="max-width: 650px; margin: 0 auto; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">महिलाओं के स्वास्थ्य की जानकारी पाते रहें</h3>
+                <p style="color: var(--color-text-secondary); font-size: 0.95rem;">मासिक स्वास्थ्य टिप्स, स्क्रीनिंग रिमाइंडर और महिलाओं के स्वास्थ्य से जुड़ी जानकारी पाने के लिए सब्सक्राइब करें।</p>
+            </div>
+
+            <form id="registrationForm" onsubmit="handleRegistration(event)">
+                <!-- पूरा नाम -->
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                        👤 पूरा नाम *
+                    </label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        required
+                        placeholder="अपना पूरा नाम लिखें"
+                        style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                        onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                        onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                </div>
+
+                <!-- ईमेल पता -->
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                        📧 ईमेल पता *
+                    </label>
+                    <input
+                        type="email"
+                        id="emailAddress"
+                        name="emailAddress"
+                        required
+                        placeholder="your.email@example.com"
+                        style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                        onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                        onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                </div>
+
+                <!-- निवास का शहर -->
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                        📍 निवास का शहर
+                    </label>
+                    <input
+                        type="text"
+                        id="cityOfResidence"
+                        name="cityOfResidence"
+                        placeholder="जैसे: कोलकाता, दिल्ली, मुंबई"
+                        style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                        onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                        onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                </div>
+
+                <!-- फोन नंबर (वैकल्पिक) -->
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                        📱 फोन नंबर (वैकल्पिक)
+                    </label>
+                    <input
+                        type="tel"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        placeholder="+91 XXXXXXXXXX"
+                        pattern="[0-9+\-\s]+"
+                        style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                        onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                        onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                </div>
+
+                <!-- सब्सक्रिप्शन प्रेफरेंसेज़ -->
+                <div style="margin-bottom: 2rem; padding: 1.25rem; background: rgba(139, 79, 139, 0.05); border-radius: var(--radius-md); border-left: 4px solid var(--color-primary);">
+                    <label style="display: block; margin-bottom: 0.75rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                        📬 मैं यह जानकारी पाना चाहती हूँ:
+                    </label>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label style="display: flex; align-items: center; cursor: pointer;">
+                            <input type="checkbox" name="subscribeMonthly" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                            <span style="font-size: 0.95rem; color: var(--color-text);">मासिक स्वास्थ्य टिप्स और लेख</span>
+                        </label>
+                        <label style="display: flex; align-items: center; cursor: pointer;">
+                            <input type="checkbox" name="subscribeScreening" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                            <span style="font-size: 0.95rem; color: var(--color-text);">स्क्रीनिंग और चेकअप रिमाइंडर</span>
+                        </label>
+                        <label style="display: flex; align-items: center; cursor: pointer;">
+                            <input type="checkbox" name="subscribeUpdates" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                            <span style="font-size: 0.95rem; color: var(--color-text);">स्वास्थ्य जागरूकता से जुड़ी अपडेट</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- गोपनीयता सहमति -->
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: flex; align-items: start; cursor: pointer;">
+                        <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                        <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                            मैं स्वास्थ्य संबंधी जानकारी प्राप्त करने के लिए सहमत हूँ और समझती हूँ कि मेरा डेटा गोपनीय रखा जाएगा और किसी तीसरे पक्ष के साथ साझा नहीं किया जाएगा। मैं कभी भी अनसब्सक्राइब कर सकती हूँ।
+                        </span>
+                    </label>
+                </div>
+
+                <!-- सबमिट बटन -->
+                <button
+                    type="submit"
+                    style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                    ✓ अभी सब्सक्राइब करें
+                </button>
+
+                <!-- गोपनीयता नोट -->
+                <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                    🔒 आपका डेटा गोपनीय रखा जाएगा और किसी तीसरे पक्ष के साथ साझा नहीं किया जाएगा। हमारी <a href="#" style="color: var(--color-primary); text-decoration: underline;">प्राइवेसी नीति</a> पढ़ें।
+                </p>
+            </form>
+
+            <!-- सफल सब्सक्रिप्शन संदेश (शुरू में छुपा हुआ) -->
+            <div id="registrationSuccess" style="display: none; text-align: center; padding: 2rem;">
+                <div style="width: 80px; height: 80px; background: var(--color-success); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);">
+                    <span style="font-size: 3rem; color: white;">✓</span>
+                </div>
+                <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">सब्सक्रिप्शन सफल रहा!</h3>
+                <p style="color: var(--color-text-secondary); font-size: 1rem;">सब्सक्राइब करने के लिए धन्यवाद! आपको हमारा अगला न्यूज़लेटर जल्द ही प्राप्त होगा।</p>
+            </div>
+        </div>
+            </div>
 
         </section>
 
@@ -1064,8 +2133,6 @@
             </div>
         </div>
 
-
-    </div>
 
     <div id="diseaseDetailModal" class="modal">
         <div class="modal-content">

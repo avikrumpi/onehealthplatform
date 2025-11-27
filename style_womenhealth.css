@@ -205,6 +205,11 @@ body {
     display: none; /* Disable shimmer on active */
 }
 
+.wellness-section {
+  display: flex;         /* or block/grid */
+  flex-direction: column; /* for top-down stack */
+}
+
 /* Active Hover State */
 .nav-tab.active:hover {
     transform: translateY(-6px) scale(1.04);
@@ -754,26 +759,31 @@ body {
 }
 
 .banner-header {
-    text-align: center;
-    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.25rem;
-}
-
-.banner-icon {
-    font-size: 1.75rem;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #8b4f8b 0%, #e88eb5 100%);
+    border-radius: 12px;
+    padding: 1.2rem;
+    border-left: 6px solid #ff6b9d; /* Pink border */
+    box-shadow: 0 2px 12px rgba(255, 107, 157, 0.07);
 }
 
 .banner-header h3 {
-    color: white;
-    font-size: 1.25rem;
+    color: white;       /* Pink heading */
+    font-size: 2rem;
     font-weight: 700;
-    margin: 0;
-    letter-spacing: 0.3px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 0.5rem 0 0.25rem 0;
+    text-shadow: 0 2px 6px rgba(255, 107, 157, 0.15);
+}
+
+.banner-header .banner-subtitle {
+    color: white;       /* Slightly different pink subtitle */
+    font-size: 1.2rem;
+    margin-bottom: 0;
 }
 
 .banner-subtitle {
@@ -781,6 +791,12 @@ body {
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.3px;
+}
+
+.guidelines-horizontal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 }
 
 .guidelines-horizontal {
@@ -1698,8 +1714,8 @@ footer p {
     }
     
     .nav-tab {
-        font-size: 0.9rem;
-        padding: 0.75rem 0.75rem;
+        font-size: 0.35rem;
+        padding: 0.65rem 0.65rem;
     }
 }
 
@@ -1710,10 +1726,20 @@ footer p {
     }
     
     .nav-tab {
-        font-size: 0.875rem;
-        padding: 0.7rem 0.5rem;
+        font-size: 0.35rem;
+        padding: 0.65rem 0.65rem;
         white-space: normal; /* Allow text wrapping on small screens */
     }
+}
+
+/* Section headings (h2 in tabs/sections) */
+.section h2 {
+  font-size: 0.8rem;       /* smaller than default 1.5–2rem */
+}
+
+/* Optional: tab bar heading inside header (if any) */
+.header .nav-tabs .nav-tab {
+  font-size: 0.8rem;
 }
 
 @media (max-width: 480px) {
@@ -1723,7 +1749,7 @@ footer p {
     }
     
     .nav-tab {
-        font-size: 0.95rem;
-        padding: 0.875rem 1rem;
+        font-size: 0.35rem;
+        padding: 0.65rem 0.65rem;
     }
 }

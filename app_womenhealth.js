@@ -810,6 +810,577 @@ const diseases = [
     }
 ];
 
+const hi_diseases = [
+{
+    name: 'पॉलीसिस्टिक ओवरी सिंड्रोम (PCOS)',
+    category: 'हॉर्मोनल विकार',
+    symptoms: [
+    'अनियमित या मिस्ड पीरियड्स',
+    'चेहरे और शरीर पर अधिक बाल (हिरसुटिज्म)',
+    'मुँहासे और तैलीय त्वचा',
+    'वजन बढ़ना या वजन कम करने में कठिनाई',
+    'स्कैल्प पर बाल पतले होना',
+    'त्वचा पर काले धब्बे (इंसुलिन रेजिस्टेंस)',
+    'गर्भवती होने में कठिनाई'
+    ],
+    causes: [
+    'इंसुलिन प्रतिरोध और उच्च इंसुलिन स्तर',
+    'हॉर्मोनल असंतुलन (अधिक एंड्रोजन)',
+    'कम ग्रेड की सूजन',
+    'आनुवांशिक कारक और पारिवारिक इतिहास'
+    ],
+    treatment: [
+    'पीरियड्स रेगुलेट करने के लिए गर्भनिरोधक गोलियां',
+    'इंसुलिन रेजिस्टेंस के लिए मेटफॉर्मिन',
+    'लाइफस्टाइल परिवर्तन (डाइट और व्यायाम)',
+    'फर्टिलिटी के लिए क्लोमिफीन',
+    'हिरसुटिज्म के लिए बाल हटाने का उपचार',
+    'वजन प्रबंधन कार्यक्रम'
+    ],
+    prevention: 'स्वस्थ वजन बनाए रखें, नियमित व्यायाम करें, कम रिफाइंड कार्बोहाइड्रेट वाला संतुलित आहार, तनाव प्रबंधन।',
+    imageUrl: 'https://images.unsplash.com/photo-1596766465011-893322d99d3d?w=900&q=80',
+    citation: '<a href="https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">WHO. Polycystic ovary syndrome. 2025.</a> | <a href="https://www.mayoclinic.org/diseases-conditions/PCOS/symptoms-causes/syc-20353439" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Mayo Clinic. PCOS Symptoms & Causes. 2022.</a>'
+    },
+    {
+    name: 'एंडोमेट्रियोसिस',
+    category: 'ऊतक विकार',
+    symptoms: [
+    'दर्दनाक माहवारी (डिसमेनोरिया)',
+    'पुरानी पेल्विक दर्द, अक्सर पीरियड्स के दौरान बढ़ जाती है',
+    'दर्दनाक संभोग (डिस्पारेयूनिया)',
+    'मलत्याग या पेशाब में दर्द',
+    'अत्यधिक रक्तस्राव',
+    'बांझपन या गर्भवती होने में कठिनाई',
+    'थकान, मतली, फुलाव'
+    ],
+    causes: [
+    'रिट्रोग्रेड माहवारी (माहवारी का खून पेल्विस में वापस जाना)',
+    'इंडक्शन थ्योरी (गैर-गर्भाशय कोशिकाएं एंडोमेट्रियल सेल्स में बदल जाती हैं)',
+    'भ्रूण कोशिका रूपांतरण',
+    'सर्जरी के निशान पर आ जाना',
+    'इम्यून डिसऑर्डर'
+    ],
+    treatment: [
+    'दर्द की दवा (NSAIDs)',
+    'हॉर्मोन थैरेपी (गर्भनिरोधक, GnRH एगोनिस्ट)',
+    'लेप्रोस्कोपिक सर्जरी से ऊतक हटाना',
+    'गंभीर मामलों में हिस्टेरेक्टॉमी',
+    'लक्षण प्रबंधन के लिए एक्यूपंक्चर और आहार में बदलाव'
+    ],
+    prevention: 'सिद्ध रोकथाम नहीं। जल्द निदान और प्रबंधन ज़रूरी है।',
+    imageUrl: 'https://images.unsplash.com/photo-1579737151121-65476a213e45?w=900&q=80',
+    citation: '<a href="https://www.mayoclinic.org/diseases-conditions/endometriosis/symptoms-causes/syc-20354656" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Mayo Clinic. Endometriosis Overview. 2023.</a>'
+    },
+    {
+    name: 'गर्भाशय फाइब्रॉइड्स (लाईयोमायोमा)',
+    category: 'सौम्य ट्यूमर',
+    symptoms: [
+    'अत्यधिक माहवारी रक्तस्राव',
+    'लंबी अवधि तक पीरियड्स (एक हफ्ते से ज्यादा)',
+    'पेल्विक दबाव या दर्द',
+    'बार-बार पेशाब आना',
+    'कब्ज और पीठ में दर्द',
+    'मूत्राशय पूरी तरह खाली करने में कठिनाई',
+    'ब्लड लॉस के कारण एनीमिया'
+    ],
+    causes: [
+    'मांसपेशी कोशिकाओं में आनुवांशिक बदलाव',
+    'हॉर्मोनल कारक (एस्ट्रोजन और प्रोजेस्टेरोन)',
+    'अतिरिक्त सेल्यूलर मैट्रिक्स का संचय',
+    'पारिवारिक इतिहास'
+    ],
+    treatment: [
+    'ब्लीडिंग नियंत्रिण के लिए दवा (GnRH एगोनिस्ट, IUD)',
+    'गैर-इंवेसिव प्रक्रिया (फोकस्ड अल्ट्रासाउंड सर्जरी)',
+    'मिनिमल-इंवेसिव प्रक्रिया (गर्भाशय आर्टरी एंबोलाइजेशन)',
+    'सर्जरी (मायोमेक्टॉमी, हिस्टेरेक्टॉमी)',
+    'एनीमिया के लिए आयरन सप्लीमेंट'
+    ],
+    prevention: 'स्वस्थ वजन बनाए रखें, नियमित व्यायाम करें, फल-सब्जियों वाला आहार अपनाएँ।',
+    imageUrl: 'https://images.unsplash.com/photo-1520281200388-348507204f14?w=900&q=80',
+    citation: '<a href="https://www.womenshealth.gov/a-z-topics/uterine-fibroids" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Office on Women’s Health. Uterine Fibroids. 2024.</a>'
+    },
+    {
+    name: 'स्तन कैंसर',
+    category: 'ऑन्कोलॉजिकल स्थिति',
+    symptoms: [
+    'स्तन या बगल में गाँठ या मोटाई',
+    'स्तन के आकार या रूप में बदलाव',
+    'स्तन की त्वचा में डिंपलिंग या जलन',
+    'निप्पल एवं स्तन क्षेत्र में लालिमा या झड़ना',
+    'निप्पल से अत्यधिक डिस्चार्ज',
+    'निप्पल अंदर जाना',
+    'स्तन या निप्पल में दर्द'
+    ],
+    causes: [
+    'जेनेटिक बदलाव (BRCA1 और BRCA2)',
+    'आयु (उम्र के साथ जोखिम बढ़ना)',
+    'परिवार में स्तन कैंसर का इतिहास',
+    'मोटापा और शारीरिक क्रियाकलाप की कमी',
+    'शराब का सेवन',
+    'रेडिएशन का एक्सपोजर',
+    'हॉर्मोन रिप्लेसमेंट थैरेपी'
+    ],
+    treatment: [
+    'सर्जरी (लंपेक्टॉमी या मास्टेक्टॉमी)',
+    'कीमोथैरेपी',
+    'रेडिएशन थैरेपी',
+    'हॉर्मोन थैरेपी (टैमोक्सीफेन)',
+    'लक्षित दवा चिकित्सा',
+    'इम्यूनोथैरेपी'
+    ],
+    prevention: 'नियमित स्व-जांच, क्लिनिकल जांच, मैमोग्राम, स्वस्थ वजन, शराब सीमित, स्तनपान और एक्सरसाइज़।',
+    imageUrl: 'https://images.unsplash.com/photo-1627883391216-56214309e3e7?w=900&q=80',
+    citation: '<a href="https://www.cdc.gov/cancer/breast/basic_info/prevention.htm" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">CDC. Breast Cancer Prevention. 2023.</a>'
+    },
+    {
+    name: 'गर्भाशय ग्रीवा कैंसर',
+    category: 'ऑन्कोलॉजिकल स्थिति',
+    symptoms: [
+    'असामान्य योनि रक्तस्राव (संभोग के बाद, पीरियड्स के बीच)',
+    'पेल्विक या संभोग के दौरान दर्द',
+    'पानी जैसा, खूनी या गंधयुक्त डिस्चार्ज',
+    'पेशाब में दर्द (अंतिम अवस्था)',
+    'पैरों में सूजन (अंतिम अवस्था)',
+    'वजन कम होना और थकान (अंतिम अवस्था)'
+    ],
+    causes: [
+    'एचपीवी संक्रमण (मुख्य कारण)',
+    'कई यौन साथी',
+    'जल्दी यौन सक्रियता',
+    'धूम्रपान',
+    'कमजोर इम्यून सिस्टम',
+    'लंबे समय तक ओरल कॉन्ट्रासेप्टिव्स'
+    ],
+    treatment: [
+    'सर्जरी (हिस्टेरेक्टॉमी, कोनाइजेशन)',
+    'रेडिएशन थैरेपी',
+    'कीमोथैरेपी',
+    'लक्षित दवा चिकित्सा (जटिल मामलों के लिए)'
+    ],
+    prevention: 'एचपीवी का टीका (9-26 वर्ष), नियमित पैप टेस्ट, सुरक्षित सेक्स करें, धूम्रपान न करें।',
+    imageUrl: 'https://images.unsplash.com/photo-1627883441551-766b44a30e71?w=900&q=80',
+    citation: '<a href="https://www.who.int/news-room/fact-sheets/detail/cervical-cancer" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">WHO. Cervical Cancer Key Facts. 2024.</a>'
+    },
+    {
+        name: 'मेनोपॉज़ और पेरिमेनोपॉज़',
+        category: 'जीवन चरण/हॉर्मोनल बदलाव',
+        symptoms: [
+        'हॉट फ्लैशेस और रात में पसीना',
+        'अनियमित पीरियड्स (पेरिमेनोपॉज़)',
+        'योनि में सूखापन और संभोग में दर्द',
+        'मूड परिवर्तन (चिड़चिड़ापन, डिप्रेशन)',
+        'नींद संबंधी समस्याएँ (अनिद्रा)',
+        'बाल पतले होना और त्वचा सूखना',
+        'कामेच्छा में कमी'
+        ],
+        causes: [
+        'प्रजनन हार्मोन (एस्ट्रोजन और प्रोजेस्टेरोन) में गिरावट',
+        'उम्र बढ़ना (आमतौर पर 40-50 साल)',
+        'हिस्टेरेक्टमी या ओफोरेक्टमी (डिम्ब ग्रंथि हटाना)',
+        'कीमोथैरेपी या रेडिएशन थैरेपी'
+        ],
+        treatment: [
+        'हार्मोन रिप्लेसमेंट थैरेपी (HRT)',
+        'लाइफ़स्टाइल बदलाव (आहार, व्यायाम, तनाव कम करना)',
+        'गैर-हॉर्मोनल दवा (SSRI) हॉट फ्लैशेस के लिए',
+        'सूखापन के लिए योनि एस्ट्रोजन क्रीम',
+        'माइंडफुलनेस और CBT'
+        ],
+        prevention: 'रोकथाम संभव नहीं। प्रबंधन फोकस—लक्षणों में राहत और ऑस्टियोपोरोसिस/दिल की बीमारी को रोकना।',
+        imageUrl: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=900&q=80',
+        citation: '<a href="https://www.nia.nih.gov/health/menopause/menopause-and-perimenopause" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">National Institute on Aging. Menopause Information. 2023.</a>'
+        },
+        {
+        name: 'योनि यीस्ट संक्रमण (कैंडिडायसिस)',
+        category: 'संक्रमण',
+        symptoms: [
+        'योनि और वुल्वा में खुजली और जलन',
+        'संभोग या पेशाब में जलन',
+        'वुल्वा की लालिमा व सूजन',
+        'मोटा, सफेद, दुर्गंध रहित डिस्चार्ज (कॉटेज चीज़ जैसा)',
+        'योनि में दर्द और तकलीफ'
+        ],
+        causes: [
+        'कैंडिडा एल्बिकन्स फंगस का अत्यधिक वृद्धि',
+        'एंटीबायोटिक्स का उपयोग',
+        'गर्भावस्था और अनियंत्रित डायबिटीज',
+        'कमजोर इम्यून सिस्टम',
+        'हार्मोन बदलाव (मासिक धर्म के नजदीक)'
+        ],
+        treatment: [
+        'ओवर-द-काउंटर एंटीफंगल क्रीम, मलहम, या सपोसिटरी',
+        'गंभीर मामलों में ओरल एंटीफंगल दवा (फ्लुकोनाजोल)',
+        'जिद्दी संक्रमण के लिए बोरिक एसिड कैप्सूल'
+        ],
+        prevention: 'सूती अंडरवियर, तंग कपड़ों से बचें, डौचिंग ना करें, गीले कपड़े तुरंत बदलें, डायबिटीज में ब्लड शुगर नियंत्रण।',
+        imageUrl: 'https://images.unsplash.com/photo-1543336332-9457222474f1?w=900&q=80',
+        citation: '<a href="https://www.cdc.gov/fungal/diseases/candidiasis/genital/index.html" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">CDC. Genital Candidiasis. 2023.</a>'
+        },
+        {
+        name: 'मूत्र मार्ग संक्रमण (UTI)',
+        category: 'संक्रमण',
+        symptoms: [
+        'पेशाब करने की तीव्र, बार-बार इच्छा',
+        'पेशाब करते समय जलन (डिस्यूरिया)',
+        'बार-बार, कम मात्रा में पेशाब आना',
+        'धुंधला, गहरा, या गंधयुक्त पेशाब',
+        'महिलाओं में पेल्विक दर्द',
+        'पेशाब में खून आना'
+        ],
+        causes: [
+        'बैक्टीरिया (अधिकतर E. coli) का पेशाब मार्ग में पहुंचना',
+        'यौन गतिविधि',
+        'टॉयलेट के बाद अगला-पिछला पोंछना',
+        'निश्चित गर्भनिरोधक (डायाफ्राम)',
+        'मेनोपॉज़ (एस्ट्रोजन में गिरावट)'
+        ],
+        treatment: [
+        'एंटीबायोटिक्स',
+        'दर्द राहत के लिए फेनाजोपाइरिडीन',
+        'तरल पदार्थ अधिक लें'
+        ],
+        prevention: 'अगला-पिछला दिशा में पोंछना, अधिक पानी पीना, संभोग के बाद पेशाब करना, उत्तेजक उत्पादों से बचना, मेनोपॉज़ के बाद टॉपिकल एस्ट्रोजन।',
+        imageUrl: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=900&q=80',
+        citation: '<a href="https://www.mayoclinic.org/diseases-conditions/urinary-tract-infection/symptoms-causes/syc-20353447" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Mayo Clinic. UTI Overview. 2022.</a>'
+        },
+        {
+        name: 'अंडाशय सिस्ट',
+        category: 'तरल से भरी थैली',
+        symptoms: [
+        'अधिकांश बिना लक्षण के और स्वयं ठीक हो जाते हैं',
+        'पेल्विक दर्द (हल्का या तेज)',
+        'पेट में भारीपन या फुलाव',
+        'फुलाव',
+        'संभोग के दौरान दर्द',
+        'सिस्ट फटने या टॉर्शन का अचानक तेज दर्द',
+        'बार-बार पेशाब की इच्छा'
+        ],
+        causes: [
+        'सामान्य माहवारी चक्र की प्रक्रिया (फॉलिक्यूलर और कॉर्पस ल्यूटियम सिस्ट)',
+        'एंडोमेट्रियोसिस',
+        'पीसीओएस (अनेक छोटे सिस्ट)',
+        'गंभीर पेल्विक संक्रमण'
+        ],
+        treatment: [
+        'छोटे, साधारण सिस्ट के लिए निगरानी',
+        'नए सिस्ट रोकने के लिए गर्भनिरोधक गोलियां',
+        'बड़े सिस्ट के लिए लैप्रोस्कोपी',
+        'टॉर्शन या फटने की स्थिति में इमर्जेंसी सर्जरी'
+        ],
+        prevention: 'प्रवृत्त महिलाओं में गर्भनिरोधक गोलियाँ नए सिस्ट की संभावना कम करती हैं।',
+        imageUrl: 'https://images.unsplash.com/photo-1579737151121-65476a213e45?w=900&q=80',
+        citation: '<a href="https://my.clevelandclinic.org/health/diseases/17435-ovarian-cysts" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Cleveland Clinic. Ovarian Cysts. 2024.</a>'
+        },
+        {
+        name: 'पेल्विक इंफ्लेमेटरी डिजीज (PID)',
+        category: 'संक्रमण',
+        symptoms: [
+        'निचले पेट व पेल्विस में दर्द',
+        'भारी या दुर्गंधयुक्त डिस्चार्ज',
+        'बुखार, कपकपी',
+        'संभोग के दौरान दर्द',
+        'पेशाब में दर्द या कठिनाई',
+        'अनियमित ब्लीडिंग'
+        ],
+        causes: [
+        'अनरक्षित यौन रोग (क्लैमिडिया, गोनोरिया)',
+        'डौचिंग',
+        'PID का अतीत',
+        'IUD का लगना (बहुत कम)'
+        ],
+        treatment: [
+        'संक्रमण को ठीक करने के लिए एंटीबायोटिक्स',
+        'रिइंफेक्शन रोकने के लिए पार्टनर का ट्रीटमेंट',
+        'दर्द प्रबंधन'
+        ],
+        prevention: 'सुरक्षित सेक्स, STI जांच, डौचिंग से बचाव, संक्रमण के संकेत पर तुरंत इलाज।',
+        imageUrl: 'https://images.unsplash.com/photo-1520281200388-348507204f14?w=900&q=80',
+        citation: '<a href="https://www.cdc.gov/std/pid/stdfact-pid.htm" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">CDC. Pelvic Inflammatory Disease (PID) Fact Sheet. 2022.</a>'
+        },
+        {
+        name: 'बांझपन',
+        category: 'प्रजनन स्वास्थ्य स्थिति',
+        symptoms: [
+        '1 वर्ष असुरक्षित संभोग के बाद गर्भ न ठहरना (35 से ऊपर 6 माह)',
+        'अनियमित या अनुपस्थित माहवारी',
+        'दर्दनाक या भारी माहवारी',
+        'हॉर्मोन असंतुलन के लक्षण (हिरसुटिज्म, मुँहासे)',
+        'आवर्ती गर्भपात'
+        ],
+        causes: [
+        'ओव्यूलेशन विकार (PCOS, जल्दी ओवरी फेल)',
+        'फैलोपियन ट्यूब डैमेज (PID, एंडोमेट्रियोसिस)',
+        'गर्भाशय/ग्रीवा समस्या (फाइब्रॉइड, पॉलीप्स)',
+        '30-40% पुरुष बांझपन',
+        'थायरॉयड रोग'
+        ],
+        treatment: [
+        'फर्टिलिटी ड्रग्स (क्लोमिफीन, गोनाडोट्रॉपिन्स)',
+        'इन-विट्रो फर्टिलाइजेशन (IVF)',
+        'इन्ट्रायूटेरिन इनसीमिनेशन (IUI)',
+        'यूटरस या ट्यूब संबंधी समस्या के लिए सर्जरी',
+        'लाइफस्टाइल परिवर्तन'
+        ],
+        prevention: 'स्वस्थ वजन, धूम्रपान/अत्यधिक शराब से बचना, समय पर STI इलाज, प्रजनन विंडो की जानकारी।',
+        imageUrl: 'https://images.unsplash.com/photo-1627883391216-56214309e3e7?w=900&q=80',
+        citation: '<a href="https://www.acog.org/womens-health/faqs/infertility" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">ACOG. Infertility FAQ. 2023.</a>'
+        },
+        {
+        name: 'पूर्व मासिक धर्म सिंड्रोम (PMS) और PMDD',
+        category: 'हॉर्मोनल/मूड विकार',
+        symptoms: [
+        'मूड बदलाव, चिड़चिड़ापन, चिंता (PMDD गंभीर अवसाद)',
+        'डिप्रेशन, नियंत्रण खोना (PMDD)',
+        'फुलाव और स्तनों में दर्द',
+        'थकान, नींद में परेशानी',
+        'सरदर्द/जोड़-मांसपेशी में दर्द',
+        'खाने की तीव्र इच्छा, भूख में बदलाव',
+        'लक्षण पीरियड से 1-2 सप्ताह पूर्व आते हैं और पीरियड शुरू होते ही खत्म हो जाते हैं'
+        ],
+        causes: [
+        'हार्मोन में चक्रीय उतार-चढ़ाव',
+        'सेरोटोनिन में बदलाव',
+        'आनुवांशिक प्रवृत्ति',
+        'पोषक तत्वों की कमी (कैल्शियम, मैग्नीशियम)'
+        ],
+        treatment: [
+        'लाइफस्टाइल परिवर्तन (डाइट, व्यायाम, तनाव प्रबंधन)',
+        'पोषक तत्व सप्लीमेंट',
+        'दर्द के लिए NSAIDs',
+        'हॉर्मोनल गर्भनिरोधक टैबलेट्स',
+        'PMDD में एंटीडिप्रेसेंट्स (SSRIs)'
+        ],
+        prevention: 'नियमित व्यायाम, तनाव प्रबंधन, आहार संयम (कम नमक, कैफीन, चीनी), पर्याप्त नींद।',
+        imageUrl: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=900&q=80',
+        citation: '<a href="https://www.hopkinsmedicine.org/health/conditions-and-diseases/premenstrual-dysphoric-disorder-pmdd" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Johns Hopkins Medicine. PMDD. 2024.</a>'
+        },
+        {
+        name: 'गर्भकालीन डायबिटीज',
+        category: 'गर्भावस्था स्थिति',
+        symptoms: [
+        'अधिकांश मामलों में कोई लक्षण नहीं',
+        'प्यास बढ़ना',
+        'बार-बार पेशाब आना',
+        'थकान',
+        'दृष्टि धुंधलाना (कभी-कभी)'
+        ],
+        causes: [
+        'प्लेसेंटा के हार्मोन मां के इंसुलिन को रोकते हैं (इंसुलिन रेजिस्टेंस)',
+        'पैंक्रियास पर्याप्त इंसुलिन नहीं उत्पन्न करता',
+        'जोखिम: अधिक वजन, डायबिटीज का पारिवारिक इतिहास, उम्र >25'
+        ],
+        treatment: [
+        'विशेष आहार और शारीरिक गतिविधि',
+        'रोजाना रक्त शर्करा मापन',
+        'इंसुलिन इंजेक्शन या ओरल दवा',
+        'फीटस की निगरानी बढ़ाना'
+        ],
+        prevention: 'गर्भावस्था से पहले स्वस्थ वजन, व्यायाम और संतुलित आहार।',
+        imageUrl: 'https://images.unsplash.com/photo-1543336332-9457222474f1?w=900&q=80',
+        citation: '<a href="https://www.cdc.gov/diabetes/basics/gestational.html" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">CDC. Gestational Diabetes Basics. 2023.</a>'
+        },
+        {
+        name: 'पोस्टपार्टम डिप्रेशन (PPD)',
+        category: 'मानसिक स्वास्थ्य स्थिति',
+        symptoms: [
+        'गंभीर मूड बदलाव, अत्यधिक रोना',
+        'बच्चे से जुड़ाव में कठिनाई',
+        'परिवार या मित्रों से दूरी बनाना',
+        'भूख या तो कम होना या बहुत अधिक लगना',
+        'गंभीर चिंता या घबराहट के दौरे',
+        'अपने या बच्चे को नुकसान पहुँचाने का विचार आना',
+        'डिलीवरी के बाद प्रसवोत्तर समय में (कभी-कभी गर्भावस्था में शुरू)'
+        ],
+        causes: [
+        'बर्थ के बाद हार्मोन में भारी गिरावट',
+        'नींद की कमी और प्रसव का दर्द',
+        'भावनात्मक तनाव, डिप्रेशन का इतिहास',
+        'सपोर्ट सिस्टम की कमी'
+        ],
+        treatment: [
+        'साइटोथेरेपी या काउंसलिंग',
+        'एंटीडिप्रेसेंट दवाएं (SSRIs)',
+        'सपोर्ट ग्रुप्स',
+        'कुछ मामलों में हार्मोन थेरेपी',
+        'नींद और आराम को प्राथमिकता देना'
+        ],
+        prevention: 'प्रारंभिक जांच, मजबूत सपोर्ट नेटवर्क, चेकअप्स, हेल्थ प्रोवाइडर से संवाद।',
+        imageUrl: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=900&q=80',
+        citation: '<a href="https://www.nimh.nih.gov/health/topics/postpartum-depression" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">NIMH. Postpartum Depression. 2023.</a>'
+        },
+        {
+        name: 'थायरॉयड विकार (हाइपो/हाइपर)',
+        category: 'हॉर्मोनल विकार',
+        symptoms: [
+        'हाइपो: थकान, वजन बढ़ना, डिप्रेशन, ठंड सहन न कर पाना, सूखी त्वचा, भारी पीरियड्स',
+        'हाइपर: वजन कम होना, चिंता, तेज़ धड़कन, गर्मी सहन न कर पाना, हल्की पीरियड्स',
+        'गर्दन में गांठ (गॉयटर)',
+        'बाल झड़ना और मांसपेशी कमजोरी',
+        'मूड में बदलाव'
+        ],
+        causes: [
+        'ऑटोइम्यून स्थितियाँ (हाशिमोटो-हाइपो, ग्रेव्स-हाइपर)',
+        'आयोडीन की कमी या अधिकता',
+        'गर्भावस्था व प्रसव',
+        'थायराइडिटिस (सूजन)',
+        'आनुवांशिक कारक'
+        ],
+        treatment: [
+        'हाइपोथायरॉयडिज्म: सिंथेटिक थायरॉयड हार्मोन (लेवोथायरोक्सिन)',
+        'हाइपरथायरॉयडिज्म: एंटी-थायरॉयड दवाएं, रेडियोएक्टिव आयोडीन, सर्जरी',
+        'नियमित रक्त जांच'
+        ],
+        prevention: 'उचित आयोडीन का सेवन, पारिवारिक या ऑटोइम्यून इतिहास में नियमित जाँच।',
+        imageUrl: 'https://images.unsplash.com/photo-1627883391216-56214309e3e7?w=900&q=80',
+        citation: '<a href="https://www.womenshealth.gov/a-z-topics/thyroid-disease" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Office on Women’s Health. Thyroid Disease. 2024.</a>'
+        },
+        {
+        name: 'ऑस्टियोपोरोसिस',
+        category: 'हड्डी स्वास्थ्य स्थिति',
+        symptoms: [
+        'हड्डी टूटने तक कोई लक्षण नहीं',
+        'पीठ दर्द (वर्टेब्रा की फ्रैक्चर/गिरावट द्वारा)',
+        'समय के साथ कद का कम होना',
+        'झुका हुआ पोस्चर (कायफोसिस)',
+        'हड्डियों का आसानी से टूटना'
+        ],
+        causes: [
+        'मेनोपॉज़ के बाद एस्ट्रोजन की कमी',
+        'बुढ़ापा',
+        'लंबे समय तक स्टेरॉयड का उपयोग',
+        'थायरॉयड व अन्य हार्मोन समस्याएं',
+        'कम कैल्शियम और विटामिन डी'
+        ],
+        treatment: [
+        'बिसफॉस्फोनेट/हड्डी बनाने की अन्य दवाएं',
+        'हार्मोन रिप्लेसमेंट थैरेपी',
+        'कैल्शियम व विटामिन डी सप्लीमेंट',
+        'वेट-बियरिंग एक्सरसाइज'
+        ],
+        prevention: 'जीवनभर पर्याप्त कैल्शियम व विटामिन डी लें, नियमित व्यायाम करें, धूम्रपान/अल्कोहल से बचें।',
+        imageUrl: 'https://images.unsplash.com/photo-1596766465011-893322d99d3d?w=900&q=80',
+        citation: '<a href="https://www.bones.nih.gov/health-info/bone/osteoporosis/overview" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">NIH. Osteoporosis Overview. 2023.</a>'
+        },
+        {
+        name: 'प्रीएक्लेम्पसिया',
+        category: 'गर्भावस्था स्थिति',
+        symptoms: [
+        'गर्भावस्था के 20 सप्ताह बाद उच्च ब्लड प्रेशर',
+        'मूत्र में प्रोटीन',
+        'तीव्र सिरदर्द व दृष्टि में बदलाव',
+        'ऊपरी पेट में दर्द (दाईं ओर)',
+        'मतली या उल्टी',
+        'चेहरे व हाथों में सूजन'
+        ],
+        causes: [
+        'प्लेसेंटा का असामान्य विकास व फंक्शन',
+        'आनुवांशिक/रक्त प्रवाह संबंधी समस्या',
+        'ऑटोइम्यून व वेस्कुलर समस्याएँ',
+        'पहली बार गर्भावस्था, हाइपरटेंशन का इतिहास, उम्र >40'
+        ],
+        treatment: [
+        'बच्चे और प्लेसेंटा की डिलीवरी (इलाज)',
+        'नज़दीकी निगरानी (BP, यूरीन, जांचें)',
+        'ब्लड प्रेशर व दौरे रोकने की दवाएं (MgSO4)',
+        'कुछ मामलों में बेड रेस्ट'
+        ],
+        prevention: 'लो-डोज़ एस्पिरिन (जोखिम वालों में), पूरी प्रीनेटल केयर, हाई BP/डायबिटीज का प्रबंधन।',
+        imageUrl: 'https://images.unsplash.com/photo-1543336332-9457222474f1?w=900&q=80',
+        citation: '<a href="https://www.preeclampsia.org/about-preeclampsia/what-is-preeclampsia" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Preeclampsia Foundation. What is Preeclampsia? 2024.</a>'
+        },
+        {
+        name: 'वेजिनिस्मस',
+        category: 'यौन स्वास्थ्य स्थिति',
+        symptoms: [
+        'पेल्विक फ्लोर मांसपेशियों की अनैच्छिक ऐंठन',
+        'संभोग के दौरान दर्द',
+        'गाइनेकोलॉजिकल चेकअप या टैम्पॉन डालने में असमर्थता',
+        'जलन या चुभन',
+        'संभोग को लेकर डर या चिंता'
+        ],
+        causes: [
+        'दर्द या पेनिट्रेशन का डर (मनोवैज्ञानिक कारण)',
+        'यौन आघात या दुर्व्यवहार का इतिहास',
+        'प्रथम संभोग में दर्द',
+        'मेडिकल कंडीशन (UTI, यीस्ट, एंडोमेट्रियोसिस, मेनोपॉज़)',
+        'मन:स्थिति संबंधी तनाव/चिंता'
+        ],
+        treatment: [
+        'पेल्विक फ्लोर फिजिकल थैरेपी',
+        'वैजिनल डाइलेटर थेरेपी',
+        'काउंसलिंग या सेक्स थेरेपी',
+        'दर्द प्रबंधन, मसल रिलैक्सेंट्स',
+        'कोई भी मूल कारण का इलाज'
+        ],
+        prevention: 'खुला संवाद, संपूर्ण सेक्स शिक्षा, मनोवैज्ञानिक कारकों का तुरंत समाधान, धीरे-धीरे प्रगति करें।',
+        imageUrl: 'https://images.unsplash.com/photo-1579737151121-65476a213e45?w=900&q=80',
+        citation: '<a href="https://www.acog.org/womens-health/faqs/vaginismus" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">ACOG. Vaginismus FAQ. 2023.</a>'
+        },
+        {
+        name: 'बैक्टीरियल वेजिनोसिस (BV)',
+        category: 'संक्रमण',
+        symptoms: [
+        'पतला, ग्रे, सफेद या हरा डिस्चार्ज',
+        'तेज, अप्रिय "मछली" गंध (सेक्स के बाद खास)',
+        'योनि में खुजली/जलन',
+        'पेशाब करते समय जलन (कम आम)'
+        ],
+        causes: [
+        'विशिष्ट बैक्टीरिया वृद्धि, प्राकृतिक बैलेंस बिगड़ना',
+        'डौचिंग या कठोर साबुन से धोना',
+        'कई या नए यौन साथी',
+        'लैक्टोबैसिलस का कमी',
+        'अक्सर यीस्ट से भ्रमित'
+        ],
+        treatment: [
+        'एंटीबायोटिक्स (मेट्रोनिडाजोल/क्लिंडामाइसिन), ओरल या जैल/क्रीम',
+        'प्रोबायोटिक्स बैलेंस पुनर्स्थापित करने हेतु'
+        ],
+        prevention: 'डौचिंग से बचें, साझेदार सीमित रखें, हल्का साबुन उपयोग करें, एंटीबायोटिक्स का कोर्स पूरा करें।',
+        imageUrl: 'https://images.unsplash.com/photo-1627883441551-766b44a30e71?w=900&q=80',
+        citation: '<a href="https://www.cdc.gov/std/bv/stdfact-bacterial-vaginosis.htm" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">CDC. Bacterial Vaginosis (BV) Fact Sheet. 2022.</a>'
+        },
+        {
+        name: 'ऑटोइम्यून रोग',
+        category: 'इम्यून सिस्टम विकार',
+        symptoms: [
+        'ल्युपस: चेहरे पर तितली जैसा निशान, जोड़ दर्द, थकान',
+        'रूमेटॉइड आर्थराइटिस: दर्द, सूजे जोड़, सुबह stiffness',
+        'थायरॉयड रोग: वजन, थकान, मूड बदलाव',
+        'मल्टीपल स्क्लेरोसिस: सुन्नता, दृष्टि समस्याएँ, कमजोरी',
+        'टाइप 1 डायबिटीज़: अधिक प्यास, बार-बार पेशाब',
+        'इंफ्लेमेटरी बाउल डिजीज: पेट दर्द, दस्त',
+        'स्जोग्रेन सिंड्रोम: आँख/मुँह में सूखापन',
+        'सामान्य: लंबे समय तक थकान, सूजन, अंग-विशिष्ट लक्षण'
+        ],
+        causes: [
+        'इम्यून सिस्टम शरीर की अपनी ऊतकों पर हमला करता है',
+        'आनुवांशिक प्रवृत्ति',
+        'हॉर्मोनल (एस्ट्रोजन प्रभाव)',
+        'पर्यावरणीय कारण',
+        'X क्रोमोसोम कारक',
+        'संक्रमण या बीमारी',
+        'अज्ञात कारक (रिसर्च जारी)'
+        ],
+        treatment: [
+        'डिजीज-मॉडिफाईंग दवाएं',
+        'इम्यूनोसप्रेसेंट्स',
+        'एंटी-इंफ्लेमेटरी (NSAIDs, कॉर्टिकोस्टेरॉयड)',
+        'थायरॉयड के लिए हार्मोन रिप्लेसमेंट',
+        'लक्षित बायोलॉजिक थैरेपी',
+        'फिजिकल थेरेपी और पुनर्वास',
+        'लाइफस्टाइल/लक्षण प्रबंधन'
+        ],
+        prevention: '75% ऑटोइम्यून मामलों में महिलाएं। ल्युपस वाली महिलाएं नियमित थायरॉयड मॉनिटर करें। शुरुआती निदान और उपचार जटिलताओं को रोकता है।',
+        imageUrl: 'https://images.unsplash.com/photo-1520281200388-348507204f14?w=900&q=80',
+        citation: '<a href="https://www.hss.edu/health-library/conditions-and-treatments/lupus-autoimmune-thyroid-diseases-top-10-series" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Hospital for Special Surgery. Lupus and Autoimmune Thyroid Diseases. 2025.</a> | <a href="https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2017.00138/full" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Ferrari SM, et al. Systemic Lupus Erythematosus and Thyroid Autoimmunity. Front Endocrinol. 2017.</a>'
+        }
+    ];
+
+let currentDiseases = diseases;
+
+
 const doctorsData = {
     'Delhi': [
         {
@@ -1501,6 +2072,728 @@ const doctorsData = {
     ]
 };
 
+let currentDoctorsData = doctorsData; // Default English
+let currentCityKey = "Delhi"
+let currentLanguage = 'en'; // Track selected language (set default)
+
+document.addEventListener('DOMContentLoaded', function() {
+  const langSelector = document.getElementById('languageSelector');
+  const govEn = document.getElementById('government-en');
+  const govHi = document.getElementById('government-hi');
+
+  function toggleGovernmentSection(lang) {
+    if (lang === 'hi') {
+      govEn.style.display = 'none';
+      govHi.style.display = 'block';
+    } else {
+      govEn.style.display = 'block';
+      govHi.style.display = 'none';
+    }
+  }
+
+  toggleGovernmentSection(langSelector.value);
+  langSelector.addEventListener('change', function(e) {
+    toggleGovernmentSection(e.target.value);
+  });
+});
+
+
+
+const hi_doctorsData = {
+'Delhi': [
+    {
+        name: 'डॉ. कविता गुप्ता',
+        image: '',
+        credentials: 'एमबीबीएस, डीजीओ, एफआरसीओजी',
+        experience: '18+ वर्षों का अनुभव',
+        hospital: 'गुप्ता मैटरनिटी एवं स्त्री रोग केंद्र',
+        address: '56 कनॉट प्लेस, नई दिल्ली - 110001',
+        phone: '+91 11 5678 9012',
+        email: 'care@guptacenter.com',
+        hours: 'सोम-शनि 8AM-8PM',
+        specializations: 'मातृ-भ्रूण चिकित्सा, फाइब्रॉइड उपचार, मेनोपॉज़ प्रबंधन',
+        bookingLink: 'https://www.practo.com',
+        rating: '4.8/5 (256 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. सुनीता मल्होत्रा',
+        image: '',
+        credentials: 'एमडी, एमएस (स्त्री/प्रसूति)',
+        experience: '25+ वर्षों का अनुभव',
+        hospital: 'अपोलो इंद्रप्रस्थ अस्पताल',
+        address: 'सरिता विहार, दिल्ली मथुरा रोड, नई दिल्ली - 110076',
+        phone: '+91 11 2692 5858',
+        email: 's.malhotra@apollohospitals.com',
+        hours: 'सोम-शुक्र 10AM-5PM',
+        specializations: 'हाई रिस्क गर्भावस्था, एंडोमेट्रियोसिस सर्जरी, पीसीओएस प्रबंधन',
+        bookingLink: 'https://www.apollohospitals.com',
+        rating: '4.9/5 (410 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. प्रिया शर्मा',
+        image: '',
+        credentials: 'एमबीबीएस, डीएनबी (OBG)',
+        experience: '12+ वर्षों का अनुभव',
+        hospital: 'मैक्स अस्पताल साकेत',
+        address: '1-2, प्रेस एंक्लेव रोड, साकेत, नई दिल्ली - 110017',
+        phone: '+91 11 4055 4055',
+        email: 'priya.sharma@maxhealthcare.com',
+        hours: 'सोम-शनि 9AM-4PM',
+        specializations: 'बांझपन, न्यूनतम इनवेसिव सर्जरी, किशोर स्त्री रोग',
+        bookingLink: 'https://www.maxhealthcare.in',
+        rating: '4.7/5 (190 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. रेणु जैन',
+        image: '',
+        credentials: 'एमडी, डीएनबी (OB/GYN)',
+        experience: '20+ वर्षों का अनुभव',
+        hospital: 'फोर्टिस ला फेम',
+        address: 'ग्रेटर कैलाश II, नई दिल्ली',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'contact@fortislafemme.com',
+        hours: 'सोम-शुक्र 10AM-5PM',
+        specializations: 'आईवीएफ, हाई रिस्क प्रसूति, लैप्रोस्कोपिक सर्जरी',
+        bookingLink: 'https://www.practo.com',
+        rating: '4.8/5 (310 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. सुरभि सिंह',
+        image: '',
+        credentials: 'एमबीबीएस, एमएस (OB/GYN), फेलो इनफर्टिलिटी',
+        experience: '14+ वर्षों का अनुभव',
+        hospital: 'बीएलके-मैक्स सुपर स्पेशलिटी अस्पताल',
+        address: 'पुसा रोड, राजेंद्र प्लेस, नई दिल्ली',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'surbhi.singh@maxhospital.com',
+        hours: 'सोम-शनि 9AM-4PM',
+        specializations: 'इनफर्टिलिटी विशेषज्ञ, प्रजनन चिकित्सा, पीसीओडी',
+        bookingLink: 'https://www.maxhealthcare.in',
+        rating: '4.7/5 (245 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. अलका शर्मा',
+        image: '',
+        credentials: 'एमडी, डीजीओ',
+        experience: '28+ वर्षों का अनुभव',
+        hospital: 'इंद्रप्रस्थ अपोलो अस्पताल',
+        address: 'सरिता विहार, नई दिल्ली',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'care@apollohospitals.com',
+        hours: 'मंगल, गुरु, शनि 10AM-6PM',
+        specializations: 'जनरल गाइनकोलॉजी, मेनोपॉज क्लिनिक, हाइस्टेरेक्टॉमी',
+        bookingLink: 'https://www.apollohospitals.com',
+        rating: '4.9/5 (500 समीक्षाएँ)'
+    }
+],
+'Mumbai': [
+    {
+        name: 'डॉ. नेहा शाह',
+        image: '',
+        credentials: 'एमडी, डीजीओ, एफआईसीओजी',
+        experience: '16+ वर्षों का अनुभव',
+        hospital: 'ब्रीच कैंडी हॉस्पिटल',
+        address: '60-A, भुलाभाई देसाई रोड, मुंबई - 400026',
+        phone: '+91 22 2367 1234',
+        email: 'drshah@breachcandy.com',
+        hours: 'सोम-शनि 9AM-6PM',
+        specializations: 'इनफर्टिलिटी उपचार, आईवीएफ, प्रजनन चिकित्सा',
+        bookingLink: 'https://www.breachcandyhospital.org',
+        rating: '4.9/5 (278 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. आरती कुलकर्णी',
+        image: '',
+        credentials: 'एमबीबीएस, एमएस (OB/GYN), फेलो गाइन ऑन्कोलॉजी',
+        experience: '20+ वर्षों का अनुभव',
+        hospital: 'लिलावती अस्पताल और रिसर्च सेंटर',
+        address: 'बांद्रा रिक्लेमेशन, बांद्रा वेस्ट, मुंबई - 400050',
+        phone: '+91 22 2675 1000',
+        email: 'a.kulkarni@lilavatihospital.com',
+        hours: 'मंगल, गुरु, शनि 11AM-4PM',
+        specializations: 'स्त्री रोग ऑन्कोलॉजी, उच्च जोखिम गर्भावस्था, माहवारी अनियमितताएँ',
+        bookingLink: 'https://www.lilavatihospital.com',
+        rating: '4.8/5 (350 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. हृषिकेश पाई',
+        image: '',
+        credentials: 'एमडी, एफआरसीओजी (यूके), डीएनबी, एफसीपीएस',
+        experience: '41+ वर्षों का अनुभव',
+        hospital: 'फोर्टिस अस्पताल / लिलावती अस्पताल',
+        address: 'मुलुंड / बांद्रा, मुंबई',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'contact@drhrishikeshpai.com',
+        hours: 'सोम-शुक्र 10AM-5PM',
+        specializations: 'इनफर्टिलिटी, आईवीएफ व आईसीएसआई, प्रजनन चिकित्सा',
+        bookingLink: 'https://www.fortishealthcare.com',
+        rating: '4.9/5 (600 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. दुरु शाह',
+        image: '',
+        credentials: 'एमडी, डीजीओ, एफसीपीएस, एफआईसीओजी',
+        experience: '40+ वर्षों का अनुभव',
+        hospital: 'गाइनएकवर्ल्ड क्लिनिक',
+        address: 'केम्प्स कॉर्नर, मुंबई',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'info@gynaecworld.com',
+        hours: 'सोम-शनि 9:30AM-6:30PM',
+        specializations: 'पीसीओएस/पीसीओडी, किशोर स्त्री विज्ञान, माहवारी विकार',
+        bookingLink: 'https://www.practo.com',
+        rating: '4.8/5 (550 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. रेखा अंबेगांवकर',
+        image: '',
+        credentials: 'एमबीबीएस, डीजीओ, एमडी (OB/GYN)',
+        experience: '30+ वर्षों का अनुभव',
+        hospital: 'नानावटी मैक्स सुपर स्पेशलिटी हॉस्पिटल',
+        address: 'विले पार्ले वेस्ट, मुंबई',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'contact@nanavatimaxhospital.org',
+        hours: 'सोम-शुक्र 10AM-6PM',
+        specializations: 'हाई-रिस्क ऑब्सटेट्रिक्स, स्त्री रोग सर्जरी, गर्भाशय फाइब्रॉइड्स',
+        bookingLink: 'https://www.nanavatimaxhospital.org',
+        rating: '4.7/5 (420 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. गायत्री देशपांडे',
+        image: '',
+        credentials: 'एमडी, एमएस (OBG), MRCOG (यूके)',
+        experience: '22+ वर्षों का अनुभव',
+        hospital: 'नानावटी मैक्स सुपर स्पेशलिटी हॉस्पिटल',
+        address: 'विले पार्ले वेस्ट, मुंबई',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'contact@nanavatimaxhospital.org',
+        hours: 'मंगल, गुरु 11AM-3PM',
+        specializations: 'रोबोटिक सर्जरी, न्यूनतम हस्तक्षेप स्त्रीरोग, एंडोमेट्रियोसिस',
+        bookingLink: 'https://www.nanavatimaxhospital.org',
+        rating: '4.6/5 (380 समीक्षाएँ)'
+    }
+],
+'Bangalore': [
+    {
+        name: 'डॉ. राजेश्वरी अय्यर',
+        image: '',
+        credentials: 'एमबीबीएस, डीजीओ, एमआरसीओजी (यूके)',
+        experience: '15+ वर्षों का अनुभव',
+        hospital: 'मणिपाल अस्पताल, ओल्ड एयरपोर्ट रोड',
+        address: '98, एचएएल ओल्ड एयरपोर्ट रोड, कोडिहल्ली, बेंगलुरु - 560017',
+        phone: '+91 80 2502 4444',
+        email: 'rajeshwari.iyer@manipalhospitals.com',
+        hours: 'सोम-शुक्र 9AM-5PM',
+        specializations: 'लैप्रोस्कोपिक हायस्टेरेक्टॉमी, पीसीओडी/पीसीओएस, यूरोगाइनकोलॉजी',
+        bookingLink: 'https://www.manipalhospitals.com',
+        rating: '4.7/5 (215 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. वसंती राव',
+        image: '',
+        credentials: 'एमडी (OB/GYN), डीएनबी',
+        experience: '10+ वर्षों का अनुभव',
+        hospital: 'आस्टर सीएमआई अस्पताल',
+        address: 'एनएच 44, हेब्बल, बेंगलुरु - 560092',
+        phone: '+91 80 4012 2222',
+        email: 'vasanthi.rao@astercmi.com',
+        hours: 'सोम-शनि 8AM-7PM',
+        specializations: 'प्रजनन हार्मोन विज्ञान, मेनोपॉज क्लिनिक, गर्भनिरोधक परामर्श',
+        bookingLink: 'https://www.asterhospitals.com',
+        rating: '4.6/5 (180 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. चैत्रा प्रसाद',
+        image: '',
+        credentials: 'एमएस (OB/GYN), लैप्रोस्कोपी फेलोशिप',
+        experience: '18+ वर्षों का अनुभव',
+        hospital: 'क्लाउडनाइन अस्पताल',
+        address: 'ओल्ड एयरपोर्ट रोड, बेंगलुरु',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'contact@cloudninecare.com',
+        hours: 'सोम-शुक्र 9AM-6PM',
+        specializations: 'लैप्रोस्कोपिक एवं हिस्टेरोस्कोपिक सर्जरी, इनफर्टिलिटी, एंडोमेट्रियोसिस',
+        bookingLink: 'https://www.cloudninecare.com',
+        rating: '4.9/5 (450 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. सुनीता महेश',
+        image: '',
+        credentials: 'एमडी, डीएनबी (OBG)',
+        experience: '25+ वर्षों का अनुभव',
+        hospital: 'कोलंबिया एशिया अस्पताल',
+        address: 'व्हाइटफील्ड, बेंगलुरु',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 's.mahesh@columbiaasia.com',
+        hours: 'मंगल, गुरु, शनि 10AM-5PM',
+        specializations: 'हाई-रिस्क प्रेग्नेंसी, भ्रूण चिकित्सा, स्त्री कैंसर स्क्रीनिंग',
+        bookingLink: 'https://www.columbiaasia.com',
+        rating: '4.8/5 (390 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. शिल्पा घोष',
+        image: '',
+        credentials: 'एमबीबीएस, डीजीओ',
+        experience: '12+ वर्षों का अनुभव',
+        hospital: 'साकरा वर्ल्ड हॉस्पिटल',
+        address: 'बेलंदूर, बेंगलुरु',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'contact@sakraworldhospital.com',
+        hours: 'सोम-शनि 11AM-7PM',
+        specializations: 'पीसीओएस प्रबंधन, गर्भनिरोधक परामर्श, सामान्य डिलीवरी',
+        bookingLink: 'https://www.practo.com',
+        rating: '4.7/5 (280 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. शीला कुमारी',
+        image: '',
+        credentials: 'एमडी, एफआरसीओजी (लंदन)',
+        experience: '30+ वर्षों का अनुभव',
+        hospital: 'फोर्टिस हॉस्पिटल',
+        address: 'बन्नेरघट्टा रोड, बेंगलुरु',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 's.kumari@fortishealthcare.com',
+        hours: 'सोम-शुक्र 9AM-4PM',
+        specializations: 'प्रजनन मेडिसिन, मेनोपॉज प्रबंधन, फाइब्रॉइड रिमूवल',
+        bookingLink: 'https://www.fortishealthcare.com',
+        rating: '4.9/5 (550 समीक्षाएँ)'
+    }
+  ],
+   Chennai :  [
+    {
+        name: 'डॉ. पद्मा श्रीधर',
+        image: '',
+        credentials: 'एमबीबीएस, एमएस (OB/GYN), एफआरसीओजी',
+        experience: '22+ वर्षों का अनुभव',
+        hospital: 'अपोलो वुमेन्स हॉस्पिटल',
+        address: '15, शफी मोहम्मद रोड, नुंगमबक्कम, चेन्नई - 600006',
+        phone: '+91 44 2829 0200',
+        email: 'padma.s@apollohospitals.com',
+        hours: 'सोम-शुक्र 10AM-6PM',
+        specializations: 'हाई-रिस्क प्रसूति, भ्रूण चिकित्सा, स्त्रीरोग सर्जरी',
+        bookingLink: 'https://www.apollohospitals.com',
+        rating: '4.8/5 (305 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. सी. गीता हरिप्रिया',
+        image: '',
+        credentials: 'एमडी, डीजीओ, एफओजीएसआई',
+        experience: '40+ वर्षों का अनुभव',
+        hospital: 'प्रशांत हॉस्पिटल्स',
+        address: 'वेलाचेरी, चेन्नई',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'c.haripriya@prashanthhospitals.org',
+        hours: 'सोम-शनि 9AM-5PM',
+        specializations: 'इनफर्टिलिटी प्रबंधन, आईवीएफ, प्रजनन चिकित्सा',
+        bookingLink: 'https://prashanthhospitals.org',
+        rating: '4.9/5 (480 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. विनिता पद्मिनी मैरी',
+        image: '',
+        credentials: 'एमबीबीएस, एमडी, डीजीओ',
+        experience: '24+ वर्षों का अनुभव',
+        hospital: 'वीएस हॉस्पिटल्स',
+        address: 'किलपौक, चेन्नई',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'v.mary@vshospitals.com',
+        hours: 'सोम-शुक्र 10AM-6PM',
+        specializations: 'इनफर्टिलिटी विशेषज्ञ, हिस्टेरेक्टॉमी, सर्वाइकल प्रक्रियाएँ',
+        bookingLink: 'https://vshospitals.com',
+        rating: '4.7/5 (320 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. प्रेमा एलिजाबेथ',
+        image: '',
+        credentials: 'एमबीबीएस, एमडी, डिप्लोमा एनबी (OB&G)',
+        experience: '25+ वर्षों का अनुभव',
+        hospital: 'वीएस हॉस्पिटल्स',
+        address: 'किलपौक, चेन्नई',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'p.elizabeth@vshospitals.com',
+        hours: 'सोम-शनि 9AM-5PM',
+        specializations: 'हाई-रिस्क प्रसूति, स्त्री कैंसर विज्ञान, महिलाओं का स्वास्थ्य',
+        bookingLink: 'https://vshospitals.com',
+        rating: '4.8/5 (390 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. केएस कविता गौतम',
+        image: '',
+        credentials: 'एमबीबीएस, एमएस (OG), डीआरएम (जर्मनी)',
+        experience: '18+ वर्षों का अनुभव',
+        hospital: 'ब्लूमलाइफ हॉस्पिटल और ब्लूम फर्टिलिटी सेंटर',
+        address: 'वेलाचेरी, चेन्नई',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'k.gautham@bloomlifehospital.com',
+        hours: 'मंगल, गुरु, शनि 10AM-4PM',
+        specializations: 'हाई-रिस्क प्रसूति, प्रजनन चिकित्सा, VBAC, वॉटर बर्थ',
+        bookingLink: 'https://bloomlifehospital.com',
+        rating: '4.7/5 (210 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. ऊषा टोडडरी',
+        image: '',
+        credentials: 'एमबीबीएस, डीएनबी (OBG)',
+        experience: '35+ वर्षों का अनुभव',
+        hospital: 'प्रशांत हॉस्पिटल्स',
+        address: 'वेलाचेरी, चेन्नई',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'u.todadri@prashanthhospitals.org',
+        hours: 'सोम-शुक्र 11AM-6PM',
+        specializations: 'मातृ और भ्रूण चिकित्सा, हाई-रिस्क प्रेग्नेंसी, निवारक देखभाल',
+        bookingLink: 'https://prashanthhospitals.org',
+        rating: '4.6/5 (190 समीक्षाएँ)'
+    }
+],
+
+Hyderabad : [
+    {
+        name: 'डॉ. शालिनी रेड्डी',
+        image: '',
+        credentials: 'एमडी (OB/GYN), डीजीओ',
+        experience: '14+ वर्षों का अनुभव',
+        hospital: 'KIMS हॉस्पिटल्स',
+        address: '1-8-31/1, मिनिस्टर रोड, कावाडिगुडा, सिकंदराबाद - 500003',
+        phone: '+91 40 4012 2222',
+        email: 's.reddy@kimshospitals.com',
+        hours: 'सोम, बुध, शुक्र 9AM-4PM',
+        specializations: 'फर्टिलिटी प्रिजर्वेशन, किशोर स्वास्थ्य, एंडोमेट्रियोसिस',
+        bookingLink: 'https://www.kimshospitals.com',
+        rating: '4.7/5 (205 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. टी. राजेश्वरी रेड्डी',
+        image: '',
+        credentials: 'एमडी, डीएनबी (OBG)',
+        experience: '23+ वर्षों का अनुभव',
+        hospital: 'कॉन्टिनेंटल हॉस्पिटल',
+        address: 'नानकरामगुड़ा, हैदराबाद',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 't.reddy@continentalhospitals.com',
+        hours: 'सोम-शनि 10AM-5PM',
+        specializations: 'लैप्रोस्कोपी, बांझपन, हाई-रिस्क प्रेग्नेंसी',
+        bookingLink: 'https://www.continentalhospitals.com',
+        rating: '4.9/5 (835 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. हिमाबिंदु अन्नेमराजु',
+        image: '',
+        credentials: 'एमएस (OB/GYN), लैप्रोस्कोपी फेलोशिप',
+        experience: '20+ वर्षों का अनुभव',
+        hospital: 'रेनबो चिल्ड्रन हॉस्पिटल',
+        address: 'नानकरामगुड़ा, हैदराबाद',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'h.annemraju@rainbowhospitals.in',
+        hours: 'सोम-शुक्र 9AM-4PM',
+        specializations: 'हाई-रिस्क प्रेग्नेंसी, एडवांस्ड लैप्रोस्कोपी, बार-बार गर्भपात',
+        bookingLink: 'https://www.rainbowhospitals.in',
+        rating: '5.0/5 (368 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. अनुशा राव पी.',
+        image: '',
+        credentials: 'एमबीबीएस, एमएस (OB/GYN), रोबोटिक फेलोशिप',
+        experience: '15+ वर्षों का अनुभव',
+        hospital: 'यशोदा हॉस्पिटल्स',
+        address: 'सिकंदराबाद, हैदराबाद',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'a.rao@yashodahospitals.com',
+        hours: 'सोम-शनि 11AM-7PM',
+        specializations: 'मिनिमल इनवेसिव & रोबोटिक सर्जरी, फर्टिलिटी केयर, एंडोमेट्रियोसिस',
+        bookingLink: 'https://www.yashodahospitals.com',
+        rating: '5.0/5 (270 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. शशिकला कोला',
+        image: '',
+        credentials: 'एमबीबीएस, एमडी (OBG), डीजीओ',
+        experience: '28+ वर्षों का अनुभव',
+        hospital: 'रेनबो चिल्ड्रन हॉस्पिटल & बर्थराइट',
+        address: 'बंजारा हिल्स, हैदराबाद',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 's.kola@rainbowhospitals.in',
+        hours: 'सोम-शुक्र 12PM-2:30PM',
+        specializations: 'जनरल गाइनकोलॉजी, मेनोपॉज प्रबंधन, पीसीओएस',
+        bookingLink: 'https://www.rainbowhospitals.in',
+        rating: '4.7/5 (450 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. उदिता मुखर्जी',
+        image: '',
+        credentials: 'एमबीबीएस, डीएनबी, एमआरसीओजी',
+        experience: '16+ वर्षों का अनुभव',
+        hospital: 'रेनबो चिल्ड्रन हॉस्पिटल',
+        address: 'फिनांशियल डिस्ट्रिक्ट, हैदराबाद',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'u.mukherjee@rainbowhospitals.in',
+        hours: 'सोम-शनि 11AM-6PM',
+        specializations: 'हाई-रिस्क प्रेग्नेंसी, लैप्रोस्कोपिक सर्जरी, भ्रूण चिकित्सा',
+        bookingLink: 'https://www.rainbowhospitals.in',
+        rating: '4.6/5 (195 समीक्षाएँ)'
+    }
+],
+
+Kolkata : [
+    {
+        name: 'डॉ. अनन्या राय',
+        image: '',
+        credentials: 'एमबीबीएस, डीएनबी, एमआरसीओजी',
+        experience: '17+ वर्षों का अनुभव',
+        hospital: 'एएमआरआई अस्पताल, साल्ट लेक',
+        address: 'सीबी 17, सेक्टर III, साल्ट लेक सिटी, कोलकाता - 700098',
+        phone: '+91 33 6606 3800',
+        email: 'drananya@amrihospitals.in',
+        hours: 'सोम-शुक्र 10AM-6PM, शनि 10AM-2PM',
+        specializations: 'लैप्रोस्कोपिक सर्जरी, डिम्बग्रंथि सिस्ट, माहवारी विकार',
+        bookingLink: 'https://www.amrihospitals.in',
+        rating: '4.7/5 (201 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. रमना बनर्जी',
+        image: '',
+        credentials: 'एमबीबीएस, एमडी, एफआरसीओजी (यूके)',
+        experience: '28+ वर्षों का अनुभव',
+        hospital: 'अपोलो ग्लेनेगल्स हॉस्पिटल्स',
+        address: 'साल्ट लेक सिटी, कोलकाता',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'r.banerjee@apollohospitals.com',
+        hours: 'सोम-शनि 11AM-6PM',
+        specializations: 'हाई-रिस्क प्रेग्नेंसी, बांझपन, कोलपोस्कोपी, एंडोमेट्रियोसिस',
+        bookingLink: 'https://www.apollohospitals.com',
+        rating: '4.8/5 (53 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. तनुका दासगुप्ता',
+        image: '',
+        credentials: 'एमडी (OBG), डीएनबी',
+        experience: '20+ वर्षों का अनुभव',
+        hospital: 'आईरिस हॉस्पिटल्स',
+        address: 'बागमारी, कोलकाता',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'contact@irishealthservices.com',
+        hours: 'सोम-शुक्र 10AM-5PM',
+        specializations: 'लैप्रोस्कोपिक हिस्टेरेक्टोमी, फाइब्रॉइड उपचार, मेनोपॉज प्रबंधन',
+        bookingLink: 'https://irishealthservices.com',
+        rating: '4.7/5 (180 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. मलिनाथ मुखर्जी',
+        image: '',
+        credentials: 'एमबीबीएस, एफआरसीओजी (यूके), एफआरसीएस (एडिनबरह)',
+        experience: '35+ वर्षों का अनुभव',
+        hospital: 'अपोलो मल्टीस्पेशलिटी हॉस्पिटल्स',
+        address: 'ईएम बाईपास, कोलकाता',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'm.mukherjee@apollohospitals.com',
+        hours: 'मंगल, गुरु 2PM-5PM',
+        specializations: 'बांझपन, प्रजनन हार्मोन विज्ञान, रोबोटिक सर्जरी',
+        bookingLink: 'https://www.apollohospitals.com',
+        rating: '4.9/5 (210 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. सुबिदिता चटर्जी',
+        image: '',
+        credentials: 'एमएस (OBG)',
+        experience: '40+ वर्षों का अनुभव',
+        hospital: 'फोर हर गाइन फर्टिलिटी वेलनेस क्लिनिक',
+        address: 'साल्ट लेक, कोलकाता',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 's.chatterjee@gynaefwclinic.com',
+        hours: 'सोम-शनि 4PM-7PM',
+        specializations: 'सामान्य गाइनकोलॉजी, बांझपन और वेलनेस, माहवारी स्वास्थ्य',
+        bookingLink: 'https://www.practo.com',
+        rating: '4.6/5 (596 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. रुपाश्री दासगुप्ता',
+        image: '',
+        credentials: 'एमबीबीएस, डीजीओ, एमडी, एमआरसीओजी (यूके)',
+        experience: '23+ वर्षों का अनुभव',
+        hospital: 'अपोलो मल्टीस्पेशलिटी हॉस्पिटल्स',
+        address: 'ईएम बाईपास, कोलकाता',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'r.dasgupta@apollohospitals.com',
+        hours: 'सोम-शनि 10AM-6PM',
+        specializations: 'हाई-रिस्क प्रसूति, पीसीओडी, न्यूनतम हस्तक्षेप सर्जरी',
+        bookingLink: 'https://www.apollohospitals.com',
+        rating: '4.7/5 (250 समीक्षाएँ)'
+    }
+],
+
+Pune : [
+    {
+        name: 'डॉ. मीना जोशी',
+        image: '',
+        credentials: 'एमडी (OB/GYN)',
+        experience: '19+ वर्षों का अनुभव',
+        hospital: 'जहांगीर अस्पताल',
+        address: '32 ससून रोड, पुणे - 411001',
+        phone: '+91 20 6681 1000',
+        email: 'm.joshi@jehangirhospital.com',
+        hours: 'सोम-शुक्र 9AM-5PM',
+        specializations: 'इनफर्टिलिटी, मेनोपॉज प्रबंधन, सामान्य गाइनकोलॉजी',
+        bookingLink: 'https://www.jehangirhospital.com',
+        rating: '4.8/5 (280 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. किशोर पंडित',
+        image: '',
+        credentials: 'एमडी, डीजीओ, एफसीपीएस',
+        experience: '28+ वर्षों का अनुभव',
+        hospital: 'गाइनइवर्ल्ड अस्पताल',
+        address: 'शिवाजीनगर, पुणे',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'contact@gynaeworld.com',
+        hours: 'सोम-शनि 10AM-6PM',
+        specializations: 'हाई-रिस्क प्रेग्नेंसी, लैप्रोस्कोपिक सर्जरी, इनफर्टिलिटी',
+        bookingLink: 'https://www.practo.com',
+        rating: '4.9/5 (345 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. कीर्ति जोगलेकर',
+        image: '',
+        credentials: 'एमडी, डीजीओ',
+        experience: '46+ वर्षों का अनुभव',
+        hospital: 'गाइनइवर्ल्ड अस्पताल',
+        address: 'शिवाजीनगर, पुणे',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'contact@gynaeworld.com',
+        hours: 'सोम-शुक्र 10AM-2PM',
+        specializations: 'वरिष्ठ सलाहकार, सामान्य गाइनकोलॉजी, मेनोपॉज क्लिनिक',
+        bookingLink: 'https://www.practo.com',
+        rating: '5.0/5 (25 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. प्रतिभा चव्हाण',
+        image: '',
+        credentials: 'एमडी, डीजीओ, डीएनबी',
+        experience: '17+ वर्षों का अनुभव',
+        hospital: 'गैलेक्सी अस्पताल',
+        address: 'पिंपल सौदागर, पुणे',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'p.chavan@galaxyhospital.in',
+        hours: 'सोम-शनि 9AM-5PM',
+        specializations: 'इनफर्टिलिटी विशेषज्ञ, आईवीएफ, पीसीओडी उपचार, हाई-रिस्क प्रसूति',
+        bookingLink: 'https://www.practo.com',
+        rating: '4.8/5 (2539 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. निलेश बालकवडे',
+        image: '',
+        credentials: 'एमएस (OBG), डीएनबी',
+        experience: '17+ वर्षों का अनुभव',
+        hospital: 'ओएसिस फर्टिलिटी',
+        address: 'वाकड़, पुणे',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'n.balkawade@oasisfertility.com',
+        hours: 'सोम-शुक्र 9AM-5PM',
+        specializations: 'इनफर्टिलिटी विशेषज्ञ, आईवीएफ, प्रजनन विज्ञान, मिनिमल एक्सेस सर्जरी',
+        bookingLink: 'https://www.oasisfertility.com',
+        rating: '4.7/5 (39 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. वैशाली चव्हाण',
+        image: '',
+        credentials: 'एमडी, डीजीओ, डीएनबी, डिप्लोमा एंडोस्कोपी (जर्मनी)',
+        experience: '25+ वर्षों का अनुभव',
+        hospital: 'क्लाउडनाइन हॉस्पिटल',
+        address: 'कल्याणी नगर, पुणे',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'v.chavan@cloudninecare.com',
+        hours: 'मंगल, गुरु, शनि 11AM-4PM',
+        specializations: 'एंडोस्कोपिक सर्जरी, हिस्टेरेक्टोमी, मेनोपॉज प्रबंधन, फाइब्रॉइड्स',
+        bookingLink: 'https://www.cloudninecare.com',
+        rating: '4.7/5 (150 समीक्षाएँ)'
+    }
+],
+
+Ahmedabad : [
+    {
+        name: 'डॉ. अल्पना पटेल',
+        image: '',
+        credentials: 'एमबीबीएस, डीजीओ, एफओजीएसआई',
+        experience: '16+ वर्षों का अनुभव',
+        hospital: 'CIMS अस्पताल',
+        address: 'ऑफ साइंस सिटी रोड, सोला, अहमदाबाद - 380060',
+        phone: '+91 79 2771 2771',
+        email: 'a.patel@cimshospitals.com',
+        hours: 'सोम-शनि 10AM-7PM',
+        specializations: 'हाई-रिस्क प्रेग्नेंसी, लैप्रोस्कोपिक सर्जरी, भ्रूण अल्ट्रासाउंड',
+        bookingLink: 'https://www.cims.org',
+        rating: '4.7/5 (195 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. मनीष शाह',
+        image: '',
+        credentials: 'एमएस (OB/GYN), डीएनबी',
+        experience: '23+ वर्षों का अनुभव',
+        hospital: 'ट्यूलिप विमेंस हॉस्पिटल',
+        address: 'सेटेलाइट, अहमदाबाद',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'm.shah@tulipwomenshospital.com',
+        hours: 'सोम-शुक्र 10AM-5PM',
+        specializations: 'लैप्रोस्कोपिक सर्जरी, हाई-रिस्क प्रेग्नेंसी, इनफर्टिलिटी',
+        bookingLink: 'https://www.practo.com',
+        rating: '4.9/5 (17 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. उषा बोहरा',
+        image: '',
+        credentials: 'एमडी (OBG)',
+        experience: '34+ वर्षों का अनुभव',
+        hospital: 'अपोलो अस्पताल',
+        address: 'भाट, गांधी नगर बाईपास, अहमदाबाद',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'u.bohra@apollohospitals.com',
+        hours: 'सोम-शुक्र 10AM-12PM',
+        specializations: 'हाई-रिस्क प्रेग्नेंसी, स्त्री कैंसर विज्ञान, गर्भाशय फाइब्रॉइड्स',
+        bookingLink: 'https://www.apollohospitals.com',
+        rating: '4.7/5 (10 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. भौमिक शाह',
+        image: '',
+        credentials: 'एमडी (OBG)',
+        experience: '21+ वर्षों का अनुभव',
+        hospital: 'श्री श्रीजी हॉस्पिटल',
+        address: 'गोटा, अहमदाबाद',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'b.shah@shreejihospital.com',
+        hours: 'सोम-शनि 10:30AM-1:30PM',
+        specializations: 'इनफर्टिलिटी ट्रीटमेंट, पीसीओएस, सामान्य एवं सिजेरियन डिलीवरी',
+        bookingLink: 'https://www.practo.com',
+        rating: '5.0/5 (525 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. रंजन जोशी',
+        image: '',
+        credentials: 'एमडी गाइनेकोलॉजी, एमबीबीएस',
+        experience: '39+ वर्षों का अनुभव',
+        hospital: 'डॉ. जोशी मैटरनिटी एवं स्त्री रोग अस्पताल',
+        address: 'एलिस ब्रिज, अहमदाबाद',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'r.joshi@drjoshishospital.com',
+        hours: 'सोम-शनि 11AM-5PM',
+        specializations: 'आम स्त्री रोग, माहवारी विकार, मेनोपॉज प्रबंधन',
+        bookingLink: 'https://www.practo.com',
+        rating: '4.7/5 (224 समीक्षाएँ)'
+    },
+    {
+        name: 'डॉ. दीप्ति जैन',
+        image: '',
+        credentials: 'एमएस - ऑब्स्टेट्रिक्स एंड गाइनेकोलॉजी',
+        experience: '18+ वर्षों का अनुभव',
+        hospital: 'विमेंस क्लिनिक इंडिया',
+        address: 'पलड़ी, अहमदाबाद',
+        phone: 'अनुरोध पर उपलब्ध',
+        email: 'd.jain@womensclinicindia.com',
+        hours: 'सोम-शनि 11AM-1:30PM',
+        specializations: 'मासिक धर्म समस्याएं, स्त्री समस्याएं, महिला यौन समस्याएं, पीसीओडी',
+        bookingLink: 'https://www.lybrate.com',
+        rating: '4.8/5 (130 समीक्षाएँ)'
+    }
+  ]
+};
+
 // ========================================================================
 // FAQS ARRAY
 // ========================================================================
@@ -1557,9 +2850,65 @@ const faqs = [
     }
 ];
 
+const hi_faqs = [
+    {
+        question: 'मैं कितनी बार गाइनेकोलॉजिस्ट के पास जाऊं?',
+        answer: 'महिलाओं को 13-15 वर्ष की उम्र से हर साल गाइनेकोलॉजिस्ट से वेलनेस विजिट करानी चाहिए। सर्वाइकल कैंसर स्क्रीनिंग के लिए पैप स्मीयर 21 वर्ष की उम्र से शुरू होकर 21-29 वर्ष की उम्र में हर 3 वर्ष, और 30-65 वर्ष की उम्र में हर 3-5 वर्ष में HPV को-टेस्ट के साथ करवाना चाहिए। अगर आपको असामान्य ब्लीडिंग, तीव्र दर्द या अजीब डिस्चार्ज जैसी समस्याएँ हों तो तुरंत डॉक्टर से मिलें।',
+        citation: '<a href="https://www.cdc.gov/cervical-cancer/prevention/index.html" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">CDC. Reducing Risk for Cervical Cancer. 2025.</a>'
+    },
+    {
+        question: 'PCOS के सबसे आम लक्षण क्या हैं?',
+        answer: '**अनियमित या अनुपस्थित पीरियड्स**, **अत्यधिक बाल/चेहरे पर बाल (हिरसुटिज्म)**, **गंभीर मुंहासे**, और **वजन कम करने में कठिनाई** PCOS के सबसे आम लक्षण हैं। डायग्नोसिस के लिए इनमें से दो: अनियमित पीरियड्स, हाई एंड्रोजन स्तर या अल्ट्रासाउंड में पॉलीसिस्टिक ओवरीज़ जरूर हों।',
+        citation: '<a href="https://www.cdc.gov/diabetes/basics/PCOS.html" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">CDC. PCOS and Diabetes. 2023.</a>'
+    },
+    {
+        question: 'क्या गर्भावस्था के दौरान व्यायाम करना सुरक्षित है?',
+        answer: 'हाँ, अधिकांश महिलाओं के लिए गर्भावस्था में व्यायाम सुरक्षित ही नहीं बल्कि फायदेमंद है। इससे पीठ दर्द, कब्ज, और गर्भकालीन मधुमेह एवं प्रीक्लेम्प्सिया का जोखिम कम होता है। हल्के व्यायाम जैसे चलना, तैराकी, प्रीनेटल योग करें और कोई भी नया व्यायाम शुरू करने से पहले अपने डॉक्टर से जरूर सलाह लें।',
+        citation: '<a href="https://www.acog.org/womens-health/faqs/exercise-during-pregnancy" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">ACOG. Exercise During Pregnancy FAQ. 2022.</a>'
+    },
+    {
+        question: 'HPV वैक्सीन का महत्व क्या है?',
+        answer: 'ह्यूमन पैपिलोमावायरस (HPV) वैक्सीन लगभग 90% सर्वाइकल कैंसर और अधिकतर गुदा, योनि, वल्वा, लिंग और ओरल कैंसर के कारण बनने वाले HPV टाइप्स से बचाव करता है। यह सभी बच्चों को 11 या 12 वर्ष की उम्र में लगवाने की सलाह दी जाती है और 26 वर्ष तक दी जा सकती है। टीकाकरण HPV से जुड़ी बीमारियों की रोकथाम के लिए बहुत जरूरी है।',
+        citation: '<a href="https://www.cdc.gov/hpv/parents/questions-answers.html" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">CDC. HPV Vaccine Q&A. 2023.</a>'
+    },
+    {
+        question: 'एंडोमेट्रियोसिस दर्द को कम करने के लिए कौन से लाइफस्टाइल बदलाव मदद कर सकते हैं?',
+        answer: 'दवाओं और सर्जरी के साथ-साथ लाइफस्टाइल में बदलाव से भी लक्षणों में काफी राहत मिल सकती है। इसमें शामिल है: **एंटी-इंफ्लेमेटरी डाइट** (रेड मीट, कैफीन और शराब कम करें), **नियमित हल्का व्यायाम** (योग और चलना), **हीट थेरेपी** (गर्म स्नान/पैड), और **तनाव प्रबंधन** (मेडिटेशन, पर्याप्त नींद)।',
+        citation: '<a href="https://www.endometriosis.org/resources/articles/nutrition" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">World Endometriosis Society. Nutrition and Diet. 2020.</a>'
+    },
+    {
+        question: 'मेमोग्राम कब शुरू करवाना चाहिए?',
+        answer: '**अमेरिकन कैंसर सोसाइटी (ACS)** के अनुसार सामान्य जोखिम वाली महिलाएं 40-44 साल की उम्र में सालाना मैमोग्राम शुरू करें और 45-54 वर्ष तक हर साल जारी रखें। 55 वर्ष के बाद दो साल में एक बार या हर साल जांच जारी रखें। उच्च जोखिम वाली महिलाओं को जल्दी शुरुआत करने की सलाह दी जाती है।',
+        citation: '<a href="https://www.cancer.org/cancer/types/breast-cancer/screening-tests-and-early-detection/american-cancer-society-guidelines-for-the-early-detection-of-cancer.html" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">American Cancer Society. Screening Guidelines. 2024.</a>'
+    },
+    {
+        question: 'मेनोपॉज़ के दौरान मूड बदलना सामान्य है?',
+        answer: 'हाँ, यह बहुत सामान्य है। परिमेनोपॉज़ और मेनोपॉज़ में एस्ट्रोजन व प्रोजेस्टेरोन हार्मोन के घटते स्तर से दिमागी कैमिस्ट्री प्रभावित होती है, जिससे **मूड बदलना, चिंता, चिड़चिड़ापन या डिप्रेशन** होता है। इलाज में हॉर्मोन रिप्लेसमेंट थेरेपी (HRT) और काउंसलिंग शामिल है।',
+        citation: '<a href="https://www.mayoclinic.org/diseases-conditions/menopause/symptoms-causes/syc-20353390" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Mayo Clinic. Menopause Mood Changes. 2023.</a>'
+    },
+    {
+        question: 'PMS और PMDD में क्या अंतर है?',
+        answer: 'दोनों प्रीमेनस्ट्रुअल डिसऑर्डर्स हैं, लेकिन **PMDD (प्रीमेनस्ट्रुअल डिस्फोरिक डिसऑर्डर) PMS का गंभीर रूप है**। जहां PMS हल्के लक्षण जैसे ब्लोटिंग और मूड बदलना देता है, वहीं PMDD में गंभीर डिप्रेशन, चिंता, ज्यादा चिड़चिड़ापन और नियंत्रण खोने की भावना होती है। यह गंभीर बीमारी है जिसमें डॉक्टर की सलाह जरूरी है।',
+        citation: '<a href="https://www.hopkinsmedicine.org/health/conditions-and-diseases/premenstrual-dysphoric-disorder-pmdd" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Johns Hopkins Medicine. PMDD Information. 2024.</a>'
+    },
+    {
+        question: 'मेरे पास यीस्ट संक्रमण है या बैक्टीरियल वेजिनोसिस (BV), कैसे जानें?',
+        answer: 'इनके लक्षण अलग होते हैं। **यीस्ट इंफेक्शन** में आमतौर पर मोटा, सफेद, दही जैसा डिस्चार्ज और तीव्र खुजली होती है लेकिन बदबू नहीं होती। **BV** में पतला, ग्रे या हरा डिस्चार्ज और विशिष्ट मछली जैसी गंध होती है। सही उपचार के लिए डॉक्टर से जांच कराएं, क्योंकि अलग-अलग उपचार लगते हैं।',
+        citation: '<a href="https://www.mayoclinic.org/diseases-conditions/vaginitis/expert-answers/yeast-infection-bacterial-vaginosis/faq-20058257" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Mayo Clinic. Yeast vs. BV. 2023.</a>'
+    },
+    {
+        question: 'महिलाएं ऑटोइम्यून बीमारियों के प्रति ज्यादा संवेदनशील क्यों होती हैं?',
+        answer: 'लगभग 75% ऑटोइम्यून रोग महिलाएं प्रभावित होती हैं। इसके पीछे हार्मोनल कारण (खासकर एस्ट्रोजन), आनुवांशिक कारण (X क्रोमोसोम में ज्यादा इम्यून-जीन) और मजबूत महिला इम्यून सिस्टम की प्रवृत्ति प्रमुख मानी जाती है।',
+        citation: '<a href="https://www.frontiersin.org/articles/10.3389/fimmu.2019.01439/full" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">Frontiers in Immunology. Sex Differences in Autoimmunity. 2019.</a>'
+    }
+];
+
+let currentFaqs = faqs; // default as English
+
 // ========================================================================
 // NEW DATA STRUCTURES FOR EMPTY SECTIONS
 // ========================================================================
+
 
 const whenToSeeData = [
 
@@ -1613,6 +2962,59 @@ const whenToSeeData = [
     {
         question: '📅 Annual Wellness Check',
         answer: 'An annual wellness visit is recommended for all women to discuss birth control, STI prevention, vaccination updates, and mental health, even if no physical exam is required.'
+    }
+];
+const hi_whenToSeeData = [
+    {
+        question: '📅 पहली महिला चिकित्सक विज़िट (आयु 13-15)',
+        answer: 'पहली बार किशोरावस्था (13 से 15 वर्ष) में महिला चिकित्सक से मिलना चाहिए। इसमें सामान्य जांच, स्वास्थ्य इतिहास व सामान्य प्रश्नों पर चर्चा होती है। विशेष लक्षण या समस्या न हो तो आमतौर पर पेल्विक जांच आवश्यक नहीं होती।'
+    },
+    {
+        question: '🩸 असामान्य रक्तस्राव या दर्द',
+        answer: 'यदि आपको नीचे दिए गए लक्षण हों तो तुरंत स्त्री रोग विशेषज्ञ से मिलें:<br><br>• <strong>बहुत अधिक या लंबे समय तक माहवारी (Menorrhagia):</strong> हर घंटे पैड/टैम्पोन पूरा भीगना, पीरियड्स 7 दिन से ज्यादा<br>• <strong>माहवारी के बीच में रक्तस्राव (Spotting):</strong> नियमित चक्र के अलावा किसी भी समय खून आना<br>• <strong>रजोनिवृत्ति के बाद रक्तस्राव:</strong> गर्भाशय या गर्भाशयग्रीवा (सर्विक्स) कैंसर का संकेत<br>• <strong>गंभीर पेल्विक दर्द:</strong> असहनीय माहवारी दर्द (Dysmenorrhea) या लगातार पेल्विक दर्द',
+        citation: '[translate:American College of Obstetricians and Gynecologists (ACOG). FAQs: Abnormal Uterine Bleeding. 2024.]'
+    },
+    {
+        question: '🦠 संक्रमण का संदेह या असामान्य डिस्चार्ज',
+        answer: 'डॉक्टर से अवश्य मिलें यदि आपको नीचे दिए गए लक्षण हों:<br><br>• <strong>लगातार असामान्य डिस्चार्ज:</strong> रंग (पीला, हरा, ग्रे), मात्रा या गाढ़ा/पतला<br>• <strong>तेज दुर्गंध:</strong> विशेष रूप से बदबूदार \"फिशी\" गंध<br>• <strong>तीव्र जलन या खुजली:</strong> योनि या बाहर<br>• <strong>पेशाब में दर्द (Dysuria):</strong> पेशाब करते समय जलन — प्रायः यूटीआई/STI का संकेत<br><br>PID जैसे संक्रमण का तुरंत इलाज करवाना जरूरी है, ताकि आगे चलकर बांझपन जैसी जटिलता न हो।',
+        citation: '[translate:CDC. Common Reproductive Health Concerns for Women. 2025.]'
+    },
+    {
+        question: '🤱 गर्भावस्था, गर्भधारण पूर्व परामर्श, एवं परिवार नियोजन',
+        answer: 'इन स्थितियों के लिए डॉक्टर से मिलें:<br><br>• <strong>गर्भधारण पूर्व परामर्श:</strong> गर्भ ठहराने से पहले<br>• <strong>गर्भावस्था की पुष्टि:</strong> प्रसव पूर्व देखभाल प्रारंभ करें<br>• <strong>परिवार नियोजन:</strong> गर्भनिरोधक विकल्प, IUD लगवाना/निकालना<br>• <strong>बांझपन चिंता:</strong> 12 महीने की कोशिश के बाद (या 35 वर्ष से अधिक होने पर 6 माह के भीतर)',
+        citation: '[translate:American College of Obstetricians and Gynecologists (ACOG). Initial Prenatal Care. 2023.]'
+    },
+    {
+        question: '🩺 वार्षिक स्वास्थ्य जांच और नियमित स्क्रीनिंग',
+        answer: 'स्वस्थ महसूस कर रही हों तब भी हर महिला को हर साल गाइनिकोलॉजिस्ट से जांच करानी चाहिए, जिसमें शामिल हैं:<br><br>• <strong>पेल्विक जांच:</strong> प्रजनन अंगों का स्वास्थ्य जाँच<br>• <strong>पैप स्मीयर:</strong> गर्भाशयग्रीवा कैंसर की स्क्रीनिंग (3-5 वर्ष में एक बार, उम्र और जोखिम के अनुसार)<br>• <strong>स्तन परीक्षा:</strong> क्लिनिकल ब्रेस्ट एग्ज़ाम और मैमोग्राम सलाह<br>• <strong>गर्भनिरोधक/एसटीआई सलाह:</strong>',
+        citation: '[translate:U.S. Preventive Services Task Force (USPSTF). Screening for Cervical Cancer. 2024.]'
+    },
+    {
+        question: '🍈 स्तन में गांठ या निप्पल में बदलाव',
+        answer: 'यदि आपको नीचे दिए गए बदलाव दिखें तो डॉक्टर से मिलें:<br><br>• <strong>नई गांठ या कठोरता:</strong> स्तन या बगल में<br>• <strong>स्तन के आकार या रूप में बदलाव</strong><br>• <strong>निप्पल डिस्चार्ज:</strong> खासकर यदि खून हो या अपने-आप निकलता हो<br>• <strong>त्वचा में बदलाव:</strong> सिकुड़न, गढ्डा, लालिमा, या \"संतरे के छिलके\" जैसा रूप',
+        citation: '[translate:American Cancer Society (ACS). Breast Cancer Early Detection. 2023.]'
+    },
+    {
+        question: '👵 रजोनिवृत्ति के लक्षण या रजोनिवृत्ति के बाद की चिंता',
+        answer: 'इन स्थितियों में डॉक्टर अवश्य दिखाएँ:<br><br>• <strong>बहुत तेज़ गरमाहट या रात में पसीना आना</strong><br>• <strong>योनि में सूखापन या यौन संबंध में दर्द</strong><br>• <strong>मूड बदलना</strong> जिससे रोजमर्रा जीवन प्रभावित हो<br>• <strong>रजोनिवृत्ति के बाद खून आना:</strong> *एंडोमेट्रियल कैंसर की जांच आवश्यक*',
+        citation: '[translate:National Institute on Aging (NIA). Menopause: Symptoms and Treatments. 2024.]'
+    },
+    {
+        question: '🚨 लगातार सूजन या असामान्य थकान (कैंसर के रेड फ्लैग्स)',
+        answer: 'यदि ये लक्षण हों तो तुरंत डॉक्टर से मिलें:<br><br>• <strong>लगातार पेट फूलना:</strong> 2 हफ्ते से ज्यादा<br>• <strong>बिना वजह वजन घटना:</strong> वजन खुद-ब-खुद कम होना<br>• <strong>पेल्विक दबाव:</strong> पेट में भारीपन<br>• <strong>थकान:</strong> आराम के बाद भी दूर न हो<br>• <strong>मल/पेशाब करने की आदत में बदलाव</strong><br>• <strong>रजोनिवृत्ति के बाद खून आना:</strong> किसी भी तरह का रक्तस्राव<br><br>गर्भाशय, अंडाशय या ग्रीवा कैंसर की जल्द जांच और इलाज से बचाव संभव है। नियमित जांच जरूरी है।',
+        citation: '[translate:American Cancer Society (ACS). Signs and Symptoms of Gynecologic Cancers. 2024.]'
+    },
+    {
+        question: '🤰 नियमित पैप स्मीयर (21 वर्ष से ऊपर)',
+        answer: 'गर्भाशयग्रीवा कैंसर जांच (Pap test) की शुरुआत 21 साल की उम्र में होती है, चाहे यौन संबंध हुए हों या नहीं। 21-29 साल में हर 3 साल पर जांच। 30-65 में को-टेस्ट (पैप+HPV) हर 5 साल या सिर्फ पैप हर 3 साल में।'
+    },
+    {
+        question: '🧘‍♀️ असामान्य लक्षण',
+        answer: 'यदि आपको ये लक्षण हों तो तुरंत डॉक्टर से अपॉइंटमेंट लें: **असामान्य योनि रक्तस्राव** (माहवारी के बीच, सहवास के बाद या रजोनिवृत्ति के बाद), **काफी तेज पेल्विक दर्द**, **असामान्य या बदबूदार डिस्चार्ज**, **स्तन में गांठ या अचानक दिखने में बदलाव**, या **यौन संबंध में दर्द**।'
+    },
+    {
+        question: '📅 वार्षिक स्वास्थ्य जांच',
+        answer: 'हर महिला के लिए साल में एक बार डॉक्टर से सलाह जरूरी है, जिसमें गर्भनिरोधक, एसटीआई से बचाव, टीकाकरण और मानसिक स्वास्थ्य की चर्चा हो, भले ही शारीरिक जांच हमेशा जरूरी न हो।'
     }
 ];
 
@@ -1686,6 +3088,80 @@ const preventionData = [
     {
         question: "⚖️ Obesity Prevention & Weight Management",
         answer: "Maintain a healthy weight through regular physical activity and a balanced diet—obesity increases the risk of heart disease, diabetes, and hormone-related cancers in women; even modest weight loss (5-10%) substantially improves health outcomes",
+        icon: "⚖️"
+    }
+];
+
+const hi_preventionData = [
+
+    {
+        question: '🏃‍♀️ नियमित व्यायाम',
+        answer: 'अमेरिकन कैंसर सोसाइटी के अनुसार, स्तन कैंसर की रोकथाम के लिए हर सप्ताह कम से कम 150 मिनट मध्यम तीव्रता का व्यायाम ज़रूरी है। शारीरिक गतिविधि हार्मोन को संतुलित करती है, वजन नियंत्रित रखती है, तनाव कम करती है और सम्पूर्ण प्रजनन स्वास्थ्य सुधारती है। जिन महिलाओं के परिवार में स्तन कैंसर का इतिहास है, उनके लिए व्यायाम के दिशानिर्देशों का पालन करने से मृत्यु दर 44-53% तक कम होती है।<br><br><strong>लाभ:</strong> माहवारी में कम ऐंठन, बेहतर हार्मोन बैलेंस, पीसीओएस जटिलताएं घटती हैं, प्रजनन क्षमता सुधरती है, और स्तन कैंसर का बड़ा जोखिम कम होता है।<br><br><em><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9455068/" target="_blank" rel="noopener noreferrer" style="color: var(--color-info);">📚 Exercise Guidelines for Cancer Prevention - NIH 2022</a></em>',
+        citation: 'American Cancer Society (ACS). Exercise and Physical Activity. 2023.'
+    },
+    {
+        question: '🍎 संतुलित आहार व स्वस्थ वजन',
+        answer: 'स्वस्थ शरीर का वजन बनाए रखना महिलाओं में कई कैंसर (स्तन, गर्भाशय, डिंबग्रंथि) के जोखिम को कम करता है और पीसीओएस जैसी हार्मोन संबंधी बीमारियों को नियंत्रित करने में मदद करता है। ताजे फल, सब्ज़ियाँ, साबुत अनाज और कम वसा वाले प्रोटीन का सेवन करें और लाल/प्रोसेस्ड मीट, चीनी व शराब सीमित मात्रा में लें।<br><br><strong>महत्वपूर्ण आहार सुझाव:</strong> फाइबर की मात्रा बढ़ाएँ, रिफाइंड कार्बोहाइड्रेट कम करें, हड्डियों के स्वास्थ्य के लिए विटामिन D व कैल्शियम पर्याप्त मात्रा में लें।<br><br><em><a href="https://www.who.int/news-room/fact-sheets/detail/cancer" target="_blank" rel="noopener noreferrer" style="color: var(--color-info);">📚 WHO Cancer Fact Sheet 2024</a></em>',
+        citation: 'World Health Organization (WHO). Diet, Nutrition and the Prevention of Chronic Diseases. 2003.'
+    },
+    {
+        question: '💉 टीकाकरण (HPV और फ्लू)',
+        answer: '**HPV वैक्सीन** (Gardasil 9) 90% से अधिक गर्भाशयग्रीवा कैंसर के प्रकारों से, साथ ही अधिकतर गुदा, योनि, वुल्वा और गले के कैंसर से बचाता है। 9-26 वर्ष की आयु के लिए अनुशंसित है, और 27-45 वर्ष में डॉक्टरी सलाह पर दिया जा सकता है।<br><br>**फ्लू वैक्सीन** और **कोविड-19 वैक्सीन** भी समग्र स्वास्थ्य, विशेषकर गर्भावस्था में, ज़रूरी हैं।<br><br><em><a href="https://www.cdc.gov/cervical-cancer/prevention/index.html" target="_blank" rel="noopener noreferrer" style="color: var(--color-info);">📚 CDC - Reducing Risk for Cervical Cancer 2025</a></em>',
+        citation: 'CDC. HPV Vaccine Recommendations. 2024.'
+    },
+    {
+        question: '🩺 स्क्रीनिंग दिशानिर्देश (पैप स्मीयर एवं मैमोग्राफी)',
+        answer: 'समयसमय पर स्क्रीनिंग करवाना आरंभिक पहचान के लिए महत्वपूर्ण है:<br><br>• <strong>गर्भाशयग्रीवा की स्क्रीनिंग (पैप स्मीयर):</strong> 21 साल की उम्र से शुरू करें। 21-29 साल में हर 3 साल पर केवल पैप टेस्ट। 30-65 में पैप+HPV को-टेस्ट हर 5 साल पर।<br>• <strong>स्तन कैंसर स्क्रीनिंग (मैमोग्राफी):</strong> WPSI-HRSA के अनुसार, औसत जोखिम वाली महिलाओं को 40 वर्ष से पहले और 50 से देर से शुरू नहीं करना चाहिए। कम से कम हर 2 साल पर स्क्रीनिंग करें और ज़रूरत पड़े तो सालाना कराएँ। 74 वर्ष तक जारी रखें, केवल उम्र के हिसाब से रोकें नहीं।<br><br><strong>ऊँचे जोखिम वाली महिलाएं:</strong> BRCA म्यूटेशन वाले या परिवार में तीव्र इतिहास हों तो पहले जांच शुरू करें, और मैमोग्राफी के साथ-साथ ब्रेस्ट MRI भी कराएँ।<br><br><em><a href="https://www.hrsa.gov/womens-guidelines-2016" target="_blank" rel="noopener noreferrer" style="color: var(--color-info);">📚 WPSI Guidelines - HRSA 2016</a></em>',
+        citation: 'U.S. Preventive Services Task Force (USPSTF). Screening for Breast Cancer. 2024. | USPSTF. Screening for Cervical Cancer. 2024.'
+    },
+    {
+        question: '🧘‍♀️ तनाव प्रबंधन एवं मानसिक स्वास्थ्य',
+        answer: 'लगातार तनाव हार्मोन संतुलन (जैसे कोर्टिसोल) को बिगाड़ सकता है, माहवारी चक्र को प्रभावित कर सकता है, पीसीओएस व एंडोमेट्रियोसिस जैसी स्थितियाँ बढ़ा सकता है, और डिप्रेशन व एंग्ज़ायटी (जो महिलाओं में दुगनी होती है) का खतरा बढ़ाता है।<br><br><strong>प्रभावी तरीके:</strong> माइंडफुलनेस, योग, ध्यान, पर्याप्त नींद (7-9 घंटे), सामाजिक जुड़ाव, और जब ज़रूरत हो तब पेशेवर सलाह लें (काउंसलिंग/थेरेपी)।<br><br><em><a href="https://www.womenshealth.gov/mental-health/mental-health-conditions/depression" target="_blank" rel="noopener noreferrer" style="color: var(--color-info);">📚 Office on Women\'s Health - Depression 2021</a></em>',
+        citation: 'National Institute of Mental Health (NIMH). Stress Management. 2023.'
+    },
+
+    {
+        question: '🏋️‍♀️ पेल्विक फ्लोर स्वास्थ्य और केगल एक्सरसाइज़',
+        answer: 'पेल्विक फ्लोर की मांसपेशियाँ मूत्राशय, गर्भाशय और आंतों को सहारा देती हैं। इन मांसपेशियों को (केगल एक्सरसाइज द्वारा) मजबूत करना ज़रूरी है, खासकर गर्भावस्था, प्रसव के बाद और बढ़ती उम्र में। महिला स्वास्थ्य के हर चरण पर पेल्विक फ्लोर स्ट्रेंथ का ध्यान रखना चाहिए।<br><br><strong>लाभ:</strong> मूत्र असंयम में कमी, यौन संतुष्टि में वृद्धि, पेल्विक अंगों का बेहतर समर्थन, प्रसव के बाद तेज़ सुधार, अंग ढीलापन से बचाव।<br><br><em><a href="https://www.cdc.gov/womens-health/index.html" target="_blank" rel="noopener noreferrer" style="color: var(--color-info);">📚 CDC Office of Women\'s Health 2025</a></em>',
+        citation: 'American College of Obstetricians and Gynecologists (ACOG). Pelvic Floor Dysfunction. 2023.'
+    },
+    {
+        question: '🛡️ सर्विक्स कैंसर की रोकथाम',
+        answer: '**HPV वैक्सीन** (सिफारिश 9-26 वर्ष के लिए) लगवाएँ, और डॉक्टर की सलाह के अनुसार **नियमित पैप एवं HPV स्क्रीनिंग** कराते रहें। HPV संक्रमण रोकने के लिए कंडोम जैसे बैरियर मेथड्स उपयोग करें।',
+        citation: '<a href="https://www.cdc.gov/cancer/cervical/basic_info/prevention.htm" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">CDC. Cervical Cancer Prevention. 2023.</a>',
+        icon: '🛡️'
+    },
+    {
+        question: '🎀 स्तन कैंसर की रोकथाम',
+        answer: '**नियमित स्वयं-परीक्षण** करें, हर साल **क्लिनिकल स्तन जांच** करवाएँ, और डॉक्टर की सलाह पर **मैमोग्राम्स** (आमतौर पर 40-50 वर्ष से शुरू) करवाएँ। स्वस्थ वजन बनाए रखें और शराब सीमित करें।',
+        citation: '<a href="https://www.cancer.org/cancer/types/breast-cancer/screening-tests-and-early-detection.html" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">American Cancer Society. Screening Guidelines. 2024.</a>',
+        icon: '🎀'
+    },
+    {
+        question: '🏃‍♀️ पीसीओएस और डायबिटीज़ की रोकथाम',
+        answer: '**स्वस्थ, स्थिर वजन** रखें, सप्ताह में 3-5 बार **नियमित व्यायाम** करें, और **संतुलित आहार** लें जिसमें प्रोसेस्ड फूड और परिष्कृत चीनी कम हो ताकि इंसुलिन संवेदनशीलता बढ़े।',
+        icon: '🏃‍♀️'
+    },
+    {
+        question: '🦴 हड्डियों का स्वास्थ्य (ऑस्टियोपोरोसिस) रोकथाम',
+        answer: 'हर दिन पर्याप्त मात्रा में **कैल्शियम और विटामिन D** लें। **भार उठाने वाले व्यायाम** (जैसे चलना, दौड़ना, नृत्य) करें जिससे हड्डियों की गुणवत्ता बनी रहे, खासकर रजोनिवृत्ति के बाद।',
+        icon: '🦴'
+    },
+
+    {
+        question: "🛡️ लैंगिक हिंसा से बचाव और सुरक्षा",
+        answer: "यौन हिंसा से सुरक्षा के लिए सजग रहें, सहमति (consent) समझें, स्वस्थ रिश्ते बनाए रखें, और सामुदायिक रोकथाम अभियानों को समर्थन दें—सुरक्षा व सशक्तिकरण के लिए पूर्व शिक्षा अत्यंत ज़रूरी है।",
+        icon: "🛡️"
+    },
+    {
+        question: "💚 मानसिक स्वास्थ्य: डिप्रेशन और एंग्ज़ायटी रोकथाम",
+        answer: "नियमित व्यायाम, संतुलित आहार, मजबूत सामाजिक सपोर्ट, पर्याप्त नींद और मूड में लगातार बदलाव दिखे तो सहायता लें—इनसे डिप्रेशन और एंग्ज़ायटी से बचाव संभव है।",
+        icon: "💚"
+    },
+
+    {
+        question: "⚖️ मोटापा रोकथाम व वजन प्रबंधन",
+        answer: "नियमित व्यायाम और संतुलित आहार से स्वस्थ वजन कायम रखें—मोटापा महिलाओं में दिल की बीमारी, डायबिटीज़ और हार्मोन संबंधी कैंसर की आशंका बढ़ाता है। सिर्फ 5-10% वजन कम करने से भी स्वास्थ्य में बेहद सुधार आ सकता है।",
         icon: "⚖️"
     }
 ];
@@ -1778,6 +3254,7 @@ const conversationStats = {
     typedMessages: 0,
     conversationChain: 1
 };
+
 
 /* CHatbot functions taken from standalone chatbot */
 
@@ -1922,8 +3399,7 @@ function triggerInitialRagResponse() {
                 enableTextInput();
             }, 2000);
 
-       console.log("After contactPrompt")
-    })
+   })
     .catch(error => {
         console.error('RAG Error:', error);
         addMessage("assistant", "দুঃখিত, সমস্যা হয়েছে। আবার চেষ্টা করুন।");
@@ -2367,11 +3843,9 @@ function sendMessage() {
     disableTextInput();
 
     if (appState.awaitingContactConfirmation) {
-        console.log("Going for handleconfirmation")
         handleContactConfirmation(message);
     }
     else if (appState.awaitingDistrictSelection) {
-        console.log("Going in")
         handleDistrictSelection(message);
     }
     else if (appState.awaitingFollowupDecision) {
@@ -2418,7 +3892,6 @@ function handleUserInput(userInput) {
 
 // Handle option button click
 function handleOptionClick(option) {
-    console.log('Option clicked:', option);
 
     // Add user's selection to chat
     addChatMessage("user", option);
@@ -3096,6 +4569,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // ========================================================================
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    console.log("document.addEventListener('DOMContentLoaded")
     // Get chat input and send button
     const chatInput = document.getElementById('chatInput');
     const chatSendBtn = document.getElementById('chatSendBtn');
@@ -3131,6 +4606,7 @@ document.addEventListener('DOMContentLoaded', function() {
             chatSendBtn: !!chatSendBtn
         });
     }
+
 });
 
 // Modify handleChatbot to track typed messages
@@ -3236,9 +4712,11 @@ function renderDiseases(diseasesToShow = diseases) {
 // RENDER FAQs FUNCTION (UNCHANGED)
 // ========================================================================
 
-function renderFAQs() {
+//LANGUAGE SELECTOR
+
+function renderFaqs(faqArray) {
     const container = document.getElementById('faqContainer');
-    container.innerHTML = faqs.map((faq, index) => `
+    container.innerHTML = faqArray.map((faq, index) => `
         <div class="faq-item" data-index="${index}">
             <div class="faq-question">
                 <span>${faq.question}</span>
@@ -3255,7 +4733,229 @@ function renderFAQs() {
             </div>
         </div>
     `).join('');
+
+    console.log("Render Faqs", container.innerHTML);
 }
+
+
+
+function renderDoctorsList(doctorsMap, cityKey, selectedLang) {
+
+    console.log("In renderDoctorsList", doctorsMap, cityKey);
+    const doctors = doctorsMap[cityKey] || [];
+    const container = document.getElementById('doctorsContainer');
+    console.log("Container:", container);
+    console.log("Doctors:", doctors);
+
+    if (!container) return;
+
+    if (!cityKey) {
+    container.innerHTML = '<p>कृपया शहर चुनें।</p>';
+    return;
+  }
+
+    if (doctors.length === 0) {
+        container.innerHTML = '<p>कोई डॉक्टर सूचीबद्ध नहीं है।</p>';
+        return;
+    }
+
+
+    if (doctors.length > 0) console.log("First doctor fields:", doctors[0]);
+
+    if(selectedLang == 'hi')
+        container.innerHTML = doctors.map(doc => `
+            <div class="doctor-card">
+                <div class="doctor-header">
+                    <strong>${doc.name}</strong>
+                    <span class="doctor-credentials">${doc.credentials}</span>
+                    <span class="doctor-experience">${doc.experience}</span>
+                </div>
+                <div class="doctor-hospital">
+                    <strong>अस्पताल:</strong> ${doc.hospital}<br>
+                    <strong>पता:</strong> ${doc.address}<br>
+                    <strong>सम्पर्क:</strong> ${doc.phone}<br>
+                    <strong>ईमेल:</strong> ${doc.email}
+                </div>
+                <div class="doctor-details">
+                    <strong>समय:</strong> ${doc.hours}
+                    <br>
+                    <strong>विशेषज्ञता:</strong> ${doc.specializations}
+                    <br>
+                    <strong>रेटिंग:</strong> ${doc.rating}
+                    <br>
+                    <a href="${doc.bookingLink}" target="_blank" rel="noopener noreferrer">ऑनलाइन बुक करें</a>
+                </div>
+            </div>
+        `).join('');
+
+        else
+                container.innerHTML = doctors.map(doc => `
+                <div class="doctor-card">
+                    <div class="doctor-header">
+                        <strong>${doc.name}</strong>
+                        <span class="doctor-credentials">${doc.credentials}</span>
+                        <span class="doctor-experience">${doc.experience}</span>
+                    </div>
+                    <div class="doctor-hospital">
+                        <strong>Hospital:</strong> ${doc.hospital}<br>
+                        <strong>Address:</strong> ${doc.address}<br>
+                        <strong>Contact:</strong> ${doc.phone}<br>
+                        <strong>Email:</strong> ${doc.email}
+                    </div>
+                    <div class="doctor-details">
+                        <strong>Hours:</strong> ${doc.hours}
+                        <br>
+                        <strong>Specializations:</strong> ${doc.specializations}
+                        <br>
+                        <strong>Rating:</strong> ${doc.rating}
+                        <br>
+                        <a href="${doc.bookingLink}" target="_blank" rel="noopener noreferrer">Book Online</a>
+                    </div>
+                </div>
+            `).join('');
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const langSelector = document.getElementById('languageSelector');
+    const enDiv = document.getElementById('w-guidelines-en');
+    const hiDiv = document.getElementById('w-guidelines-hi');
+
+    // Reusable function to toggle
+    function toggleLang(lang) {
+        if (lang === 'hi') {
+            enDiv.style.display = 'none';
+            hiDiv.style.display = 'block';
+        } else {
+            enDiv.style.display = 'block';
+            hiDiv.style.display = 'none';
+        }
+    }
+
+    // Initial render
+    toggleLang(langSelector.value);
+
+    // On selector change
+    langSelector.addEventListener('change', function(e) {
+        toggleLang(e.target.value);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const langSelector = document.getElementById('languageSelector');
+    const enDiv = document.getElementById('registration-en');
+    const hiDiv = document.getElementById('registration-hi');
+    const enSub = document.getElementById('subscription-en');
+    const hiSub = document.getElementById('subscription-hi');
+    const navEn = document.getElementById('nav-tabs-en');
+    const navHi = document.getElementById('nav-tabs-hi');
+
+    function toggleRegistrationSection(lang) {
+        if (lang === 'hi') {
+            enDiv.style.display = 'none';
+            hiDiv.style.display = 'block';
+        } else {
+            enDiv.style.display = 'block';
+            hiDiv.style.display = 'none';
+        }
+    }
+
+    function toggleSubscriptionSection(lang) {
+    if (lang === 'hi') {
+        enSub.style.display = 'none';
+        hiSub.style.display = 'block';
+    } else {
+        enSub.style.display = 'block';
+        hiSub.style.display = 'none';
+    }
+}
+
+     function toggleNavTabs(lang) {
+        if (lang === 'hi') {
+          navEn.style.display = 'none';
+          navHi.style.display = 'flex';  // or 'block' depending on your CSS
+        } else {
+          navEn.style.display = 'flex';
+          navHi.style.display = 'none';
+        }
+      }
+
+    langSelector.addEventListener('change', function(e) {
+        toggleRegistrationSection(e.target.value);
+        toggleSubscriptionSection(e.target.value);
+        toggleNavTabs(e.target.value);
+    });
+
+    // On page load, set default
+    toggleRegistrationSection(langSelector.value || 'en');
+    toggleSubscriptionSection(langSelector.value || 'en');
+    // initial state
+    toggleNavTabs(langSelector.value || 'en');
+
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    const initialLang = document.getElementById('languageSelector').value || 'en';
+    document.getElementById('languageSelector').addEventListener('change', function(e) {
+
+    if (e.target.value === 'en') {
+        document.getElementById('wellnessProdsEn').style.display = 'block';
+        document.getElementById('wellnessProdsHi').style.display = 'none';
+
+      //  document.getElementById('guidelines-en').style.display = e.target.value === 'en' ? 'block' : 'none';
+
+    } else {
+        document.getElementById('wellnessProdsEn').style.display = 'none';
+        document.getElementById('wellnessProdsHi').style.display = 'block';
+
+       // document.getElementById('guidelines-hi').style.display = e.target.value === 'hi' ? 'block' : 'none';
+    }
+
+    currentFaqs = e.target.value === 'hi' ? hi_faqs : faqs;
+
+    currentLanguage = e.target.value;
+    renderWhenToSee();
+    renderPrevention();
+    renderFaqs(currentFaqs);
+
+    document.getElementById('citySelect').addEventListener('change', function(e) {
+        const cityKey = e.target.value;
+        currentCityKey = cityKey;
+
+    });
+
+    const selectedLang = e.target.value;
+    if (selectedLang === 'hi') {
+        currentDoctorsData = hi_doctorsData;
+        //console.log(currentDoctorsData, currentCityKey);
+    } else {
+        currentDoctorsData = doctorsData;
+
+        //console.log(currentDoctorsData, currentCityKey);
+    }
+
+    renderDoctorsList(currentDoctorsData, currentCityKey, selectedLang);
+
+    });
+
+    document.getElementById('citySelect').addEventListener('change', function(e) {
+    currentCityKey = e.target.value;
+
+    // If you want to FORCE switch language selector to English on city change:
+    currentLanguage = 'en';
+    document.getElementById('languageSelector').value = 'en';
+    currentDoctorsData = doctorsData;
+    document.getElementById('wellnessProdsEn').style.display = 'block';
+    document.getElementById('wellnessProdsHi').style.display = 'none';
+
+    renderDoctorsList(currentDoctorsData, currentCityKey, currentLanguage);
+
+
+});
+
+});
 
 
 // ========================================================================
@@ -3263,7 +4963,7 @@ function renderFAQs() {
 // ========================================================================
 
 // Reusable function for the FAQ-style sections
-function renderSectionContent(data, containerId) {
+/*function renderSectionContent(data, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
@@ -3284,16 +4984,65 @@ function renderSectionContent(data, containerId) {
             </div>
         </div>
     `).join('');
+}*/
+
+function renderSectionContent(data, containerId) {
+    const container = document.getElementById(containerId);
+    if (!container || !Array.isArray(data) || data.length === 0) {
+        // Optionally, display "No items" message
+        if (container) container.innerHTML = '<div>कोई जानकारी उपलब्ध नहीं है</div>';
+        return;
+    }
+
+    container.innerHTML = data.map((item, index) => `
+        <div class="faq-item" data-index="${index}">
+            <div class="faq-question" style="cursor:pointer;">
+                <span>${item.question}</span>
+                <span class="faq-toggle" style="float:right;">+</span>
+            </div>
+            <div class="faq-answer" style="display:none;">
+                ${item.answer || ""}
+                ${item.citation ? `
+                    <div style="background: #e8f4f8; border-left: 3px solid #2196f3; padding: 0.75rem; margin-top: 1rem; border-radius: 4px; font-size: 0.85rem;">
+                        <strong style="color: #2196f3;">📚 शोध स्रोत:</strong><br>
+                        ${item.citation}
+                    </div>
+                ` : ''}
+            </div>
+        </div>
+    `).join('');
+
+    // Attach expand/collapse handler
+    Array.from(container.getElementsByClassName('faq-question')).forEach((el, idx) => {
+        el.addEventListener('click', function() {
+            const answerDiv = this.nextElementSibling;
+            if (!answerDiv) return;
+            // Toggle display
+            if (answerDiv.style.display === "none" || !answerDiv.style.display) {
+                answerDiv.style.display = "block";
+                this.querySelector('.faq-toggle').textContent = "−";
+            } else {
+                answerDiv.style.display = "none";
+                this.querySelector('.faq-toggle').textContent = "+";
+            }
+        });
+    });
+
+  //  console.log("Inner html", container.innerHTML)
 }
 
 function renderWhenToSee() {
     // The "When to See a Gynecologist" section uses the same FAQ-like structure
-    renderSectionContent(whenToSeeData, 'whenToSeeContainer');
+    const data = currentLanguage === "hi" ? hi_whenToSeeData : whenToSeeData;
+    //console.log("renderWhenToSee lang", data);
+    renderSectionContent(data, 'whenToSeeContainer');
 }
 
 function renderPrevention() {
     // The "Prevention & Care" section uses the same FAQ-like structure
-    renderSectionContent(preventionData, 'preventionContainer');
+    const data = currentLanguage === "hi" ? hi_preventionData : preventionData;
+    console.log("renderPrevention lang", data);
+    renderSectionContent(data, 'preventionContainer');
 }
 
 function renderDoctors(doctorsToShow = []) {
@@ -3320,9 +5069,29 @@ function renderDoctors(doctorsToShow = []) {
 // ========================================================================
 // SHOW DISEASE DETAILS MODAL FUNCTION (UNCHANGED)
 // ========================================================================
+// Default as English
+document.addEventListener('DOMContentLoaded', function() {
+    // Default language is English
+    renderDiseases(currentDiseases);
+
+    document.getElementById('languageSelector').addEventListener('change', function(e) {
+        const selectedLang = e.target.value;
+        if (selectedLang === 'hi') {
+            currentDiseases = hi_diseases;
+        } else {
+            currentDiseases = diseases;
+        }
+        renderDiseases(currentDiseases);
+    });
+
+    // Optional: Ensure diseases tab is shown
+    showSection('diseases');
+});
+
+
 
 window.showDiseaseDetails = (diseaseName) => {
-    const disease = diseases.find(d => d.name === diseaseName);
+    const disease = currentDiseases.find(d => d.name === diseaseName);
     if (!disease) return;
 
     // Use the specific image URL from the disease object (which we added above).
@@ -3380,6 +5149,29 @@ window.showDiseaseDetails = (diseaseName) => {
     document.body.style.overflow = 'hidden'; // Prevents background scrolling when modal is open
 };
 
+document.addEventListener('DOMContentLoaded', function() {
+    const langSelector = document.getElementById('languageSelector');
+    const enDiv = document.getElementById('guidelines-en');
+    const hiDiv = document.getElementById('guidelines-hi');
+
+    function toggleGuidelines(lang) {
+        if (lang === 'hi') {
+            enDiv.style.display = 'none';
+            hiDiv.style.display = 'block';
+        } else {
+            enDiv.style.display = 'block';
+            hiDiv.style.display = 'none';
+        }
+    }
+
+    langSelector.addEventListener('change', function(e) {
+        toggleGuidelines(e.target.value);
+    });
+
+    // Set initial state on load
+    toggleGuidelines(langSelector.value || 'en');
+});
+
 // ========================================================================
 // SEARCH FUNCTIONALITY (RETAINED)
 // ========================================================================
@@ -3388,7 +5180,7 @@ document.getElementById('searchBox').addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase().trim();
 
     if (!searchTerm) {
-        renderDiseases();
+        renderDiseases(diseasesToShow = diseases);
         return;
     }
 
@@ -3400,7 +5192,7 @@ document.getElementById('searchBox').addEventListener('input', (e) => {
                disease.treatment.some(t => t.toLowerCase().includes(searchTerm));
     });
 
-    renderDiseases(filtered);
+    renderDiseases(diseasesToShow = filtered);
 });
 
 // ========================================================================
@@ -3644,7 +5436,7 @@ window.handleSearch = () => {
                 item.question.toLowerCase().includes(query) ||
                 item.answer.toLowerCase().includes(query)
             );
-            renderFAQs(filteredFAQs);
+            renderFaqs(filteredFAQs);
             break;
 
         case 'chatbot':
@@ -3665,27 +5457,26 @@ document.getElementById('searchBox').addEventListener('input', window.handleSear
 // INITIALIZE APPLICATION (UPDATED)
 // ========================================================================
 
-renderDiseases();
-renderFAQs();
+renderFaqs(currentFaqs);
+
 renderWhenToSee();   // NEW: Initializes "When to See a Gynecologist" content
 renderPrevention();  // NEW: Initializes "Prevention & Care" content
 //renderDoctors();     // NEW: Initializes "Find Gynecologists" content
 const allDoctors = Object.values(doctorsData).flat();
-renderDoctors(allDoctors);
+//renderDoctors(allDoctors);
+currentDoctorsData = allDoctors
+renderDoctorsList(currentDoctorsData, "Delhi", currentLanguage);
+
 
 // Placeholder functions to prevent errors for other sections
-
-
 // On main menu option select
 function handleMainMenuSelection(userInput) {
 
   const cleanInput = userInput.trim();
   const stateKey = nextStateMap[cleanInput];
   chatbotState.awaitingMainMenu = false;  // ✅ Changed from appState
-  console.log("In handleMainMenuSelection", stateKey)
   if (stateKey && healthPromptMap[stateKey]) {
     const { botPrompt, options } = healthPromptMap[stateKey];
-    //console.log("stateKey", botPrompt, options)
     addChatMessage("assistant", botPrompt, options);
     chatbotState.awaitingSubMenu = true;  // ✅ Changed from appState.awaitingSubMenuSelection
     chatbotState.currentSection = stateKey;  // ✅ Changed from appState
@@ -3705,15 +5496,19 @@ function showSection(sectionId) {
   // Hide missionBanner for tabs, show only for main/home/landing section
   const mainSectionIds = ['diseases']; // replace with your main/landing section id(s)
   if (mainSectionIds.includes(sectionId)) {
-    document.getElementById('missionBanner').style.display = 'block';
+    //document.getElementById('missionBanner').style.display = 'block';
+    console.log("uncomment");
   } else {
-    document.getElementById('missionBanner').style.display = 'none';
+    //document.getElementById('missionBanner').style.display = 'none';
+    console.log("uncomment");
   }
 
   if (sectionId === 'diseases') {
-      document.getElementById('missionBanner').classList.remove('hidden');
+     // document.getElementById('missionBanner').classList.remove('hidden');
+     console.log("uncomment");
     } else {
-      document.getElementById('missionBanner').classList.add('hidden');
+      //document.getElementById('missionBanner').classList.add('hidden');
+      console.log("uncomment");
     }
 }
 
@@ -3726,6 +5521,7 @@ document.querySelectorAll('.nav-tab').forEach(tab => {
 
 window.handleRegistration = (event) => {
     event.preventDefault();
-    console.log("Registration submitted!");
     alert("Thank you for registering! We'll send you monthly health tips.");
 };
+
+
